@@ -1,11 +1,14 @@
 ---
-title: "bsiepe.github.io"
+title: "About"
+image: files/images/bjoern_headshot.jpg
 ---
 
-This is a Quarto website.
+My name is Björn Siepe, and I am a PhD student in Psychological Methods at
+the [University of Marburg, Germany](https://www.uni-marburg.de/de/fb04/team-heck/team/bjoern-siepe). 
+In my methodological work, I study uncertainty in psychological time series analysis, network models, and predictive modelling. I'm also interested in using longitudinal and passive sensor data to better understand and predict mental disorders. 
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
 
-```{r}
-1 + 1
-```
+I am passionate about the open science movement and have been actively involved in the local open science groups in Frankfurt and Marburg. I have been involved in (co-)hosting multiple recurring events, such as the [ReproducibiliTea](https://frankfurt-osi.netlify.app/top/reproducibilitea/) journal club or [Brainhack School](https://openscienceinitiativeuniversitymarburg.github.io/). If possible, I publish all my projects with open data and code.
+
+To find all my publications and talks, take a look at my [CV](../cv).
+

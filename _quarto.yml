@@ -1,19 +1,57 @@
 project:
   type: website
-
+  output-dir: docs
+  
 website:
-  title: "bsiepe.github.io"
+  title: "Björn Siepe"
+  image: files/images/bjoern_headshot.png
+
   navbar:
+    background: primary
+    search: true
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - text: "Home"
+        file: index.qmd
+      - text: "Publications"
+        href: publications/index.qmd
+      - text: "Talks"
+        href: talks/index.qmd
+      - text: "Workshops"
+        href: workshops/index.qmd
+      - text: "CV"
+        href: cv/index.qmd
+    right:
+      - icon: envelope
+        href: "mailto:bjoern.siepe@uni-marburg.de"
+      - icon: twitter
+        href: "https://twitter.com/b_siepe"
+      - icon: github
+        href: "https://github.com/bsiepe"
+      - icon: linkedin
+        href: "https://www.linkedin.com/in/bj%C3%B6rn-siepe-11a750219/"
+
+      
+  page-footer:
+    left: |
+       <span class="faux-block">{{< fa brands creative-commons >}} 2023 Björn Siepe</span>
+       
+    center: |
+        <span class="faux-block"><a href="https://github.com/bsiepe/bsiepe.github.io">{{< fa brands github >}} Source Code</a></span>
+        
+    right: |
+       <span class="faux-block"> Built with <a href="https://quarto.org/">Quarto</a></span>
+ 
+
+
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    theme: 
+      - flatly
+      - styles.css
     toc: true
+    page-layout: full
+    fontsize: 1.1em
+    linestretch: 1.7
 
 editor: visual
-

@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "workshops/index.html",
+    "href": "workshops/index.html",
+    "title": "Workshops",
+    "section": "",
+    "text": "Bla"
+  },
+  {
+    "objectID": "talks/index.html",
+    "href": "talks/index.html",
+    "title": "Talks",
+    "section": "",
+    "text": "Blub"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "publications/index.html",
+    "href": "publications/index.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Bli"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About",
+    "section": "",
+    "text": "My name is Björn Siepe, and I am a PhD student in Psychological Methods at the University of Marburg, Germany. In my methodological work, I study uncertainty in psychological time series analysis, network models, and predictive modelling. I’m also interested in using longitudinal and passive sensor data to better understand and predict mental disorders.\n1 Paragraph Teaching"
+  }
+]
