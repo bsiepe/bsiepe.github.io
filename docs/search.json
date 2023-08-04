@@ -25,7 +25,7 @@
     "href": "index.html",
     "title": "About",
     "section": "",
-    "text": "My name is Björn Siepe, and I am a PhD student in Psychological Methods at the University of Marburg, Germany. In my methodological work, I study uncertainty in psychological time series analysis, network models, and predictive modelling. I’m also interested in using longitudinal and passive sensor data to better understand and predict mental disorders.\nI am passionate about the open science movement and have been actively involved in the local open science groups in Frankfurt and Marburg. I have been involved in (co-)hosting multiple recurring events, such as the ReproducibiliTea journal club or Brainhack School. If possible, I publish all my projects with open data and code.\nTo find all my publications and talks, take a look at my CV."
+    "text": "::: {.grid}\n\n\n\n\nMy name is Björn Siepe, and I am a PhD student in Psychological Methods at the University of Marburg, Germany. In my methodological work, I study uncertainty in psychological time series analysis, network models, and predictive modelling. I’m also interested in using longitudinal and passive sensor data to better understand and predict mental disorders.\n\nI am passionate about the open science movement and have been actively involved in the local open science groups in Frankfurt and Marburg. I have been involved in (co-)hosting multiple recurring events, such as the ReproducibiliTea journal club or Brainhack School. If possible, I publish all my projects with open data and code.\nTo find all my publications and talks, take a look at my CV."
   },
   {
     "objectID": "cv/index.html",
