@@ -4,21 +4,21 @@
     "href": "workshops/index.html",
     "title": "Workshops",
     "section": "",
-    "text": "Bla"
-  },
-  {
-    "objectID": "talks/index.html",
-    "href": "talks/index.html",
-    "title": "Talks",
-    "section": "",
-    "text": "Blub"
+    "text": "updated soon"
   },
   {
     "objectID": "publications/index.html",
     "href": "publications/index.html",
     "title": "Publications",
     "section": "",
-    "text": "Bli"
+    "text": "updated soon"
+  },
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "My current CV",
+    "section": "",
+    "text": "Download CV"
   },
   {
     "objectID": "index.html",
@@ -28,10 +28,10 @@
     "text": "::: {.grid}\n\n\n\n\nMy name is Björn Siepe, and I am a PhD student in Psychological Methods at the University of Marburg, Germany. In my methodological work, I study uncertainty in psychological time series analysis, network models, and predictive modelling. I’m also interested in using longitudinal and passive sensor data to better understand and predict mental disorders.\n\nI am passionate about the open science movement and have been actively involved in the local open science groups in Frankfurt and Marburg. I have been involved in (co-)hosting multiple recurring events, such as the ReproducibiliTea journal club or Brainhack School. If possible, I publish all my projects with open data and code.\nTo find all my publications and talks, take a look at my CV."
   },
   {
-    "objectID": "cv/index.html",
-    "href": "cv/index.html",
-    "title": "My current CV",
+    "objectID": "talks/index.html",
+    "href": "talks/index.html",
+    "title": "Talks",
     "section": "",
-    "text": "Download CV"
+    "text": "updated soon"
   }
 ]
