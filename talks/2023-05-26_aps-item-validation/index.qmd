@@ -1,0 +1,6 @@
+---
+title: "Item Validation in the WARN-D Study"
+author: "Björn Siepe"
+date: "2023-05-28"
+categories: [EMA, Data Visualization, Time Series]
+---

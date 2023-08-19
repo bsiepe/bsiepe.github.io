@@ -4,34 +4,41 @@
     "href": "workshops/index.html",
     "title": "Workshops",
     "section": "",
-    "text": "updated soon"
+    "text": "Location: Frankfurt a.M., Germany \\ Date: \\ Description: \\\nSlides & Code"
   },
   {
-    "objectID": "publications/index.html",
-    "href": "publications/index.html",
-    "title": "Publications",
+    "objectID": "workshops/index.html#introduction-to-dynamic-networks",
+    "href": "workshops/index.html#introduction-to-dynamic-networks",
+    "title": "Workshops",
     "section": "",
-    "text": "updated soon"
-  },
-  {
-    "objectID": "cv/index.html",
-    "href": "cv/index.html",
-    "title": "My current CV",
-    "section": "",
-    "text": "Download CV"
+    "text": "Location: Frankfurt a.M., Germany \\ Date: \\ Description: \\\nSlides & Code"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "About",
     "section": "",
-    "text": "::: {.grid}\n\n\n\n\nMy name is Björn Siepe, and I am a PhD student in Psychological Methods at the University of Marburg, Germany. In my methodological work, I study uncertainty in psychological time series analysis, network models, and predictive modelling. I’m also interested in using longitudinal and passive sensor data to better understand and predict mental disorders.\n\nI am passionate about the open science movement and have been actively involved in the local open science groups in Frankfurt and Marburg. I have been involved in (co-)hosting multiple recurring events, such as the ReproducibiliTea journal club or Brainhack School. If possible, I publish all my projects with open data and code.\nTo find all my publications and talks, take a look at my CV."
+    "text": "My name is Björn Siepe, and I am a PhD student in Psychological Methods at the University of Marburg, Germany. In my methodological work, I study uncertainty in psychological time series analysis, network models, and predictive modelling. I’m also interested in using longitudinal and passive sensor data to better understand and predict mental disorders.\nI am passionate about the open science movement and have been actively involved in the local open science groups in Frankfurt and Marburg. I have been involved in (co-)hosting multiple recurring events, such as the ReproducibiliTea journal club or Brainhack School. If possible, I publish all my projects with open data and code.\nTo find all my publications and talks, take a look at my CV."
+  },
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "My current CV",
+    "section": "",
+    "text": "Last updated: 04th August 2023\n\n\n\n\n  \n     Download CV"
+  },
+  {
+    "objectID": "publications/index.html",
+    "href": "publications/index.html",
+    "title": "Publications",
+    "section": "",
+    "text": "updated soon\n\n\n\n\n\n\n\n\n\nNo matching items\n\n\n\n\n\n\n\nTitle\n\n\nDescription\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "talks/index.html",
     "href": "talks/index.html",
     "title": "Talks",
     "section": "",
-    "text": "updated soon"
+    "text": "Item Validation in the WARN-D Study\n\n\n\n\n\n\n\nEMA\n\n\nData Visualization\n\n\nTime Series\n\n\n\n\n\n\n\n\n\n\n\nMay 28, 2023\n\n\nBjörn Siepe\n\n\n\n\n\n\n  \n\n\n\n\nTemporal Dynamics of Depressive Symptomatology\n\n\n\n\n\n\n\nEMA\n\n\nNetwork Analysis\n\n\nTime Series\n\n\n\n\n\n\n\n\n\n\n\nMay 13, 2023\n\n\nBjörn Siepe\n\n\n\n\n\n\n  \n\n\n\n\nTemporal Dynamics of Depressive Symptomatology\n\n\nSymposium talk at DGPPN Conference (Berlin, Germany)\n\n\n\n\nEMA\n\n\nNetwork Analysis\n\n\nTime Series\n\n\n\n\n\n\n\n\n\n\n\nNov 28, 2022\n\n\nBjörn Siepe\n\n\n\n\n\n\nNo matching items"
   }
 ]

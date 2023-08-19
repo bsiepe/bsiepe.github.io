@@ -1,5 +1,25 @@
 ---
 title: "Publications"
+listing:
+  - id: ehr
+    max-description-length: 500
+    image-height: 150px
+    fields: [image, title, description]
+    contents: 
+      - publications/project_1
+    type: grid
+    grid-item-border: false
+  - id: packages
+    max-description-length: 80
+    image-height: 250px
+    fields: [title, description]
+    contents: 
+      - pkg_1
+      - pkg_2
+    type: table
+    grid-item-border: false
+    sort-ui: false
+    filter-ui: false
 ---
 
 updated soon

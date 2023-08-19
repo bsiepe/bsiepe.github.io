@@ -1,0 +1,7 @@
+---
+title: "Temporal Dynamics of Depressive Symptomatology"
+author: "Björn Siepe"
+subtitle: Symposium talk at DGPPN Conference (Berlin, Germany)
+date: "2022-11-28"
+categories: [EMA, Network Analysis, Time Series]
+---
