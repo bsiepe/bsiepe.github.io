@@ -1,11 +1,12 @@
 ---
 title: "Workshops"
+listing:
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
 ---
 
-## Introduction to Dynamic Networks
-Location: Frankfurt a.M., Germany \\
-Date:  \\
-Description: \\
 
 
-<a href="https://github.com/bsiepe/dynamical-networks-workshop" target="_blank">Slides & Code</a> 

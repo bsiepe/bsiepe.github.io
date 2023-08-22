@@ -1,25 +1,90 @@
 ---
 title: "Publications"
-listing:
-  - id: ehr
-    max-description-length: 500
-    image-height: 150px
-    fields: [image, title, description]
-    contents: 
-      - publications/project_1
-    type: grid
-    grid-item-border: false
-  - id: packages
-    max-description-length: 80
-    image-height: 250px
-    fields: [title, description]
-    contents: 
-      - pkg_1
-      - pkg_2
-    type: table
-    grid-item-border: false
-    sort-ui: false
-    filter-ui: false
+# listing:
+#   - id: ehr
+#     max-description-length: 500
+#     image-height: 150px
+#     fields: [image, title, description]
+#     contents: 
+#       - publications/project_1
+#     type: grid
+#     grid-item-border: false
+#   - id: packages
+#     max-description-length: 80
+#     image-height: 250px
+#     fields: [title, description]
+#     contents: 
+#       - pkg_1
+#       - pkg_2
+#     type: table
+#     grid-item-border: false
+#     sort-ui: false
+#     filter-ui: false
+# description: "List of my Publications"
 ---
+```{=html}
 
-updated soon
+
+<head>
+    <style>
+        <!-- body { -->
+        <!--     font-family: Arial, sans-serif; -->
+        <!-- } -->
+
+        .publication {
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-weight: bold;
+        }
+
+        .authors {
+            font-style: italic;
+        }
+
+        .year {
+            font-size: 12px;
+            color: #777;
+        }
+
+        .link, .code-link {
+            font-size: 14px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .link:hover, .code-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="publication">
+        <div class="title">Bayesian Estimation and Comparison of Idiographic Network Models</div>
+        <div class="authors">B.S. Siepe, D.W. Heck</div>
+        <div class="year">(2023)</div>
+        <div class="journal">PsyArXiv Preprint</div>
+        <a class="link" href="https://doi.org/10.31234/osf.io/uwfjc">Preprint</a>
+        <a class="code-link" href="https://github.com/bsiepe/var-compare">Code</a>
+    </div>
+
+    <div class="publication">
+        <div class="title">Temporal dynamics of depressive symptomatology: An idiographic time series analysis applying network models to patients with depressive disorders.</div>
+        <div class="authors">B.S. Siepe, C. Sander, M. Schultze, A. Kliem, S. Ludwig, U. Hegerl, H. Reich</div>
+        <div class="year">(2022)</div>
+        <div class="journal">PsyArXiv Preprint</div>
+        <a class="link" href="https://doi.org/10.31234/osf.io/hnw69">Preprint</a>
+        <a class="code-link" href="https://github.com/bsiepe/steady_tvvar">Code</a>
+    </div>
+
+    <div class="publication">
+        <div class="title">An exploratory study on how attachment classifications manifest in group psychotherapy</div>
+        <div class="authors">A. Talia, A. Georg, B.S. Siepe, S. Gullo, M. Miller-Bottome, J. Volkert, S. Taubner</div>
+        <div class="year">(2022)</div>
+        <div class="journal">Research in Psychotherapy: Psychopathology, Process and Outcome, 25(3), 286-298</div>
+        <a class="link" href="https://doi.org/10.4081/ripppo.2022.653">Published Paper</a>
+    </div>
+</body>
+```

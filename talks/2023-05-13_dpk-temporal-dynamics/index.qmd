@@ -5,3 +5,4 @@ date: "2023-05-13"
 categories: [EMA, Network Analysis, Time Series]
 ---
 
+Symposium talk at the annual German psychotherapy conference (DPK).

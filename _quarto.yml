@@ -40,6 +40,7 @@ website:
         
     right: |
        <span class="faux-block"> Built with <a href="https://quarto.org/">Quarto</a></span>
+       <span class="faux-block"> <a href="/impressum/impressum.html">Impressum</a></span>
  
 
 

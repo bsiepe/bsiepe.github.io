@@ -54,6 +54,7 @@ $footer-fg: $gray-300 !default;
 $code-bg: $gray-200 !default;
 $code-color: $black !default;   
 
+
 // TOC
 $toc-color: $black;
 $toc-font-size: 1em;
