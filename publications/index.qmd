@@ -22,6 +22,7 @@ title: "Publications"
 #     filter-ui: false
 # description: "List of my Publications"
 ---
+
 ```{=html}
 
 
@@ -30,6 +31,14 @@ title: "Publications"
         <!-- body { -->
         <!--     font-family: Arial, sans-serif; -->
         <!-- } -->
+        
+        .year-header {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
 
         .publication {
             margin-bottom: 20px;
@@ -41,26 +50,36 @@ title: "Publications"
 
         .authors {
             font-style: italic;
+            display: inline-block;
+            margin-right: 3px;
         }
 
         .year {
-            font-size: 12px;
+            <!-- font-size: 12px; -->
             color: #777;
+            display: inline-block;
+            margin-right: 10px;
         }
 
         .link, .code-link {
-            font-size: 14px;
+            font-size: 16px;
+            display: inline-block;
+            padding: 5px 10px;
+            border: 1px solid #007bff;
             color: #007bff;
             text-decoration: none;
+            border-radius: 5px;
         }
 
         .link:hover, .code-link:hover {
-            text-decoration: underline;
+            background-color: #007bff;
+            color: #fff;
         }
     </style>
 </head>
 
 <body>
+    <div class="year-header">2023</div>
     <div class="publication">
         <div class="title">Bayesian Estimation and Comparison of Idiographic Network Models</div>
         <div class="authors">B.S. Siepe, D.W. Heck</div>
@@ -69,7 +88,8 @@ title: "Publications"
         <a class="link" href="https://doi.org/10.31234/osf.io/uwfjc">Preprint</a>
         <a class="code-link" href="https://github.com/bsiepe/var-compare">Code</a>
     </div>
-
+    
+    <div class="year-header">2022</div>
     <div class="publication">
         <div class="title">Temporal dynamics of depressive symptomatology: An idiographic time series analysis applying network models to patients with depressive disorders.</div>
         <div class="authors">B.S. Siepe, C. Sander, M. Schultze, A. Kliem, S. Ludwig, U. Hegerl, H. Reich</div>
@@ -84,7 +104,7 @@ title: "Publications"
         <div class="authors">A. Talia, A. Georg, B.S. Siepe, S. Gullo, M. Miller-Bottome, J. Volkert, S. Taubner</div>
         <div class="year">(2022)</div>
         <div class="journal">Research in Psychotherapy: Psychopathology, Process and Outcome, 25(3), 286-298</div>
-        <a class="link" href="https://doi.org/10.4081/ripppo.2022.653">Published Paper</a>
+        <a class="link" href="https://doi.org/10.4081/ripppo.2022.653">Paper</a>
     </div>
 </body>
 ```

@@ -2,7 +2,10 @@
 title: "Introduction to Dynamic Networks"
 author: Björn Siepe
 date: "2023-06-28"
+description: "Two part workshop with a theoretical and practical introduction to dynamic network analysis in psychology."
 categories: [EMA, Network Analysis, Time Series]
+image: "dynnet-workshop-image.png"
 ---
+The first workshop consisted of a theoretical introduction to network analysis in psychology, with a focus on dynamic networks. The second workshop consisted of more hands-on coding, looking deeply into data preprocessing and modelling with GIMME and graphicalVAR.
 
 <a href="https://github.com/bsiepe/dynamical-networks-workshop" target="_blank">Slides & Code</a>
