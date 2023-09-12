@@ -1,0 +1,23 @@
+{
+<<<<<<< HEAD
+  "hash": "b0959b76bf8caa4d90592119c77704af",
+  "result": {
+    "markdown": "---\ntitle: \"Bayesian Estimation and Comparison of Idiographic Network Models\"\nauthor: \"Björn Siepe\"\ndate: \"2023-09-12\"\ncategories: [Bayes, Network Analysis, Time Series]\nimage: \"empirical-nets.png\"\nengine: knitr\ncomments: false\nexecute:\n  freeze: true\ndescription: \"Symposium talk at the FGME (Quantitative Methods Subgroup of the German Psychological Association) 2023 (Konstanz, Germany).\"\ncv:\n  pdf: \"FGME_2023_Presentation.pdf\"\n---\n\n\nThe preprint associated with the talk is available at [PsyArxiv](https://psyarxiv.com/uwfjc/). \n\n\n::: {.cell}\n<style type=\"text/css\">\n.embed-container {\n    position: relative;\n    padding-bottom: 100%;\n    height: 0;\n    overflow: hidden;\n    max-width: 100%;\n}\n.embed-container iframe,\n.embed-container object,\n.embed-container embed {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 80%;\n    height: 80%;\n}\n</style>\n:::\n\n```{=html}\n<p class=\"text-center\">\n<<<<<<< HEAD\n  <a class=\"btn btn-primary btn-lg cv-download\" href=\"FGME_2023_Presentation.pdf\" target=\"_blank\">\n=======\n  <a class=\"btn btn-primary btn-lg cv-download\" href=\"\" target=\"_blank\">\n>>>>>>> 875bd861e90968ca7aaff47788cbc32dc70cef43\n    <i class=\"fa-solid fa-file-arrow-down\"></i>&ensp;Download Slides\n  </a>\n</p>\n<div class=\"embed-container\">\n  <iframe src=\"FGME_2023_Presentation.pdf\" style=\"border: 0.5px\"></iframe>\n</div>\n```\n",
+    "supporting": [
+      "index_files"
+    ],
+=======
+  "hash": "51165dbdc592cad7c870c9a94efc019a",
+  "result": {
+    "markdown": "---\ntitle: \"Bayesian Estimation and Comparison of Idiographic Network Models\"\nauthor: \"Björn Siepe\"\ndate: \"2023-09-12\"\ncategories: [Bayes, Network Analysis, Time Series]\nimage: \"empirical-nets.png\"\nengine: knitr\ncomments: false\nexecute:\n  freeze: true\ndescription: \"Symposium talk at the FGME (Quantitative Methods Subgroup of the German Psychological Association) 2023 (Konstanz, Germany).\"\ncv:\n  - pdf: \"FGME_2023_Presentation.pdf\"\n---\n\n\nThe prprint associated with the talk is available at ![PsyArxiv](https://psyarxiv.com/uwfjc/). \n\n::: {.cell}\n<style type=\"text/css\">\n.embed-container {\n    position: relative;\n    padding-bottom: 100%;\n    height: 0;\n    overflow: hidden;\n    max-width: 100%;\n}\n.embed-container iframe,\n.embed-container object,\n.embed-container embed {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 80%;\n    height: 80%;\n}\n</style>\n:::\n\n```{=html}\n<p class=\"text-center\">\n  <a class=\"btn btn-primary btn-lg cv-download\" href=\"\" target=\"_blank\">\n    <i class=\"fa-solid fa-file-arrow-down\"></i>&ensp;Download Slides\n  </a>\n</p>\n<div class=\"embed-container\">\n  <iframe src=\"\" style=\"border: 0.5px\"></iframe>\n</div>\n```\n",
+    "supporting": [],
+>>>>>>> 875bd861e90968ca7aaff47788cbc32dc70cef43
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

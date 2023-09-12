@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Björn Siepe">
+<meta name="dcterms.date" content="2023-09-12">
+<meta name="description" content="Symposium talk at the FGME (Quantitative Methods Subgroup of the German Psychological Association) 2023 (Konstanz, Germany).">
 
-<title>Björn Siepe - Talks</title>
+<title>Björn Siepe - Bayesian Estimation and Comparison of Idiographic Network Models</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +26,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-listing/list.min.js"></script>
-<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,38 +64,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-date','listing-author','listing-categories','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -105,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Björn Siepe</span>
     </a>
   </div>
@@ -116,23 +86,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../publications/index.html" rel="" target="">
+    <a class="nav-link" href="../../publications/index.html" rel="" target="">
  <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../talks/index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../talks/index.html" rel="" target="">
  <span class="menu-text">Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../workshops/index.html" rel="" target="">
+    <a class="nav-link" href="../../workshops/index.html" rel="" target="">
  <span class="menu-text">Workshops</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../cv/index.html" rel="" target="">
+    <a class="nav-link" href="../../cv/index.html" rel="" target="">
  <span class="menu-text">CV</span></a>
   </li>  
 </ul>
@@ -168,22 +138,44 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(4)</span></div><div class="category" data-category="Bayes">Bayes <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data Visualization">Data Visualization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="EMA">EMA <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Network Analysis">Network Analysis <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Time Series">Time Series <span class="quarto-category-count">(4)</span></div></div></div>
+    </div>
 <!-- main -->
-<main class="content column-page-left" id="quarto-document-content">
+<main class="content column-page" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Talks</h1>
-</div>
+<h1 class="title">Bayesian Estimation and Comparison of Idiographic Network Models</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Bayes</div>
+    <div class="quarto-category">Network Analysis</div>
+    <div class="quarto-category">Time Series</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Symposium talk at the FGME (Quantitative Methods Subgroup of the German Psychological Association) 2023 (Konstanz, Germany).
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Björn Siepe </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 12, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -191,185 +183,51 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
 <<<<<<< HEAD
-<div class="quarto-post image-right" data-index="0" data-categories="Bayes,Network Analysis,Time Series" data-listing-date-sort="1694469600000" data-listing-file-modified-sort="1694497260684" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<p>The preprint associated with the talk is available at <a href="https://psyarxiv.com/uwfjc/">PsyArxiv</a>.</p>
 =======
-<div class="quarto-post image-right" data-index="0" data-categories="Bayes,Network Analysis,Time Series" data-listing-date-sort="1694469600000" data-listing-file-modified-sort="1694495564651" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<p>The prprint associated with the talk is available at <img src="https://psyarxiv.com/uwfjc/.png" class="img-fluid" alt="PsyArxiv">.</p>
 >>>>>>> 875bd861e90968ca7aaff47788cbc32dc70cef43
-<div class="thumbnail">
-<p><a href="../talks/2023-10-09_fgme-bayesian-idiographic-nets/index.html"> <img src="../talks/2023-10-09_fgme-bayesian-idiographic-nets/empirical-nets.png" class="thumbnail-image"> </a></p>
+<div class="cell">
+<style type="text/css">
+.embed-container {
+    position: relative;
+    padding-bottom: 100%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 80%;
+}
+</style>
 </div>
-<div class="body">
-<a href="../talks/2023-10-09_fgme-bayesian-idiographic-nets/index.html">
-<h3 class="no-anchor listing-title">
-Bayesian Estimation and Comparison of Idiographic Network Models
-</h3>
-<div class="listing-subtitle">
+<p class="text-center">
+<<<<<<< HEAD
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+  <a class="btn btn-primary btn-lg cv-download" href="FGME_2023_Presentation.pdf" target="_blank">
+=======
+  </a><a class="btn btn-primary btn-lg cv-download" href="" target="_blank">
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 875bd861e90968ca7aaff47788cbc32dc70cef43
+=======
+  <a class="btn btn-primary btn-lg cv-download" href="" target="_blank">
+>>>>>>> 875bd861e90968ca7aaff47788cbc32dc70cef43
+    <i class="fa-solid fa-file-arrow-down"></i> Download Slides
+  </a>
+</p>
+<div class="embed-container">
+  <iframe src="FGME_2023_Presentation.pdf" style="border: 0.5px"></iframe>
+</div>
 
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Bayes'); return false;">
-Bayes
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Network Analysis'); return false;">
-Network Analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Time Series'); return false;">
-Time Series
-</div>
-</div>
-<a href="../talks/2023-10-09_fgme-bayesian-idiographic-nets/index.html">
-<div class="listing-description">
-<p>Symposium talk at the FGME (Quantitative Methods Subgroup of the German Psychological Association) 2023 (Konstanz, Germany).</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../talks/2023-10-09_fgme-bayesian-idiographic-nets/index.html">
-<div class="listing-date">
-Sep 12, 2023
-</div>
-<div class="listing-author">
-Björn Siepe
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="EMA,Data Visualization,Time Series" data-listing-date-sort="1685224800000" data-listing-file-modified-sort="1692724530905" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="../talks/2023-05-26_aps-item-validation/index.html"> <img src="../talks/2023-05-26_aps-item-validation/aps-validation-image.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="../talks/2023-05-26_aps-item-validation/index.html">
-<h3 class="no-anchor listing-title">
-Item Validation in the WARN-D Study
-</h3>
-<div class="listing-subtitle">
 
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('EMA'); return false;">
-EMA
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Data Visualization'); return false;">
-Data Visualization
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Time Series'); return false;">
-Time Series
-</div>
-</div>
-<a href="../talks/2023-05-26_aps-item-validation/index.html">
-<div class="listing-description">
-<p>Symposium talk at the APS Annual Convention 2023 (Washington D.C., US).</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../talks/2023-05-26_aps-item-validation/index.html">
-<div class="listing-date">
-May 28, 2023
-</div>
-<div class="listing-author">
-Björn Siepe
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="EMA,Network Analysis,Time Series" data-listing-date-sort="1683928800000" data-listing-file-modified-sort="1692724364953" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="../talks/2023-05-13_dpk-temporal-dynamics/index.html"> <img src="../talks/2023-05-13_dpk-temporal-dynamics/dpk-2023-talk-image.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="../talks/2023-05-13_dpk-temporal-dynamics/index.html">
-<h3 class="no-anchor listing-title">
-Temporal Dynamics of Depressive Symptomatology
-</h3>
-<div class="listing-subtitle">
 
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('EMA'); return false;">
-EMA
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Network Analysis'); return false;">
-Network Analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Time Series'); return false;">
-Time Series
-</div>
-</div>
-<a href="../talks/2023-05-13_dpk-temporal-dynamics/index.html">
-<div class="listing-description">
-<p>Symposium talk at the annual German psychotherapy conference (DPK).</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../talks/2023-05-13_dpk-temporal-dynamics/index.html">
-<div class="listing-date">
-May 13, 2023
-</div>
-<div class="listing-author">
-Björn Siepe
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="EMA,Network Analysis,Time Series" data-listing-date-sort="1669590000000" data-listing-file-modified-sort="1692878462146" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
-<div class="thumbnail">
-<p><a href="../talks/2022-11-01_dgppn-temporal-dynamics/index.html"> <img src="../talks/2022-11-01_dgppn-temporal-dynamics/dgppn-2022-talk-image.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="../talks/2022-11-01_dgppn-temporal-dynamics/index.html">
-<h3 class="no-anchor listing-title">
-Temporal Dynamics of Depressive Symptomatology
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('EMA'); return false;">
-EMA
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Network Analysis'); return false;">
-Network Analysis
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Time Series'); return false;">
-Time Series
-</div>
-</div>
-<a href="../talks/2022-11-01_dgppn-temporal-dynamics/index.html">
-<div class="listing-description">
-<p>Symposium talk at the DGPPN Conference (Berlin, Germany).</p>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="../talks/2022-11-01_dgppn-temporal-dynamics/index.html">
-<div class="listing-date">
-Nov 28, 2022
-</div>
-<div class="listing-author">
-Björn Siepe
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -608,7 +466,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-footer">
     <div class="nav-footer-left"><span class="faux-block"><i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> 2023 Björn Siepe</span></div>   
     <div class="nav-footer-center"><span class="faux-block"><a href="https://github.com/bsiepe/bsiepe.github.io"><i class="fa-brands fa-github" aria-label="github"></i> Source Code</a></span></div>
-    <div class="nav-footer-right"><span class="faux-block"> Built with <a href="https://quarto.org/">Quarto</a></span> <span class="faux-block"> <a href="../impressum/impressum.html">Impressum</a></span></div>
+    <div class="nav-footer-right"><span class="faux-block"> Built with <a href="https://quarto.org/">Quarto</a></span> <span class="faux-block"> <a href="../../impressum/impressum.html">Impressum</a></span></div>
   </div>
 </footer>
 
