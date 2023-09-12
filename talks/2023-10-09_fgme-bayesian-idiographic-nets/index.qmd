@@ -36,15 +36,7 @@ The preprint associated with the talk is available at [PsyArxiv](https://psyarxi
 
 ```{=html}
 <p class="text-center">
-<<<<<<< HEAD
-<<<<<<< HEAD
   <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf`" target="_blank">
-=======
-  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$slides$pdf`" target="_blank">
->>>>>>> 875bd861e90968ca7aaff47788cbc32dc70cef43
-=======
-  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$slides$pdf`" target="_blank">
->>>>>>> 875bd861e90968ca7aaff47788cbc32dc70cef43
     <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download Slides
   </a>
 </p>
