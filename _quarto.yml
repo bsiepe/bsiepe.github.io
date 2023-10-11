@@ -10,15 +10,15 @@ website:
     background: primary
     search: true
     left:
-      - text: "Home"
+      - text: "{{< fa house >}} Home"
         file: index.qmd
-      - text: "Publications"
+      - text: "{{< fa file-lines >}}Publications"
         href: publications/index.qmd
-      - text: "Talks"
+      - text: "{{< fa person-chalkboard >}}Talks"
         href: talks/index.qmd
-      - text: "Workshops"
+      - text: "{{< fa laptop >}}Workshops"
         href: workshops/index.qmd
-      - text: "CV"
+      - text: "{{< fa user >}}CV"
         href: cv/index.qmd
     right:
       - icon: envelope
@@ -52,7 +52,7 @@ format:
       - styles.css
     toc: true
     page-layout: full
-    fontsize: 1.1em
+    fontsize: 1.23em
     linestretch: 1.7
 
 editor: visual

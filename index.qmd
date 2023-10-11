@@ -1,23 +1,35 @@
 ---
-title: "About"
-image: files/images/bjoern_headshot.png
+title: ""
+image: files/images/portrait_bjoern.jpg
+about:
+  template: jolla
+engine: knitr
 ---
-::: {.grid}
+<!-- ::: {.grid} -->
 
-::: {.g-col-12 .g-col-md-3}
-![](files/images/bjoern_headshot.png){width=100% fig-alt="An image of Björn Siepe"}
-::: 
+<!-- ::: {.g-col-12 .g-col-md-3} -->
+<!-- ![](files/images/bjoern_headshot.png){width=100% fig-alt="An image of Björn Siepe"} -->
+<!-- :::  -->
 
-::: {.g-col-12 .g-col-md-9}
+<!-- ::: {.g-col-12 .g-col-md-9} -->
+<!-- My name is Björn Siepe, and I am a PhD student in Psychological Methods at -->
+<!-- the [University of Marburg, Germany](https://www.uni-marburg.de/de/fb04/team-heck/team/bjoern-siepe).  -->
+<!-- In my methodological work, I study uncertainty in psychological time series analysis, network models, and predictive modelling. I'm also interested in using longitudinal and passive sensor data to better understand and predict mental disorders.  -->
+
+<!-- I am passionate about the open science movement and have been actively involved in the local open science groups in Frankfurt and Marburg. I have been involved in (co-)hosting multiple recurring events, such as the [ReproducibiliTea](https://frankfurt-osi.netlify.app/top/reproducibilitea/) journal club or [Brainhack School](https://openscienceinitiativeuniversitymarburg.github.io/). If possible, I publish all my projects with open data and code. -->
+
+<!-- To find all my publications and talks, take a look at my [CV](../cv). -->
+
+<!-- ::: -->
+<!-- ::: -->
+
+
 My name is Björn Siepe, and I am a PhD student in Psychological Methods at
-the [University of Marburg, Germany](https://www.uni-marburg.de/de/fb04/team-heck/team/bjoern-siepe). 
-In my methodological work, I study uncertainty in psychological time series analysis, network models, and predictive modelling. I'm also interested in using longitudinal and passive sensor data to better understand and predict mental disorders. 
+the [University of Marburg, Germany](https://www.uni-marburg.de/de/fb04/team-heck/team/bjoern-siepe).<br>
+In my methodological work, I study uncertainty in psychological time series analysis, network models, and predictive modelling.<br>
+I'm also interested in using longitudinal and passive sensor data to better understand and predict mental disorders.
 
-I am passionate about the open science movement and have been actively involved in the local open science groups in Frankfurt and Marburg. I have been involved in (co-)hosting multiple recurring events, such as the [ReproducibiliTea](https://frankfurt-osi.netlify.app/top/reproducibilitea/) journal club or [Brainhack School](https://openscienceinitiativeuniversitymarburg.github.io/). If possible, I publish all my projects with open data and code.
+I am passionate about the open science movement and have been actively involved in the local open science groups in Frankfurt and Marburg. <br>
+If possible, I publish all my projects with open data and code.
 
 To find all my publications and talks, take a look at my [CV](../cv).
-
-:::
-:::
-
-
