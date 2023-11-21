@@ -1,5 +1,5 @@
 ---
-title: "Publications"
+title: "Publications & Preprints"
 # listing:
 #   - id: ehr
 #     max-description-length: 500
@@ -24,13 +24,11 @@ title: "Publications"
 ---
 
 ```{=html}
-
-
 <head>
     <style>
-        <!-- body { -->
-        <!--     font-family: Arial, sans-serif; -->
-        <!-- } -->
+        body {
+            font-family: Arial, sans-serif;
+        }
         
         .year-header {
             font-size: 20px;
@@ -55,13 +53,13 @@ title: "Publications"
         }
 
         .year {
-            <!-- font-size: 12px; -->
+            font-size: 16px;
             color: #777;
             display: inline-block;
             margin-right: 10px;
         }
 
-        .link, .code-link {
+        .link, .code-link, .preregistration-link {
             font-size: 16px;
             display: inline-block;
             padding: 5px 10px;
@@ -69,17 +67,41 @@ title: "Publications"
             color: #007bff;
             text-decoration: none;
             border-radius: 5px;
+            margin-right: 10px;
         }
 
-        .link:hover, .code-link:hover {
+        .link:hover, .code-link:hover, .preregistration-link:hover {
             background-color: #007bff;
             color: #fff;
         }
     </style>
 </head>
 
+
 <body>
     <div class="year-header">2023</div>
+    
+    <div class="publication">
+    <div class="title">Multiverse Analysis for Dynamic Network Models: Investigating the Influence         of Plausible Alternative Modeling Choices</div>
+    <div class="authors">B.S. Siepe, D.W. Heck</div>
+    <div class="year">(2023)</div>
+    <div class="journal">OSF Preprint</div>
+    <a class="link" href="https://doi.org/10.31219/osf.io/etm3u">Preprint</a>
+    <a class="code-link" href="https://github.com/bsiepe/network-multiverse">Code</a>
+    <a class="preregistration-link" href="https://osf.io/ahcx5">Preregistration</a>
+    </div>
+    
+    <div class="publication">
+    <div class="title">Simulation Studies for Methodological Research in Psychology: A                    Standardized Template for Planning, Preregistration, and Reporting</div>
+    <div class="authors">B.S. Siepe, F. Bartoš, T.P. Morris, A. Boulesteix, D.W. Heck, S.                         Pawel</div>
+    <div class="year">(2023)</div>
+    <div class="journal">PsyArXiv Preprint</div>
+    <a class="link" href="https://doi.org/10.31234/osf.io/ufgy6">Preprint</a>
+    <a class="code-link" href="https://github.com/bsiepe/SimPsychReview">Code</a>
+    <a class="preregistration-link" href="https://osf.io/dfgvu/registrations">Preregistration</a>
+    </div>
+
+    
     <div class="publication">
         <div class="title">Bayesian Estimation and Comparison of Idiographic Network Models</div>
         <div class="authors">B.S. Siepe, D.W. Heck</div>
@@ -97,6 +119,7 @@ title: "Publications"
         <div class="journal">PsyArXiv Preprint</div>
         <a class="link" href="https://doi.org/10.31234/osf.io/hnw69">Preprint</a>
         <a class="code-link" href="https://github.com/bsiepe/steady_tvvar">Code</a>
+        <a class="preregistration-link" href="https://osf.io/mnehzs">Preregistration</a>
     </div>
 
     <div class="publication">

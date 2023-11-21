@@ -2,7 +2,7 @@
 title: "Temporal Dynamics of Depressive Symptomatology"
 author: "Björn Siepe"
 date: "2023-05-13"
-description: "Symposium talk at the annual German psychotherapy conference (DPK)."
+description: "Symposium talk at the annual German psychotherapy conference (DPK) in Berlin (Germany)."
 categories: [EMA, Network Analysis, Time Series]
 image: "dpk-2023-talk-image.png"
 ---

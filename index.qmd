@@ -24,6 +24,13 @@ engine: knitr
 <!-- ::: -->
 
 
+```{css, echo = FALSE}
+.justify {
+  text-align: justify !important
+}
+```
+
+::: {.justify}
 My name is Björn Siepe, and I am a PhD student in Psychological Methods at
 the [University of Marburg, Germany](https://www.uni-marburg.de/de/fb04/team-heck/team/bjoern-siepe).<br>
 In my methodological work, I study uncertainty in psychological time series analysis, network models, and predictive modelling.<br>
@@ -33,3 +40,5 @@ I am passionate about the open science movement and have been actively involved 
 If possible, I publish all my projects with open data and code.
 
 To find all my publications and talks, take a look at my [CV](../cv).
+:::
+

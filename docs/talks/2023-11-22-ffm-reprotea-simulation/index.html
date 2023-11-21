@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Björn Siepe">
+<meta name="dcterms.date" content="2023-09-12">
+<meta name="description" content="Online talk at the ReproducibiliTea Frankfurt journal club (Germany).">
 
-<title>Björn Siepe - Publications &amp; Preprints</title>
+<title>Björn Siepe - Good Practices for Simulation Studies</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +26,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../">
-<script src="../site_libs/quarto-html/quarto.js"></script>
-<script src="../site_libs/quarto-html/popper.min.js"></script>
-<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Björn Siepe</span>
     </a>
   </div>
@@ -83,23 +86,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../index.html" rel="" target="">
+    <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-house" aria-label="house"></i> Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../publications/index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../publications/index.html" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-file-lines" aria-label="file-lines"></i>Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../talks/index.html" rel="" target="">
+    <a class="nav-link" href="../../talks/index.html" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i>Talks</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../workshops/index.html" rel="" target="">
+    <a class="nav-link" href="../../workshops/index.html" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-laptop" aria-label="laptop"></i>Workshops</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../cv/index.html" rel="" target="">
+    <a class="nav-link" href="../../cv/index.html" rel="" target="">
  <span class="menu-text"><i class="fa-solid fa-user" aria-label="user"></i>CV</span></a>
   </li>  
 </ul>
@@ -143,14 +146,36 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Publications &amp; Preprints</h1>
-</div>
+<h1 class="title">Good Practices for Simulation Studies</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Simulation Studies</div>
+    <div class="quarto-category">Open Science</div>
+    <div class="quarto-category">Metascience</div>
+  </div>
+  </div>
 
+<div>
+  <div class="description">
+    Online talk at the ReproducibiliTea Frankfurt journal club (Germany).
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Björn Siepe </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 12, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -158,112 +183,35 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        
-        .year-header {
-            font-size: 20px;
-            font-weight: bold;
-            margin-top: 20px;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
-        }
-
-        .publication {
-            margin-bottom: 20px;
-        }
-
-        .title {
-            font-weight: bold;
-        }
-
-        .authors {
-            font-style: italic;
-            display: inline-block;
-            margin-right: 3px;
-        }
-
-        .year {
-            font-size: 16px;
-            color: #777;
-            display: inline-block;
-            margin-right: 10px;
-        }
-
-        .link, .code-link, .preregistration-link {
-            font-size: 16px;
-            display: inline-block;
-            padding: 5px 10px;
-            border: 1px solid #007bff;
-            color: #007bff;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-
-        .link:hover, .code-link:hover, .preregistration-link:hover {
-            background-color: #007bff;
-            color: #fff;
-        }
-    </style>
-
-
-
-
-    <div class="year-header">2023</div>
-    
-    <div class="publication">
-    <div class="title">Multiverse Analysis for Dynamic Network Models: Investigating the Influence         of Plausible Alternative Modeling Choices</div>
-    <div class="authors">B.S. Siepe, D.W. Heck</div>
-    <div class="year">(2023)</div>
-    <div class="journal">OSF Preprint</div>
-    <a class="link" href="https://doi.org/10.31219/osf.io/etm3u">Preprint</a>
-    <a class="code-link" href="https://github.com/bsiepe/network-multiverse">Code</a>
-    <a class="preregistration-link" href="https://osf.io/ahcx5">Preregistration</a>
-    </div>
-    
-    <div class="publication">
-    <div class="title">Simulation Studies for Methodological Research in Psychology: A                    Standardized Template for Planning, Preregistration, and Reporting</div>
-    <div class="authors">B.S. Siepe, F. Bartoš, T.P. Morris, A. Boulesteix, D.W. Heck, S.                         Pawel</div>
-    <div class="year">(2023)</div>
-    <div class="journal">PsyArXiv Preprint</div>
-    <a class="link" href="https://doi.org/10.31234/osf.io/ufgy6">Preprint</a>
-    <a class="code-link" href="https://github.com/bsiepe/SimPsychReview">Code</a>
-    <a class="preregistration-link" href="https://osf.io/dfgvu/registrations">Preregistration</a>
-    </div>
-
-    
-    <div class="publication">
-        <div class="title">Bayesian Estimation and Comparison of Idiographic Network Models</div>
-        <div class="authors">B.S. Siepe, D.W. Heck</div>
-        <div class="year">(2023)</div>
-        <div class="journal">PsyArXiv Preprint</div>
-        <a class="link" href="https://doi.org/10.31234/osf.io/uwfjc">Preprint</a>
-        <a class="code-link" href="https://github.com/bsiepe/var-compare">Code</a>
-    </div>
-    
-    <div class="year-header">2022</div>
-    <div class="publication">
-        <div class="title">Temporal dynamics of depressive symptomatology: An idiographic time series analysis applying network models to patients with depressive disorders.</div>
-        <div class="authors">B.S. Siepe, C. Sander, M. Schultze, A. Kliem, S. Ludwig, U. Hegerl, H. Reich</div>
-        <div class="year">(2022)</div>
-        <div class="journal">PsyArXiv Preprint</div>
-        <a class="link" href="https://doi.org/10.31234/osf.io/hnw69">Preprint</a>
-        <a class="code-link" href="https://github.com/bsiepe/steady_tvvar">Code</a>
-        <a class="preregistration-link" href="https://osf.io/mnehzs">Preregistration</a>
-    </div>
-
-    <div class="publication">
-        <div class="title">An exploratory study on how attachment classifications manifest in group psychotherapy</div>
-        <div class="authors">A. Talia, A. Georg, B.S. Siepe, S. Gullo, M. Miller-Bottome, J. Volkert, S. Taubner</div>
-        <div class="year">(2022)</div>
-        <div class="journal">Research in Psychotherapy: Psychopathology, Process and Outcome, 25(3), 286-298</div>
-        <a class="link" href="https://doi.org/10.4081/ripppo.2022.653">Paper</a>
-    </div>
-
+<p>The preprint associated with the talk is available at <a href="https://osf.io/preprints/psyarxiv/ufgy6/">PsyArxiv</a>.</p>
+<div class="cell">
+<style type="text/css">
+.embed-container {
+    position: relative;
+    padding-bottom: 100%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 80%;
+}
+</style>
+</div>
+<p class="text-center">
+  <a class="btn btn-primary btn-lg cv-download" href="Session2_winterterm_22-23_ReproTeaFrankfurt_Siepe.pdf" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i> Download Slides
+  </a>
+</p>
+<div class="embed-container">
+  <iframe src="Session2_winterterm_22-23_ReproTeaFrankfurt_Siepe.pdf" style="border: 0.5px"></iframe>
+</div>
 
 
 
@@ -506,7 +454,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-footer">
     <div class="nav-footer-left"><span class="faux-block"><i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> 2023 Björn Siepe</span></div>   
     <div class="nav-footer-center"><span class="faux-block"><a href="https://github.com/bsiepe/bsiepe.github.io"><i class="fa-brands fa-github" aria-label="github"></i> Source Code</a></span></div>
-    <div class="nav-footer-right"><span class="faux-block"> Built with <a href="https://quarto.org/">Quarto</a></span> <span class="faux-block"> <a href="../impressum/impressum.html">Impressum</a></span></div>
+    <div class="nav-footer-right"><span class="faux-block"> Built with <a href="https://quarto.org/">Quarto</a></span> <span class="faux-block"> <a href="../../impressum/impressum.html">Impressum</a></span></div>
   </div>
 </footer>
 
