@@ -36,8 +36,9 @@ the [University of Marburg, Germany](https://www.uni-marburg.de/de/fb04/team-hec
 In my methodological work, I study uncertainty in psychological time series analysis, network models, and predictive modelling.<br>
 I'm also interested in using longitudinal and passive sensor data to better understand and predict mental disorders.
 
-I am passionate about the open science movement and have been actively involved in the local open science groups in Frankfurt and Marburg. <br>
-If possible, I publish all my projects with open data and code.
+I am passionate about the open science movement and have been actively involved in the local open science groups in Frankfurt and Marburg. If possible, I publish all my projects with open data and code, which you can find on my [GitHub account](https://github.com/bsiepe). <br>
+
+Should you have any questions or would just like to chat, feel free to [contact me](mailto:bjoern.siepe@uni-marburg.de).
 
 To find all my publications and talks, take a look at my [CV](../cv).
 :::

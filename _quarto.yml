@@ -29,6 +29,8 @@ website:
         href: "https://github.com/bsiepe"
       - icon: linkedin
         href: "https://www.linkedin.com/in/bj%C3%B6rn-siepe-11a750219/"
+      - icon: cloud
+        href: "https://bsky.app/profile/bsiepe.bsky.social"
 
       
   page-footer:

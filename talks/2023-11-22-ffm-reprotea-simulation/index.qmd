@@ -13,7 +13,7 @@ cv:
   pdf: "Session2_winterterm_22-23_ReproTeaFrankfurt_Siepe.pdf"
 ---
 
-The preprint associated with the talk is available at [PsyArxiv](https://osf.io/preprints/psyarxiv/ufgy6/).
+The preprint associated with the talk is available at [PsyArxiv](https://osf.io/preprints/psyarxiv/ufgy6/). The journal club is usually quite lighthearted, so my slides reflect that :-). The slides do not render the GIFs in an animated fashion.
 
 ```{css echo=FALSE}
 .embed-container {
