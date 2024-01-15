@@ -87,7 +87,7 @@ title: "Publications & Preprints"
     <div class="journal">Administration and Policy in Mental Health and Mental Health Services Research </div>
     <a class="link" href="https://link.springer.com/article/10.1007/s10488-023-01324-4">Paper</a>
     <a class="code-link" href="https://osf.io/8q254/">Code</a>
-    <a class="shiny-app-link-link" href="https://solo-fsw.shinyapps.io/FRED/">Shiny App</a>
+    <a class="shiny-app-link" href="https://solo-fsw.shinyapps.io/FRED/">Shiny App</a>
     </div>
   
     <div class="year-header">2023</div>
@@ -110,6 +110,7 @@ title: "Publications & Preprints"
     <a class="link" href="https://doi.org/10.31219/osf.io/etm3u">Preprint</a>
     <a class="code-link" href="https://github.com/bsiepe/network-multiverse">Code</a>
     <a class="preregistration-link" href="https://osf.io/ahcx5">Preregistration</a>
+    <a class="shiny-app-link" href="https://bsiepe.shinyapps.io/shiny-app/">Shiny App</a>
     </div>
     
     <div class="publication">
