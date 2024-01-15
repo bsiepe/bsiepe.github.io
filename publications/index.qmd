@@ -59,7 +59,7 @@ title: "Publications & Preprints"
             margin-right: 10px;
         }
 
-        .link, .code-link, .preregistration-link {
+        .link, .code-link, .preregistration-link, .shiny-app-link {
             font-size: 16px;
             display: inline-block;
             padding: 5px 10px;
@@ -70,7 +70,7 @@ title: "Publications & Preprints"
             margin-right: 10px;
         }
 
-        .link:hover, .code-link:hover, .preregistration-link:hover {
+        .link:hover, .code-link:hover, .preregistration-link:hover, .shiny-app-link:hover {
             background-color: #007bff;
             color: #fff;
         }
@@ -79,6 +79,17 @@ title: "Publications & Preprints"
 
 
 <body>
+    <div class="year-header">2024</div>
+    <div class="publication">
+    <div class="title">Introducing FRED: Software for Generating Feedback Reports for Ecological Momentary Assessment Data</div>
+    <div class="authors">A. Rimpler, B.S. Siepe, C.L. Rieble, R.K.K. Proppert, E.I. Fried</div>
+    <div class="year">(2024)</div>
+    <div class="journal">Administration and Policy in Mental Health and Mental Health Services Research </div>
+    <a class="link" href="https://link.springer.com/article/10.1007/s10488-023-01324-4">Paper</a>
+    <a class="code-link" href="https://osf.io/8q254/">Code</a>
+    <a class="shiny-app-link-link" href="https://solo-fsw.shinyapps.io/FRED/">Shiny App</a>
+    </div>
+  
     <div class="year-header">2023</div>
         <div class="publication">
     <div class="title">Stop Being So Rigid: The Interplay of Psychological Flexibility and Cognitive-Affective Processes in the Daily Lives of Young Adults</div>
@@ -88,7 +99,6 @@ title: "Publications & Preprints"
     <a class="link" href="https://www.researchsquare.com/article/rs-3742788/v1">Preprint</a>
     <a class="code-link" href="https://osf.io/ejtzs/">Code</a>
     </div>
-    
     
     
     
