@@ -1,6 +1,6 @@
 ---
 title: ""
-image: files/images/portrait_bjoern.jpg
+image: files/images/headshot_bjoern_siepe.jpg
 about:
   template: jolla
 engine: knitr

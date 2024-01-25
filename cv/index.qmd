@@ -8,7 +8,7 @@ cv:
   pdf: "cv_siepe.pdf"
 ---
 
-Last updated: 15th of January 2024
+Last updated: 25th of January 2024
 
 ```{css echo=FALSE}
 .embed-container {
