@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Björn Siepe"
 image: files/images/headshot_bjoern_siepe.jpg
 about:
   template: jolla
@@ -31,7 +31,7 @@ engine: knitr
 ```
 
 ::: {.justify}
-My name is Björn Siepe, and I am a PhD student in Psychological Methods at
+I am a PhD student in Psychological Methods at
 the [University of Marburg, Germany](https://www.uni-marburg.de/de/fb04/team-heck/team/bjoern-siepe).<br>
 In my methodological work, I study uncertainty in psychological time series analysis, network models, and predictive modelling.<br>
 I'm also interested in using longitudinal and passive sensor data to better understand and predict mental disorders.
