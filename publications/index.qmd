@@ -80,6 +80,22 @@ title: "Publications & Preprints"
 
 <body>
     <div class="year-header">2024</div>
+    <div class="publication">
+      <div class="publication">
+    <div class="title">A Template and Tutorial for Preregistering Studies Using Passive Smartphone Measures</div>
+    <div class="authors">A. Langener, B.S. Siepe, M.M. Elsherif, K. Niemeijer, P.K. Andresen, S. Akre, ... N.C. Jacobson</div>
+    <div class="year">(2024)</div>
+    <div class="journal">PsyArXiv Preprint</div>
+    <a class="link" href="https://osf.io/preprints/psyarxiv/p4xf8">Paper</a>
+      
+        <div class="title">Understanding EMA Data: A Tutorial on Exploring Item Performance in Ecological Momentary Assessment Data</div>
+    <div class="authors">B.S. Siepe, C.L. Rieble, R. Tutunji, A. Rimpler, J. März, R.K.K. Proppert, E.I. Fried</div>
+    <div class="year">(2024)</div>
+    <div class="journal">PsyArXiv Preprint</div>
+    <a class="link" href="https://doi.org/10.31234/osf.io/dvj8g">Paper</a>
+  <a class="code-link" href="https://osf.io/yf3up/">Code</a>
+    
+    
         <div class="publication">
         <div class="title">Understanding EMA Data: A Tutorial on Exploring Item Performance in Ecological Momentary Assessment Data</div>
     <div class="authors">B.S. Siepe, C.L. Rieble, R. Tutunji, A. Rimpler, J. März, R.K.K. Proppert, E.I. Fried</div>
