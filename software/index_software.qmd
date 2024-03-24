@@ -1,0 +1,78 @@
+---
+title: "Software"
+---
+
+```{=html}
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .year-header {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 25px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 2px;
+        }
+
+        .package {
+            margin-bottom: 25px;
+        }
+
+        .title {
+            font-weight: bold;
+        }
+
+        .authors {
+            font-style: italic;
+            display: inline-block;
+            margin-right: 3px;
+        }
+
+        .type {
+            font-size: 14px;
+            color: #777;
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .link {
+            font-size: 14px;
+            display: inline-block;
+            padding: 5px 10px;
+            border: 1px solid #007bff;
+            color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-right: 10px;
+            margin-bottom: 15px;
+        }
+
+        .link:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+
+
+
+<body>
+<div class="publication">
+<div class="title">tsnet: Fitting, Comparing, and Visualizing Networks Based on Time Series Data</div>
+<div class="authors">B.S. Siepe, M. Kloft</div>
+<div class="type">R Package</div><br>
+<a class="link" href="https://cran.r-project.org/web/packages/tsnet/index.html">CRAN</a>
+<a class="link" href="https://github.com/bsiepe/tsnet">GitHub</a>
+<a class="link" href="https://osf.io/preprints/psyarxiv/uwfjc">Associated Paper</a>
+</div>
+
+
+</body>
+
+
+
+```
+

@@ -33,13 +33,13 @@ title: "Publications & Preprints"
         .year-header {
             font-size: 20px;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 25px;
             border-bottom: 1px solid #ccc;
-            padding-bottom: 5px;
+            padding-bottom: 2px;
         }
 
         .publication {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .title {
@@ -53,14 +53,14 @@ title: "Publications & Preprints"
         }
 
         .year {
-            font-size: 16px;
+            font-size: 14px;
             color: #777;
             display: inline-block;
             margin-right: 10px;
         }
 
         .link, .code-link, .preregistration-link, .shiny-app-link {
-            font-size: 16px;
+            font-size: 14px;
             display: inline-block;
             padding: 5px 10px;
             border: 1px solid #007bff;
@@ -68,6 +68,7 @@ title: "Publications & Preprints"
             text-decoration: none;
             border-radius: 5px;
             margin-right: 10px;
+            margin-bottom: 15px;
         }
 
         .link:hover, .code-link:hover, .preregistration-link:hover, .shiny-app-link:hover {
@@ -88,21 +89,14 @@ title: "Publications & Preprints"
     <div class="journal">PsyArXiv Preprint</div>
     <a class="link" href="https://osf.io/preprints/psyarxiv/p4xf8">Paper</a>
       
-        <div class="title">Understanding EMA Data: A Tutorial on Exploring Item Performance in Ecological Momentary Assessment Data</div>
-    <div class="authors">B.S. Siepe, C.L. Rieble, R. Tutunji, A. Rimpler, J. März, R.K.K. Proppert, E.I. Fried</div>
-    <div class="year">(2024)</div>
-    <div class="journal">PsyArXiv Preprint</div>
-    <a class="link" href="https://doi.org/10.31234/osf.io/dvj8g">Paper</a>
-  <a class="code-link" href="https://osf.io/yf3up/">Code</a>
-    
-    
+
         <div class="publication">
         <div class="title">Understanding EMA Data: A Tutorial on Exploring Item Performance in Ecological Momentary Assessment Data</div>
     <div class="authors">B.S. Siepe, C.L. Rieble, R. Tutunji, A. Rimpler, J. März, R.K.K. Proppert, E.I. Fried</div>
     <div class="year">(2024)</div>
     <div class="journal">PsyArXiv Preprint</div>
     <a class="link" href="https://doi.org/10.31234/osf.io/dvj8g">Paper</a>
-  <a class="code-link" href="https://osf.io/yf3up/">Code</a>
+  <a class="code-link" href="https://osf.io/yf3up/">Code & Synthetic Data</a>
   
     
     
@@ -123,18 +117,18 @@ title: "Publications & Preprints"
     <div class="year">(2023)</div>
     <div class="journal">Researchsquare Preprint</div>
     <a class="link" href="https://www.researchsquare.com/article/rs-3742788/v1">Preprint</a>
-    <a class="code-link" href="https://osf.io/ejtzs/">Code</a>
+    <a class="code-link" href="https://osf.io/ejtzs/">Code & Data</a>
     </div>
     
     
     
     <div class="publication">
-    <div class="title">Multiverse Analysis for Dynamic Network Models: Investigating the Influence         of Plausible Alternative Modeling Choices</div>
+    <div class="title">Multiverse Analysis for Dynamic Network Models: Investigating the Influence of Plausible Alternative Modeling Choices</div>
     <div class="authors">B.S. Siepe, D.W. Heck</div>
     <div class="year">(2023)</div>
     <div class="journal">OSF Preprint</div>
     <a class="link" href="https://doi.org/10.31219/osf.io/etm3u">Preprint</a>
-    <a class="code-link" href="https://github.com/bsiepe/network-multiverse">Code</a>
+    <a class="code-link" href="https://github.com/bsiepe/network-multiverse">Code & Data</a>
     <a class="preregistration-link" href="https://osf.io/ahcx5">Preregistration</a>
     <a class="shiny-app-link" href="https://bsiepe.shinyapps.io/shiny-app/">Shiny App</a>
     </div>
@@ -156,7 +150,7 @@ title: "Publications & Preprints"
         <div class="year">(2023)</div>
         <div class="journal">PsyArXiv Preprint</div>
         <a class="link" href="https://doi.org/10.31234/osf.io/uwfjc">Preprint</a>
-        <a class="code-link" href="https://github.com/bsiepe/var-compare">Code</a>
+        <a class="code-link" href="https://github.com/bsiepe/var-compare">Code & Data</a>
     </div>
     
     <div class="year-header">2022</div>
