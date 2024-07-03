@@ -1,5 +1,5 @@
 ---
-title: "Good Practices for Simulation Studies"
+title: "Simulation Studies for Methodological Research in Psychology"
 author: "Björn Siepe"
 date: "2024-06-07"
 categories: [Simulation Studies, Open Science, Metascience]
@@ -14,8 +14,7 @@ cv:
   pdf2: "SIPS24-Bjoern-Siepe.pdf"
 ---
 
-The preprint associated with the talk is available at [PsyArxiv](https://osf.io/preprints/psyarxiv/ufgy6/). 
-I collected the slides of different talks here here because the talks were similar in content. The slides for IMPS will be uploaded shortly.
+The preprint associated with the talk is available at [PsyArxiv](https://osf.io/preprints/psyarxiv/ufgy6/). I collected the slides of different talks here here because the talks were similar in content. The slides for IMPS will be uploaded shortly.
 
 ```{css echo=FALSE}
 .embed-container {
@@ -37,6 +36,7 @@ I collected the slides of different talks here here because the talks were simil
 ```
 
 Find the slides for Virtual Math Psych 2024 here:
+
 ```{=html}
 <p class="text-center">
   <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf1`" target="_blank">
@@ -47,7 +47,6 @@ Find the slides for Virtual Math Psych 2024 here:
   <iframe src="`r rmarkdown::metadata$cv$pdf1`" style="border: 0.5px"></iframe>
 </div>
 ```
-
 Find the slides for Virtual SIPS 2024 here:
 
 ```{=html}
@@ -60,5 +59,3 @@ Find the slides for Virtual SIPS 2024 here:
   <iframe src="`r rmarkdown::metadata$cv$pdf2`" style="border: 0.5px"></iframe>
 </div>
 ```
-
-
