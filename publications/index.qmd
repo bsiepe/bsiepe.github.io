@@ -81,6 +81,18 @@ title: "Publications & Preprints"
 
 <body>
     <div class="year-header">2024</div>
+    
+    <div class="publication">
+        <div class="title">Time-Varying Network Models for the Temporal Dynamics of Depressive Symptomatology in Patients With Depressive Disorders: Secondary Analysis of Longitudinal Observational Data</div>
+        <div class="authors">B.S. Siepe, C. Sander, M. Schultze, A. Kliem, S. Ludwig, U. Hegerl, H. Reich</div>
+        <div class="year">(2024)</div>
+        <div class="journal">JMIR Mental Health</div>
+        <a class="link" href="https://doi.org/10.2196/50136">Paper</a>
+        <a class="code-link" href="https://github.com/bsiepe/steady_tvvar">Code</a>
+        <a class="preregistration-link" href="https://osf.io/mnehzs">Preregistration</a>
+    </div>
+    
+    
     <div class="publication">
       <div class="publication">
     <div class="title">A Template and Tutorial for Preregistering Studies Using Passive Smartphone Measures</div>
@@ -154,15 +166,15 @@ title: "Publications & Preprints"
     </div>
     
     <div class="year-header">2022</div>
-    <div class="publication">
-        <div class="title">Temporal dynamics of depressive symptomatology: An idiographic time series analysis applying network models to patients with depressive disorders.</div>
-        <div class="authors">B.S. Siepe, C. Sander, M. Schultze, A. Kliem, S. Ludwig, U. Hegerl, H. Reich</div>
-        <div class="year">(2022)</div>
-        <div class="journal">PsyArXiv Preprint</div>
-        <a class="link" href="https://doi.org/10.31234/osf.io/hnw69">Preprint</a>
-        <a class="code-link" href="https://github.com/bsiepe/steady_tvvar">Code</a>
-        <a class="preregistration-link" href="https://osf.io/mnehzs">Preregistration</a>
-    </div>
+    <!-- <div class="publication"> -->
+    <!--     <div class="title">Temporal dynamics of depressive symptomatology: An idiographic time series analysis applying network models to patients with depressive disorders.</div> -->
+    <!--     <div class="authors">B.S. Siepe, C. Sander, M. Schultze, A. Kliem, S. Ludwig, U. Hegerl, H. Reich</div> -->
+    <!--     <div class="year">(2022)</div> -->
+    <!--     <div class="journal">PsyArXiv Preprint</div> -->
+    <!--     <a class="link" href="https://doi.org/10.31234/osf.io/hnw69">Preprint</a> -->
+    <!--     <a class="code-link" href="https://github.com/bsiepe/steady_tvvar">Code</a> -->
+    <!--     <a class="preregistration-link" href="https://osf.io/mnehzs">Preregistration</a> -->
+    <!-- </div> -->
 
     <div class="publication">
         <div class="title">An exploratory study on how attachment classifications manifest in group psychotherapy</div>
