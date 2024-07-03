@@ -81,6 +81,15 @@ title: "Publications & Preprints"
 
 <body>
     <div class="year-header">2024</div>
+        <div class="publication">
+        <div class="title">Associations between ecological momentary assessment and passive sensor data in a large student sample</div>
+    <div class="authors">B.S. Siepe, R. Tutunji, C.L. Rieble, R.K.K. Proppert, E.I. Fried</div>
+    <div class="year">(2024)</div>
+    <div class="journal">PsyArXiv Preprint</div>
+    <a class="link" href="https://osf.io/preprints/psyarxiv/ybns6">Paper</a>
+  <a class="code-link" href="https://osf.io/txgnq/">Code</a>
+      
+    
     
     <div class="publication">
         <div class="title">Time-Varying Network Models for the Temporal Dynamics of Depressive Symptomatology in Patients With Depressive Disorders: Secondary Analysis of Longitudinal Observational Data</div>
@@ -92,6 +101,15 @@ title: "Publications & Preprints"
         <a class="preregistration-link" href="https://osf.io/mnehzs">Preregistration</a>
     </div>
     
+    
+            <div class="publication">
+    <div class="title">Psychological flexibility and cognitive-affective processes in young adults’ daily lives</div>
+    <div class="authors">M. Westhoff, S. Heshmati, B.S. Siepe, C. Vogelbacher, J. Ciarocchi, S.C. Hayes, S.G. Hofmann</div>
+    <div class="year">(2023)</div>
+    <div class="journal">Scientific Reports</div>
+    <a class="link" href="https://doi.org/10.1038/s41598-024-58598-3">Paper</a>
+    <a class="code-link" href="https://osf.io/ejtzs/">Code & Data</a>
+    </div>
     
     <div class="publication">
       <div class="publication">
@@ -123,14 +141,7 @@ title: "Publications & Preprints"
     </div>
   
     <div class="year-header">2023</div>
-        <div class="publication">
-    <div class="title">Stop Being So Rigid: The Interplay of Psychological Flexibility and Cognitive-Affective Processes in the Daily Lives of Young Adults</div>
-    <div class="authors">M. Westhoff, S. Heshmati, B.S. Siepe, C. Vogelbacher, J. Ciarocchi, S.C. Hayes, S.G. Hofmann</div>
-    <div class="year">(2023)</div>
-    <div class="journal">Researchsquare Preprint</div>
-    <a class="link" href="https://www.researchsquare.com/article/rs-3742788/v1">Preprint</a>
-    <a class="code-link" href="https://osf.io/ejtzs/">Code & Data</a>
-    </div>
+
     
     
     
