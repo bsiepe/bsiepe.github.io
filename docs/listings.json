@@ -8,11 +8,13 @@
   {
     "listing": "/talks/index.html",
     "items": [
-      "/talks/2024-11-22-simulation-studies/index-simulation-talk.html",
+      "/talks/2024-07-16_imps-bayesian-idiographic-nets/index-imps24-networks.html",
+      "/talks/2024-06-22-simulation-studies/index-simulation-talk.html",
       "/talks/2024-04-16_mitnb-ema-exploration/talk_mitnb_ema_index.html",
       "/talks/2024-02-16_fsm-forecasting-literature/index.html",
       "/talks/2023-11-22-ffm-reprotea-simulation/index.html",
       "/talks/2023-10-09_fgme-bayesian-idiographic-nets/index.html",
+      "/talks/2024-07-16_imps-bayesian-idiographic-nets/index.html",
       "/talks/2023-05-26_aps-item-validation/index.html",
       "/talks/2023-05-13_dpk-temporal-dynamics/index.html",
       "/talks/2022-11-01_dgppn-temporal-dynamics/index.html"

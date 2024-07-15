@@ -12,9 +12,10 @@ description: "Online talk at Virtual SIPS 2024, Virtual Math Psych 2024, and IMP
 cv:
   pdf1: "VMP24-Bjoern-Siepe.pdf"
   pdf2: "SIPS24-Bjoern-Siepe.pdf"
+  pdf3: "IMPS24-Bjoern-Siepe.pdf"
 ---
 
-The preprint associated with the talk is available at [PsyArxiv](https://osf.io/preprints/psyarxiv/ufgy6/). I collected the slides of different talks here here because the talks were similar in content. The slides for IMPS will be uploaded shortly.
+The manuscript (accepted at Psychological Methods) associated with the talk is available at [PsyArxiv](https://osf.io/preprints/psyarxiv/ufgy6/). I collected the slides of different talks here because the talks were similar in content. 
 
 ```{css echo=FALSE}
 .embed-container {
@@ -59,3 +60,17 @@ Find the slides for Virtual SIPS 2024 here:
   <iframe src="`r rmarkdown::metadata$cv$pdf2`" style="border: 0.5px"></iframe>
 </div>
 ```
+
+Find the slides for IMPS 2024 here:
+
+```{=html}
+<p class="text-center">
+  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf3`" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download IMPS Slides
+  </a>
+</p>
+<div class="embed-container">
+  <iframe src="`r rmarkdown::metadata$cv$pdf3`" style="border: 0.5px"></iframe>
+</div>
+```
+
