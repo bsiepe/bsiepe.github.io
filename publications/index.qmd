@@ -39,17 +39,20 @@ title: "Publications & Preprints"
         }
 
         .publication {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
-        .title {
+        .papertitle {
             font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 0.1px;
         }
 
         .authors {
             font-style: italic;
             display: inline-block;
             margin-right: 3px;
+            font-size: 14px;
         }
 
         .year {
@@ -58,9 +61,13 @@ title: "Publications & Preprints"
             display: inline-block;
             margin-right: 10px;
         }
+        
+        .journal {
+            font-size: 14px;
+        }
 
         .link, .code-link, .preregistration-link, .shiny-app-link {
-            font-size: 14px;
+            font-size: 13px;
             display: inline-block;
             padding: 5px 10px;
             border: 1px solid #007bff;
@@ -68,7 +75,7 @@ title: "Publications & Preprints"
             text-decoration: none;
             border-radius: 5px;
             margin-right: 10px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .link:hover, .code-link:hover, .preregistration-link:hover, .shiny-app-link:hover {
@@ -81,18 +88,48 @@ title: "Publications & Preprints"
 
 <body>
     <div class="year-header">2024</div>
-        <div class="publication">
-        <div class="title">Associations between ecological momentary assessment and passive sensor data in a large student sample</div>
-    <div class="authors">B.S. Siepe, R. Tutunji, C.L. Rieble, R.K.K. Proppert, E.I. Fried</div>
+<div class="publication">
+    <div class="papertitle">Handling Missingness, Failures, and Non-Convergence in Simulation Studies: A Review of Current Practices and Recommendations</div>
+    <div class="authors">S. Pawel, F. Bartoš, B.S. Siepe, A. Lohmann</div>
     <div class="year">(2024)</div>
-    <div class="journal">PsyArXiv Preprint</div>
-    <a class="link" href="https://osf.io/preprints/psyarxiv/ybns6">Paper</a>
-  <a class="code-link" href="https://osf.io/txgnq/">Code</a>
-      
-    
-    
+    <div class="journal">arXiv Preprint</div>
+    <a class="link" href="https://arxiv.org/abs/2409.18527">Preprint</a>
+    <a class="code-link" href="https://github.com/SamCH93/missSim">Code</a>
+</div>
+
+<div class="publication">
+<div class="papertitle">Simulation Studies for Methodological Research in Psychology: A Standardized Template for Planning, Preregistration, and Reporting</div>
+<div class="authors">B.S. Siepe, F. Bartoš, T.P. Morris, A. Boulesteix, D.W. Heck, S.                         Pawel</div>
+<div class="year">(2024)</div>
+<div class="journal">Psychological Methods (In Press)</div>
+<a class="link" href="https://doi.org/10.1037/met0000695">Paper</a>
+<a class="link" href="https://doi.org/10.31234/osf.io/ufgy6">Preprint</a>
+<a class="code-link" href="https://github.com/bsiepe/SimPsychReview">Code</a>
+<a class="preregistration-link" href="https://osf.io/dfgvu/registrations">Preregistration</a>
+</div>
+
+
+<div class="publication">
+    <div class="papertitle">Associations between ecological momentary assessment and passive sensor data in a large student sample</div>
+<div class="authors">B.S. Siepe, R. Tutunji, C.L. Rieble, R.K.K. Proppert, E.I. Fried</div>
+<div class="year">(2024)</div>
+<div class="journal">PsyArXiv Preprint</div>
+<a class="link" href="https://osf.io/preprints/psyarxiv/ybns6">Preprint</a>
+<a class="code-link" href="https://osf.io/txgnq/">Code</a>
+</div>
+
+<div class="publication">
+    <div class="papertitle">Bayesian Estimation and Comparison of Idiographic Network Models</div>
+    <div class="authors">B.S. Siepe, D.W. Heck</div>
+    <div class="year">(2024)</div>
+    <div class="journal">Psychological Methods (In Press)</div>
+    <a class="link" href="https://doi.org/10.1037/met0000672">Paper</a>
+    <a class="link" href="https://doi.org/10.31234/osf.io/uwfjc">Preprint</a>
+    <a class="code-link" href="https://github.com/bsiepe/var-compare">Code & Data</a>
+</div>
+
     <div class="publication">
-        <div class="title">Time-Varying Network Models for the Temporal Dynamics of Depressive Symptomatology in Patients With Depressive Disorders: Secondary Analysis of Longitudinal Observational Data</div>
+        <div class="papertitle">Time-Varying Network Models for the Temporal Dynamics of Depressive Symptomatology in Patients With Depressive Disorders: Secondary Analysis of Longitudinal Observational Data</div>
         <div class="authors">B.S. Siepe, C. Sander, M. Schultze, A. Kliem, S. Ludwig, U. Hegerl, H. Reich</div>
         <div class="year">(2024)</div>
         <div class="journal">JMIR Mental Health</div>
@@ -101,9 +138,8 @@ title: "Publications & Preprints"
         <a class="preregistration-link" href="https://osf.io/mnehzs">Preregistration</a>
     </div>
     
-    
             <div class="publication">
-    <div class="title">Psychological flexibility and cognitive-affective processes in young adults’ daily lives</div>
+    <div class="papertitle">Psychological flexibility and cognitive-affective processes in young adults’ daily lives</div>
     <div class="authors">M. Westhoff, S. Heshmati, B.S. Siepe, C. Vogelbacher, J. Ciarocchi, S.C. Hayes, S.G. Hofmann</div>
     <div class="year">(2023)</div>
     <div class="journal">Scientific Reports</div>
@@ -113,25 +149,26 @@ title: "Publications & Preprints"
     
     <div class="publication">
       <div class="publication">
-    <div class="title">A Template and Tutorial for Preregistering Studies Using Passive Smartphone Measures</div>
+    <div class="papertitle">A Template and Tutorial for Preregistering Studies Using Passive Smartphone Measures</div>
     <div class="authors">A. Langener, B.S. Siepe, M.M. Elsherif, K. Niemeijer, P.K. Andresen, S. Akre, ... N.C. Jacobson</div>
     <div class="year">(2024)</div>
-    <div class="journal">PsyArXiv Preprint</div>
-    <a class="link" href="https://osf.io/preprints/psyarxiv/p4xf8">Paper</a>
-      
+    <div class="journal">Behavior Research Methods</div>
+    <a class="link" href="https://osf.io/preprints/psyarxiv/p4xf8">Preprint</a>
+    <a class="link" href="https://doi.org/10.3758/s13428-024-02474-5">Paper</a>
+ </div>     
 
         <div class="publication">
-        <div class="title">Understanding EMA Data: A Tutorial on Exploring Item Performance in Ecological Momentary Assessment Data</div>
+        <div class="papertitle">Understanding EMA Data: A Tutorial on Exploring Item Performance in Ecological Momentary Assessment Data</div>
     <div class="authors">B.S. Siepe, C.L. Rieble, R. Tutunji, A. Rimpler, J. März, R.K.K. Proppert, E.I. Fried</div>
     <div class="year">(2024)</div>
     <div class="journal">PsyArXiv Preprint</div>
     <a class="link" href="https://doi.org/10.31234/osf.io/dvj8g">Paper</a>
   <a class="code-link" href="https://osf.io/yf3up/">Code & Synthetic Data</a>
-  
+</div>  
     
     
     <div class="publication">
-    <div class="title">Introducing FRED: Software for Generating Feedback Reports for Ecological Momentary Assessment Data</div>
+    <div class="papertitle">Introducing FRED: Software for Generating Feedback Reports for Ecological Momentary Assessment Data</div>
     <div class="authors">A. Rimpler, B.S. Siepe, C.L. Rieble, R.K.K. Proppert, E.I. Fried</div>
     <div class="year">(2024)</div>
     <div class="journal">Administration and Policy in Mental Health and Mental Health Services Research </div>
@@ -143,10 +180,8 @@ title: "Publications & Preprints"
     <div class="year-header">2023</div>
 
     
-    
-    
     <div class="publication">
-    <div class="title">Multiverse Analysis for Dynamic Network Models: Investigating the Influence of Plausible Alternative Modeling Choices</div>
+    <div class="papertitle">Multiverse Analysis for Dynamic Network Models: Investigating the Influence of Plausible Alternative Modeling Choices</div>
     <div class="authors">B.S. Siepe, D.W. Heck</div>
     <div class="year">(2023)</div>
     <div class="journal">OSF Preprint</div>
@@ -155,30 +190,11 @@ title: "Publications & Preprints"
     <a class="preregistration-link" href="https://osf.io/ahcx5">Preregistration</a>
     <a class="shiny-app-link" href="https://bsiepe.shinyapps.io/shiny-app/">Shiny App</a>
     </div>
-    
-    <div class="publication">
-    <div class="title">Simulation Studies for Methodological Research in Psychology: A                    Standardized Template for Planning, Preregistration, and Reporting</div>
-    <div class="authors">B.S. Siepe, F. Bartoš, T.P. Morris, A. Boulesteix, D.W. Heck, S.                         Pawel</div>
-    <div class="year">(2023)</div>
-    <div class="journal">PsyArXiv Preprint</div>
-    <a class="link" href="https://doi.org/10.31234/osf.io/ufgy6">Preprint</a>
-    <a class="code-link" href="https://github.com/bsiepe/SimPsychReview">Code</a>
-    <a class="preregistration-link" href="https://osf.io/dfgvu/registrations">Preregistration</a>
-    </div>
 
-    
-    <div class="publication">
-        <div class="title">Bayesian Estimation and Comparison of Idiographic Network Models</div>
-        <div class="authors">B.S. Siepe, D.W. Heck</div>
-        <div class="year">(2023)</div>
-        <div class="journal">PsyArXiv Preprint</div>
-        <a class="link" href="https://doi.org/10.31234/osf.io/uwfjc">Preprint</a>
-        <a class="code-link" href="https://github.com/bsiepe/var-compare">Code & Data</a>
-    </div>
-    
+
     <div class="year-header">2022</div>
     <!-- <div class="publication"> -->
-    <!--     <div class="title">Temporal dynamics of depressive symptomatology: An idiographic time series analysis applying network models to patients with depressive disorders.</div> -->
+    <!--     <div class="papertitle">Temporal dynamics of depressive symptomatology: An idiographic time series analysis applying network models to patients with depressive disorders.</div> -->
     <!--     <div class="authors">B.S. Siepe, C. Sander, M. Schultze, A. Kliem, S. Ludwig, U. Hegerl, H. Reich</div> -->
     <!--     <div class="year">(2022)</div> -->
     <!--     <div class="journal">PsyArXiv Preprint</div> -->
@@ -188,7 +204,7 @@ title: "Publications & Preprints"
     <!-- </div> -->
 
     <div class="publication">
-        <div class="title">An exploratory study on how attachment classifications manifest in group psychotherapy</div>
+        <div class="papertitle">An exploratory study on how attachment classifications manifest in group psychotherapy</div>
         <div class="authors">A. Talia, A. Georg, B.S. Siepe, S. Gullo, M. Miller-Bottome, J. Volkert, S. Taubner</div>
         <div class="year">(2022)</div>
         <div class="journal">Research in Psychotherapy: Psychopathology, Process and Outcome, 25(3), 286-298</div>
