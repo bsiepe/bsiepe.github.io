@@ -1,0 +1,12 @@
+---
+title: "Introduction to Dynamic Networks"
+author: Björn Siepe
+date: "2024-10-21"
+description: "Two hour workshop with a theoretical and practical introduction to dynamic network analysis in psychology for the ECR Day of the DYNAMIC consortium, Frankfurt."
+categories: [EMA, Network Analysis, Time Series]
+image: "dynnet-workshop-ecr.png"
+---
+
+The workshop consisted of a theoretical and short practical introduction to dynamic network analyses in psychology.
+
+<a href="https://github.com/bsiepe/dynamical-networks-workshop" target="_blank">Slides & Code</a>
