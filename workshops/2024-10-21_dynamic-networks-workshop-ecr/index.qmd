@@ -10,3 +10,9 @@ image: "dynnet-workshop-ecr.png"
 The workshop consisted of a theoretical and short practical introduction to dynamic network analyses in psychology.
 
 <a href="https://github.com/bsiepe/dynamical-networks-workshop" target="_blank">Slides & Code</a>
+
+<div>
+```{=html}
+<iframe class="slide-deck" src="dynamic-networks-ffm24.html" width="780" height="500"></iframe>
+```
+</div>
