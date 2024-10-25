@@ -88,9 +88,22 @@ title: "Publications & Preprints"
 
 <body>
     <div class="year-header">2024</div>
+    
+
+<div class="publication">
+    <div class="papertitle">The Interval Truth Model: A Consensus Model for Continuous Bounded Interval Responses </div>
+    <div class="authors">M. Kloft, B.S. Siepe, D.W. Heck</div>
+    <div class="year">(2024)</div>
+    <div class="journal">PsyArXiv Preprint</div>
+    <a class="link" href="https://doi.org/10.31234/osf.io/dzvw2">Preprint</a>
+    <a class="code-link" href="The Interval Truth Model: A Consensus Model for Continuous Bounded Interval Responses">Code</a>
+</div>
+    
+    
 <div class="publication">
     <div class="papertitle">Handling Missingness, Failures, and Non-Convergence in Simulation Studies: A Review of Current Practices and Recommendations</div>
-    <div class="authors">S. Pawel, F. Bartoš, B.S. Siepe, A. Lohmann</div>
+    <div class="authors">S. Pawel, F. Bartoš*, B.S. Siepe*, A. Lohmann*</div>
+<!-- TODO note shared second authorship -->
     <div class="year">(2024)</div>
     <div class="journal">arXiv Preprint</div>
     <a class="link" href="https://arxiv.org/abs/2409.18527">Preprint</a>
@@ -211,4 +224,7 @@ title: "Publications & Preprints"
         <a class="link" href="https://doi.org/10.4081/ripppo.2022.653">Paper</a>
     </div>
 </body>
-```
+
+``` 
+
+\* Note: Shared second authorship.
