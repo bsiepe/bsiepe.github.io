@@ -1,0 +1,12 @@
+---
+title: "When, how, and why (not) to preregister"
+author: Anabel Büchner & Björn Siepe
+date: "2025-02-31"
+description: "Workshop on theoretical and practical questions around preregistration for the Berlin University Alliance, Berlin."
+categories: [Preregistration, Open Science, Philosophy of Science]
+image: "prereg-workshop-title.png"
+---
+
+The workshop consisted of an overview of the historical background of preregistration, its theoretical beneficts, the current evidence on implementation, and discussions and guidance on deviations from preregistration as well as reviewing them. 
+
+<a href="https://osf.io/xqrz2" target="_blank">Slides & Exercises</a>
