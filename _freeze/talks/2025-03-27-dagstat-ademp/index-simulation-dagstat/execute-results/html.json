@@ -1,0 +1,15 @@
+{
+  "hash": "67dccd3cd9ee3f2af0dcf9843afd74cf",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Simulation Studies for Methodological Research in Psychology\"\nauthor: \"Björn Siepe\"\ndate: \"2025-03-27\"\ncategories: [Simulation Studies, Open Science, Metascience]\nimage: \"ademprereg.png\"\nengine: knitr\ncomments: false\nexecute:\n  freeze: true\ndescription: \"Talk at DAGStat 2025 (Joint Statistical Meeting of the German Statistical Working Group).\"\ncv:\n  pdf1: \"DagStat25-Bjoern-Siepe.pdf\"\n---\n\n\nThe manuscript associated with the talk is available was published in [Psychological Methods](https://psycnet.apa.org/doi/10.1037/met0000695); an accepted version is available at [PsyArxiv](https://osf.io/preprints/psyarxiv/ufgy6/). \n\n\n::: {.cell}\n<style type=\"text/css\">\n.embed-container {\n    position: relative;\n    padding-bottom: 100%;\n    height: 0;\n    overflow: hidden;\n    max-width: 100%;\n}\n.embed-container iframe,\n.embed-container object,\n.embed-container embed {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 80%;\n    height: 80%;\n}\n</style>\n:::\n\n\nFind the slides here:\n\n```{=html}\n<p class=\"text-center\">\n  <a class=\"btn btn-primary btn-lg cv-download\" href=\"DagStat25-Bjoern-Siepe.pdf\" target=\"_blank\">\n    <i class=\"fa-solid fa-file-arrow-down\"></i>&ensp;Download VMP Slides\n  </a>\n</p>\n<div class=\"embed-container\">\n  <iframe src=\"DagStat25-Bjoern-Siepe.pdf\" style=\"border: 0.5px\"></iframe>\n</div>\n```\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
