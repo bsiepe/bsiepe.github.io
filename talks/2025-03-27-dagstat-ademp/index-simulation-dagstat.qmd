@@ -10,7 +10,7 @@ execute:
   freeze: true
 description: "Talk at DAGStat 2025 (Joint Statistical Meeting of the German Statistical Working Group)."
 cv:
-  pdf1: "DagStat25-Bjoern-Siepe.pdf"
+  pdf: "DagStat25-Bjoern-Siepe.pdf"
 ---
 
 The manuscript associated with the talk is available was published in [Psychological Methods](https://psycnet.apa.org/doi/10.1037/met0000695); an accepted version is available at [PsyArxiv](https://osf.io/preprints/psyarxiv/ufgy6/).
@@ -39,10 +39,10 @@ Find the slides here:
 ```{=html}
 <p class="text-center">
   <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf1`" target="_blank">
-    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download Slides
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download PDF Slides
   </a>
 </p>
 <div class="embed-container">
-  <iframe src="`r rmarkdown::metadata$cv$pdf1`" style="border: 0.5px"></iframe>
+  <iframe src="`r rmarkdown::metadata$cv$pdf`" style="border: 0.5px"></iframe>
 </div>
 ```
