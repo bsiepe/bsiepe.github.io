@@ -1,0 +1,48 @@
+---
+title: "Simulation Studies for Methodological Research: State of the Art, Issues, and Potential Solutions"
+author: "Samuel Pawel & Björn Siepe"
+date: "2025-04-16"
+categories: [Simulation Studies, Open Science, Metascience]
+image: "simstudies.png"
+engine: knitr
+comments: false
+execute:
+  freeze: true
+description: "Invited online talk at the colloquium of the Methods and Evaluation / Quality Assurance Unit at the Freie Universität Berlin."
+cv:
+  pdf: "FU_Kolloquium25-Pawel-Siepe.pdf"
+---
+
+The manuscript associated with the talk is available was published in [Psychological Methods](https://psycnet.apa.org/doi/10.1037/met0000695); an accepted version is available at [PsyArxiv](https://osf.io/preprints/psyarxiv/ufgy6/).
+
+```{css echo=FALSE}
+.embed-container {
+    position: relative;
+    padding-bottom: 100%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 80%;
+}
+```
+
+Find the slides here:
+
+```{=html}
+<p class="text-center">
+  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf`" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download PDF Slides
+  </a>
+</p>
+<div class="embed-container">
+  <iframe src="`r rmarkdown::metadata$cv$pdf`" style="border: 0.5px"></iframe>
+</div>
+```
