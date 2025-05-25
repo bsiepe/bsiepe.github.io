@@ -1,0 +1,15 @@
+{
+  "hash": "af68fea46a8bdc41d9b8f35fbb33daad",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Associations between EMA and passive sensor data in a large student sample\"\nauthor: \"Björn Siepe\"\ndate: \"2025-05-26\"\ncategories: [Time Series, EMA, Measurement]\nimage: \"sensors.png\"\nengine: knitr\ncomments: false\nexecute:\n  freeze: true\ndescription: \"Talk at the annual meeting of the Society for Ambulatory Assessment 2025 (Leuven, Belgium).\"\ncv:\n  pdf: \"SAA-2025-Sensors-Siepe.pdf\"\n---\n\n\nThe manuscript associated with the talk is accepted at Journal of Psychopathology and Clinical Science, see [here](https://doi.org/10.31234/osf.io/ybns6) for the preprint.\n\n\n::: {.cell}\n<style type=\"text/css\">\n.embed-container {\n    position: relative;\n    padding-bottom: 100%;\n    height: 0;\n    overflow: hidden;\n    max-width: 100%;\n}\n.embed-container iframe,\n.embed-container object,\n.embed-container embed {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 80%;\n    height: 80%;\n}\n</style>\n:::\n\n\nFind the slides here:\n\n\n```{=html}\n<p class=\"text-center\">\n  <a class=\"btn btn-primary btn-lg cv-download\" href=\"SAA-2025-Sensors-Siepe.pdf\" target=\"_blank\">\n    <i class=\"fa-solid fa-file-arrow-down\"></i>&ensp;Download PDF Slides\n  </a>\n</p>\n<div class=\"embed-container\">\n  <iframe src=\"SAA-2025-Sensors-Siepe.pdf\" style=\"border: 0.5px\"></iframe>\n</div>\n```\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
