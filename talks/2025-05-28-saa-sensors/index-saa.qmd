@@ -1,7 +1,7 @@
 ---
 title: "Associations between EMA and passive sensor data in a large student sample"
 author: "Björn Siepe"
-date: "2025-05-26"
+date: "2025-05-28"
 categories: [Time Series, EMA, Measurement]
 image: "sensors.png"
 engine: knitr
