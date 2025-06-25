@@ -8,9 +8,10 @@ engine: knitr
 comments: false
 execute:
   freeze: true
-description: "Invited online talk at the colloquium of the Methods and Evaluation / Quality Assurance Unit at the Freie Universität Berlin."
+description: "Invited talk at the colloquium of the Methods and Evaluation / Quality Assurance Unit at the Freie Universität Berlin and the colloquium of the Statistics & Psychological Methods Working Unit at the University of Münster."
 cv:
-  pdf: "FU_Kolloquium25-Pawel-Siepe.pdf"
+  pdf1: "Muenster_Kolloquium25-Siepe.pdf"
+  pdf2: "FU_Kolloquium25-Pawel-Siepe.pdf"
 ---
 
 The manuscript associated with the talk is available was published in [Psychological Methods](https://psycnet.apa.org/doi/10.1037/met0000695); an accepted version is available at [PsyArxiv](https://osf.io/preprints/psyarxiv/ufgy6/).
@@ -34,15 +35,29 @@ The manuscript associated with the talk is available was published in [Psycholog
 }
 ```
 
-Find the slides here:
+Find the slides for Münster here: 
 
 ```{=html}
 <p class="text-center">
-  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf`" target="_blank">
+  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf1`" target="_blank">
     <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download PDF Slides
   </a>
 </p>
 <div class="embed-container">
-  <iframe src="`r rmarkdown::metadata$cv$pdf`" style="border: 0.5px"></iframe>
+  <iframe src="`r rmarkdown::metadata$cv$pdf1`" style="border: 0.5px"></iframe>
+</div>
+```
+
+
+Find the (very similar) slides for Berlin here:
+
+```{=html}
+<p class="text-center">
+  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf2`" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download PDF Slides
+  </a>
+</p>
+<div class="embed-container">
+  <iframe src="`r rmarkdown::metadata$cv$pdf2`" style="border: 0.5px"></iframe>
 </div>
 ```
