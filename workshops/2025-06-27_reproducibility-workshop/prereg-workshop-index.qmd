@@ -1,5 +1,5 @@
 ---
-title: "Rerproducible Research in R and Quarto"
+title: "Reproducible Research in R and Quarto"
 author: Björn Siepe
 date: "2025-06-27"
 description: "Workshop on reproducible research in R and Quarto for the Graduate School of Education, University of Wuppertal."
@@ -11,4 +11,6 @@ The workshop consisted of an introduction to the topic, easy wins, hands-on exer
 The workshop materials are licensed under a [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.
 The preview image is taken from [The Turing Way](https://zenodo.org/doi/10.5281/zenodo.3332807). 
  
-<a href="https://github.com/bsiepe/repro-workshop" target="_blank">Slides & Exercises</a>
+<a href="https://github.com/bsiepe/repro-workshop" target="_blank">Slides & Exercises on GitHub</a> 
+
+<a href="https://osf.io/zgs9u/" target="_blank">Slides & Exercises on OSF</a> 

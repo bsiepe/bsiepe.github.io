@@ -4,7 +4,7 @@
     "href": "workshops/index.html",
     "title": "Workshops",
     "section": "",
-    "text": "Rerproducible Research in R and Quarto\n\n\n\n\n\n\nOpen Science\n\n\nReproducibility\n\n\nStatistics\n\n\n\nWorkshop on reproducible research in R and Quarto for the Graduate School of Education, University of Wuppertal.\n\n\n\n\n\nJun 27, 2025\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nWhen, how, and why (not) to preregister\n\n\n\n\n\n\nPreregistration\n\n\nOpen Science\n\n\nPhilosophy of Science\n\n\n\nWorkshop on theoretical and practical questions around preregistration for the Berlin University Alliance, Berlin.\n\n\n\n\n\nJan 31, 2025\n\n\nAnabel Büchner & Björn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Dynamic Networks\n\n\n\n\n\n\nEMA\n\n\nNetwork Analysis\n\n\nTime Series\n\n\n\nTwo hour workshop with a theoretical and practical introduction to dynamic network analysis in psychology for the ECR Day of the DYNAMIC consortium, Frankfurt.\n\n\n\n\n\nOct 21, 2024\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Dynamic Networks\n\n\n\n\n\n\nEMA\n\n\nNetwork Analysis\n\n\nTime Series\n\n\n\nTwo part workshop with a theoretical and practical introduction to dynamic network analysis in psychology for the clinical psychology group at Goethe University, Frankfurt.\n\n\n\n\n\nJun 28, 2023\n\n\nBjörn Siepe\n\n\n\n\n\n\nNo matching items"
+    "text": "Reproducible Research in R and Quarto\n\n\n\n\n\n\nOpen Science\n\n\nReproducibility\n\n\nStatistics\n\n\n\nWorkshop on reproducible research in R and Quarto for the Graduate School of Education, University of Wuppertal.\n\n\n\n\n\nJun 27, 2025\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nWhen, how, and why (not) to preregister\n\n\n\n\n\n\nPreregistration\n\n\nOpen Science\n\n\nPhilosophy of Science\n\n\n\nWorkshop on theoretical and practical questions around preregistration for the Berlin University Alliance, Berlin.\n\n\n\n\n\nJan 31, 2025\n\n\nAnabel Büchner & Björn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Dynamic Networks\n\n\n\n\n\n\nEMA\n\n\nNetwork Analysis\n\n\nTime Series\n\n\n\nTwo hour workshop with a theoretical and practical introduction to dynamic network analysis in psychology for the ECR Day of the DYNAMIC consortium, Frankfurt.\n\n\n\n\n\nOct 21, 2024\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Dynamic Networks\n\n\n\n\n\n\nEMA\n\n\nNetwork Analysis\n\n\nTime Series\n\n\n\nTwo part workshop with a theoretical and practical introduction to dynamic network analysis in psychology for the clinical psychology group at Goethe University, Frankfurt.\n\n\n\n\n\nJun 28, 2023\n\n\nBjörn Siepe\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "workshops/2025-02-31_preregistration-workshop/prereg-workshop-index.html",
@@ -142,8 +142,8 @@
   {
     "objectID": "workshops/2025-06-27_reproducibility-workshop/prereg-workshop-index.html",
     "href": "workshops/2025-06-27_reproducibility-workshop/prereg-workshop-index.html",
-    "title": "Rerproducible Research in R and Quarto",
+    "title": "Reproducible Research in R and Quarto",
     "section": "",
-    "text": "The workshop consisted of an introduction to the topic, easy wins, hands-on exercises on creating reproducible manuscripts in Quarto, and an outlook to advanced topics like version control and containerization. Slides and exercises are in German. The workshop materials are licensed under a CC BY 4.0 license. The preview image is taken from The Turing Way.\nSlides & Exercises"
+    "text": "The workshop consisted of an introduction to the topic, easy wins, hands-on exercises on creating reproducible manuscripts in Quarto, and an outlook to advanced topics like version control and containerization. Slides and exercises are in German. The workshop materials are licensed under a CC BY 4.0 license. The preview image is taken from The Turing Way.\nSlides & Exercises on GitHub\nSlides & Exercises on OSF"
   }
 ]
