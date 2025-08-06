@@ -3,6 +3,7 @@ title: "When, how, and why (not) to preregister"
 author: Anabel Büchner & Björn Siepe
 date: "2025-01-31"
 description: "Workshop on theoretical and practical questions around preregistration for the Berlin University Alliance, Berlin."
+license: "CC BY"
 categories: [Preregistration, Open Science, Philosophy of Science]
 image: "prereg-workshop-title.png"
 ---

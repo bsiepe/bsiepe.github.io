@@ -9,6 +9,7 @@ comments: false
 execute:
   freeze: true
 description: "Symposium talk at the IMPS (International Meeting of the Psychometric Society) 2024 (Prague, Czech Republic)."
+license: "CC BY"
 cv:
   pdf: "IMPS_2024_Siepe_Networks.pdf"
 ---

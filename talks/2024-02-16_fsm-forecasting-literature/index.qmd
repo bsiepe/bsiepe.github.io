@@ -9,43 +9,69 @@ image: "forecast-snapshot.png"
 execute:
   freeze: true
 description: "Online talk at the WARN-D Friday Science Meeting (Leiden University, Netherlands)."
+license: "CC BY"
 ---
 
-The slides were created in Quarto and are available on [GitHub](https://github.com/bsiepe/forecast-literature-talk). You can click through the .html slides below. 
+The slides were created in Quarto and are available on [GitHub](https://github.com/bsiepe/forecast-literature-talk). You can click through the .html slides below.
+
 ```{=html}
 <iframe width="1050" height="700" marginheight="50" marginwidth="50" src="forecast-literature-slides.html">
   Your browser apparently does not support rendering the html files. Please download them from GitHub.
 </iframe>
 ```
 
-
-
 <!-- ```{css echo=FALSE} -->
+
 <!-- .embed-container { -->
+
 <!--     position: relative; -->
+
 <!--     padding-bottom: 100%; -->
+
 <!--     height: 0; -->
+
 <!--     overflow: hidden; -->
+
 <!--     max-width: 100%; -->
+
 <!-- } -->
+
 <!-- .embed-container iframe, -->
+
 <!-- .embed-container object, -->
+
 <!-- .embed-container embed { -->
+
 <!--     position: absolute; -->
+
 <!--     top: 0; -->
+
 <!--     left: 0; -->
+
 <!--     width: 80%; -->
+
 <!--     height: 80%; -->
+
 <!-- } -->
+
 <!-- ``` -->
 
 <!-- ```{=html} -->
+
 <!-- <p class="text-center"> -->
+
 <!--   <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf`" target="_blank"> -->
+
 <!--     <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download Slides -->
+
 <!--   </a> -->
+
 <!-- </p> -->
+
 <!-- <div class="embed-container"> -->
+
 <!--   <iframe src="`r rmarkdown::metadata$cv$pdf`" style="border: 0.5px"></iframe> -->
+
 <!-- </div> -->
+
 <!-- ``` -->

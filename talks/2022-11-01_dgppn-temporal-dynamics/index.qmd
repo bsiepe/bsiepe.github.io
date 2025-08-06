@@ -5,4 +5,5 @@ description: Symposium talk at the DGPPN Conference (Berlin, Germany).
 date: "2022-11-28"
 categories: [EMA, Network Analysis, Time Series]
 image: "dgppn-2022-talk-image.png"
+license: "CC BY"
 ---

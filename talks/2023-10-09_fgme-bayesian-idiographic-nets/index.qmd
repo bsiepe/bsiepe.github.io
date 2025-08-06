@@ -11,9 +11,10 @@ execute:
 description: "Symposium talk at the FGME (Quantitative Methods Subgroup of the German Psychological Association) 2023 (Konstanz, Germany)."
 cv:
   pdf: "FGME_2023_Presentation.pdf"
+license: "CC BY"
 ---
 
-The preprint associated with the talk is available at [PsyArxiv](https://psyarxiv.com/uwfjc/). 
+The preprint associated with the talk is available at [PsyArxiv](https://psyarxiv.com/uwfjc/).
 
 ```{css echo=FALSE}
 .embed-container {
@@ -44,4 +45,3 @@ The preprint associated with the talk is available at [PsyArxiv](https://psyarxi
   <iframe src="`r rmarkdown::metadata$cv$pdf`" style="border: 0.5px"></iframe>
 </div>
 ```
-

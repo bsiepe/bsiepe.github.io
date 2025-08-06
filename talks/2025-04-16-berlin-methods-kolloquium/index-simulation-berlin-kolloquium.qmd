@@ -6,6 +6,7 @@ categories: [Simulation Studies, Open Science, Metascience]
 image: "simstudies.png"
 engine: knitr
 comments: false
+license: "CC BY"
 execute:
   freeze: true
 description: "Invited talk at the colloquium of the Methods and Evaluation / Quality Assurance Unit at the Freie Universität Berlin and the colloquium of the Statistics & Psychological Methods Working Unit at the University of Münster."
@@ -35,7 +36,7 @@ The manuscript associated with the talk is available was published in [Psycholog
 }
 ```
 
-Find the slides for Münster here: 
+Find the slides for Münster here:
 
 ```{=html}
 <p class="text-center">
@@ -47,7 +48,6 @@ Find the slides for Münster here:
   <iframe src="`r rmarkdown::metadata$cv$pdf1`" style="border: 0.5px"></iframe>
 </div>
 ```
-
 
 Find the (very similar) slides for Berlin here:
 

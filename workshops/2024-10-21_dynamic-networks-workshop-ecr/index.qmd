@@ -3,6 +3,7 @@ title: "Introduction to Dynamic Networks"
 author: Björn Siepe
 date: "2024-10-21"
 description: "Two hour workshop with a theoretical and practical introduction to dynamic network analysis in psychology for the ECR Day of the DYNAMIC consortium, Frankfurt."
+license: "CC BY"
 categories: [EMA, Network Analysis, Time Series]
 image: "dynnet-workshop-ecr.png"
 ---
@@ -12,7 +13,9 @@ The workshop consisted of a theoretical and short practical introduction to dyna
 <a href="https://github.com/bsiepe/dynamical-networks-workshop" target="_blank">Slides & Code</a>
 
 <div>
+
 ```{=html}
 <iframe class="slide-deck" src="dynamic-networks-ffm24.html" width="780" height="500"></iframe>
 ```
+
 </div>

@@ -9,6 +9,7 @@ comments: false
 execute:
   freeze: true
 description: "Talk at the annual meeting of the Society for Ambulatory Assessment 2025 (Leuven, Belgium)."
+license: "CC BY"
 cv:
   pdf: "SAA-2025-Sensors-Siepe.pdf"
 ---

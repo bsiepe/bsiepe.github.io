@@ -9,6 +9,7 @@ comments: false
 execute:
   freeze: true
 description: "Talk at DAGStat 2025 (Joint Statistical Meeting of the German Statistical Working Group)."
+license: "CC BY"
 cv:
   pdf: "DagStat25-Bjoern-Siepe.pdf"
 ---

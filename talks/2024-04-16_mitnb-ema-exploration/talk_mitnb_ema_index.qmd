@@ -6,6 +6,7 @@ categories: [EMA, Data Visualization, Time Series]
 image: "ema_item_exploration_image.png"
 description: "Online talk at the Measurement is the New Black (MITNB) Meeting."
 engine: knitr
+license: "CC BY"
 comments: false
 execute:
   freeze: true
@@ -14,8 +15,6 @@ cv:
 ---
 
 The preprint associated with the talk is available at [PsyArXiv](https://osf.io/preprints/psyarxiv/dvj8g).
-
-
 
 ```{css echo=FALSE}
 .embed-container {

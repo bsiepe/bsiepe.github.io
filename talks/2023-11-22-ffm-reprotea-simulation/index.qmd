@@ -9,6 +9,7 @@ comments: false
 execute:
   freeze: true
 description: "Online talk at the ReproducibiliTea Frankfurt journal club (Germany)."
+license: "CC BY"
 cv:
   pdf: "Session2_winterterm_22-23_ReproTeaFrankfurt_Siepe.pdf"
 ---

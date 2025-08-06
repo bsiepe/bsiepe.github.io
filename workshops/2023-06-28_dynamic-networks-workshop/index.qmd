@@ -3,6 +3,7 @@ title: "Introduction to Dynamic Networks"
 author: Björn Siepe
 date: "2023-06-28"
 description: "Two part workshop with a theoretical and practical introduction to dynamic network analysis in psychology for the clinical psychology group at Goethe University, Frankfurt."
+license: "CC BY"
 categories: [EMA, Network Analysis, Time Series]
 image: "dynnet-workshop-image.png"
 ---
