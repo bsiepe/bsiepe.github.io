@@ -1,6 +1,6 @@
 ---
 title: "Simulation Studies for Methodological Research: State of the Art, Issues, and Potential Solutions"
-author: "Samuel Pawel & Björn Siepe"
+author: "Björn Siepe & Samuel Pawel"
 date: "2025-04-16"
 categories: [Simulation Studies, Open Science, Metascience]
 image: "simstudies.png"
@@ -9,10 +9,11 @@ comments: false
 license: "CC BY"
 execute:
   freeze: true
-description: "Invited talk at the colloquium of the Methods and Evaluation / Quality Assurance Unit at the Freie Universität Berlin and the colloquium of the Statistics & Psychological Methods Working Unit at the University of Münster."
+description: "Invited talk at the colloquium of the Methods and Evaluation / Quality Assurance Unit at the Freie Universität Berlin and the colloquium of the Statistics & Psychological Methods Working Unit at the University of Münster, and a conference talk at the Conference of the DGPs Methods and Evaluation Section 2025."
 cv:
   pdf1: "Muenster_Kolloquium25-Siepe.pdf"
   pdf2: "FU_Kolloquium25-Pawel-Siepe.pdf"
+  pdf3: "FGME_Talk_Siepe.pdf"
 ---
 
 The manuscript associated with the talk is available was published in [Psychological Methods](https://psycnet.apa.org/doi/10.1037/met0000695); an accepted version is available at [PsyArxiv](https://osf.io/preprints/psyarxiv/ufgy6/).
@@ -34,6 +35,19 @@ The manuscript associated with the talk is available was published in [Psycholog
     width: 80%;
     height: 80%;
 }
+```
+
+Find the slides for the FGME conference here:
+
+```{=html}
+<p class="text-center">
+  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf1`" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download PDF Slides
+  </a>
+</p>
+<div class="embed-container">
+  <iframe src="`r rmarkdown::metadata$cv$pdf3`" style="border: 0.5px"></iframe>
+</div>
 ```
 
 Find the slides for Münster here:
