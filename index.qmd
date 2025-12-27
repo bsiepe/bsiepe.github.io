@@ -37,12 +37,11 @@ engine: knitr
 ```
 
 ::: justify
-I am a Doctoral student in Psychological Methods at the [University of Marburg, Germany](https://www.uni-marburg.de/de/fb04/team-heck/team/bjoern-siepe).<br> In my methodological work, I study uncertainty in psychological time series analysis, simulation studies, and predictive modelling.<br> I'm also interested in using longitudinal and passive sensor data to better understand and predict mental disorders.
+I am a Doctoral student in Psychological Methods at the [University of Marburg, Germany](https://www.uni-marburg.de/de/fb04/team-heck/team/bjoern-siepe). <br> 
+My research focuses on three areas: metascience of methodological research (particularly simulation studies), time series models for psychological time series, and applied experience sampling research. I'm interested in understanding how we can make methodological research more robust and transparent, and how we can better model intensive longitudinal data.
 
 
-I am passionate about the open science movement. Together with my colleagues, we built [openESM](https://openesmdata.org), a growing and fully open-source database of freely available experience sampling datasets. I'm also a member of the [Open Science Initiative](https://openscienceinitiativeuniversitymarburg.github.io/) at my university. If possible, I publish all my projects with open data and code, which you can find on my [GitHub account](https://github.com/bsiepe). <br>
+I'm committed to open science practices. Together with collaborators, I built [openESM](https://openesmdata.org), an open-source database of 60+ experience sampling datasets. I'm also a board member of the [Open Science Initiative](https://openscienceinitiativeuniversitymarburg.github.io/) at Marburg University. You can find my projects with open data and code on [GitHub](https://github.com/bsiepe). <br>
 
-Should you have any questions or would just like to chat, feel free to [contact me](mailto:bjoern.siepe@uni-marburg.de).
-
-To find all my publications and talks, take a look at my [CV](../cv).
+For questions or a chat, feel free to [contact me](mailto:bjoernsiepe@gmail.com). My full publication list is in my [CV](../cv).
 :::
