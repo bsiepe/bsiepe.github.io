@@ -270,6 +270,7 @@ title: "Publications & Preprints"
     <div class="journal">PsyArXiv Preprint</div>
     <a class="link" href="https://doi.org/10.31234/osf.io/2c8xf_v1">Preprint</a>
     <a class="code-link" href="https://osf.io/njvgc/">Code & Data</a>
+    <a class="preregistration-link" href="https://osf.io/a96dt/overview">Preregistration</a>
 </div>
 
 <div class="publication">
@@ -278,7 +279,9 @@ title: "Publications & Preprints"
     <div class="year">(2025)</div>
     <div class="journal">Psychological Assessment, 37(11), 656–669</div>
     <a class="link" href="https://doi.org/10.1037/pas0001384">Paper</a>
+    <a class="link" href="https://doi.org/10.31234/osf.io/3r9q6_v1">Preprint</a>
     <a class="code-link" href="https://osf.io/nhy9s">Code & Data</a>
+    <a class="preregistration-link" href="https://osf.io/nhy9s/files/squn2">Preregistration</a>
 </div>
 
 <div class="publication">
