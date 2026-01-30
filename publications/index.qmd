@@ -226,6 +226,14 @@ title: "Publications & Preprints"
 <div class="year-header">2025</div>
 
 <div class="publication">
+    <div class="papertitle">Why, when, and how to (or not to) preregister a simulation study</div>
+    <div class="authors">B.S. Siepe, F. Bartoš, A. Peikert, D.W. Heck, A. Sarafoglou, A.-L. Boulesteix, S. Pawel</div>
+    <div class="year">(2026)</div>
+    <div class="journal">PsyArXiv Preprint</div>
+    <a class="link" href="https://doi.org/10.31234/osf.io/cxjrb">Preprint</a>
+</div>
+
+<div class="publication">
     <div class="papertitle">Model Checking for Vector Autoregressive Models</div>
     <div class="authors">J.M.B. Haslbeck, J. Jongerling, B.S. Siepe, S. Epskamp, L. Waldorp</div>
     <div class="year">(2025)</div>
