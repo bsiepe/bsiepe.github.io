@@ -8,10 +8,11 @@ engine: knitr
 comments: false
 execute:
   freeze: true
-description: "Talk at the Oxford Emotional Disorder Genesis and Evolution (EDGE) Lab."
+description: "Talk at the Oxford Emotional Disorder Genesis and Evolution (EDGE) Lab and the Australasian MathPsych Conference 2026."
 license: "CC BY"
 cv:
-  pdf: "openESM-Talk-EDGE-Siepe.pdf"
+  pdf1: "openESM-Talk-AMPC-Siepe.pdf"
+  pdf2: "openESM-Talk-EDGE-Siepe.pdf"
 ---
 
 See [here](https://doi.org/10.31234/osf.io/qfdtb_v1) for the preprint introducing [openESM](https://openesmdata.org).
@@ -35,15 +36,28 @@ See [here](https://doi.org/10.31234/osf.io/qfdtb_v1) for the preprint introducin
 }
 ```
 
-Find the slides here:
+Find the slides for the talk at AMPC here:
 
 ```{=html}
 <p class="text-center">
-  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf`" target="_blank">
+  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf1`" target="_blank">
     <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download PDF Slides
   </a>
 </p>
 <div class="embed-container">
-  <iframe src="`r rmarkdown::metadata$cv$pdf`" style="border: 0.5px"></iframe>
+  <iframe src="`r rmarkdown::metadata$cv$pdf1`" style="border: 0.5px"></iframe>
+</div>
+```
+
+Find the slides for the talk at Oxford here:
+
+```{=html}
+<p class="text-center">
+  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf2`" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download PDF Slides
+  </a>
+</p>
+<div class="embed-container">
+  <iframe src="`r rmarkdown::metadata$cv$pdf2`" style="border: 0.5px"></iframe>
 </div>
 ```
