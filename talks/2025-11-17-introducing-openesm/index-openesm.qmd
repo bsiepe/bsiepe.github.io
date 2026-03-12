@@ -8,12 +8,13 @@ engine: knitr
 comments: false
 execute:
   freeze: true
-description: "Talk at the Oxford Emotional Disorder Genesis and Evolution (EDGE) Lab, the Australasian MathPsych Conference 2026, and MITNB."
+description: "Talk at the Oxford Emotional Disorder Genesis and Evolution (EDGE) Lab, the Australasian MathPsych Conference 2026, at a MITNB consortium online meeting, and at the NTU Singapore."
 license: "CC BY"
 cv:
   pdf1: "openESM-Talk-AMPC-Siepe.pdf"
   pdf2: "openESM-Talk-EDGE-Siepe.pdf"
   pdf3: "openESM-Talk-MITNB-Siepe.pdf"
+  pdf4: "openESM-Talk-NTU-Siepe-2026.pdf"
 ---
 
 See [here](https://doi.org/10.31234/osf.io/qfdtb_v1) for the preprint introducing [openESM](https://openesmdata.org).
@@ -36,6 +37,21 @@ See [here](https://doi.org/10.31234/osf.io/qfdtb_v1) for the preprint introducin
     height: 80%;
 }
 ```
+
+Find the slides for the talk at NTU here: 
+
+```{=html}
+<p class="text-center">
+  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf4`" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download PDF Slides
+  </a>
+</p>
+<div class="embed-container">
+  <iframe src="`r rmarkdown::metadata$cv$pdf4`" style="border: 0.5px"></iframe>
+</div>
+```
+
+
 
 Find the slides for the talk for MITNB here: 
 
