@@ -1,0 +1,126 @@
+---
+title: "Lunch Lectures on Monte Carlo Simulation Studies"
+toc: false
+page-layout: full
+---
+
+```{=html}
+<style>
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.97rem;
+  }
+  .schedule-table thead tr {
+    background: #f4f7fb;
+  }
+  .schedule-table thead th {
+    padding: 0.65rem 1rem;
+    font-weight: 600;
+    border-bottom: 2px solid #dee2e6;
+    text-align: left;
+  }
+  .schedule-table tbody tr {
+    border-bottom: 1px solid #e8ecf1;
+  }
+  .schedule-table td {
+    padding: 0.75rem 1rem;
+    vertical-align: top;
+  }
+  .talk-date {
+    white-space: nowrap;
+  }
+  .tbd {
+    font-style: italic;
+    color: #999;
+    font-size: 0.88rem;
+  }
+</style>
+```
+
+
+## About the Series
+
+This is a recurring talk series on Monte Carlo simulation studies in psychology and related fields, intended for a broad audience:
+
+-  **Students** interested in learning about simulation studies
+-  **Applied researchers** who want to learn more about methodological research  
+-  **Methodologists** wishing to stay up to date on the latest developments
+
+Talks are held in **English** and are **free to attend** for everyone.
+
+---
+
+The series starts with two introductory talks on the design and implementation of simulation studies in R, followed by talks on questionable research practices, the state of the art and potential solutions, synthetic benchmarking, and reporting and open science practices.
+
+🗓️ **Time:** Noon (CET) on the first Wednesday of each month (except July and August)  
+🏛️ **Organizer:** Working Group "Quality Standards of Simulation Studies" of the Methods and Evaluation Division of the German Psychological Society (DGPs)
+
+---
+
+These talks cover topics currently discussed in the scientific community. Opinions may differ, and the talks do not necessarily reflect the views of all working group members — they aim to provide a platform for learning and discussion.
+
+📎 Meeting links differ between talks and are listed in the schedule below. Recordings will be added consecutively.  
+✉️ For questions, contact [bjoern.siepe@uni-marburg.de](mailto:bjoern.siepe@uni-marburg.de).
+
+
+
+## Schedule 2026
+
+```{=html}
+<table class="schedule-table">
+  <thead>
+    <tr>
+      <th style="width:11%">Date</th>
+      <th style="width:27%">Speaker(s)</th>
+      <th style="width:45%">Title</th>
+      <th style="width:8%">Link</th>
+      <th style="width:9%">Recording</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="talk-date">01.04.2026, Noon (CET)</td>
+      <td>Carolin Strobl, Mirka Henninger &amp; Rudolf Debelak</td>
+      <td>Design of simulation studies and first implementation in R</td>
+      <td><a href="https://epfl.zoom.us/j/63087259191?pwd=ciyJwUb2sO0uSUkodBHDEEoF1o7CHT.1" target="_blank">Join</a></td>
+      <td class="tbd">—</td>
+    </tr>
+    <tr>
+      <td class="talk-date">06.05.2026, Noon (CET)</td>
+      <td>Carolin Strobl, Mirka Henninger &amp; Rudolf Debelak</td>
+      <td>Tips and tricks for simulation studies in R</td>
+      <td><a href="https://epfl.zoom.us/j/65242326604?pwd=HElSDJD4X4BOaYfMEuFHRAjO3ctkdf.1" target="_blank">Join</a></td>
+      <td class="tbd">—</td>
+    </tr>
+    <tr>
+      <td class="talk-date">03.06.2026, Noon (CET)</td>
+      <td>Samuel Pawel</td>
+      <td>Researcher degrees of freedom and questionable research practices in simulation studies</td>
+      <td><a href="https://PLACEHOLDER" target="_blank">TBA</a></td>
+      <td class="tbd">—</td>
+    </tr>
+    <tr>
+      <td class="talk-date">01.07.2026, Noon (CET)</td>
+      <td>Björn Siepe</td>
+      <td>Simulation studies in psychology: State of the art, problems, and potential solutions</td>
+      <td><a href="https://PLACEHOLDER" target="_blank">TBA</a></td>
+      <td class="tbd">—</td>
+    </tr>
+    <tr>
+      <td class="talk-date">07.10.2026, Noon (CET)</td>
+      <td>František Bartoš</td>
+      <td>Synthetic benchmarking for simulation studies</td>
+      <td><a href="https://PLACEHOLDER" target="_blank">TBA</a></td>
+      <td class="tbd">—</td>
+    </tr>
+    <tr>
+      <td class="talk-date">04.11.2026, Noon (CET)</td>
+      <td>Anouk Bouma</td>
+      <td>Reporting practices, open science practices, and trustworthiness of simulation studies in psychology</td>
+      <td><a href="https://PLACEHOLDER" target="_blank">TBA</a></td>
+      <td class="tbd">—</td>
+    </tr>
+  </tbody>
+</table>
+```
