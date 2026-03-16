@@ -53,7 +53,7 @@ Talks are held in **English** and are **free to attend** for everyone.
 
 The series starts with two introductory talks on the design and implementation of simulation studies in R, followed by talks on questionable research practices, the state of the art and potential solutions, synthetic benchmarking, and reporting and open science practices.
 
-🗓️ **Time:** Noon (Berlin time) on the first Wednesday of each month (except July and August)  
+🗓️ **Time:** Noon (Berlin time) on the first Wednesday of each month (except August and September)  
 🏛️ **Organizer:** Working Group "Quality Standards of Simulation Studies" of the Methods and Evaluation Division of the German Psychological Society (DGPs)
 
 ---
