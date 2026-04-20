@@ -84,13 +84,13 @@ These talks cover topics currently discussed in the scientific community. Opinio
       <td>Carolin Strobl, Mirka Henninger &amp; Rudolf Debelak</td>
       <td>Design of simulation studies and first implementation in R</td>
       <td><a href="https://epfl.zoom.us/j/63087259191?pwd=ciyJwUb2sO0uSUkodBHDEEoF1o7CHT.1" target="_blank">Join</a></td>
-      <td class="tbd">—</td>
+      <td><a href="https://youtu.be/PpvDiFrXcd4"target="_blank">Watch</a></td>
     </tr>
     <tr>
       <td class="talk-date">06.05.2026, Noon</td>
       <td>Carolin Strobl, Mirka Henninger &amp; Rudolf Debelak</td>
       <td>Tips and tricks for simulation studies in R</td>
-      <td><a href="https://epfl.zoom.us/j/65242326604?pwd=HElSDJD4X4BOaYfMEuFHRAjO3ctkdf.1" target="_blank">Join</a></td>
+      <td><a href="https://epfl.zoom.us/j/65242326604?pwd=HElSDJD4X4BOaYfMEuFHRAjO3ctkdf.1"target="_blank">Join</a></td>
       <td class="tbd">—</td>
     </tr>
     <tr>
