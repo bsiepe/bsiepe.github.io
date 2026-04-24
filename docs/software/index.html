@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -69,7 +71,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: [],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -107,7 +167,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text"><i class="fa-solid fa-laptop" aria-label="laptop"></i>Workshops</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../software/index_software.html" aria-current="page"> 
+    <a class="nav-link active" href="../software/index.html" aria-current="page"> 
 <span class="menu-text"><i class="fa-solid fa-code" aria-label="code"></i>Software</span></a>
   </li>  
   <li class="nav-item">
@@ -178,69 +238,317 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
         }
         
-        .year-header {
+        .category-header {
             font-size: 20px;
-            font-weight: bold;
-            margin-top: 25px;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 2px;
+            font-weight: 600;
+            margin-top: 36px;
+            margin-bottom: 16px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #495057;
+            color: #495057;
+            letter-spacing: 0.02em;
         }
 
-        .package {
-            margin-bottom: 25px;
+        .software-item {
+            margin-bottom: 18px;
+            padding: 12px 14px;
+            background: #fafbfc;
+            border-radius: 6px;
+            border: 1px solid #e8e9eb;
+            border-left: 2px solid #6c757d;
+            box-shadow: none;
+            transition: box-shadow 0.2s ease, border-color 0.2s ease;
         }
 
-        .title {
-            font-weight: bold;
+        .software-item:hover {
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+            border-left-color: #495057;
         }
 
-        .authors {
-            font-style: italic;
+        .software-name {
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #212529;
+            line-height: 1.35;
+            font-family: 'Courier New', monospace;
+        }
+
+        .software-description {
+            font-size: 13px;
+            color: #495057;
+            margin-bottom: 8px;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .software-meta {
+            font-size: 13px;
+            color: #6c757d;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .role-badge {
             display: inline-block;
-            margin-right: 3px;
+            padding: 3px 8px;
+            background: #e8e9eb;
+            color: #495057;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 500;
+            margin-right: 6px;
+            margin-bottom: 6px;
         }
 
-        .type {
-            font-size: 14px;
-            color: #777;
+        .year-label {
             display: inline-block;
-            margin-right: 10px;
+            padding: 3px 8px;
+            background: #f8f9fa;
+            color: #868e96;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: 500;
+            margin-right: 6px;
+            margin-bottom: 6px;
         }
 
-        .link {
-            font-size: 14px;
+        /* Software type link */
+        .software-link {
+            font-size: 12px;
             display: inline-block;
-            padding: 5px 10px;
-            border: 1px solid #007bff;
-            color: #007bff;
+            padding: 5px 12px;
+            background: white;
+            color: #6c757d;
             text-decoration: none;
-            border-radius: 5px;
-            margin-right: 10px;
-            margin-bottom: 15px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            transition: all 0.2s ease;
+            font-weight: 500;
         }
 
-        .link:hover {
-            background-color: #007bff;
-            color: #fff;
+        .software-link:hover {
+            background: #f8f9fa;
+            color: #212529;
+            border-color: #6c757d;
+        }
+
+        .software-link::before {
+            content: "\f0c1";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 6px;
+        }
+
+        /* Package link */
+        .package-link {
+            font-size: 12px;
+            display: inline-block;
+            padding: 5px 12px;
+            background: white;
+            color: #0b5ed7;
+            text-decoration: none;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .package-link:hover {
+            background: #f8f9fa;
+            color: #0952b3;
+            border-color: #0b5ed7;
+        }
+
+        .package-link::before {
+            content: "\f187";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 6px;
+        }
+
+        /* GitHub link */
+        .github-link {
+            font-size: 12px;
+            display: inline-block;
+            padding: 5px 12px;
+            background: white;
+            color: #212529;
+            text-decoration: none;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .github-link:hover {
+            background: #f8f9fa;
+            color: #000;
+            border-color: #212529;
+        }
+
+        .github-link::before {
+            content: "\f09b";
+            font-family: "Font Awesome 6 Brands";
+            font-weight: 400;
+            margin-right: 6px;
+        }
+
+        /* Website link */
+        .website-link {
+            font-size: 12px;
+            display: inline-block;
+            padding: 5px 12px;
+            background: white;
+            color: #495057;
+            text-decoration: none;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .website-link:hover {
+            background: #f8f9fa;
+            color: #212529;
+            border-color: #495057;
+        }
+
+        .website-link::before {
+            content: "\f0ac";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            margin-right: 6px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .software-item {
+                padding: 10px 12px;
+            }
+            
+            .software-name {
+                font-size: 15px;
+            }
         }
     </style>
 
 
 
 
+<div class="category-header">Websites &amp; Databases</div>
 
-<div class="publication">
-<div class="title">tsnet: Fitting, Comparing, and Visualizing Networks Based on Time Series Data</div>
-<div class="authors">B.S. Siepe, M. Kloft</div>
-<div class="type">R Package</div><br>
-<a class="link" href="https://cran.r-project.org/web/packages/tsnet/index.html">CRAN</a>
-<a class="link" href="https://github.com/bsiepe/tsnet">GitHub</a>
-<a class="link" href="https://osf.io/preprints/psyarxiv/uwfjc">Associated Paper</a>
+<div class="software-item">
+    <div class="software-name">openESM</div>
+    <div class="software-description">Open database of experience sampling datasets </div>
+    <div class="software-meta">
+        <span class="year-label">2025</span>
+        <span class="role-badge">Lead Developer</span>
+        <span class="role-badge">Maintainer</span>
+    </div>
+    <a class="website-link" href="https://openesmdata.org">Visit Website</a>
+    <a class="github-link" href="https://github.com/openesm-project/">GitHub</a>
+</div>
+
+<div class="category-header">R Packages</div>
+
+
+
+<div class="software-item">
+    <div class="software-name">VARcheck</div>
+    <div class="software-description">Visual Diagnostic Checks for Vector Autoregressive Models</div>
+    <div class="software-meta">
+        <span class="year-label">2026</span>
+        <span class="role-badge">Maintainer</span>
+        <span class="role-badge">Author</span>
+    </div>
+    <a class="github-link" href="https://github.com/bsiepe/VARcheck">GitHub</a>
+</div>
+
+<div class="software-item">
+    <div class="software-name">openesm</div>
+    <div class="software-description">Accessing the openESM Database</div>
+    <div class="software-meta">
+        <span class="year-label">2025</span>
+        <span class="role-badge">Maintainer</span>
+        <span class="role-badge">Author</span>
+    </div>
+    <a class="package-link" href="https://doi.org/10.32614/CRAN.package.openesm">CRAN</a>
+    <a class="github-link" href="https://github.com/openesm-project/">GitHub</a>
+</div>
+
+
+
+<div class="software-item">
+    <div class="software-name">intervalpsych</div>
+    <div class="software-description">Analyzing Interval Data in Psychometrics</div>
+    <div class="software-meta">
+        <span class="year-label">2025</span>
+        <span class="role-badge">Author</span>
+    </div>
+    <a class="package-link" href="https://doi.org/10.32614/CRAN.package.intervalpsych">CRAN</a>
+</div>
+
+<div class="software-item">
+    <div class="software-name">PublicationBiasBenchmark</div>
+    <div class="software-description">Benchmark for Publication Bias Correction Methods</div>
+    <div class="software-meta">
+        <span class="year-label">2025</span>
+        <span class="role-badge">Author</span>
+    </div>
+    <a class="package-link" href="https://doi.org/10.32614/CRAN.package.PublicationBiasBenchmark">CRAN</a>
+    <a class="github-link" href="https://github.com/FBartos/PublicationBiasBenchmark">GitHub</a>
+</div>
+
+<div class="software-item">
+    <div class="software-name">gimme</div>
+    <div class="software-description">Group Iterative Multiple Model Estimation</div>
+    <div class="software-meta">
+        <span class="year-label">2025</span>
+        <span class="role-badge">Contributor</span>
+    </div>
+    <a class="package-link" href="https://doi.org/10.32614/CRAN.package.gimme">CRAN</a>
+</div>
+
+<div class="software-item">
+    <div class="software-name">tsnet</div>
+    <div class="software-description">Comparing and Visualizing Networks based on Time Series Data</div>
+    <div class="software-meta">
+        <span class="year-label">2024</span>
+        <span class="role-badge">Maintainer</span>
+        <span class="role-badge">Author</span>
+    </div>
+    <a class="package-link" href="https://doi.org/10.32614/CRAN.package.tsnet">CRAN</a>
+    <a class="github-link" href="https://github.com/bsiepe/tsnet">GitHub</a>
+</div>
+
+<div class="category-header">Python Packages</div>
+
+<div class="software-item">
+    <div class="software-name">openesm</div>
+    <div class="software-description">Accessing the openESM Database</div>
+    <div class="software-meta">
+        <span class="year-label">2025</span>
+        <span class="role-badge">Maintainer</span>
+        <span class="role-badge">Author</span>
+    </div>
+    <a class="package-link" href="https://pypi.org/project/openesm/">PyPI</a>
+    <a class="github-link" href="https://github.com/openesm-project/">GitHub</a>
 </div>
 
 
@@ -250,7 +558,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-</main> <!-- /main -->
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
@@ -654,7 +967,7 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p><span class="faux-block"><i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> 2023 Björn Siepe</span></p>
+<p><span class="faux-block"><i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> 2026 Björn Siepe</span></p>
 </div>   
     <div class="nav-footer-center">
 <p><span class="faux-block"><a href="https://github.com/bsiepe/bsiepe.github.io"><i class="fa-brands fa-github" aria-label="github"></i> Source Code</a></span></p>
