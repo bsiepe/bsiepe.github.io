@@ -18,6 +18,8 @@ website:
         href: talks/index.qmd
       - text: "{{< fa laptop >}}Workshops"
         href: workshops/index.qmd
+      - text: "{{< fa code >}}Software"
+        href: software/index.qmd
       - text: "{{< fa user >}}CV"
         href: cv/index.qmd
     right:
@@ -35,7 +37,7 @@ website:
       
   page-footer:
     left: |
-       <span class="faux-block">{{< fa brands creative-commons >}} 2023 Björn Siepe</span>
+       <span class="faux-block">{{< fa brands creative-commons >}} 2026 Björn Siepe</span>
        
     center: |
         <span class="faux-block"><a href="https://github.com/bsiepe/bsiepe.github.io">{{< fa brands github >}} Source Code</a></span>
