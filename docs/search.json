@@ -70,11 +70,11 @@
     "text": "ReuseCC BY 4.0"
   },
   {
-    "objectID": "software/index_software.html",
-    "href": "software/index_software.html",
+    "objectID": "software/index.html",
+    "href": "software/index.html",
     "title": "Software",
     "section": "",
-    "text": "tsnet: Fitting, Comparing, and Visualizing Networks Based on Time Series Data\nB.S. Siepe, M. Kloft\nR Package\nCRAN\nGitHub\nAssociated Paper"
+    "text": "Websites & Databases\n\n\n    openESM\n    Open database of experience sampling datasets \n    \n        2025\n        Lead Developer\n        Maintainer\n    \n    Visit Website\n    GitHub\n\n\nR Packages\n\n\n\n\n    VARcheck\n    Visual Diagnostic Checks for Vector Autoregressive Models\n    \n        2026\n        Maintainer\n        Author\n    \n    GitHub\n\n\n\n    openesm\n    Accessing the openESM Database\n    \n        2025\n        Maintainer\n        Author\n    \n    CRAN\n    GitHub\n\n\n\n\n\n    intervalpsych\n    Analyzing Interval Data in Psychometrics\n    \n        2025\n        Author\n    \n    CRAN\n\n\n\n    PublicationBiasBenchmark\n    Benchmark for Publication Bias Correction Methods\n    \n        2025\n        Author\n    \n    CRAN\n    GitHub\n\n\n\n    gimme\n    Group Iterative Multiple Model Estimation\n    \n        2025\n        Contributor\n    \n    CRAN\n\n\n\n    tsnet\n    Comparing and Visualizing Networks based on Time Series Data\n    \n        2024\n        Maintainer\n        Author\n    \n    CRAN\n    GitHub\n\n\nPython Packages\n\n\n    openesm\n    Accessing the openESM Database\n    \n        2025\n        Maintainer\n        Author\n    \n    PyPI\n    GitHub\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "publications/index.html",
@@ -194,12 +194,5 @@
     "title": "Reproducible Research in R and Quarto",
     "section": "",
     "text": "The workshop consisted of an introduction to the topic, easy wins, hands-on exercises on creating reproducible manuscripts in Quarto, and an outlook to advanced topics like version control and containerization. Slides and exercises are in German. The workshop materials are licensed under a CC BY 4.0 license. The preview image is taken from The Turing Way.\nSlides & Exercises on GitHub\nSlides & Exercises on OSF\n\n\n\nReuseCC BY 4.0"
-  },
-  {
-    "objectID": "software/index.html",
-    "href": "software/index.html",
-    "title": "Software",
-    "section": "",
-    "text": "Websites & Databases\n\n\n    openESM\n    Open database of experience sampling datasets \n    \n        2025\n        Lead Developer\n        Maintainer\n    \n    Visit Website\n    GitHub\n\n\nR Packages\n\n\n\n\n    VARcheck\n    Visual Diagnostic Checks for Vector Autoregressive Models\n    \n        2026\n        Maintainer\n        Author\n    \n    GitHub\n\n\n\n    openesm\n    Accessing the openESM Database\n    \n        2025\n        Maintainer\n        Author\n    \n    CRAN\n    GitHub\n\n\n\n\n\n    intervalpsych\n    Analyzing Interval Data in Psychometrics\n    \n        2025\n        Author\n    \n    CRAN\n\n\n\n    PublicationBiasBenchmark\n    Benchmark for Publication Bias Correction Methods\n    \n        2025\n        Author\n    \n    CRAN\n    GitHub\n\n\n\n    gimme\n    Group Iterative Multiple Model Estimation\n    \n        2025\n        Contributor\n    \n    CRAN\n\n\n\n    tsnet\n    Comparing and Visualizing Networks based on Time Series Data\n    \n        2024\n        Maintainer\n        Author\n    \n    CRAN\n    GitHub\n\n\nPython Packages\n\n\n    openesm\n    Accessing the openESM Database\n    \n        2025\n        Maintainer\n        Author\n    \n    PyPI\n    GitHub\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   }
 ]
