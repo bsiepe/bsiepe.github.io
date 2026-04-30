@@ -4,105 +4,77 @@
     "href": "workshops/index.html",
     "title": "Workshops",
     "section": "",
-    "text": "Reproducible Research in R and Quarto\n\n\n\nOpen Science\n\nReproducibility\n\nStatistics\n\n\n\nWorkshop on reproducible research in R and Quarto for the Graduate School of Education, University of Wuppertal.\n\n\n\n\n\nJun 27, 2025\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nWhen, how, and why (not) to preregister\n\n\n\nPreregistration\n\nOpen Science\n\nPhilosophy of Science\n\n\n\nWorkshop on theoretical and practical questions around preregistration for the Berlin University Alliance, Berlin.\n\n\n\n\n\nJan 31, 2025\n\n\nAnabel Büchner & Björn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Dynamic Networks\n\n\n\nEMA\n\nNetwork Analysis\n\nTime Series\n\n\n\nTwo hour workshop with a theoretical and practical introduction to dynamic network analysis in psychology for the ECR Day of the DYNAMIC consortium, Frankfurt.\n\n\n\n\n\nOct 21, 2024\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Dynamic Networks\n\n\n\nEMA\n\nNetwork Analysis\n\nTime Series\n\n\n\nTwo part workshop with a theoretical and practical introduction to dynamic network analysis in psychology for the clinical psychology group at Goethe University, Frankfurt.\n\n\n\n\n\nJun 28, 2023\n\n\nBjörn Siepe\n\n\n\n\n\nNo matching items"
+    "text": "Introducing openESM: A database of openly available experience sampling research\n\n\n\nOpen Science\n\nTime Series\n\nopenESM\n\n\n\nWorkshop on openESM and statistical modeling of its data for the Psych #rstats Club, online.\n\n\n\n\n\nApr 30, 2026\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nReproducible Research in R and Quarto\n\n\n\nOpen Science\n\nReproducibility\n\nStatistics\n\n\n\nWorkshop on reproducible research in R and Quarto for the Graduate School of Education, University of Wuppertal.\n\n\n\n\n\nJun 27, 2025\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nWhen, how, and why (not) to preregister\n\n\n\nPreregistration\n\nOpen Science\n\nPhilosophy of Science\n\n\n\nWorkshop on theoretical and practical questions around preregistration for the Berlin University Alliance, Berlin.\n\n\n\n\n\nJan 31, 2025\n\n\nAnabel Büchner & Björn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Dynamic Networks\n\n\n\nEMA\n\nNetwork Analysis\n\nTime Series\n\n\n\nTwo hour workshop with a theoretical and practical introduction to dynamic network analysis in psychology for the ECR Day of the DYNAMIC consortium, Frankfurt.\n\n\n\n\n\nOct 21, 2024\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nIntroduction to Dynamic Networks\n\n\n\nEMA\n\nNetwork Analysis\n\nTime Series\n\n\n\nTwo part workshop with a theoretical and practical introduction to dynamic network analysis in psychology for the clinical psychology group at Goethe University, Frankfurt.\n\n\n\n\n\nJun 28, 2023\n\n\nBjörn Siepe\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "workshops/2025-02-31_preregistration-workshop/prereg-workshop-index.html",
-    "href": "workshops/2025-02-31_preregistration-workshop/prereg-workshop-index.html",
-    "title": "When, how, and why (not) to preregister",
+    "objectID": "workshops/2025-06-27_reproducibility-workshop/prereg-workshop-index.html",
+    "href": "workshops/2025-06-27_reproducibility-workshop/prereg-workshop-index.html",
+    "title": "Reproducible Research in R and Quarto",
     "section": "",
-    "text": "The workshop consisted of an overview of the historical background of preregistration, its theoretical beneficts, the current evidence on implementation, and discussions and guidance on deviations from preregistration as well as reviewing them.\nSlides & Exercises\n\n\n\nReuseCC BY 4.0"
+    "text": "The workshop consisted of an introduction to the topic, easy wins, hands-on exercises on creating reproducible manuscripts in Quarto, and an outlook to advanced topics like version control and containerization. Slides and exercises are in German. The workshop materials are licensed under a CC BY 4.0 license. The preview image is taken from The Turing Way.\nSlides & Exercises on GitHub\nSlides & Exercises on OSF\n\n\n\nReuseCC BY 4.0"
   },
   {
-    "objectID": "workshops/2023-06-28_dynamic-networks-workshop/index.html",
-    "href": "workshops/2023-06-28_dynamic-networks-workshop/index.html",
+    "objectID": "workshops/2024-10-21_dynamic-networks-workshop-ecr/index.html",
+    "href": "workshops/2024-10-21_dynamic-networks-workshop-ecr/index.html",
     "title": "Introduction to Dynamic Networks",
     "section": "",
-    "text": "The first workshop consisted of a theoretical introduction to network analysis in psychology, with a focus on dynamic networks. The second workshop consisted of more hands-on coding, looking deeply into data preprocessing and modelling with GIMME and graphicalVAR.\nSlides & Code\n\n\n\nReuseCC BY 4.0"
+    "text": "The workshop consisted of a theoretical and short practical introduction to dynamic network analyses in psychology.\nSlides & Code\n\n\n\n\n\n\nReuseCC BY 4.0"
   },
   {
-    "objectID": "talks/2025-11-17-introducing-openesm/index-openesm.html",
-    "href": "talks/2025-11-17-introducing-openesm/index-openesm.html",
-    "title": "Introducing openESM: A database of openly available experience sampling datasets",
+    "objectID": "talks/index.html",
+    "href": "talks/index.html",
+    "title": "Talks",
     "section": "",
-    "text": "See here for the preprint introducing openESM.\n\n\n\nFind the slides for the talk at NTU here:\n\n  \n     Download PDF Slides\n  \n\n\n  \n\nFind the slides for the talk for MITNB here:\n\n  \n     Download PDF Slides\n  \n\n\n  \n\nFind the slides for the talk at AMPC here:\n\n  \n     Download PDF Slides\n  \n\n\n  \n\nFind the slides for the talk at Oxford here:\n\n  \n     Download PDF Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
+    "text": "Introducing openESM: A database of openly available experience sampling datasets\n\n\n\nTime Series\n\nEMA\n\nopenESM\n\nopen science\n\n\n\nTalk at the Oxford Emotional Disorder Genesis and Evolution (EDGE) Lab, the Australasian MathPsych Conference 2026, at a MITNB consortium online meeting, and at the NTU Singapore.\n\n\n\n\n\nNov 18, 2025\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nAssociations between EMA and passive sensor data in a large student sample\n\n\n\nTime Series\n\nEMA\n\nMeasurement\n\n\n\nTalk at the annual meeting of the Society for Ambulatory Assessment 2025 (Leuven, Belgium).\n\n\n\n\n\nMay 28, 2025\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nMultiverse Analysis for Dynamic Network Models\n\n\n\nTime Series\n\nEMA\n\nNetwork Analysis\n\n\n\nTalk at the annual meeting of the Society for Ambulatory Assessment 2025 (Leuven, Belgium).\n\n\n\n\n\nMay 26, 2025\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nSimulation Studies for Methodological Research: State of the Art, Issues, and Potential Solutions\n\n\n\nSimulation Studies\n\nOpen Science\n\nMetascience\n\n\n\nInvited talk at the colloquium of the Methods and Evaluation / Quality Assurance Unit at the Freie Universität Berlin and the colloquium of the Statistics & Psychological Methods Working Unit at the University of Münster, and a conference talk at the Conference of the DGPs Methods and Evaluation Section 2025.\n\n\n\n\n\nApr 16, 2025\n\n\nBjörn Siepe & Samuel Pawel\n\n\n\n\n\n\n\n\n\n\n\n\nSimulation Studies for Methodological Research in Psychology\n\n\n\nSimulation Studies\n\nOpen Science\n\nMetascience\n\n\n\nTalk at DAGStat 2025 (Joint Statistical Meeting of the German Statistical Working Group).\n\n\n\n\n\nMar 27, 2025\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nBayesian Estimation and Comparison of Idiographic Network Models\n\n\n\nBayes\n\nNetwork Analysis\n\nTime Series\n\n\n\nSymposium talk at the IMPS (International Meeting of the Psychometric Society) 2024 (Prague, Czech Republic).\n\n\n\n\n\nJul 16, 2024\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nSimulation Studies for Methodological Research in Psychology\n\n\n\nSimulation Studies\n\nOpen Science\n\nMetascience\n\n\n\nOnline talk at Virtual SIPS 2024, Virtual Math Psych 2024, and IMPS 2024.\n\n\n\n\n\nJun 7, 2024\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nExploration of Ecological Momentary Assessment Data\n\n\n\nEMA\n\nData Visualization\n\nTime Series\n\n\n\nOnline talk at the Measurement is the New Black (MITNB) Meeting.\n\n\n\n\n\nApr 16, 2024\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nHistorical and recent trends in the forecasting literature\n\n\n\nForecasting\n\nTime Series\n\nMachine Learning\n\n\n\nOnline talk at the WARN-D Friday Science Meeting (Leiden University, Netherlands).\n\n\n\n\n\nFeb 15, 2024\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nGood Practices for Simulation Studies\n\n\n\nSimulation Studies\n\nOpen Science\n\nMetascience\n\n\n\nOnline talk at the ReproducibiliTea Frankfurt journal club (Germany).\n\n\n\n\n\nNov 22, 2023\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nBayesian Estimation and Comparison of Idiographic Network Models\n\n\n\nBayes\n\nNetwork Analysis\n\nTime Series\n\n\n\nSymposium talk at the FGME (Quantitative Methods Subgroup of the German Psychological Association) 2023 (Konstanz, Germany).\n\n\n\n\n\nSep 12, 2023\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nItem Validation in the WARN-D Study\n\n\n\nEMA\n\nData Visualization\n\nTime Series\n\n\n\nSymposium talk at the APS Annual Convention 2023 (Washington D.C., US).\n\n\n\n\n\nMay 28, 2023\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nTemporal Dynamics of Depressive Symptomatology\n\n\n\nEMA\n\nNetwork Analysis\n\nTime Series\n\n\n\nSymposium talk at the annual German psychotherapy conference (DPK) in Berlin (Germany).\n\n\n\n\n\nMay 13, 2023\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nTemporal Dynamics of Depressive Symptomatology\n\n\n\nEMA\n\nNetwork Analysis\n\nTime Series\n\n\n\nSymposium talk at the DGPPN Conference (Berlin, Germany).\n\n\n\n\n\nNov 28, 2022\n\n\nBjörn Siepe\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "talks/2025-05-26-saa-multiverse/index-saa.html",
-    "href": "talks/2025-05-26-saa-multiverse/index-saa.html",
-    "title": "Multiverse Analysis for Dynamic Network Models",
+    "objectID": "talks/2025-05-28-saa-sensors/index-saa.html",
+    "href": "talks/2025-05-28-saa-sensors/index-saa.html",
+    "title": "Associations between EMA and passive sensor data in a large student sample",
     "section": "",
-    "text": "The manuscript associated with the talk is accepted at Methodology).\n\n\n\nFind the slides here:\n\n  \n     Download PDF Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
+    "text": "The manuscript associated with the talk is accepted at Journal of Psychopathology and Clinical Science, see here for the preprint.\n\n\n\nFind the slides here:\n\n  \n     Download PDF Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
   },
   {
-    "objectID": "talks/2025-03-27-dagstat-ademp/index-simulation-dagstat.html",
-    "href": "talks/2025-03-27-dagstat-ademp/index-simulation-dagstat.html",
-    "title": "Simulation Studies for Methodological Research in Psychology",
+    "objectID": "talks/2025-04-16-berlin-methods-kolloquium/index-simulation-berlin-kolloquium.html",
+    "href": "talks/2025-04-16-berlin-methods-kolloquium/index-simulation-berlin-kolloquium.html",
+    "title": "Simulation Studies for Methodological Research: State of the Art, Issues, and Potential Solutions",
     "section": "",
-    "text": "The manuscript associated with the talk is available was published in Psychological Methods; an accepted version is available at PsyArxiv.\n\n\n\nFind the slides here:\n\n  \n     Download VMP Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
+    "text": "The manuscript associated with the talk is available was published in Psychological Methods; an accepted version is available at PsyArxiv.\n\n\n\nFind the slides for the FGME conference here:\n\n  \n     Download PDF Slides\n  \n\n\n  \n\nFind the slides for Münster here:\n\n  \n     Download PDF Slides\n  \n\n\n  \n\nFind the (very similar) slides for Berlin here:\n\n  \n     Download PDF Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
   },
   {
-    "objectID": "talks/2024-06-22-simulation-studies/index-simulation-talk.html",
-    "href": "talks/2024-06-22-simulation-studies/index-simulation-talk.html",
-    "title": "Simulation Studies for Methodological Research in Psychology",
-    "section": "",
-    "text": "The manuscript (accepted at Psychological Methods) associated with the talk is available at PsyArxiv. I collected the slides of different talks here because the talks were similar in content.\n\n\n\nFind the slides for Virtual Math Psych 2024 here:\n\n  \n     Download VMP Slides\n  \n\n\n  \n\nFind the slides for Virtual SIPS 2024 here:\n\n  \n     Download SIPS Slides\n  \n\n\n  \n\nFind the slides for IMPS 2024 here:\n\n  \n     Download IMPS Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
-  },
-  {
-    "objectID": "talks/2024-02-16_fsm-forecasting-literature/index.html",
-    "href": "talks/2024-02-16_fsm-forecasting-literature/index.html",
-    "title": "Historical and recent trends in the forecasting literature",
-    "section": "",
-    "text": "The slides were created in Quarto and are available on GitHub. You can click through the .html slides below.\n\n  Your browser apparently does not support rendering the html files. Please download them from GitHub.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReuseCC BY 4.0"
-  },
-  {
-    "objectID": "talks/2023-10-09_fgme-bayesian-idiographic-nets/index.html",
-    "href": "talks/2023-10-09_fgme-bayesian-idiographic-nets/index.html",
+    "objectID": "talks/2024-07-16_imps-bayesian-idiographic-nets/index-imps24-networks.html",
+    "href": "talks/2024-07-16_imps-bayesian-idiographic-nets/index-imps24-networks.html",
     "title": "Bayesian Estimation and Comparison of Idiographic Network Models",
     "section": "",
-    "text": "The preprint associated with the talk is available at PsyArxiv.\n\n\n\n\n  \n     Download Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
+    "text": "The manuscript associated with the talk (in press at Psychological Methods) is available at PsyArxiv.\n\n\n\n\n  \n     Download Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
   },
   {
-    "objectID": "talks/2023-05-13_dpk-temporal-dynamics/index.html",
-    "href": "talks/2023-05-13_dpk-temporal-dynamics/index.html",
-    "title": "Temporal Dynamics of Depressive Symptomatology",
+    "objectID": "talks/2024-04-16_mitnb-ema-exploration/talk_mitnb_ema_index.html",
+    "href": "talks/2024-04-16_mitnb-ema-exploration/talk_mitnb_ema_index.html",
+    "title": "Exploration of Ecological Momentary Assessment Data",
+    "section": "",
+    "text": "The preprint associated with the talk is available at PsyArXiv.\n\n\n\n\n  \n     Download Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
+  },
+  {
+    "objectID": "talks/2023-11-22-ffm-reprotea-simulation/index.html",
+    "href": "talks/2023-11-22-ffm-reprotea-simulation/index.html",
+    "title": "Good Practices for Simulation Studies",
+    "section": "",
+    "text": "The preprint associated with the talk is available at PsyArxiv. The journal club is usually quite lighthearted, so my slides reflect that :-).\n\n\n\n\n  \n     Download Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
+  },
+  {
+    "objectID": "talks/2023-05-26_aps-item-validation/index.html",
+    "href": "talks/2023-05-26_aps-item-validation/index.html",
+    "title": "Item Validation in the WARN-D Study",
     "section": "",
     "text": "ReuseCC BY 4.0"
   },
   {
-    "objectID": "software/index.html",
-    "href": "software/index.html",
-    "title": "Software",
+    "objectID": "talks/2022-11-01_dgppn-temporal-dynamics/index.html",
+    "href": "talks/2022-11-01_dgppn-temporal-dynamics/index.html",
+    "title": "Temporal Dynamics of Depressive Symptomatology",
     "section": "",
-    "text": "Websites & Databases\n\n\n    openESM\n    Open database of experience sampling datasets \n    \n        2025\n        Lead Developer\n        Maintainer\n    \n    Visit Website\n    GitHub\n\n\nR Packages\n\n\n\n\n    VARcheck\n    Visual Diagnostic Checks for Vector Autoregressive Models\n    \n        2026\n        Maintainer\n        Author\n    \n    GitHub\n\n\n\n    openesm\n    Accessing the openESM Database\n    \n        2025\n        Maintainer\n        Author\n    \n    CRAN\n    GitHub\n\n\n\n\n\n    intervalpsych\n    Analyzing Interval Data in Psychometrics\n    \n        2025\n        Author\n    \n    CRAN\n\n\n\n    PublicationBiasBenchmark\n    Benchmark for Publication Bias Correction Methods\n    \n        2025\n        Author\n    \n    CRAN\n    GitHub\n\n\n\n    gimme\n    Group Iterative Multiple Model Estimation\n    \n        2025\n        Contributor\n    \n    CRAN\n\n\n\n    tsnet\n    Comparing and Visualizing Networks based on Time Series Data\n    \n        2024\n        Maintainer\n        Author\n    \n    CRAN\n    GitHub\n\n\nPython Packages\n\n\n    openesm\n    Accessing the openESM Database\n    \n        2025\n        Maintainer\n        Author\n    \n    PyPI\n    GitHub\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "publications/index.html",
-    "href": "publications/index.html",
-    "title": "Publications & Preprints",
-    "section": "",
-    "text": "2026\n\n\n    Why, when, and how to (or not to) preregister a simulation study\n    B.S. Siepe, F. Bartoš, A. Peikert, D.W. Heck, A. Sarafoglou, A.-L. Boulesteix, S. Pawel\n    PsyArXiv Preprint\n    Preprint\n\n\n\n    Social connection features predicting loneliness: A longitudinal, interpretable machine-learning analysis\n    K.B.S. Huth, S. M. C. E. Wijnen,  N. Skjerdingstad, F. Bartoš, A. Finnemann, O. V.Ebrahimi, B.S. Siepe, L. C. J. Steijvers, C. van Bilsen, H. Bosma, L. Schumacher, N. H.Dukers-Muijrers \n    PsyArXiv Preprint\n    Preprint\n    Code & Synthetic Data\n\n\n2025\n\n    Model Checking for Vector Autoregressive Models\n    J.M.B. Haslbeck, J. Jongerling, B.S. Siepe, S. Epskamp, L. Waldorp\n    PsyArXiv Preprint\n    Preprint\n    Code & Data\n\n\n\n    Introducing openESM: A database of openly available experience sampling datasets\n    B.S. Siepe, J.M.B. Haslbeck, M. Kloft, A. Büchner, Y. Zhang, E.I. Fried, D.W. Heck\n    PsyArXiv Preprint\n    Preprint\n    Code\n    Website\n\n\n\n    Living synthetic benchmarks: A neutral and cumulative framework for simulation studies\n    F. Bartoš, S. Pawel, B.S. Siepe\n    arXiv Preprint\n    Preprint\n    Code & Data\n\n\n\n    A methodological metamorphosis: The rapid rise of Bayesian inference and open science practices in psychology\n    J.M. Pfadt, F. Bartoš, H.R. Godmann, ... B.S. Siepe, ... K. de Wit, J. Wuth, E.-J. Wagenmakers\n    PsyArXiv Preprint\n    Preprint\n    Code & Data\n    Preregistration\n\n\n\n    Using features of dynamic networks to guide treatment selection and outcome prediction: The central role of uncertainty\n    B.S. Siepe, M. Kloft, Y. Zhang, F. Petersen, L.F. Bringmann, D.W. Heck\n    PsyArXiv Preprint\n    Preprint\n    Code & Data\n    Preregistration\n\n\n\n    Exploring the predictive value of different affect dynamics for psychological treatment outcome\n    M.I. Hehlmann, B. Siepe, F. Mink, J.S. Peña Loray, J.M. Gomez Penedo, J. Fritz, D. Moggia, J.A. Rubel, W. Lutz\n    Psychological Assessment, 37(11), 656–669\n    Paper\n    Preprint\n    Code & Data\n    Preregistration\n\n\n\n    The Interval Consensus Model: Aggregating Continuous Bounded Interval Responses\n    M. Kloft, B.S. Siepe, D.W. Heck\n    Psychometrika (Advance Online Publication)\n    Paper\n    Preprint\n    Code & Data\n\n\n\n    Handling Missingness, Failures, and Non-Convergence in Simulation Studies: A Review of Present Practices and Recommendations\n    S. Pawel, F. Bartoš*, B.S. Siepe*, A. Lohmann*\n    The American Statistician\n    Paper\n    Preprint\n    Code & Data\n\n\n\n    Associations between ecological momentary assessment and passive sensor data in a large student sample\n    B.S. Siepe, R. Tutunji, C.L. Rieble, R.K.K. Proppert, E.I. Fried\n    Journal of Psychopathology and Clinical Science, 134(8), 912–925\n    Paper\n    Preprint\n    Code\n\n\n\n    Multiverse analysis for dynamic network models: Investigating the influence of plausible alternative modeling choices\n    B.S. Siepe, D.W. Heck\n    Methodology, 21(2), 123–143\n    Paper\n    Preprint\n    Code & Data\n    Preregistration\n    Shiny App\n\n\n\n    Accuracy and Consistency of Visual Analog Scales in Ecological Momentary Assessment and Digital Studies\n    L. Cloos♱, B.S. Siepe♱, M. Piccirillo, E.I. Fried, S.B. Wang, M.A. Helmich, S.U. Johnson, A. Hoffart, O.V. Ebrahimi\n    Collabra: Psychology, 11(1): 142735\n    Paper\n    Preprint\n    Code & Synthetic Data\n\n\n\n    Understanding EMA Data: A Tutorial on Exploring Item Performance in Ecological Momentary Assessment Data\n    B.S. Siepe, C.L. Rieble, R. Tutunji, A. Rimpler, J. März, R.K.K. Proppert, E.I. Fried\n    Advances in Methods and Practices in Psychological Science, 8(1)\n    Paper\n    Code & Synthetic Data\n\n\n\n    Unravelling the dynamics of language learning: Insights from temporal network analysis\n    L. Freeborn, B.S. Siepe\n    In Lowie, Rosmawati, & De Wilde (Eds.), Research Methods in Applied Linguistics (Vol. 14, pp. 143–166). John Benjamins Publishing Company\n    Chapter\n\n\n\n    A Robustness Reproduction of Cox et al. (2023)\n    B.S. Siepe, M. Kloft, S.C. Aktepe, D.W. Heck\n    I4R Discussion Paper Series No. 196\n    Report\n    Code & Data\n\n\n2024\n\n\n    Simulation Studies for Methodological Research in Psychology: A Standardized Template for Planning, Preregistration, and Reporting\n    B.S. Siepe, F. Bartoš, T.P. Morris, A. Boulesteix, D.W. Heck, S. Pawel\n    Psychological Methods (Advance Online Publication)\n    Paper\n    Preprint\n    Code & Data\n    Preregistration\n\n\n\n    Bayesian Estimation and Comparison of Idiographic Network Models\n    B.S. Siepe, D.W. Heck\n    Psychological Methods (Advance Online Publication)\n    Paper\n    Preprint\n    Code & Data\n\n\n\n    Time-Varying Network Models for the Temporal Dynamics of Depressive Symptomatology in Patients With Depressive Disorders: Secondary Analysis of Longitudinal Observational Data\n    B.S. Siepe, C. Sander, M. Schultze, A. Kliem, S. Ludwig, U. Hegerl, H. Reich\n    JMIR Mental Health, 11:e50136\n    Paper\n    Code\n    Preregistration\n\n\n\n    Psychological flexibility and cognitive-affective processes in young adults' daily lives\n    M. Westhoff, S. Heshmati, B.S. Siepe, C. Vogelbacher, J. Ciarocchi, S.C. Hayes, S.G. Hofmann\n    Scientific Reports, 14, 8182\n    Paper\n    Code & Data\n\n\n\n    A Template and Tutorial for Preregistering Studies Using Passive Smartphone Measures\n    A. Langener, B.S. Siepe, M.M. Elsherif, K. Niemeijer, P.K. Andresen, S. Akre, ... N.C. Jacobson\n    Behavior Research Methods (Advance Online Publication)\n    Paper\n    Preprint\n\n\n\n    Introducing FRED: Software for Generating Feedback Reports for Ecological Momentary Assessment Data\n    A. Rimpler, B.S. Siepe, C.L. Rieble, R.K.K. Proppert, E.I. Fried\n    Administration and Policy in Mental Health and Mental Health Services Research, 1-11\n    Paper\n    Code\n    Shiny App\n\n\n2022\n\n\n    An exploratory study on how attachment classifications manifest in group psychotherapy\n    A. Talia, A. Georg, B.S. Siepe, S. Gullo, M. Miller-Bottome, J. Volkert, S. Taubner\n    Research in Psychotherapy: Psychopathology, Process and Outcome, 25(3), 286-298\n    Paper\n\n\n\n♱ Note: Shared first authorship. * Note: Shared second authorship."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Björn Siepe",
-    "section": "",
-    "text": "I am a Doctoral student in Psychological Methods at Marburg University, Germany.  My research focuses on three areas: metascience of methodological research, time series modelling, and applied experience sampling research. I’m interested in understanding how we can make methodological research more robust and transparent, and how we can better model intensive longitudinal data.\nI’m committed to open science practices. Together with collaborators, I built openESM, an open-source database of 60+ experience sampling datasets. I’m also a board member of the Open Science Initiative at Marburg University. \nFeel free to browse my publications, software, or CV, or contact me directly."
-  },
-  {
-    "objectID": "cv/index.html",
-    "href": "cv/index.html",
-    "title": "My current CV",
-    "section": "",
-    "text": "Download CV"
-  },
-  {
-    "objectID": "impressum/impressum.html",
-    "href": "impressum/impressum.html",
-    "title": "Impressum",
-    "section": "",
-    "text": "Impressum\n\n\nAngaben gemäß § 5 TMG\n\n\nBjörn Siepe  Gutenbergstraße 18 35037 Marburg \n\n\nVertreten durch:  Björn Siepe\n\n\nKontakt:  Telefon: 06421-2823616 E-Mail: bjoern.siepe@uni-marburg.de\n\n\nHaftungsausschluss: Haftung für Inhalte Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.Haftung für Links Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.Urheberrecht Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.Datenschutz Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.  Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.  Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.\n\n Impressum vom Impressum Generator der Kanzlei Hasselbach, Rechtsanwälte für Arbeitsrecht und Familienrecht"
+    "text": "ReuseCC BY 4.0"
   },
   {
     "objectID": "simulation-talk-series/index.html",
@@ -126,73 +98,108 @@
     "text": "Schedule 2026\n\n\n\nDate\nSpeaker(s)\nTitle\nLink\nRecording\n\n\n\n\n01.04.2026, Noon\nCarolin Strobl, Mirka Henninger & Rudolf Debelak\nDesign of simulation studies and first implementation in R\nJoin\nWatch\n\n\n06.05.2026, Noon\nCarolin Strobl, Mirka Henninger & Rudolf Debelak\nTips and tricks for simulation studies in R\nJoin\n—\n\n\n03.06.2026, Noon\nSamuel Pawel\nResearcher degrees of freedom and questionable research practices in simulation studies\nTBA\n—\n\n\n01.07.2026, Noon\nBjörn Siepe\nSimulation studies in psychology: State of the art, problems, and potential solutions\nTBA\n—\n\n\n07.10.2026, Noon\nFrantišek Bartoš\nSynthetic benchmarking for simulation studies\nTBA\n—\n\n\n04.11.2026, Noon\nAnouk Bouma\nReporting practices, open science practices, and trustworthiness of simulation studies in psychology\nTBA\n—"
   },
   {
-    "objectID": "talks/2022-11-01_dgppn-temporal-dynamics/index.html",
-    "href": "talks/2022-11-01_dgppn-temporal-dynamics/index.html",
+    "objectID": "impressum/impressum.html",
+    "href": "impressum/impressum.html",
+    "title": "Impressum",
+    "section": "",
+    "text": "Impressum\n\n\nAngaben gemäß § 5 TMG\n\n\nBjörn Siepe  Gutenbergstraße 18 35037 Marburg \n\n\nVertreten durch:  Björn Siepe\n\n\nKontakt:  Telefon: 06421-2823616 E-Mail: bjoern.siepe@uni-marburg.de\n\n\nHaftungsausschluss: Haftung für Inhalte Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.Haftung für Links Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.Urheberrecht Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.Datenschutz Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.  Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.  Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.\n\n Impressum vom Impressum Generator der Kanzlei Hasselbach, Rechtsanwälte für Arbeitsrecht und Familienrecht"
+  },
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "My current CV",
+    "section": "",
+    "text": "Download CV"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Björn Siepe",
+    "section": "",
+    "text": "I am a Doctoral student in Psychological Methods at Marburg University, Germany.  My research focuses on three areas: metascience of methodological research, time series modelling, and applied experience sampling research. I’m interested in understanding how we can make methodological research more robust and transparent, and how we can better model intensive longitudinal data.\nI’m committed to open science practices. Together with collaborators, I built openESM, an open-source database of 60+ experience sampling datasets. I’m also a board member of the Open Science Initiative at Marburg University. \nFeel free to browse my publications, software, or CV, or contact me directly."
+  },
+  {
+    "objectID": "publications/index.html",
+    "href": "publications/index.html",
+    "title": "Publications & Preprints",
+    "section": "",
+    "text": "2026\n\n\n    Identifying careless responding in ecological momentary assessment: Inconsistent signals\nfrom different detection methods in the WARN-D data\n    L. V. D. E. Vogelsmeier, B. S. Siepe, E. Ulitzsch, G. Eisele, J. Geeraerts, A. Klocek, R. K. K. Proppert, C. Rieble, R. Tutunji, E. Dejonckheere, P. Kuppens, E. I. Fried\n    Psychological Methods (Accepted for Publication)\n    Preprint\n    Code\n\n\n\n\n    Why, when, and how to (or not to) preregister a simulation study\n    B.S. Siepe, F. Bartoš, A. Peikert, D.W. Heck, A. Sarafoglou, A.-L. Boulesteix, S. Pawel\n    PsyArXiv Preprint\n    Preprint\n\n\n\n    Social connection features predicting loneliness: A longitudinal, interpretable machine-learning analysis\n    K.B.S. Huth, S. M. C. E. Wijnen,  N. Skjerdingstad, F. Bartoš, A. Finnemann, O. V.Ebrahimi, B.S. Siepe, L. C. J. Steijvers, C. van Bilsen, H. Bosma, L. Schumacher, N. H.Dukers-Muijrers \n    PsyArXiv Preprint\n    Preprint\n    Code & Synthetic Data\n\n\n2025\n\n    Model Checking for Vector Autoregressive Models\n    J.M.B. Haslbeck, J. Jongerling, B.S. Siepe, S. Epskamp, L. Waldorp\n    PsyArXiv Preprint\n    Preprint\n    Code & Data\n\n\n\n    Introducing openESM: A database of openly available experience sampling datasets\n    B.S. Siepe, J.M.B. Haslbeck, M. Kloft, A. Büchner, Y. Zhang, E.I. Fried, D.W. Heck\n    PsyArXiv Preprint\n    Preprint\n    Code\n    Website\n\n\n\n    Living synthetic benchmarks: A neutral and cumulative framework for simulation studies\n    F. Bartoš, S. Pawel, B.S. Siepe\n    arXiv Preprint\n    Preprint\n    Code & Data\n\n\n\n    A methodological metamorphosis: The rapid rise of Bayesian inference and open science practices in psychology\n    J.M. Pfadt, F. Bartoš, H.R. Godmann, ... B.S. Siepe, ... K. de Wit, J. Wuth, E.-J. Wagenmakers\n    PsyArXiv Preprint\n    Preprint\n    Code & Data\n    Preregistration\n\n\n\n    Using features of dynamic networks to guide treatment selection and outcome prediction: The central role of uncertainty\n    B.S. Siepe, M. Kloft, Y. Zhang, F. Petersen, L.F. Bringmann, D.W. Heck\n    PsyArXiv Preprint\n    Preprint\n    Code & Data\n    Preregistration\n\n\n\n    Exploring the predictive value of different affect dynamics for psychological treatment outcome\n    M.I. Hehlmann, B. Siepe, F. Mink, J.S. Peña Loray, J.M. Gomez Penedo, J. Fritz, D. Moggia, J.A. Rubel, W. Lutz\n    Psychological Assessment, 37(11), 656–669\n    Paper\n    Preprint\n    Code & Data\n    Preregistration\n\n\n\n    The Interval Consensus Model: Aggregating Continuous Bounded Interval Responses\n    M. Kloft, B.S. Siepe, D.W. Heck\n    Psychometrika (Advance Online Publication)\n    Paper\n    Preprint\n    Code & Data\n\n\n\n    Handling Missingness, Failures, and Non-Convergence in Simulation Studies: A Review of Present Practices and Recommendations\n    S. Pawel, F. Bartoš*, B.S. Siepe*, A. Lohmann*\n    The American Statistician\n    Paper\n    Preprint\n    Code & Data\n\n\n\n    Associations between ecological momentary assessment and passive sensor data in a large student sample\n    B.S. Siepe, R. Tutunji, C.L. Rieble, R.K.K. Proppert, E.I. Fried\n    Journal of Psychopathology and Clinical Science, 134(8), 912–925\n    Paper\n    Preprint\n    Code\n\n\n\n    Multiverse analysis for dynamic network models: Investigating the influence of plausible alternative modeling choices\n    B.S. Siepe, D.W. Heck\n    Methodology, 21(2), 123–143\n    Paper\n    Preprint\n    Code & Data\n    Preregistration\n    Shiny App\n\n\n\n    Accuracy and Consistency of Visual Analog Scales in Ecological Momentary Assessment and Digital Studies\n    L. Cloos♱, B.S. Siepe♱, M. Piccirillo, E.I. Fried, S.B. Wang, M.A. Helmich, S.U. Johnson, A. Hoffart, O.V. Ebrahimi\n    Collabra: Psychology, 11(1): 142735\n    Paper\n    Preprint\n    Code & Synthetic Data\n\n\n\n    Understanding EMA Data: A Tutorial on Exploring Item Performance in Ecological Momentary Assessment Data\n    B.S. Siepe, C.L. Rieble, R. Tutunji, A. Rimpler, J. März, R.K.K. Proppert, E.I. Fried\n    Advances in Methods and Practices in Psychological Science, 8(1)\n    Paper\n    Code & Synthetic Data\n\n\n\n    Unravelling the dynamics of language learning: Insights from temporal network analysis\n    L. Freeborn, B.S. Siepe\n    In Lowie, Rosmawati, & De Wilde (Eds.), Research Methods in Applied Linguistics (Vol. 14, pp. 143–166). John Benjamins Publishing Company\n    Chapter\n\n\n\n    A Robustness Reproduction of Cox et al. (2023)\n    B.S. Siepe, M. Kloft, S.C. Aktepe, D.W. Heck\n    I4R Discussion Paper Series No. 196\n    Report\n    Code & Data\n\n\n2024\n\n\n    Simulation Studies for Methodological Research in Psychology: A Standardized Template for Planning, Preregistration, and Reporting\n    B.S. Siepe, F. Bartoš, T.P. Morris, A. Boulesteix, D.W. Heck, S. Pawel\n    Psychological Methods (Advance Online Publication)\n    Paper\n    Preprint\n    Code & Data\n    Preregistration\n\n\n\n    Bayesian Estimation and Comparison of Idiographic Network Models\n    B.S. Siepe, D.W. Heck\n    Psychological Methods (Advance Online Publication)\n    Paper\n    Preprint\n    Code & Data\n\n\n\n    Time-Varying Network Models for the Temporal Dynamics of Depressive Symptomatology in Patients With Depressive Disorders: Secondary Analysis of Longitudinal Observational Data\n    B.S. Siepe, C. Sander, M. Schultze, A. Kliem, S. Ludwig, U. Hegerl, H. Reich\n    JMIR Mental Health, 11:e50136\n    Paper\n    Code\n    Preregistration\n\n\n\n    Psychological flexibility and cognitive-affective processes in young adults' daily lives\n    M. Westhoff, S. Heshmati, B.S. Siepe, C. Vogelbacher, J. Ciarocchi, S.C. Hayes, S.G. Hofmann\n    Scientific Reports, 14, 8182\n    Paper\n    Code & Data\n\n\n\n    A Template and Tutorial for Preregistering Studies Using Passive Smartphone Measures\n    A. Langener, B.S. Siepe, M.M. Elsherif, K. Niemeijer, P.K. Andresen, S. Akre, ... N.C. Jacobson\n    Behavior Research Methods (Advance Online Publication)\n    Paper\n    Preprint\n\n\n\n    Introducing FRED: Software for Generating Feedback Reports for Ecological Momentary Assessment Data\n    A. Rimpler, B.S. Siepe, C.L. Rieble, R.K.K. Proppert, E.I. Fried\n    Administration and Policy in Mental Health and Mental Health Services Research, 1-11\n    Paper\n    Code\n    Shiny App\n\n\n2022\n\n\n    An exploratory study on how attachment classifications manifest in group psychotherapy\n    A. Talia, A. Georg, B.S. Siepe, S. Gullo, M. Miller-Bottome, J. Volkert, S. Taubner\n    Research in Psychotherapy: Psychopathology, Process and Outcome, 25(3), 286-298\n    Paper\n\n\n\n♱ Note: Shared first authorship. * Note: Shared second authorship."
+  },
+  {
+    "objectID": "software/index.html",
+    "href": "software/index.html",
+    "title": "Software",
+    "section": "",
+    "text": "Websites & Databases\n\n\n    openESM\n    Open database of experience sampling datasets \n    \n        2025\n        Lead Developer\n        Maintainer\n    \n    Visit Website\n    GitHub\n\n\nR Packages\n\n\n\n\n    VARcheck\n    Visual Diagnostic Checks for Vector Autoregressive Models\n    \n        2026\n        Maintainer\n        Author\n    \n    GitHub\n\n\n\n    openesm\n    Accessing the openESM Database\n    \n        2025\n        Maintainer\n        Author\n    \n    CRAN\n    GitHub\n\n\n\n\n\n    intervalpsych\n    Analyzing Interval Data in Psychometrics\n    \n        2025\n        Author\n    \n    CRAN\n\n\n\n    PublicationBiasBenchmark\n    Benchmark for Publication Bias Correction Methods\n    \n        2025\n        Author\n    \n    CRAN\n    GitHub\n\n\n\n    gimme\n    Group Iterative Multiple Model Estimation\n    \n        2025\n        Contributor\n    \n    CRAN\n\n\n\n    tsnet\n    Comparing and Visualizing Networks based on Time Series Data\n    \n        2024\n        Maintainer\n        Author\n    \n    CRAN\n    GitHub\n\n\nPython Packages\n\n\n    openesm\n    Accessing the openESM Database\n    \n        2025\n        Maintainer\n        Author\n    \n    PyPI\n    GitHub\n\n\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "talks/2023-05-13_dpk-temporal-dynamics/index.html",
+    "href": "talks/2023-05-13_dpk-temporal-dynamics/index.html",
     "title": "Temporal Dynamics of Depressive Symptomatology",
     "section": "",
     "text": "ReuseCC BY 4.0"
   },
   {
-    "objectID": "talks/2023-05-26_aps-item-validation/index.html",
-    "href": "talks/2023-05-26_aps-item-validation/index.html",
-    "title": "Item Validation in the WARN-D Study",
-    "section": "",
-    "text": "ReuseCC BY 4.0"
-  },
-  {
-    "objectID": "talks/2023-11-22-ffm-reprotea-simulation/index.html",
-    "href": "talks/2023-11-22-ffm-reprotea-simulation/index.html",
-    "title": "Good Practices for Simulation Studies",
-    "section": "",
-    "text": "The preprint associated with the talk is available at PsyArxiv. The journal club is usually quite lighthearted, so my slides reflect that :-).\n\n\n\n\n  \n     Download Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
-  },
-  {
-    "objectID": "talks/2024-04-16_mitnb-ema-exploration/talk_mitnb_ema_index.html",
-    "href": "talks/2024-04-16_mitnb-ema-exploration/talk_mitnb_ema_index.html",
-    "title": "Exploration of Ecological Momentary Assessment Data",
-    "section": "",
-    "text": "The preprint associated with the talk is available at PsyArXiv.\n\n\n\n\n  \n     Download Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
-  },
-  {
-    "objectID": "talks/2024-07-16_imps-bayesian-idiographic-nets/index-imps24-networks.html",
-    "href": "talks/2024-07-16_imps-bayesian-idiographic-nets/index-imps24-networks.html",
+    "objectID": "talks/2023-10-09_fgme-bayesian-idiographic-nets/index.html",
+    "href": "talks/2023-10-09_fgme-bayesian-idiographic-nets/index.html",
     "title": "Bayesian Estimation and Comparison of Idiographic Network Models",
     "section": "",
-    "text": "The manuscript associated with the talk (in press at Psychological Methods) is available at PsyArxiv.\n\n\n\n\n  \n     Download Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
+    "text": "The preprint associated with the talk is available at PsyArxiv.\n\n\n\n\n  \n     Download Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
   },
   {
-    "objectID": "talks/2025-04-16-berlin-methods-kolloquium/index-simulation-berlin-kolloquium.html",
-    "href": "talks/2025-04-16-berlin-methods-kolloquium/index-simulation-berlin-kolloquium.html",
-    "title": "Simulation Studies for Methodological Research: State of the Art, Issues, and Potential Solutions",
+    "objectID": "talks/2024-02-16_fsm-forecasting-literature/index.html",
+    "href": "talks/2024-02-16_fsm-forecasting-literature/index.html",
+    "title": "Historical and recent trends in the forecasting literature",
     "section": "",
-    "text": "The manuscript associated with the talk is available was published in Psychological Methods; an accepted version is available at PsyArxiv.\n\n\n\nFind the slides for the FGME conference here:\n\n  \n     Download PDF Slides\n  \n\n\n  \n\nFind the slides for Münster here:\n\n  \n     Download PDF Slides\n  \n\n\n  \n\nFind the (very similar) slides for Berlin here:\n\n  \n     Download PDF Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
+    "text": "The slides were created in Quarto and are available on GitHub. You can click through the .html slides below.\n\n  Your browser apparently does not support rendering the html files. Please download them from GitHub.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nReuseCC BY 4.0"
   },
   {
-    "objectID": "talks/2025-05-28-saa-sensors/index-saa.html",
-    "href": "talks/2025-05-28-saa-sensors/index-saa.html",
-    "title": "Associations between EMA and passive sensor data in a large student sample",
+    "objectID": "talks/2024-06-22-simulation-studies/index-simulation-talk.html",
+    "href": "talks/2024-06-22-simulation-studies/index-simulation-talk.html",
+    "title": "Simulation Studies for Methodological Research in Psychology",
     "section": "",
-    "text": "The manuscript associated with the talk is accepted at Journal of Psychopathology and Clinical Science, see here for the preprint.\n\n\n\nFind the slides here:\n\n  \n     Download PDF Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
+    "text": "The manuscript (accepted at Psychological Methods) associated with the talk is available at PsyArxiv. I collected the slides of different talks here because the talks were similar in content.\n\n\n\nFind the slides for Virtual Math Psych 2024 here:\n\n  \n     Download VMP Slides\n  \n\n\n  \n\nFind the slides for Virtual SIPS 2024 here:\n\n  \n     Download SIPS Slides\n  \n\n\n  \n\nFind the slides for IMPS 2024 here:\n\n  \n     Download IMPS Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
   },
   {
-    "objectID": "talks/index.html",
-    "href": "talks/index.html",
-    "title": "Talks",
+    "objectID": "talks/2025-03-27-dagstat-ademp/index-simulation-dagstat.html",
+    "href": "talks/2025-03-27-dagstat-ademp/index-simulation-dagstat.html",
+    "title": "Simulation Studies for Methodological Research in Psychology",
     "section": "",
-    "text": "Introducing openESM: A database of openly available experience sampling datasets\n\n\n\nTime Series\n\nEMA\n\nopenESM\n\nopen science\n\n\n\nTalk at the Oxford Emotional Disorder Genesis and Evolution (EDGE) Lab, the Australasian MathPsych Conference 2026, at a MITNB consortium online meeting, and at the NTU Singapore.\n\n\n\n\n\nNov 18, 2025\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nAssociations between EMA and passive sensor data in a large student sample\n\n\n\nTime Series\n\nEMA\n\nMeasurement\n\n\n\nTalk at the annual meeting of the Society for Ambulatory Assessment 2025 (Leuven, Belgium).\n\n\n\n\n\nMay 28, 2025\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nMultiverse Analysis for Dynamic Network Models\n\n\n\nTime Series\n\nEMA\n\nNetwork Analysis\n\n\n\nTalk at the annual meeting of the Society for Ambulatory Assessment 2025 (Leuven, Belgium).\n\n\n\n\n\nMay 26, 2025\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nSimulation Studies for Methodological Research: State of the Art, Issues, and Potential Solutions\n\n\n\nSimulation Studies\n\nOpen Science\n\nMetascience\n\n\n\nInvited talk at the colloquium of the Methods and Evaluation / Quality Assurance Unit at the Freie Universität Berlin and the colloquium of the Statistics & Psychological Methods Working Unit at the University of Münster, and a conference talk at the Conference of the DGPs Methods and Evaluation Section 2025.\n\n\n\n\n\nApr 16, 2025\n\n\nBjörn Siepe & Samuel Pawel\n\n\n\n\n\n\n\n\n\n\n\n\nSimulation Studies for Methodological Research in Psychology\n\n\n\nSimulation Studies\n\nOpen Science\n\nMetascience\n\n\n\nTalk at DAGStat 2025 (Joint Statistical Meeting of the German Statistical Working Group).\n\n\n\n\n\nMar 27, 2025\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nBayesian Estimation and Comparison of Idiographic Network Models\n\n\n\nBayes\n\nNetwork Analysis\n\nTime Series\n\n\n\nSymposium talk at the IMPS (International Meeting of the Psychometric Society) 2024 (Prague, Czech Republic).\n\n\n\n\n\nJul 16, 2024\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nSimulation Studies for Methodological Research in Psychology\n\n\n\nSimulation Studies\n\nOpen Science\n\nMetascience\n\n\n\nOnline talk at Virtual SIPS 2024, Virtual Math Psych 2024, and IMPS 2024.\n\n\n\n\n\nJun 7, 2024\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nExploration of Ecological Momentary Assessment Data\n\n\n\nEMA\n\nData Visualization\n\nTime Series\n\n\n\nOnline talk at the Measurement is the New Black (MITNB) Meeting.\n\n\n\n\n\nApr 16, 2024\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nHistorical and recent trends in the forecasting literature\n\n\n\nForecasting\n\nTime Series\n\nMachine Learning\n\n\n\nOnline talk at the WARN-D Friday Science Meeting (Leiden University, Netherlands).\n\n\n\n\n\nFeb 15, 2024\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nGood Practices for Simulation Studies\n\n\n\nSimulation Studies\n\nOpen Science\n\nMetascience\n\n\n\nOnline talk at the ReproducibiliTea Frankfurt journal club (Germany).\n\n\n\n\n\nNov 22, 2023\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nBayesian Estimation and Comparison of Idiographic Network Models\n\n\n\nBayes\n\nNetwork Analysis\n\nTime Series\n\n\n\nSymposium talk at the FGME (Quantitative Methods Subgroup of the German Psychological Association) 2023 (Konstanz, Germany).\n\n\n\n\n\nSep 12, 2023\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nItem Validation in the WARN-D Study\n\n\n\nEMA\n\nData Visualization\n\nTime Series\n\n\n\nSymposium talk at the APS Annual Convention 2023 (Washington D.C., US).\n\n\n\n\n\nMay 28, 2023\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nTemporal Dynamics of Depressive Symptomatology\n\n\n\nEMA\n\nNetwork Analysis\n\nTime Series\n\n\n\nSymposium talk at the annual German psychotherapy conference (DPK) in Berlin (Germany).\n\n\n\n\n\nMay 13, 2023\n\n\nBjörn Siepe\n\n\n\n\n\n\n\n\n\n\n\n\nTemporal Dynamics of Depressive Symptomatology\n\n\n\nEMA\n\nNetwork Analysis\n\nTime Series\n\n\n\nSymposium talk at the DGPPN Conference (Berlin, Germany).\n\n\n\n\n\nNov 28, 2022\n\n\nBjörn Siepe\n\n\n\n\n\nNo matching items"
+    "text": "The manuscript associated with the talk is available was published in Psychological Methods; an accepted version is available at PsyArxiv.\n\n\n\nFind the slides here:\n\n  \n     Download VMP Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
   },
   {
-    "objectID": "workshops/2024-10-21_dynamic-networks-workshop-ecr/index.html",
-    "href": "workshops/2024-10-21_dynamic-networks-workshop-ecr/index.html",
+    "objectID": "talks/2025-05-26-saa-multiverse/index-saa.html",
+    "href": "talks/2025-05-26-saa-multiverse/index-saa.html",
+    "title": "Multiverse Analysis for Dynamic Network Models",
+    "section": "",
+    "text": "The manuscript associated with the talk is accepted at Methodology).\n\n\n\nFind the slides here:\n\n  \n     Download PDF Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
+  },
+  {
+    "objectID": "talks/2025-11-17-introducing-openesm/index-openesm.html",
+    "href": "talks/2025-11-17-introducing-openesm/index-openesm.html",
+    "title": "Introducing openESM: A database of openly available experience sampling datasets",
+    "section": "",
+    "text": "See here for the preprint introducing openESM.\n\n\n\nFind the slides for the talk at NTU here:\n\n  \n     Download PDF Slides\n  \n\n\n  \n\nFind the slides for the talk for MITNB here:\n\n  \n     Download PDF Slides\n  \n\n\n  \n\nFind the slides for the talk at AMPC here:\n\n  \n     Download PDF Slides\n  \n\n\n  \n\nFind the slides for the talk at Oxford here:\n\n  \n     Download PDF Slides\n  \n\n\n  \n\n\n\n\nReuseCC BY 4.0"
+  },
+  {
+    "objectID": "workshops/2023-06-28_dynamic-networks-workshop/index.html",
+    "href": "workshops/2023-06-28_dynamic-networks-workshop/index.html",
     "title": "Introduction to Dynamic Networks",
     "section": "",
-    "text": "The workshop consisted of a theoretical and short practical introduction to dynamic network analyses in psychology.\nSlides & Code\n\n\n\n\n\n\nReuseCC BY 4.0"
+    "text": "The first workshop consisted of a theoretical introduction to network analysis in psychology, with a focus on dynamic networks. The second workshop consisted of more hands-on coding, looking deeply into data preprocessing and modelling with GIMME and graphicalVAR.\nSlides & Code\n\n\n\nReuseCC BY 4.0"
   },
   {
-    "objectID": "workshops/2025-06-27_reproducibility-workshop/prereg-workshop-index.html",
-    "href": "workshops/2025-06-27_reproducibility-workshop/prereg-workshop-index.html",
-    "title": "Reproducible Research in R and Quarto",
+    "objectID": "workshops/2025-02-31_preregistration-workshop/prereg-workshop-index.html",
+    "href": "workshops/2025-02-31_preregistration-workshop/prereg-workshop-index.html",
+    "title": "When, how, and why (not) to preregister",
     "section": "",
-    "text": "The workshop consisted of an introduction to the topic, easy wins, hands-on exercises on creating reproducible manuscripts in Quarto, and an outlook to advanced topics like version control and containerization. Slides and exercises are in German. The workshop materials are licensed under a CC BY 4.0 license. The preview image is taken from The Turing Way.\nSlides & Exercises on GitHub\nSlides & Exercises on OSF\n\n\n\nReuseCC BY 4.0"
+    "text": "The workshop consisted of an overview of the historical background of preregistration, its theoretical beneficts, the current evidence on implementation, and discussions and guidance on deviations from preregistration as well as reviewing them.\nSlides & Exercises\n\n\n\nReuseCC BY 4.0"
+  },
+  {
+    "objectID": "workshops/2026-04-30_introduction-openESM/openESM-workshop-index.html",
+    "href": "workshops/2026-04-30_introduction-openESM/openESM-workshop-index.html",
+    "title": "Introducing openESM: A database of openly available experience sampling research",
+    "section": "",
+    "text": "The workshop consisted of a one-hour introduction to openESM, its software packages, and to modeling multi-dataset experience sampling data. The workshop materials are licensed under a CC BY 4.0 license.\nCode & Slides on GitHub\n\n\n\nReuseCC BY 4.0"
   }
 ]

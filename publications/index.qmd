@@ -228,6 +228,16 @@ title: "Publications & Preprints"
 <div class="year-header">2026</div>
 
 <div class="publication">
+    <div class="papertitle">Identifying careless responding in ecological momentary assessment: Inconsistent signals
+from different detection methods in the WARN-D data</div>
+    <div class="authors">L. V. D. E. Vogelsmeier, B. S. Siepe, E. Ulitzsch, G. Eisele, J. Geeraerts, A. Klocek, R. K. K. Proppert, C. Rieble, R. Tutunji, E. Dejonckheere, P. Kuppens, E. I. Fried</div>
+    <div class="journal">Psychological Methods (Accepted for Publication)</div>
+    <a class="link" href="https://doi.org/10.31234/osf.io/4dfbz_v1">Preprint</a>
+    <a class="code-link" href="https://osf.io/rqgdf">Code</a>
+</div>
+
+
+<div class="publication">
     <div class="papertitle">Why, when, and how to (or not to) preregister a simulation study</div>
     <div class="authors">B.S. Siepe, F. Bartoš, A. Peikert, D.W. Heck, A. Sarafoglou, A.-L. Boulesteix, S. Pawel</div>
     <div class="journal">PsyArXiv Preprint</div>

@@ -1,0 +1,15 @@
+---
+title: "Introducing openESM: A database of openly available experience sampling research"
+author: Björn Siepe
+date: "2026-04-30"
+description: "Workshop on openESM and statistical modeling of its data for the Psych #rstats Club, online."
+license: "CC BY"
+categories: [Open Science, Time Series, openESM]
+image: "openesm_icon.png"
+---
+
+The workshop consisted of a one-hour introduction to openESM, its software packages, and to modeling multi-dataset experience sampling data. The workshop materials are licensed under a [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license. 
+
+<a href="https://github.com/bsiepe/Talks/tree/main/rStats-Psych-Club2026" target="_blank">Code & Slides on GitHub</a>
+
+

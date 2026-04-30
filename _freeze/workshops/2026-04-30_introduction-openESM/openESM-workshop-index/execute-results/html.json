@@ -1,0 +1,12 @@
+{
+  "hash": "c8593388d19d082ea42bf0fe6cc2a873",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"Introducing openESM: A database of openly available experience sampling research\"\nauthor: Björn Siepe\ndate: \"2026-04-30\"\ndescription: \"Workshop on openESM and statistical modeling of its data for the Psych #rstats Club, online.\"\nlicense: \"CC BY\"\ncategories: [Open Science, Time Series, openESM]\nimage: \"openesm_icon.png\"\ncv: \n  pdf: \"rStatsClub-Talk-Siepe-2026.pdf\"\n---\n\nThe workshop consisted of a one-hour introduction to openESM, its software packages, and to modeling multi-dataset experience sampling data. The workshop materials are licensed under a [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license. \n\n<a href=\"https://github.com/bsiepe/Talks/tree/main/rStats-Psych-Club2026\" target=\"_blank\">Code on GitHub</a>\n\n\n\n```{css echo=FALSE}\n.embed-container {\n    position: relative;\n    padding-bottom: 100%;\n    height: 0;\n    overflow: hidden;\n    max-width: 100%;\n}\n.embed-container iframe,\n.embed-container object,\n.embed-container embed {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 80%;\n    height: 80%;\n}\n```\n\nFind the slides here:\n\n```{=html}\n<p class=\"text-center\">\n  <a class=\"btn btn-primary btn-lg cv-download\" href=\"`r rmarkdown::metadata$cv$pdf`\" target=\"_blank\">\n    <i class=\"fa-solid fa-file-arrow-down\"></i>&ensp;Download PDF Slides\n  </a>\n</p>\n<div class=\"embed-container\">\n  <iframe src=\"`r rmarkdown::metadata$cv$pdf`\" style=\"border: 0.5px\"></iframe>\n</div>\n```\n\n",
+    "supporting": [
+      "openESM-workshop-index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
