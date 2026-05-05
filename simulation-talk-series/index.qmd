@@ -97,28 +97,28 @@ These talks cover topics currently discussed in the scientific community. Opinio
       <td class="talk-date">03.06.2026, Noon</td>
       <td>Samuel Pawel</td>
       <td>Researcher degrees of freedom and questionable research practices in simulation studies</td>
-      <td>TBA</td>
+      <td><a href="https://webconf.hrz.uni-marburg.de/n/rooms/wvp-c2q-ibf-qw8/join" target="_blank">Join</a></td>
       <td class="tbd">—</td>
     </tr>
     <tr>
       <td class="talk-date">01.07.2026, Noon</td>
       <td>Björn Siepe</td>
       <td>Simulation studies in psychology: State of the art, problems, and potential solutions</td>
-      <td>TBA</td>
+      <td><a href="https://webconf.hrz.uni-marburg.de/n/rooms/wvp-c2q-ibf-qw8/join" target="_blank">Join</a></td>
       <td class="tbd">—</td>
     </tr>
     <tr>
       <td class="talk-date">07.10.2026, Noon</td>
       <td>František Bartoš</td>
       <td>Synthetic benchmarking for simulation studies</td>
-      <td>TBA</td>
+      <td><a href="https://webconf.hrz.uni-marburg.de/n/rooms/wvp-c2q-ibf-qw8/join" target="_blank">Join</a></td>
       <td class="tbd">—</td>
     </tr>
     <tr>
       <td class="talk-date">04.11.2026, Noon</td>
       <td>Anouk Bouma</td>
       <td>Reporting practices, open science practices, and trustworthiness of simulation studies in psychology</td>
-      <td>TBA</td>
+      <td><a href="https://webconf.hrz.uni-marburg.de/n/rooms/wvp-c2q-ibf-qw8/join" target="_blank">Join</a></td>
       <td class="tbd">—</td>
     </tr>
   </tbody>
