@@ -109,7 +109,7 @@
     "href": "blog/index.html",
     "title": "Blog",
     "section": "",
-    "text": "Model Checking for VAR Models\n\n\n\nWebsite\n\nNotes\n\n\n\nIntroducing VARcheck, a new R package for visual checks for VAR models.\n\n\n\n\n\nMay 20, 2026\n\n\nBjörn Siepe, Jonas Haslbeck\n\n\n\n\n\nNo matching items"
+    "text": "Model Checking for VAR Models\n\n\n\nBlog\n\nTime Series\n\nEMA\n\n\n\nIntroducing VARcheck, a new R package for visual checks for VAR models.\n\n\n\n\n\nMay 26, 2026\n\n\nBjörn Siepe, Jonas Haslbeck\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/2026-05-20_varcheck/index.html",
@@ -119,11 +119,11 @@
     "text": "Researchers are trying to build dynamic models of the daily functioning of persons with the goal of understanding it and being able to predict the outcomes of interventions. In this context, they need to recover causal effects between variables. When we establish multiple such causal effects among a set of variables, we obtain a dynamic model. Doing this is very difficult. However, one reasonable starting point could be to fit the simplest possible multivariate dynamical model directly to empirical data. This model is the Vector Autoregressive model, which in its simplest version models each variable at a given time point as a linear function of all variables including itself at the previous time point. Since the model seems a natural starting point and because software to estimate VAR models is readily available, it has become the most popular model for intensive longitudinal data."
   },
   {
-    "objectID": "blog/2026-05-20_varcheck/index.html#modeling-psycholigical-time-series-with-vector-autoregressive-models",
-    "href": "blog/2026-05-20_varcheck/index.html#modeling-psycholigical-time-series-with-vector-autoregressive-models",
+    "objectID": "blog/2026-05-20_varcheck/index.html#modeling-psychological-time-series-with-vector-autoregressive-models",
+    "href": "blog/2026-05-20_varcheck/index.html#modeling-psychological-time-series-with-vector-autoregressive-models",
     "title": "Model Checking for VAR Models",
     "section": "",
-    "text": "Researchers are trying to build dynamic models of the daily functioning of persons with the goal of understanding it and be able to predict the outcomes of interventions. In this context, they need to recover causal effects between variables. When establishing multiple of such causal effects between a set of variables we obtain such a dynamic model. Doing this is very difficult. However, one reasonable starting point could be to fit the simplest possible multivariate dynamical model directly to empirical data. This model is the Vector Autoregressive model, which in its simplest version models each variable at a given time point as a linear function of all variables including itself at the previous time point. Since the model seems a natural starting point and because software to estimate VAR models is readily available, it has become the most popular model for intensive longitudinal data."
+    "text": "Researchers are trying to build dynamic models of the daily functioning of persons with the goal of understanding it and being able to predict the outcomes of interventions. In this context, they need to recover causal effects between variables. When we establish multiple such causal effects among a set of variables, we obtain a dynamic model. Doing this is very difficult. However, one reasonable starting point could be to fit the simplest possible multivariate dynamical model directly to empirical data. This model is the Vector Autoregressive model, which in its simplest version models each variable at a given time point as a linear function of all variables including itself at the previous time point. Since the model seems a natural starting point and because software to estimate VAR models is readily available, it has become the most popular model for intensive longitudinal data."
   },
   {
     "objectID": "blog/2026-05-20_varcheck/index.html#why-check-the-fit-of-your-var-model",
@@ -271,12 +271,5 @@
     "title": "Introducing openESM: A database of openly available experience sampling research",
     "section": "",
     "text": "The workshop consisted of a one-hour introduction to openESM, its software packages, and to modeling multi-dataset experience sampling data. The workshop materials are licensed under a CC BY 4.0 license.\nCode & Slides on GitHub\n\n\n\nReuseCC BY 4.0"
-  },
-  {
-    "objectID": "blog/2026-05-20_varcheck/index.html#modeling-psychological-time-series-with-vector-autoregressive-models",
-    "href": "blog/2026-05-20_varcheck/index.html#modeling-psychological-time-series-with-vector-autoregressive-models",
-    "title": "Model Checking for VAR Models",
-    "section": "",
-    "text": "Researchers are trying to build dynamic models of the daily functioning of persons with the goal of understanding it and being able to predict the outcomes of interventions. In this context, they need to recover causal effects between variables. When we establish multiple such causal effects among a set of variables, we obtain a dynamic model. Doing this is very difficult. However, one reasonable starting point could be to fit the simplest possible multivariate dynamical model directly to empirical data. This model is the Vector Autoregressive model, which in its simplest version models each variable at a given time point as a linear function of all variables including itself at the previous time point. Since the model seems a natural starting point and because software to estimate VAR models is readily available, it has become the most popular model for intensive longitudinal data."
   }
 ]
