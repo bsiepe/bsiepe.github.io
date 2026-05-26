@@ -18,6 +18,8 @@ website:
         href: talks/index.qmd
       - text: "{{< fa laptop >}}Workshops"
         href: workshops/index.qmd
+      - text: "{{< fa pen-nib >}}Blog"
+        href: blog/index.qmd
       - text: "{{< fa code >}}Software"
         href: software/index.qmd
       - text: "{{< fa user >}}CV"

@@ -29,6 +29,12 @@
     ]
   },
   {
+    "listing": "/blog/index.html",
+    "items": [
+      "/blog/2026-05-20_varcheck/index.html"
+    ]
+  },
+  {
     "listing": "/software/index.html",
     "items": []
   }

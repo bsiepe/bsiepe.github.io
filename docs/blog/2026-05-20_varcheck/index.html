@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.34">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Björn Siepe">
+<meta name="author" content="Jonas Haslbeck">
+<meta name="dcterms.date" content="2026-05-26">
+<meta name="description" content="Introducing VARcheck, a new R package for visual checks for VAR models.">
+
+<title>Model Checking for VAR Models – Björn Siepe</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-622e6c9d8f8a320c8c7f5f7616704e60.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Björn Siepe</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text"><i class="fa-solid fa-house" aria-label="house"></i> Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../publications/index.html"> 
+<span class="menu-text"><i class="fa-solid fa-file-lines" aria-label="file-lines"></i>Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../talks/index.html"> 
+<span class="menu-text"><i class="fa-solid fa-person-chalkboard" aria-label="person-chalkboard"></i>Talks</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../workshops/index.html"> 
+<span class="menu-text"><i class="fa-solid fa-laptop" aria-label="laptop"></i>Workshops</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog/index.html"> 
+<span class="menu-text"><i class="fa-solid fa-pen-nib" aria-label="pen-nib"></i>Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../software/index.html"> 
+<span class="menu-text"><i class="fa-solid fa-code" aria-label="code"></i>Software</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../cv/index.html"> 
+<span class="menu-text"><i class="fa-solid fa-user" aria-label="user"></i>CV</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:bjoern.siepe@uni-marburg.de"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/b_siepe"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/bsiepe"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.linkedin.com/in/bj%C3%B6rn-siepe-11a750219/"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://bsky.app/profile/bsiepe.bsky.social"> <i class="bi bi-cloud" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#modeling-psychological-time-series-with-vector-autoregressive-models" id="toc-modeling-psychological-time-series-with-vector-autoregressive-models" class="nav-link active" data-scroll-target="#modeling-psychological-time-series-with-vector-autoregressive-models">Modeling Psychological Time Series with Vector Autoregressive Models</a></li>
+  <li><a href="#why-check-the-fit-of-your-var-model" id="toc-why-check-the-fit-of-your-var-model" class="nav-link" data-scroll-target="#why-check-the-fit-of-your-var-model">Why Check the Fit of Your VAR Model?</a></li>
+  <li><a href="#preparing-packages-data" id="toc-preparing-packages-data" class="nav-link" data-scroll-target="#preparing-packages-data">Preparing Packages &amp; Data</a></li>
+  <li><a href="#var-model-estimation" id="toc-var-model-estimation" class="nav-link" data-scroll-target="#var-model-estimation">VAR Model Estimation</a></li>
+  <li><a href="#checking-var-model-fit" id="toc-checking-var-model-fit" class="nav-link" data-scroll-target="#checking-var-model-fit">Checking VAR Model Fit</a></li>
+  <li><a href="#where-do-you-go-from-here" id="toc-where-do-you-go-from-here" class="nav-link" data-scroll-target="#where-do-you-go-from-here">Where do you go from here?</a></li>
+  <li><a href="#computational-details" id="toc-computational-details" class="nav-link" data-scroll-target="#computational-details">Computational Details</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content column-page-left" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Model Checking for VAR Models</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Blog</div>
+    <div class="quarto-category">Time Series</div>
+    <div class="quarto-category">EMA</div>
+  </div>
+  </div>
+
+<div>
+  <div class="description">
+    Introducing VARcheck, a new R package for visual checks for VAR models.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta column-page-left">
+
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Björn Siepe </p>
+             <p>Jonas Haslbeck </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 26, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="modeling-psychological-time-series-with-vector-autoregressive-models" class="level2">
+<h2 class="anchored" data-anchor-id="modeling-psychological-time-series-with-vector-autoregressive-models">Modeling Psychological Time Series with Vector Autoregressive Models</h2>
+<p>Researchers are trying to build dynamic models of the daily functioning of persons with the goal of understanding it and being able to predict the outcomes of interventions. In this context, they need to recover causal effects between variables. When we establish multiple such causal effects among a set of variables, we obtain a dynamic model. <a href="https://psycnet.apa.org/fulltext/2022-00806-001.html">Doing this is very difficult</a>. However, one reasonable starting point could be to fit the simplest possible multivariate dynamical model directly to empirical data. This model is the Vector Autoregressive model, which in its simplest version models each variable at a given time point as a linear function of all variables including itself at the previous time point. Since the model seems a natural starting point and because software to estimate VAR models is readily available, it has become the most popular model for intensive longitudinal data.</p>
+</section>
+<section id="why-check-the-fit-of-your-var-model" class="level2">
+<h2 class="anchored" data-anchor-id="why-check-the-fit-of-your-var-model">Why Check the Fit of Your VAR Model?</h2>
+<p>When reading one of the many published articles reporting on multilevel VAR analyses, you typically only see the group-level effects of the model, usually represented as a directed network. Some studies also report the estimated variability of group-level effects. However, what almost no study reports is how well the VAR model actually fits the data. This is a massive issue for two reasons: First, if the model does not fit the data well, the interpretation of parameters is problematic at the very least and at worst may invalidate the conclusions of the entire analysis. Second, checking model fit and finding model misfit means discovering additional structure in the data that almost always is theoretically interesting.</p>
+<p>If model checking is so critical, why is nobody doing it? Most researchers know that they need to do model checks in linear regression, but they don’t perform them in the more complicated VAR model. It’s a bit like wearing a helmet on your city bike, but taking it off when taking your high-powered motorcycle for a spin. We found out why when trying to implement the model checks ourselves, identifying several practical barriers: First, there is no tutorial that explains the theory and possible diagnostics in the time series setting, which is more complicated than the standard regression context most researchers are familiar with. Second, it turned out to be very difficult to get predictions and residuals out of standard statistical software despite being methodologists ourselves. And third, creating multiple diagnostic plots for many variables and individuals required many hundreds of lines of code which not every researcher is comfortable writing.</p>
+<p><a href="https://doi.org/10.31234/osf.io/k6uz4_v3">In our new paper on model checking for VAR models</a>, we remove all of these barriers. We provide an accessible tutorial on performing visual model checks on (multilevel) VAR models, a new version of the popular <code>mlVAR</code> package that provides predictions and residuals in a single line of code, additional code to get residuals also from DSEM/Mplus, and the new R-package <code>VARcheck</code>, which reduces VAR model checks for multiple persons to a single line of R-code.</p>
+<p>As a first screening of VAR model fit, we recommend using four diagnostic plots:</p>
+<ol type="1">
+<li>Visualizing empirical data and model predictions over time. Alongside this, we report <span class="math inline">\(R^2\)</span> and RMSE values to quantify predictability.</li>
+<li>Visualizing the residuals over time.</li>
+<li>Plotting residuals versus predicted values.</li>
+<li>Comparing the distribution of the data to the distribution of simulated data based on the model parameters.</li>
+</ol>
+<p>The below figure explains where different quantities come from. We estimate the VAR model from the empirical data and compute predictions from it. By subtracting the predictions from the empirical data we obtain residuals. And we can use the fitted VAR model to generate new data which we can compare with the empirical data. We introduce the basic theory behind VAR model checking and motivate these particular visual checks <a href="https://doi.org/10.31234/osf.io/k6uz4_v3">in our paper</a>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="ModelChecking_SystemsFigure.svg" class="img-fluid figure-img" style="width:95.0%"></p>
+<figcaption>Overview of the model checking procedure</figcaption>
+</figure>
+</div>
+<p>To make the model checking workflow as simple as possible, we extended existing software and developed new software. Sacha Epskamp created a new version of the R-package <a href="https://cran.r-project.org/web/packages/mlVAR/index.html">mlVAR</a> which now includes functions to easily extract predictions and residuals. Joran Jongerling also <a href="https://github.com/jmbh/ModelCheckingForVAR">created a pipeline</a> for getting predictions and residuals out of DSEM/Mplus. And we created the new R-package <a href="https://bsiepe.github.io/VARcheck/"><code>VARcheck</code></a>, which provides a set of functions to conduct the model checking procedure described in the paper.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>In this blog post we describe a brief walkthrough of how to fit a standard multilevel VAR model with mlVAR and use its new functionality and the new R-package <code>VARcheck</code> to perform extensive model checks with only a few lines of code.</p>
+</section>
+<section id="preparing-packages-data" class="level2">
+<h2 class="anchored" data-anchor-id="preparing-packages-data">Preparing Packages &amp; Data</h2>
+<p>As in the paper, we use data by <a href="https://doi.org/10.1037/emo0000669">Grommisch et al.</a> who investigated individual differences in the use of emotion regulation strategies in daily life. The dataset is available on <a href="https://openesmdata.org/datasets/0032_grommisch/">openESM</a> and can be easily loaded with the <code>openesm</code> package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openesm)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(VARcheck)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(devtools)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mlVAR)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(qgraph)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># For preprocessing</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plyr)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># load data</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> openesm<span class="sc">::</span><span class="fu">get_dataset</span>(<span class="st">"0032_grommisch"</span>, <span class="at">version =</span> <span class="st">"1.0.0"</span>)<span class="sc">$</span>data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>In the background, we conduct some light preprocessing of the data, which is described in the paper and in the <a href="https://github.com/bsiepe/bsiepe.github.io/blog">raw code</a> of this blog post. Specifically, we add missing values for missed timepoints, as these are missing only implicitly in the current dataset. We include those to retain the actual sequence of time points in the diagnostic plots.</p>
+</section>
+<section id="var-model-estimation" class="level2">
+<h2 class="anchored" data-anchor-id="var-model-estimation">VAR Model Estimation</h2>
+<p>We use the <code>mlVAR</code> package to estimate a multilevel VAR model, and <code>qgraph</code> to visualize the results.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mlVAR_out <span class="ot">&lt;-</span> <span class="fu">mlVAR</span>(<span class="at">data =</span> data_clean,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">vars =</span> <span class="fu">colnames</span>(data_clean)[<span class="dv">4</span><span class="sc">:</span><span class="dv">7</span>],</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">idvar =</span> <span class="fu">colnames</span>(data_clean)[<span class="dv">1</span>],</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">lags =</span> <span class="dv">1</span>,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">dayvar =</span> <span class="fu">colnames</span>(data_clean)[<span class="dv">3</span>],</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                   <span class="at">beepvar =</span> <span class="fu">colnames</span>(data_clean)[<span class="dv">2</span>],</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                   <span class="at">contemporaneous =</span> <span class="st">"correlated"</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                   <span class="at">temporal =</span> <span class="st">"correlated"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                   <span class="at">scale =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                   <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>These are the group-level estimates for the temporal network, and their standard deviation across individuals:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># column names</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>capitalize_first <span class="ot">&lt;-</span> <span class="cf">function</span>(x) <span class="fu">paste0</span>(<span class="fu">toupper</span>(<span class="fu">substring</span>(x, <span class="dv">1</span>, <span class="dv">1</span>)), <span class="fu">substring</span>(x, <span class="dv">2</span>))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>col_labels <span class="ot">&lt;-</span> <span class="fu">capitalize_first</span>(<span class="fu">colnames</span>(data_clean)[<span class="dv">4</span><span class="sc">:</span><span class="dv">7</span>])</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># some parameters for plotting</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>sc <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>sc_2 <span class="ot">&lt;-</span> <span class="fl">0.6</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>title_cex <span class="ot">&lt;-</span> <span class="fl">1.1</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Network</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">qgraph</span>(</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t</span>(mlVAR_out<span class="sc">$</span>results<span class="sc">$</span>Beta<span class="sc">$</span>mean[, , <span class="dv">1</span>]),</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Note: In the input matrix columns predict rows; but qgraph() plots it the other way around, so we have to transpose</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">layout =</span> <span class="st">"circle"</span>,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">labels =</span> col_labels,</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">vsize =</span> <span class="dv">18</span> <span class="sc">*</span> sc_2,</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">esize =</span> <span class="dv">12</span> <span class="sc">*</span> sc_2,</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">asize =</span> <span class="dv">10</span> <span class="sc">*</span> sc_2,</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">edge.labels =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">edge.label.cex =</span> <span class="fl">1.5</span>,</span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="at">fade =</span> F,</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="at">mar =</span> <span class="fu">rep</span>(<span class="dv">5</span>, <span class="dv">4</span>),</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>  <span class="at">palette =</span> <span class="st">"colorblind"</span>,</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">theme =</span> <span class="st">"colorblind"</span>,</span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"Fixed Effects Estimates"</span>,</span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">title.cex =</span> title_cex</span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Network</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="fu">qgraph</span>(</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">t</span>(mlVAR_out<span class="sc">$</span>results<span class="sc">$</span>Beta<span class="sc">$</span>SD[, , <span class="dv">1</span>]),</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">layout =</span> <span class="st">"circle"</span>,</span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">labels =</span> col_labels,</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>  <span class="at">vsize =</span> <span class="dv">18</span> <span class="sc">*</span> sc_2,</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>  <span class="at">esize =</span> <span class="dv">12</span> <span class="sc">*</span> sc_2,</span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  <span class="at">asize =</span> <span class="dv">10</span> <span class="sc">*</span> sc_2,</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>  <span class="at">edge.labels =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>  <span class="at">edge.label.cex =</span> <span class="fl">1.5</span>,</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>  <span class="at">fade =</span> F,</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>  <span class="at">mar =</span> <span class="fu">rep</span>(<span class="dv">5</span>, <span class="dv">4</span>),</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>  <span class="at">edge.color =</span> <span class="st">"grey"</span>,</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>  <span class="at">palette =</span> <span class="st">"colorblind"</span>,</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>  <span class="at">theme =</span> <span class="st">"colorblind"</span>,</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>  <span class="at">title =</span> <span class="st">"Random Effects SDs"</span>,</span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">title.cex =</span> title_cex</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="864"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The left network shows the group-level effects of the fitted VAR model. We see that all variables have relatively strong positive autocorrelations. Cross-lagged effects are a bit smaller in absolute value and positive between emotion measurements with the same valence, and negative between emotion measurements with a different valence. <a href="https://psycnet.apa.org/fulltext/2025-60391-001.html">This is a general pattern</a> one finds in most VAR networks of affective variables. The right network shows the variability (as a standard deviation) in these parameters across persons.</p>
+<p>In most published papers, the modeling process ends here after a description of these networks. Here we continue with checking how well the VAR model actually fits the data.</p>
+</section>
+<section id="checking-var-model-fit" class="level2">
+<h2 class="anchored" data-anchor-id="checking-var-model-fit">Checking VAR Model Fit</h2>
+<p>To check the model fit visually, we first need to obtain predicted values, residuals, and simulated data based on the parameters of the VAR model. The new version of <code>mlVAR</code> provides helper functions that make this very easy:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>pred_df <span class="ot">&lt;-</span> <span class="fu">predict</span>(mlVAR_out)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>res_df  <span class="ot">&lt;-</span> <span class="fu">residuals</span>(mlVAR_out)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>sim_df <span class="ot">&lt;-</span> <span class="fu">resimulate</span>(mlVAR_out, <span class="at">keep_missing =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                              <span class="at">variance =</span> <span class="st">"empirical"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We can then pass these objects to <code>new_var_data()</code>, one of the two main functions of <code>VARcheck</code>, which takes three required inputs (empirical data, model predictions, and residuals), each as a <span class="math inline">\(T \times p\)</span> numeric matrix (time points × variables). Simulated data for posterior predictive checks is optional but enables the rightmost column of the diagnostic grid. This means that <code>VARcheck</code> can be used with any VAR model as long as the empirical data, model predictions, and residuals are available in the required format.</p>
+<p>Here, we only use data of a single individual for demonstration purposes, but the same procedure can be (and should be) applied to all individuals in the dataset. See our <a href="https://bsiepe.github.io/VARcheck/articles/getting-started.html#using-mlvar-outputs">package documentation</a> for more information. We choose individual 33 for demonstration purposes.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>all_ids <span class="ot">&lt;-</span> <span class="fu">unique</span>(data_clean<span class="sc">$</span>id)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>demonstration_id <span class="ot">&lt;-</span> all_ids[<span class="dv">33</span>]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># get data by individual in matrix form </span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>data_matrix_demonstration <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(data_clean[data_clean<span class="sc">$</span>id <span class="sc">==</span> demonstration_id, <span class="fu">colnames</span>(data_clean)[<span class="dv">4</span><span class="sc">:</span><span class="dv">7</span>]])</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="co"># select only the variables that were included in the model</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>vd <span class="ot">&lt;-</span> <span class="fu">new_var_data</span>(</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">empirical  =</span> data_matrix_demonstration,</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">predicted  =</span> <span class="fu">as.matrix</span>(pred_df[pred_df<span class="sc">$</span>id <span class="sc">==</span> demonstration_id, <span class="fu">colnames</span>(data_clean)[<span class="dv">4</span><span class="sc">:</span><span class="dv">7</span>]]),</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">residuals  =</span> <span class="fu">as.matrix</span>(res_df[res_df<span class="sc">$</span>id <span class="sc">==</span> demonstration_id, <span class="fu">colnames</span>(data_clean)[<span class="dv">4</span><span class="sc">:</span><span class="dv">7</span>]]),</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">simulated  =</span> <span class="fu">as.matrix</span>(sim_df[sim_df<span class="sc">$</span>id <span class="sc">==</span> demonstration_id, <span class="fu">colnames</span>(data_clean)[<span class="dv">4</span><span class="sc">:</span><span class="dv">7</span>]]),</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">var_names  =</span> col_labels</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We then use <code>plot_var_check()</code> to plot the diagnostic grid:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_var_check</span>(vd)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="864"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Starting with the first row (for the variable Happy), we can see frequent switching behavior between states around 25 and 75. As a consequence, collapsing the observations across time (on the right-hand side of the first column of plots) leads to a bimodal distribution. The predictions are far off the observations, which is reflected by an <span class="math inline">\(R^2\)</span> close to zero and a relatively large RMSE of 22.</p>
+<p>In the next column, the residuals look similar to the data, only a bit less bimodal. The next plot, showing residuals as a function of predictions, again shows the bimodality of the residuals we have already seen in the second plot. If the VAR model fit well we would expect a Gaussian distribution and the bimodal residuals therefore indicate model misfit. The third column plotting residuals against predictions shows us again the bimodality of the residuals. The final column shows the simulated time series of Happy from the overall VAR model. We see that the time series looks very different and does not show the bimodal distribution of the empirical data, which again indicates model misfit.</p>
+<p>Inspecting the diagnostic plots for the remaining variables Relaxed, Sad, and Angry leads us to similar conclusions. The distributions of the data and the residuals are all bimodal. The main characteristic of the time series of Person 33 is the frequent switching between states and the implied bimodality in distributions. This is a dynamic the VAR model cannot capture and the model is therefore strongly misspecified for these data. For this individual, we could therefore not interpret the parameters of the VAR model in a meaningful way and would have to consider alternative models that can capture this type of switching behavior such as regime switching models.</p>
+</section>
+<section id="where-do-you-go-from-here" class="level2">
+<h2 class="anchored" data-anchor-id="where-do-you-go-from-here">Where do you go from here?</h2>
+<p>In practice, one would inspect the diagnostic plots for all persons and one might find that the model does not fit the data for a subset of persons, perhaps for different reasons. What to do then? Of course, there cannot be a simple answer. That would be like asking a mechanic for one universal fix for every car that makes a strange noise. What is a good way forward will depend on the goals and the context of the study at hand. That said, in our paper, we discuss some of the things one might want to think about when deciding what to do next:</p>
+<ol type="1">
+<li><p><strong>Improve measurement</strong>: Some forms of misfit, such as bimodality, might be (partially) induced by measurement. Using different items, response scales, or instructions might help to reduce these types of problems. After removing such measurement artifacts, it is easier to model the latent dynamics most researchers are primarily interested in.</p></li>
+<li><p><strong>Embrace model building</strong>: There are many flexible modeling frameworks that can allow for extensions of VAR-type models to capture more complex structure in time series data. But there are also other modeling frameworks, such as state-switching Hidden Markov Models. If your model does not fit the data well, the analysis of the precise nature of the misfit might point you in the direction of one of those extensions or alternative models.</p></li>
+<li><p><strong>Theory development</strong>: Much of the current time series modeling is based on the premise that we can estimate a believable and useful dynamic model directly from one single dataset. However, <a href="https://www.tandfonline.com/doi/full/10.1080/00273171.2021.1896353">how realistic is this</a> given the many complexities about human functioning? Developing formal theories (or computational models) provides a more flexible approach that allows one to <a href="https://www.tandfonline.com/doi/full/10.1080/00273171.2024.2336178">integrate different data sources</a>. Such a framework of course also makes use of time series data, but not to estimate the model in one shot, but rather to test specific predictions the computational model makes about specific time series data.</p></li>
+</ol>
+<p>If you try <code>VARcheck</code> on your own data, we’d be curious what you find, especially if the model fits poorly in ways we haven’t discussed here. So feel free to reach out!</p>
+</section>
+<section id="computational-details" class="level2">
+<h2 class="anchored" data-anchor-id="computational-details">Computational Details</h2>
+<p>These are the packages and versions used in this blog post:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><strong>R version 4.5.2 (2025-10-31 ucrt)</strong></p>
+<p><strong>Platform:</strong> x86_64-w64-mingw32/x64</p>
+<p><strong>locale:</strong> <em>LC_COLLATE=German_Germany.utf8</em>, <em>LC_CTYPE=German_Germany.utf8</em>, <em>LC_MONETARY=German_Germany.utf8</em>, <em>LC_NUMERIC=C</em> and <em>LC_TIME=German_Germany.utf8</em></p>
+<p><strong>attached base packages:</strong> <em>stats</em>, <em>graphics</em>, <em>grDevices</em>, <em>utils</em>, <em>datasets</em>, <em>methods</em> and <em>base</em></p>
+<p><strong>other attached packages:</strong> <em>dplyr(v.1.2.0)</em>, <em>tidyr(v.1.3.2)</em>, <em>plyr(v.1.8.9)</em>, <em>qgraph(v.1.9.8)</em>, <em>mlVAR(v.0.6.1)</em>, <em>devtools(v.2.4.5)</em>, <em>usethis(v.3.2.1)</em>, <em>VARcheck(v.0.1.0)</em> and <em>openesm(v.0.1.2)</em></p>
+<p><strong>loaded via a namespace (and not attached):</strong> <em>RColorBrewer(v.1.1-3)</em>, <em>rstudioapi(v.0.18.0)</em>, <em>jsonlite(v.2.0.0)</em>, <em>shape(v.1.4.6.1)</em>, <em>magrittr(v.2.0.3)</em>, <em>farver(v.2.1.2)</em>, <em>nloptr(v.2.2.1)</em>, <em>rmarkdown(v.2.30)</em>, <em>fs(v.1.6.6)</em>, <em>vctrs(v.0.7.1)</em>, <em>memoise(v.2.0.1)</em>, <em>minqa(v.1.2.8)</em>, <em>base64enc(v.0.1-6)</em>, <em>htmltools(v.0.5.8.1)</em>, <em>curl(v.7.0.0)</em>, <em>Formula(v.1.2-5)</em>, <em>htmlwidgets(v.1.6.4)</em>, <em>gsubfn(v.0.7)</em>, <em>httr2(v.1.2.2)</em>, <em>cachem(v.1.1.0)</em>, <em>igraph(v.2.2.2)</em>, <em>mime(v.0.13)</em>, <em>lifecycle(v.1.0.5)</em>, <em>iterators(v.1.0.14)</em>, <em>pkgconfig(v.2.0.3)</em>, <em>Matrix(v.1.7-4)</em>, <em>R6(v.2.6.1)</em>, <em>fastmap(v.1.2.0)</em>, <em>rbibutils(v.2.4.1)</em>, <em>shiny(v.1.10.0)</em>, <em>digest(v.0.6.37)</em>, <em>fdrtool(v.1.2.18)</em>, <em>colorspace(v.2.1-2)</em>, <em>patchwork(v.1.3.0)</em>, <em>pkgload(v.1.4.1)</em>, <em>Hmisc(v.5.2-5)</em>, <em>labeling(v.0.4.3)</em>, <em>clusterGeneration(v.1.3.8)</em>, <em>httr(v.1.4.7)</em>, <em>abind(v.1.4-8)</em>, <em>compiler(v.4.5.2)</em>, <em>remotes(v.2.5.0)</em>, <em>bit64(v.4.6.0-1)</em>, <em>withr(v.3.0.2)</em>, <em>pander(v.0.6.6)</em>, <em>glasso(v.1.11)</em>, <em>htmlTable(v.2.4.3)</em>, <em>S7(v.0.2.1)</em>, <em>backports(v.1.5.0)</em>, <em>psych(v.2.6.1)</em>, <em>fastDummies(v.1.7.5)</em>, <em>pkgbuild(v.1.4.8)</em>, <em>MASS(v.7.3-65)</em>, <em>rappdirs(v.0.3.4)</em>, <em>sessioninfo(v.1.2.3)</em>, <em>corpcor(v.1.6.10)</em>, <em>gtools(v.3.9.5)</em>, <em>tools(v.4.5.2)</em>, <em>pbivnorm(v.0.6.0)</em>, <em>MplusAutomation(v.1.1.1)</em>, <em>foreign(v.0.8-90)</em>, <em>otel(v.0.2.0)</em>, <em>httpuv(v.1.6.16)</em>, <em>nnet(v.7.3-20)</em>, <em>glue(v.1.8.0)</em>, <em>quadprog(v.1.5-8)</em>, <em>nlme(v.3.1-168)</em>, <em>promises(v.1.3.2)</em>, <em>graphicalVAR(v.0.3.4)</em>, <em>grid(v.4.5.2)</em>, <em>checkmate(v.2.3.4)</em>, <em>cluster(v.2.1.8.1)</em>, <em>reshape2(v.1.4.5)</em>, <em>generics(v.0.1.4)</em>, <em>gtable(v.0.3.6)</em>, <em>tzdb(v.0.5.0)</em>, <em>data.table(v.1.18.2.1)</em>, <em>hms(v.1.1.4)</em>, <em>foreach(v.1.5.2)</em>, <em>pillar(v.1.11.1)</em>, <em>stringr(v.1.6.0)</em>, <em>vroom(v.1.6.6)</em>, <em>later(v.1.4.2)</em>, <em>splines(v.4.5.2)</em>, <em>lattice(v.0.22-7)</em>, <em>survival(v.3.8-3)</em>, <em>bit(v.4.6.0)</em>, <em>tidyselect(v.1.2.1)</em>, <em>miniUI(v.0.1.2)</em>, <em>pbapply(v.1.7-4)</em>, <em>knitr(v.1.51)</em>, <em>reformulas(v.0.4.4)</em>, <em>gridExtra(v.2.3)</em>, <em>stats4(v.4.5.2)</em>, <em>xfun(v.0.56)</em>, <em>texreg(v.1.39.4)</em>, <em>arm(v.1.14-4)</em>, <em>proto(v.1.0.0)</em>, <em>stringi(v.1.8.7)</em>, <em>yaml(v.2.3.12)</em>, <em>boot(v.1.3-31)</em>, <em>evaluate(v.1.0.5)</em>, <em>codetools(v.0.2-20)</em>, <em>tibble(v.3.3.1)</em>, <em>cli(v.3.6.5)</em>, <em>rpart(v.4.1.24)</em>, <em>xtable(v.1.8-4)</em>, <em>Rdpack(v.2.6.6)</em>, <em>lavaan(v.0.6-21)</em>, <em>dichromat(v.2.0-0.1)</em>, <em>Rcpp(v.1.1.1)</em>, <em>coda(v.0.19-4.1)</em>, <em>png(v.0.1-8)</em>, <em>parallel(v.4.5.2)</em>, <em>ellipsis(v.0.3.2)</em>, <em>ggplot2(v.4.0.2)</em>, <em>readr(v.2.1.5)</em>, <em>jpeg(v.0.1-11)</em>, <em>profvis(v.0.4.0)</em>, <em>urlchecker(v.1.0.1)</em>, <em>lme4(v.1.1-38)</em>, <em>glmnet(v.4.1-8)</em>, <em>mvtnorm(v.1.3-3)</em>, <em>scales(v.1.4.0)</em>, <em>crayon(v.1.5.3)</em>, <em>purrr(v.1.2.1)</em>, <em>rlang(v.1.1.7)</em> and <em>mnormt(v.2.1.2)</em></p>
+</div>
+</div>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Only after publishing the package, a football enthusiast made us aware of the widespread use of the term “VAR check” in football. We hope our procedure becomes equally universal, if slightly less controversial.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p><span class="faux-block"><i class="fa-brands fa-creative-commons" aria-label="creative-commons"></i> 2026 Björn Siepe</span></p>
+</div>   
+    <div class="nav-footer-center">
+<p><span class="faux-block"><a href="https://github.com/bsiepe/bsiepe.github.io"><i class="fa-brands fa-github" aria-label="github"></i> Source Code</a></span></p>
+</div>
+    <div class="nav-footer-right">
+<p><span class="faux-block"> Built with <a href="https://quarto.org/">Quarto</a></span> <span class="faux-block"> <a href="../../impressum/impressum.html">Impressum</a></span></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

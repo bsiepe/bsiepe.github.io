@@ -1,7 +1,7 @@
 ---
 title: "Model Checking for VAR Models"
-date: "2026-05-20"
-categories: [Website, Notes]
+date: "2026-05-26"
+categories: [Blog, Time Series, EMA]
 image: "VARcheck-screenshot.png"
 description: "Introducing VARcheck, a new R package for visual checks for VAR models."
 engine: knitr
@@ -12,33 +12,42 @@ author:
 
 execute:
   freeze: true
+  cache: true
 ---
 
-## Why check your VAR model?
 
-Whenever researchers in psychology are interested in the dynamic associations between two or more variables over time, a vector autoregressive (VAR) model or its multilevel extension typically are not far away. In the simplest form of a VAR model, each variable is predicted by itself and all others at the previous timepoint. 
+## Modeling Psychological Time Series with Vector Autoregressive Models
 
-When reading articles that apply VAR models, you will often find a description of the group-level effects of the model, often visualized as dynamic networks. If the focus is on heterogeneity, there commonly is some discussion of the variability of effects across individuals. However, what you will rarely find is some checking of the model properties. This is pretty unfortunate, because VAR models are complex models with many parameters, and it is not clear a priori whether the model assumptions are met for a given dataset. This may lead to incorrect conclusions, and to missing interesting patterns in the data that the model cannot capture.
+Researchers are trying to build dynamic models of the daily functioning of persons with the goal of understanding it and being able to predict the outcomes of interventions. In this context, they need to recover causal effects between variables. When we establish multiple such causal effects among a set of variables, we obtain a dynamic model. [Doing this is very difficult ](https://psycnet.apa.org/fulltext/2022-00806-001.html). However, one reasonable starting point could be to fit the simplest possible multivariate dynamical model directly to empirical data. This model is the Vector Autoregressive model, which in its simplest version models each variable at a given time point as a linear function of all variables including itself at the previous time point. Since the model seems a natural starting point and because software to estimate VAR models is readily available, it has become the most popular model for intensive longitudinal data.
 
-The absence of model checks, while partly explainable by the lack of tools to do so, is certainly somewhat paradoxical: We are commonly taught to apply model checks in simpler linear regression models, but do not follow this logic in their complex siblings, VAR models. It's a bit like wearing a helmet on a bike with training wheels, but taking it off when taking a fast motorcycle for a ride.
 
-In [Haslbeck et al. (2026)](https://doi.org/10.31234/osf.io/k6uz4_v3), we describe a model checking procedure for VAR models, which is briefly summarized in the figure below. In essence, we focus on four main plots for each individual time series: 
+## Why Check the Fit of Your VAR Model?
+
+When reading one of the many published articles reporting on multilevel VAR analyses, you typically only see the group-level effects of the model, usually represented as a directed network. Some studies also report the estimated variability of group-level effects. However, what almost no study reports is how well the VAR model actually fits the data. This is a massive issue for two reasons: First, if the model does not fit the data well, the interpretation of parameters is problematic at the very least and at worst may invalidate the conclusions of the entire analysis. Second, checking model fit and finding model misfit means discovering additional structure in the data that almost always is theoretically interesting.
+
+If model checking is so critical, why is nobody doing it? Most researchers know that they need to do model checks in linear regression, but they don't perform them in the more complicated VAR model. It's a bit like wearing a helmet on your city bike, but taking it off when taking your high-powered motorcycle for a spin. We found out why when trying to implement the model checks ourselves, identifying several practical barriers: First, there is no tutorial that explains the theory and possible diagnostics in the time series setting, which is more complicated than the standard regression context most researchers are familiar with. Second, it turned out to be very difficult to get predictions and residuals out of standard statistical software despite being methodologists ourselves. And third, creating multiple diagnostic plots for many variables and individuals required many hundreds of lines of code which not every researcher is comfortable writing. 
+
+[In our new paper on model checking for VAR models](https://doi.org/10.31234/osf.io/k6uz4_v3), we remove all of these barriers. We provide an accessible tutorial on performing visual model checks on (multilevel) VAR models, a new version of the popular `mlVAR` package that provides predictions and residuals in a single line of code, additional code to get residuals also from DSEM/Mplus, and the new R-package `VARcheck`, which reduces VAR model checks for multiple persons to a single line of R-code.
+
+As a first screening of VAR model fit, we recommend using four diagnostic plots:
 
 1. Visualizing empirical data and model predictions over time. Alongside this, we report $R^2$ and RMSE values to quantify predictability.
 2. Visualizing the residuals over time.
 3. Plotting residuals versus predicted values. 
 4. Comparing the distribution of the data to the distribution of simulated data based on the model parameters.
 
+The below figure explains where different quantities come from. We estimate the VAR model from the empirical data and compute predictions from it. By subtracting the predictions from the empirical data we obtain residuals. And we can use the fitted VAR model to generate new data which we can compare with the empirical data. We introduce the basic theory behind VAR model checking and motivate these particular visual checks [in our paper](https://doi.org/10.31234/osf.io/k6uz4_v3).
+
 ![Overview of the model checking procedure](ModelChecking_SystemsFigure.svg){fig-align="center" width="95%"}
 
+To make the model checking workflow as simple as possible, we extended existing software and developed new software. Sacha Epskamp created a new version of the R-package [mlVAR](https://cran.r-project.org/web/packages/mlVAR/index.html) which now includes functions to easily extract predictions and residuals. Joran Jongerling also [created a pipeline](https://github.com/jmbh/ModelCheckingForVAR) for getting predictions and residuals out of DSEM/Mplus. And we created the new R-package [`VARcheck`](https://bsiepe.github.io/VARcheck/), which provides a set of functions to conduct the model checking procedure described in the paper.^[Only after publishing the package, a football enthusiast made us aware of the widespread use of the term "VAR check" in football. We hope our procedure becomes equally universal, if slightly less controversial.] 
 
-To make implementation of this procedure easy, we have developed the [`VARcheck`](https://bsiepe.github.io/VARcheck/) package, which provides a set of functions to conduct the model checking procedure described in the paper.^[Only after publishing the package, a football enthusiast made us aware of the widespread use of the term "VAR check" in football. We hope our procedure becomes equally universal, if slightly less controversial.] We describe a brief walkthrough through this procedure in this blog post, and explain what to make of the results of the model checks. 
+In this blog post we describe a brief walkthrough of how to fit a standard multilevel VAR model with mlVAR and use its new functionality and the new R-package `VARcheck` to perform extensive model checks with only a few lines of code.
 
-## Preparation
+## Preparing Packages & Data
 
 As in the paper, we use data by [Grommisch et al.](https://doi.org/10.1037/emo0000669) who investigated individual differences in the use of emotion regulation strategies in daily life. The dataset is available on [openESM](https://openesmdata.org/datasets/0032_grommisch/) and can be easily loaded with the `openesm` package.
 
-At the time of writing this blog post, the functions that we need from `mlVAR` are not yet available in the CRAN version, so we install the GitHub version of the package.
 
 ```{r}
 #| message: false
@@ -46,7 +55,6 @@ At the time of writing this blog post, the functions that we need from `mlVAR` a
 library(openesm)
 library(VARcheck)
 library(devtools)
-devtools::install_github("SachaEpskamp/mlVAR")
 library(mlVAR)
 library(qgraph)
 
@@ -60,7 +68,7 @@ data <- openesm::get_dataset("0032_grommisch", version = "1.0.0")$data
 
 ```
 
-In the background, we conduct some light preprocessing of the data, which is described in the paper and in the [raw code](https://github.com/bsiepe/bsiepe.github.io/blog) of this blog post. Specifically, we add missing values for missed timepoints, as these are currently only missing implicitly. 
+In the background, we conduct some light preprocessing of the data, which is described in the paper and in the [raw code](https://github.com/bsiepe/bsiepe.github.io/blog) of this blog post. Specifically, we add missing values for missed timepoints, as these are missing only implicitly in the current dataset. We include those to retain the actual sequence of time points in the diagnostic plots.
 
 ```{r}
 #| eval: true
@@ -132,6 +140,9 @@ These are the group-level estimates for the temporal network, and their standard
 
 ```{r}
 #| message: false
+#| fig-align: "center"
+#| fig-width: 9
+#| fig-height: 6
 # column names
 capitalize_first <- function(x) paste0(toupper(substring(x, 1, 1)), substring(x, 2))
 col_labels <- capitalize_first(colnames(data_clean)[4:7])
@@ -182,29 +193,25 @@ qgraph(
 )
 ```
 
+The left network shows the group-level effects of the fitted VAR model. We see that all variables have relatively strong positive autocorrelations. Cross-lagged effects are a bit smaller in absolute value and positive between emotion measurements with the same valence, and negative between emotion measurements with a different valence. [This is a general pattern](https://psycnet.apa.org/fulltext/2025-60391-001.html) one finds in most VAR networks of affective variables. The right network shows the variability (as a standard deviation) in these parameters across persons.
 
-While we would typically be interested in interpreting the results in detail at this point, we here want to focus on the model checking procedure. Therefore, we will not go into the details of interpreting the results here - we provide a bit more information on them in the paper.  
+In most published papers, the modeling process ends here after a description of these networks. Here we continue with checking how well the VAR model actually fits the data.
 
+## Checking VAR Model Fit
 
-In most published papers, the modeling process would end here after a description of these networks. However, we argue that it is crucial to check the model fit when interpreting the results. In the next section, we show how to use `VARcheck` for this purpose.
-
-
-## Checking your VAR model
-
-
-To check the model fit visually, we first need to obtain predicted values, residuals, and simulated data based on the parameters of the VAR model. Luckily, `mlVAR` provides helper functions that makes this very easy.
+To check the model fit visually, we first need to obtain predicted values, residuals, and simulated data based on the parameters of the VAR model. The new version of `mlVAR` provides helper functions that make this very easy:
 
 ```{r}
 #| message: false
 pred_df <- predict(mlVAR_out)
 res_df  <- residuals(mlVAR_out)
-sim_df <- mlVAR:::resimulate(mlVAR_out, keep_missing = TRUE,
+sim_df <- resimulate(mlVAR_out, keep_missing = TRUE,
                               variance = "empirical")
 ```
 
-We can then pass these objects to `new_var_data()`, one of the two main functions of `VARcheck`, which takes three required inputs (empirical data, model predictions, and residuals), each as a T × p numeric matrix (time points × variables). Simulated data for posterior predictive checks is optional but enables the rightmost column of the diagnostic grid. This means that `VARcheck` can be used with any VAR model as long as the empirical data, model predictions, and residuals are available in the required format.
+We can then pass these objects to `new_var_data()`, one of the two main functions of `VARcheck`, which takes three required inputs (empirical data, model predictions, and residuals), each as a $T \times p$ numeric matrix (time points × variables). Simulated data for posterior predictive checks is optional but enables the rightmost column of the diagnostic grid. This means that `VARcheck` can be used with any VAR model as long as the empirical data, model predictions, and residuals are available in the required format.
 
-Here, we only use data of a single individual for demonstration purposes, but the same procedure can be applied to all individuals in the dataset. See our [package documentation](https://bsiepe.github.io/VARcheck/articles/getting-started.html#using-mlvar-outputs) for more information. As in the paper, we choose individual 33 for demonstration purposes. 
+Here, we only use data of a single individual for demonstration purposes, but the same procedure can be (and should be) applied to all individuals in the dataset. See our [package documentation](https://bsiepe.github.io/VARcheck/articles/getting-started.html#using-mlvar-outputs) for more information. We choose individual 33 for demonstration purposes. 
 
 ```{r}
 all_ids <- unique(data_clean$id)
@@ -228,32 +235,30 @@ We then use `plot_var_check()` to plot the diagnostic grid:
 ```{r}
 #| warning: false
 #| fig-width: 9
-#| fig-height: 11
+#| fig-height: 9
 plot_var_check(vd)
 ```
 
 Starting with the first row (for the variable Happy), we can see frequent switching behavior between states around 25 and 75. As a consequence, collapsing the observations across time (on the right-hand side of the first column of plots) leads to a bimodal distribution. The predictions are far off the observations, which is reflected by an $R^2$ close to zero and a relatively large RMSE of 22. 
 
-In the next column, the residuals look similar to the data, only a bit less bimodal. The next plot, showing residuals as a function of predictions, again shows the bimodality of the residuals we have already seen in the second plot. The simulated data in the last plot does not reproduce the bimodal distribution of the data, indicating model misfit.
+In the next column, the residuals look similar to the data, only a bit less bimodal. The next plot, showing residuals as a function of predictions, again shows the bimodality of the residuals we have already seen in the second plot. If the VAR model fit well we would expect a Gaussian distribution and the bimodal residuals therefore indicate model misfit. The third column plotting residuals against predictions shows us again the bimodality of the residuals. The final column shows the simulated time series of Happy from the overall VAR model. We see that the time series looks very different and does not show the bimodal distribution of the empirical data, which again indicates model misfit.
 
-
-Inspecting the diagnostic plots for the remaining variables Relaxed, Sad, and Angry leads us to similar conclusion. The distributions of the data and the residuals are all bimodal. The main characteristic of the time series of Person 33 is the frequent switching between states and the implied bimodality in distributions. This is a dynamic the VAR model cannot capture and the model is therefore strongly misspecified for these data. For this individual, we could therefore not trust the results of the VAR model and would have to consider alternative models that can capture this switching behavior, such as a regime-switching model. 
+Inspecting the diagnostic plots for the remaining variables Relaxed, Sad, and Angry leads us to similar conclusions. The distributions of the data and the residuals are all bimodal. The main characteristic of the time series of Person 33 is the frequent switching between states and the implied bimodality in distributions. This is a dynamic the VAR model cannot capture and the model is therefore strongly misspecified for these data. For this individual, we could therefore not interpret the parameters of the VAR model in a meaningful way and would have to consider alternative models that can capture this type of switching behavior such as regime switching models.
 
 
 ## Where do you go from here?
 
-The most simple takeaway is: Things are messy, and ignoring that fact is not a good idea. What can we learn from the mess? Reporting model checks and potential misfit is crucial for the interpretation of results, and for the development of better models. Having supplements where readers can take a look at the model checks and get a feeling for the data and the model fit would be useful. If you find that your model does not fit the data well, you have a few options how to proceed. We outline three main ideas here: 
+In practice, one would inspect the diagnostic plots for all persons and one might find that the model does not fit the data for a subset of persons, perhaps for different reasons. What to do then? Of course, there cannot be a simple answer. That would be like asking a mechanic for one universal fix for every car that makes a strange noise. What is a good way forward will depend on the goals and the context of the study at hand. That said, in our paper, we discuss some of the things one might want to think about when deciding what to do next:
 
-1. **Improve measurement**: Some forms of misfit, such as bimodality, might be (partially) induced by measurement. Using different items, or different response scales, might help to reduce this problem.
+1. **Improve measurement**: Some forms of misfit, such as bimodality, might be (partially) induced by measurement. Using different items, response scales, or instructions might help to reduce these types of problems. After removing such measurement artifacts, it is easier to model the latent dynamics most researchers are primarily interested in.
 
-2. **Embrace model building**: There are many flexible modeling frameworks that can capture complex dynamics, such as hidden Markov models, Bayesian models that allow for moderation effects, or models that account for changes over time. If your model does not fit the data well, you could consider using one of these more flexible models, building your way towards a more accurate representation of the data.
+2. **Embrace model building**: There are many flexible modeling frameworks that can allow for extensions of VAR-type models to capture more complex structure in time series data. But there are also other modeling frameworks, such as state-switching Hidden Markov Models. If your model does not fit the data well, the analysis of the precise nature of the misfit might point you in the direction of one of those extensions or alternative models.
 
-3. **Theory development**: Instead of using statistical time series models to capture all systematic effects in a time series, we could also use them to test and develop scientific theories. This can be done by making predictions from a theory about a certain structure in time series data. For example, this could involve bimodality, or other particular patterns in the data. 
+3. **Theory development**: Much of the current time series modeling is based on the premise that we can estimate a believable and useful dynamic model directly from one single dataset. However, [how realistic is this](https://www.tandfonline.com/doi/full/10.1080/00273171.2021.1896353) given the many complexities about human functioning? Developing formal theories (or computational models) provides a more flexible approach that allows one to [integrate different data sources](https://www.tandfonline.com/doi/full/10.1080/00273171.2024.2336178). Such a framework of course also makes use of time series data, but not to estimate the model in one shot, but rather to test specific predictions the computational model makes about specific time series data.
 
-If you try `VARcheck` on your own data, we'd be curious what you find, especially if the model fits poorly in ways we haven't discussed here.
+If you try `VARcheck` on your own data, we'd be curious what you find, especially if the model fits poorly in ways we haven't discussed here. So feel free to reach out!
 
 ## Computational Details
-
 
 These are the packages and versions used in this blog post: 
 

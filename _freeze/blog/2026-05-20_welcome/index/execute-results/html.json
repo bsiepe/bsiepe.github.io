@@ -1,0 +1,15 @@
+{
+  "hash": "67892fdf50af33949f823ec081b01020",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Model Checking for VAR Models\"\ndate: \"2026-05-20\"\ncategories: [Website, Notes]\nimage: \"../../files/images/bjoern_headshot.png\"\ndescription: \"Introducing VARcheck, a new R package for visual checks for VAR models.\"\nengine: knitr\ncomments: false\nexecute:\n  freeze: true\n---\n\nThis is a placeholder.",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
