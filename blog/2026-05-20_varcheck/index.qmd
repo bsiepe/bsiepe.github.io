@@ -152,7 +152,7 @@ sc <- 2
 sc_2 <- 0.6
 title_cex <- 1.1
 
-par(mfrow=c(1,2))
+par(mfrow=c(1,2), oma=c(0,0,2,0))
 
 # Network
 qgraph(
@@ -166,7 +166,7 @@ qgraph(
   edge.labels = TRUE,
   edge.label.cex = 1.5,
   fade = F,
-  mar = rep(5, 4),
+  mar = rep(7, 4),
   palette = "colorblind",
   theme = "colorblind",
   title = "Fixed Effects Estimates",
@@ -184,7 +184,7 @@ qgraph(
   edge.labels = TRUE,
   edge.label.cex = 1.5,
   fade = F,
-  mar = rep(5, 4),
+  mar = rep(7, 4),
   edge.color = "grey",
   palette = "colorblind",
   theme = "colorblind",
