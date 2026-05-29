@@ -1,0 +1,15 @@
+{
+  "hash": "3239ea6ed80045809148c5b8331f09e4",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Using features of dynamic networks to guide treatment selection and outcome prediction: The central role of uncertainty\"\nauthor: \"Björn Siepe\"\ndate: \"2026-05-26\"\ncategories: [Time Series, EMA, Network Analysis]\nimage: \"bmlvar_inforaphic.png\"\nengine: knitr\ncomments: false\nexecute:\n  freeze: true\ndescription: \"Talk at the APS Annual Convention (2026), Barcelona, Spain\"\nlicense: \"CC BY\"\ncv:\n  pdf1: \"APS-Centrality-Talk-Siepe-2026.pdf\"\n---\n\nSee [here](https://osf.io/preprints/psyarxiv/2c8xf_v2) for the preprint.\n\n\n::: {.cell}\n<style type=\"text/css\">\n.embed-container {\n    position: relative;\n    padding-bottom: 100%;\n    height: 0;\n    overflow: hidden;\n    max-width: 100%;\n}\n.embed-container iframe,\n.embed-container object,\n.embed-container embed {\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 80%;\n    height: 80%;\n}\n</style>\n:::\n\n\nFind the slides here:\n\n```{=html}\n<p class=\"text-center\">\n  <a class=\"btn btn-primary btn-lg cv-download\" href=\"\" target=\"_blank\">\n    <i class=\"fa-solid fa-file-arrow-down\"></i>&ensp;Download PDF Slides\n  </a>\n</p>\n<div class=\"embed-container\">\n  <iframe src=\"APS-Centrality-Talk-Siepe-2026.pdf\" style=\"border: 0.5px\"></iframe>\n</div>\n```\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
