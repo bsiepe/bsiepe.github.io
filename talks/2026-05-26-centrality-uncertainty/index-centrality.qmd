@@ -3,7 +3,7 @@ title: "Using features of dynamic networks to guide treatment selection and outc
 author: "Björn Siepe"
 date: "2026-05-26"
 categories: [Time Series, EMA, Network Analysis]
-image: "bmlvar_inforaphic.png"
+image: "bmlvar_screenshot.png"
 engine: knitr
 comments: false
 execute:
