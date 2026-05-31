@@ -250,6 +250,7 @@ listing:
         <span class="role-badge">Maintainer</span>
         <span class="role-badge">Author</span>
     </div>
+    <a class="package-link" href="https://doi.org/10.32614/CRAN.package.VARcheck">CRAN</a>
     <a class="github-link" href="https://github.com/bsiepe/VARcheck">GitHub</a>
 </div>
 
