@@ -44,10 +44,3 @@ I'm committed to open science practices. Together with collaborators, I built [o
 Feel free to browse my [publications](../publications), [software](../software), or [CV](../cv), or [contact me](mailto:bjoernsiepe@gmail.com) directly.
 :::
 
-
-```{html, echo = FALSE}
-<script data-goatcounter="https://bsiepe.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
-
-```
-

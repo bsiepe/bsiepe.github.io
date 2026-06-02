@@ -60,5 +60,6 @@ format:
     page-layout: full
     fontsize: 1.23em
     linestretch: 1.7
+    include-after-body: goatcounter.html
 
 editor: visual
