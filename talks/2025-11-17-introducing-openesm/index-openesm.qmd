@@ -1,7 +1,7 @@
 ---
 title: "Introducing openESM: A database of openly available experience sampling datasets"
 author: "Björn Siepe"
-date: "2025-11-18"
+date: "2026-06-16"
 categories: [Time Series, EMA, openESM, open science]
 image: "openesm_icon.png"
 engine: knitr
@@ -16,6 +16,7 @@ cv:
   pdf3: "openESM-Talk-MITNB-Siepe.pdf"
   pdf4: "openESM-Talk-NTU-Siepe-2026.pdf"
   pdf5: "APS-openESM-Talk-Siepe-2026.pdf"
+  pdf6: "openESM-Talk-SDMH-Siepe-2026.pdf"
 ---
 
 See [here](https://doi.org/10.31234/osf.io/qfdtb_v1) for the preprint introducing [openESM](https://openesmdata.org).
@@ -37,6 +38,20 @@ See [here](https://doi.org/10.31234/osf.io/qfdtb_v1) for the preprint introducin
     width: 80%;
     height: 80%;
 }
+```
+
+
+Find the slides for the talk at SDMH here: 
+
+```{=html}
+<p class="text-center">
+  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf6`" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download PDF Slides
+  </a>
+</p>
+<div class="embed-container">
+  <iframe src="`r rmarkdown::metadata$cv$pdf6`" style="border: 0.5px"></iframe>
+</div>
 ```
 
 
