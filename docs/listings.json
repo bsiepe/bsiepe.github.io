@@ -12,6 +12,7 @@
   {
     "listing": "/talks/index.html",
     "items": [
+      "/talks/2026-06-24-improving-methods-research/index-methods.html",
       "/talks/2025-11-17-introducing-openesm/index-openesm.html",
       "/talks/2026-05-26-centrality-uncertainty/index-centrality.html",
       "/talks/2025-05-28-saa-sensors/index-saa.html",
@@ -30,13 +31,13 @@
     ]
   },
   {
-    "listing": "/software/index.html",
-    "items": []
-  },
-  {
     "listing": "/blog/index.html",
     "items": [
       "/blog/2026-05-20_varcheck/index.html"
     ]
+  },
+  {
+    "listing": "/software/index.html",
+    "items": []
   }
 ]
