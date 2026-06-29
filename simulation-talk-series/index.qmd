@@ -62,6 +62,7 @@ These talks cover topics currently discussed in the scientific community. Opinio
 
 📎 Meeting links differ between talks and are listed in the schedule below. Recordings will be added consecutively.  
 ✉️ For questions, contact [bjoern.siepe@uni-marburg.de](mailto:bjoern.siepe@uni-marburg.de).
+🗓 Download an .ics file with the calendar events for talks 4 to 6 [here](https://bsiepe.github.io/simulation-talk-series/Simulation-Lecture-Dates.ics).  
 
 ---
 
