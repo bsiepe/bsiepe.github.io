@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ICS Generator//NONSGML ICS Generator//DE
+BEGIN:VEVENT
+UID:1782722939203-4vxeavb?@ics-generator.de
+DTSTAMP:20260629T163306Z
+DTSTART:20260701T120000
+DTEND:20260701T130000
+SUMMARY:Simulation Lunch Lectures: Björn Siepe
+DESCRIPTION:Title of the talk: "Simulation studies in psychology: State of the art\, problems\, and potential solutions"\nMeeting room: https://webconf.hrz.uni-marburg.de/n/rooms/wvp-c2q-ibf-qw8/join\nAdditional infos: https://bsiepe.github.io/simulation-talk-series/
+URL:https://webconf.hrz.uni-marburg.de/n/rooms/wvp-c2q-ibf-qw8/join
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT30M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1782722939204-qqbb5rp?@ics-generator.de
+DTSTAMP:20260629T163306Z
+DTSTART:20261007T120000
+DTEND:20261007T130000
+SUMMARY:Simulation Lunch Lectures: František Bartoš
+DESCRIPTION:Title of the talk: "Synthetic benchmarking for simulation studies"\nMeeting room: https://webconf.hrz.uni-marburg.de/n/rooms/wvp-c2q-ibf-qw8/join\nAdditional infos: https://bsiepe.github.io/simulation-talk-series/
+URL:https://webconf.hrz.uni-marburg.de/n/rooms/wvp-c2q-ibf-qw8/join
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT30M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:1782722939204-e107hyj?@ics-generator.de
+DTSTAMP:20260629T163306Z
+DTSTART:20261104T120000
+DTEND:20261104T130000
+SUMMARY:Simulation Lunch Lectures: Anouk Bouma
+DESCRIPTION:Title of the talk: "Reporting practices\, open science practices\, and trustworthiness of simulation studies in psychology"\nMeeting room: https://webconf.hrz.uni-marburg.de/n/rooms/wvp-c2q-ibf-qw8/join\nAdditional infos: https://bsiepe.github.io/simulation-talk-series/
+URL:https://webconf.hrz.uni-marburg.de/n/rooms/wvp-c2q-ibf-qw8/join
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT30M
+DESCRIPTION:Reminder
+END:VALARM
+END:VEVENT
+END:VCALENDAR

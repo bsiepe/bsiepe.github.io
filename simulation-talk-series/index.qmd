@@ -38,36 +38,34 @@ page-layout: full
 </style>
 ```
 
-
 ## About the Series
 
 This is a recurring talk series on Monte Carlo simulation studies in psychology and related fields, intended for a broad audience:
 
--  **Students** interested in learning about simulation studies
--  **Applied researchers** who want to learn more about methodological research  
--  **Methodologists** wishing to stay up to date on the latest developments
+-   **Students** interested in learning about simulation studies
+-   **Applied researchers** who want to learn more about methodological research\
+-   **Methodologists** wishing to stay up to date on the latest developments
 
 Talks are held in **English** and are **free to attend** for everyone.
 
----
+------------------------------------------------------------------------
 
 The series starts with two introductory talks on the design and implementation of simulation studies in R, followed by talks on questionable research practices, the state of the art and potential solutions, synthetic benchmarking, and reporting and open science practices.
 
-🗓️ **Time:** Noon (Berlin time) on the first Wednesday of each month (except August and September)  
+🗓️ **Time:** Noon (Berlin time) on the first Wednesday of each month (except August and September)\
 🏛️ **Organizer:** Working Group "Quality Standards of Simulation Studies" of the Methods and Evaluation Division of the German Psychological Society (DGPs)
 
----
+------------------------------------------------------------------------
 
 These talks cover topics currently discussed in the scientific community. Opinions may differ, and the talks do not necessarily reflect the views of all working group members — they aim to provide a platform for learning and discussion.
 
-📎 Meeting links differ between talks and are listed in the schedule below. Recordings will be added consecutively.  
-✉️ For questions, contact [bjoern.siepe@uni-marburg.de](mailto:bjoern.siepe@uni-marburg.de).
-🗓 Download an .ics file with the calendar events for talks 4 to 6 [here](https://bsiepe.github.io/simulation-talk-series/Simulation-Lecture-Dates.ics).  
+📎 Meeting links differ between talks and are listed in the schedule below. Recordings will be added consecutively.\
+✉️ For questions, contact [bjoern.siepe\@uni-marburg.de](mailto:bjoern.siepe@uni-marburg.de).\
+🗓 Download an .ics file with the calendar events for talks 4 to 6 [here](https://bsiepe.github.io/simulation-talk-series/Simulation-Lecture-Dates.ics).
 
----
+------------------------------------------------------------------------
 
-For students and early career researchers, the youth member representatives of the Methods and Evaluation Division of the DGPs organize a yearly online hands-on workshop on simulation studies (in German). If you are interested in joining the next round, contact [jungmitglieder.me@gmail.com](mailto:jungmitglieder.me@gmail.com). 
-
+For students and early career researchers, the youth member representatives of the Methods and Evaluation Division of the DGPs organize a yearly online hands-on workshop on simulation studies (in German). If you are interested in joining the next round, contact [jungmitglieder.me\@gmail.com](mailto:jungmitglieder.me@gmail.com).
 
 ## Schedule 2026
 
