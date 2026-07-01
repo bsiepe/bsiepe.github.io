@@ -1,7 +1,7 @@
 ---
 title: "Simulation Studies for Methodological Research: State of the Art, Issues, and Potential Solutions"
-author: "Björn Siepe & Samuel Pawel"
-date: "2025-04-16"
+author: "Björn Siepe"
+date: "2026-07-01"
 categories: [Simulation Studies, Open Science, Metascience]
 image: "simstudies.png"
 engine: knitr
@@ -9,11 +9,12 @@ comments: false
 license: "CC BY"
 execute:
   freeze: true
-description: "Invited talk at the colloquium of the Methods and Evaluation / Quality Assurance Unit at the Freie Universität Berlin and the colloquium of the Statistics & Psychological Methods Working Unit at the University of Münster, and a conference talk at the Conference of the DGPs Methods and Evaluation Section 2025."
+description: "Invited talk at FU Berlin, University of Münster Conference of the DGPs Methods and Evaluation Section 2025, and Simulation Lunch Lectures Series 2026."
 cv:
   pdf1: "Muenster_Kolloquium25-Siepe.pdf"
   pdf2: "FU_Kolloquium25-Pawel-Siepe.pdf"
   pdf3: "FGME_Talk_Siepe.pdf"
+  pdf4: "Sim-Lunch-Lectures-Siepe-2026.pdf"
 ---
 
 The manuscript associated with the talk is available was published in [Psychological Methods](https://psycnet.apa.org/doi/10.1037/met0000695); an accepted version is available at [PsyArxiv](https://osf.io/preprints/psyarxiv/ufgy6/).
@@ -35,6 +36,20 @@ The manuscript associated with the talk is available was published in [Psycholog
     width: 80%;
     height: 80%;
 }
+```
+
+
+Find the slides for the Lunch Talk Series here:
+
+```{=html}
+<p class="text-center">
+  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf4`" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download PDF Slides
+  </a>
+</p>
+<div class="embed-container">
+  <iframe src="`r rmarkdown::metadata$cv$pdf4`" style="border: 0.5px"></iframe>
+</div>
 ```
 
 Find the slides for the FGME conference here:
@@ -63,7 +78,7 @@ Find the slides for Münster here:
 </div>
 ```
 
-Find the (very similar) slides for Berlin here:
+Find the (very similar) slides for Berlin, given together with Samuel Pawel, here:
 
 ```{=html}
 <p class="text-center">
