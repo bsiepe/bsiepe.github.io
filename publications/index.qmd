@@ -33,30 +33,28 @@ title: "Publications & Preprints"
         }
         
         .year-header {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
-            margin-top: 36px;
-            margin-bottom: 16px;
-            padding-bottom: 6px;
-            border-bottom: 2px solid #495057;
+            margin-top: 34px;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #d9dde1;
             color: #495057;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.01em;
         }
 
         .publication {
-            margin-bottom: 18px;
-            padding: 12px 14px;
-            background: #fafbfc;
-            border-radius: 6px;
-            border: 1px solid #e8e9eb;
-            border-left: 2px solid #6c757d;
+            margin: 0;
+            padding: 14px 0;
+            border-bottom: 1px solid #e8e9eb;
+            background: transparent;
+            border-radius: 0;
             box-shadow: none;
-            transition: box-shadow 0.2s ease, border-color 0.2s ease;
+            transition: background-color 0.2s ease;
         }
 
         .publication:hover {
-            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-            border-left-color: #495057;
+            background: #fcfcfd;
         }
 
         .papertitle {
@@ -96,12 +94,12 @@ title: "Publications & Preprints"
         .link {
             font-size: 12px;
             display: inline-block;
-            padding: 5px 12px;
-            background: #495057;
-            color: white;
+            padding: 4px 10px;
+            background: transparent;
+            color: #495057;
             text-decoration: none;
-            border-radius: 4px;
-            border: 1px solid #495057;
+            border-radius: 999px;
+            border: 1px solid #d6dbe1;
             margin-right: 6px;
             margin-bottom: 6px;
             transition: all 0.2s ease;
@@ -109,9 +107,9 @@ title: "Publications & Preprints"
         }
 
         .link:hover {
-            background: #212529;
-            border-color: #212529;
-            color: white;
+            background: #f4f6f8;
+            border-color: #adb5bd;
+            color: #212529;
         }
 
         .link::before {
@@ -125,12 +123,12 @@ title: "Publications & Preprints"
         .code-link {
             font-size: 12px;
             display: inline-block;
-            padding: 5px 12px;
-            background: white;
+            padding: 4px 10px;
+            background: transparent;
             color: #6c757d;
             text-decoration: none;
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
+            border: 1px solid #d6dbe1;
+            border-radius: 999px;
             margin-right: 6px;
             margin-bottom: 6px;
             transition: all 0.2s ease;
@@ -138,9 +136,9 @@ title: "Publications & Preprints"
         }
 
         .code-link:hover {
-            background: #f8f9fa;
+            background: #f4f6f8;
             color: #212529;
-            border-color: #6c757d;
+            border-color: #adb5bd;
         }
 
         .code-link::before {
@@ -154,12 +152,12 @@ title: "Publications & Preprints"
         .preregistration-link {
             font-size: 12px;
             display: inline-block;
-            padding: 5px 12px;
-            background: white;
+            padding: 4px 10px;
+            background: transparent;
             color: #198754;
             text-decoration: none;
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
+            border: 1px solid #d6dbe1;
+            border-radius: 999px;
             margin-right: 6px;
             margin-bottom: 6px;
             transition: all 0.2s ease;
@@ -167,9 +165,9 @@ title: "Publications & Preprints"
         }
 
         .preregistration-link:hover {
-            background: #f8f9fa;
+            background: #f4f6f8;
             color: #15732e;
-            border-color: #198754;
+            border-color: #74c69d;
         }
 
         .preregistration-link::before {
@@ -183,12 +181,12 @@ title: "Publications & Preprints"
         .shiny-app-link {
             font-size: 12px;
             display: inline-block;
-            padding: 5px 12px;
-            background: white;
+            padding: 4px 10px;
+            background: transparent;
             color: #0b7285;
             text-decoration: none;
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
+            border: 1px solid #d6dbe1;
+            border-radius: 999px;
             margin-right: 6px;
             margin-bottom: 6px;
             transition: all 0.2s ease;
@@ -196,9 +194,9 @@ title: "Publications & Preprints"
         }
 
         .shiny-app-link:hover {
-            background: #f8f9fa;
+            background: #f4f6f8;
             color: #0b5ed7;
-            border-color: #0dcaf0;
+            border-color: #84d2f6;
         }
 
         .shiny-app-link::before {
@@ -211,7 +209,7 @@ title: "Publications & Preprints"
         /* Responsive design */
         @media (max-width: 768px) {
             .publication {
-                padding: 10px 12px;
+                padding: 12px 0;
             }
             
             .papertitle {
@@ -227,6 +225,17 @@ title: "Publications & Preprints"
 <body>
 <div class="year-header">2026</div>
 
+
+<div class="publication">
+    <div class="papertitle">Using features of dynamic networks to guide treatment selection and outcome prediction: The central role of uncertainty</div>
+    <div class="authors">B.S. Siepe, M. Kloft, Y. Zhang, F. Petersen, L.F. Bringmann, D.W. Heck</div>
+    <div class="journal">Psychological Methods (Accepted for Publication)</div>
+    <a class="link" href="https://doi.org/10.31234/osf.io/2c8xf_v1">Preprint</a>
+    <a class="code-link" href="https://osf.io/njvgc/">Code & Data</a>
+    <a class="preregistration-link" href="https://osf.io/a96dt/overview">Preregistration</a>
+</div>
+
+
 <div class="publication">
     <div class="papertitle">Identifying careless responding in ecological momentary assessment: Inconsistent signals
 from different detection methods in the WARN-D data</div>
@@ -240,8 +249,8 @@ from different detection methods in the WARN-D data</div>
 <div class="publication">
     <div class="papertitle">Introducing openESM: A database of openly available experience sampling datasets</div>
     <div class="authors">B.S. Siepe, J.M.B. Haslbeck, M. Kloft, A. Büchner, Y. Zhang, E.I. Fried, D.W. Heck</div>
-    <div class="journal">Behavior Research Methods (Accepted for Publication)</div>
-    <a class="link" href="https://osf.io/qfdtb_v1">Preprint</a>
+    <div class="journal">Behavior Research Methods, 58(8), 240</div>
+    <a class="link" href="https://doi.org/10.3758/s13428-026-03112-y">Paper</a>
     <a class="code-link" href="https://github.com/openesm-project/">Code</a>
     <a class="shiny-app-link" href="https://openesmdata.org">Website</a>
 </div>
@@ -290,15 +299,6 @@ from different detection methods in the WARN-D data</div>
     <a class="link" href="https://doi.org/10.31234/osf.io/ck3js_v1">Preprint</a>
     <a class="code-link" href="https://osf.io/r7u23/">Code & Data</a>
     <a class="preregistration-link" href="https://osf.io/6hc9w/">Preregistration</a>
-</div>
-
-<div class="publication">
-    <div class="papertitle">Using features of dynamic networks to guide treatment selection and outcome prediction: The central role of uncertainty</div>
-    <div class="authors">B.S. Siepe, M. Kloft, Y. Zhang, F. Petersen, L.F. Bringmann, D.W. Heck</div>
-    <div class="journal">PsyArXiv Preprint</div>
-    <a class="link" href="https://doi.org/10.31234/osf.io/2c8xf_v1">Preprint</a>
-    <a class="code-link" href="https://osf.io/njvgc/">Code & Data</a>
-    <a class="preregistration-link" href="https://osf.io/a96dt/overview">Preregistration</a>
 </div>
 
 <div class="publication">

@@ -6,29 +6,6 @@ about:
 engine: knitr
 ---
 
-<!-- ::: {.grid} -->
-
-<!-- ::: {.g-col-12 .g-col-md-3} -->
-
-<!-- ![](files/images/bjoern_headshot.png){width=100% fig-alt="An image of Björn Siepe"} -->
-
-<!-- :::  -->
-
-<!-- ::: {.g-col-12 .g-col-md-9} -->
-
-<!-- My name is Björn Siepe, and I am a PhD student in Psychological Methods at -->
-
-<!-- the [University of Marburg, Germany](https://www.uni-marburg.de/de/fb04/team-heck/team/bjoern-siepe).  -->
-
-<!-- In my methodological work, I study uncertainty in psychological time series analysis, network models, and predictive modelling. I'm also interested in using longitudinal and passive sensor data to better understand and predict mental disorders.  -->
-
-<!-- I am passionate about the open science movement and have been actively involved in the local open science groups in Frankfurt and Marburg. I have been involved in (co-)hosting multiple recurring events, such as the [ReproducibiliTea](https://frankfurt-osi.netlify.app/top/reproducibilitea/) journal club or [Brainhack School](https://openscienceinitiativeuniversitymarburg.github.io/). If possible, I publish all my projects with open data and code. -->
-
-<!-- To find all my publications and talks, take a look at my [CV](../cv). -->
-
-<!-- ::: -->
-
-<!-- ::: -->
 
 ```{css, echo = FALSE}
 .justify {
@@ -36,11 +13,31 @@ engine: knitr
 }
 ```
 
-::: justify
-I am a Doctoral student in Psychological Methods at [Marburg University, Germany](https://www.uni-marburg.de/de/fb04/team-heck/team/bjoern-siepe). <br> My research focuses on three areas: metascience of methodological research, time series modelling, and applied experience sampling research. I'm interested in understanding how we can make methodological research more robust and transparent, and how we can better model intensive longitudinal data.
+::: {.home-content .justify}
+I am a postdoctoral researcher at [Marburg University, Germany](https://www.uni-marburg.de/de/fb04/team-heck/team/bjoern-siepe), where I recently finished my PhD in Psychological Methods. My [research](../publications) focuses on three areas: metascience of methodological research, time series modelling, and applied experience sampling research.
 
-I'm committed to open science practices. Together with collaborators, I built [openESM](https://openesmdata.org), an open-source database of 60+ experience sampling datasets. I'm also a board member of the [Open Science Initiative](https://openscienceinitiativeuniversitymarburg.github.io/) at Marburg University. <br>
+My methodological work influences my metascientific work, where I study how we can conduct methodological research in a transparent, robust, and reproducible way. One result of this work was the introduction of [ADEMP-PreReg](https://github.com/bsiepe/ADEMP-PreReg), a protocol for reporting and preregistering simulation studies. I'm currently (co-)chairing two working groups on quality standards for simulation studies, and I'm always open to chat about novel ideas to improve methodological research.
 
-Feel free to browse my [publications](../publications), [software](../software), or [CV](../cv), or [contact me](mailto:bjoernsiepe@gmail.com) directly.
+I have always enjoyed teaching statistics and programming to students and researchers. Over the years, I have given multiple workshops on reproducible research and time series modelling, for which you can find the materials on my [workshop page](../workshops).
+
+I'm committed to open science practices. Together with collaborators, I built [openESM](https://openesmdata.org), an open-source database of 60+ experience sampling datasets. We are actively working on expanding the database and making it easier for researchers to use it. Updates on the project can be found on the [openESM blog](https://openesmdata.org/blog/). I'm also a board member of the [Open Science Initiative](https://openscienceinitiativeuniversitymarburg.github.io/) at Marburg University.
+
+**News**
+
+::: {.news-timeline}
+<div class="news-row">
+  <div class="news-date">July 2026</div>
+  <div class="news-entry">I was awarded with a 3-year Individual Research Grant by the German Research Foundation.</div>
+</div>
+<div class="news-row">
+  <div class="news-date">July 2026</div>
+  <div class="news-entry">I just defended my PhD in Psychological Methods.</div>
+</div>
+<div class="news-row">
+  <div class="news-date">July 2026</div>
+  <div class="news-entry">openESM received a [SIPS commendation](https://improvingpsych.org/mission/awards/).</div>
+</div>
+
+:::
 :::
 

@@ -152,3 +152,56 @@ pre.text, pre.sourceCode, .cell-output pre {
         }
     }
 }
+
+.home-content {
+    max-width: 52rem;
+    margin: 0 auto;
+}
+
+.home-content p {
+    line-height: 1.5;
+    margin-bottom: 0.9rem;
+}
+
+.news-timeline {
+    margin: 0.25rem 0 1rem;
+    border-left: 1px solid $gray-300;
+    padding-left: 0.8rem;
+}
+
+.news-row {
+    display: grid;
+    grid-template-columns: 6.2rem 1fr;
+    column-gap: 0.7rem;
+    align-items: start;
+    margin-bottom: 0.35rem;
+}
+
+.news-row:last-child {
+    margin-bottom: 0;
+}
+
+.news-date {
+    color: inherit;
+    font-size: 0.96rem;
+    line-height: 1.4;
+    font-weight: inherit;
+    white-space: nowrap;
+}
+
+.news-entry {
+    font-size: 0.96rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 640px) {
+    .news-row {
+        grid-template-columns: 1fr;
+        row-gap: 0.05rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .news-date {
+        font-size: 0.96rem;
+    }
+}

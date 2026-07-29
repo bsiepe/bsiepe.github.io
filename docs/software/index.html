@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-622e6c9d8f8a320c8c7f5f7616704e60.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-469ed5f6df9ccc6d3b1a772362a842ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -250,30 +250,28 @@ window.Quarto = {
         }
         
         .category-header {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
-            margin-top: 36px;
-            margin-bottom: 16px;
-            padding-bottom: 6px;
-            border-bottom: 2px solid #495057;
+            margin-top: 34px;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #d9dde1;
             color: #495057;
-            letter-spacing: 0.02em;
+            letter-spacing: 0.01em;
         }
 
         .software-item {
-            margin-bottom: 18px;
-            padding: 12px 14px;
-            background: #fafbfc;
-            border-radius: 6px;
-            border: 1px solid #e8e9eb;
-            border-left: 2px solid #6c757d;
+            margin: 0;
+            padding: 14px 0;
+            background: transparent;
+            border-radius: 0;
+            border-bottom: 1px solid #e8e9eb;
             box-shadow: none;
-            transition: box-shadow 0.2s ease, border-color 0.2s ease;
+            transition: background-color 0.2s ease;
         }
 
         .software-item:hover {
-            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-            border-left-color: #495057;
+            background: #fcfcfd;
         }
 
         .software-name {
@@ -302,38 +300,40 @@ window.Quarto = {
 
         .role-badge {
             display: inline-block;
-            padding: 3px 8px;
-            background: #e8e9eb;
+            padding: 1px 0;
+            background: transparent;
             color: #495057;
-            border-radius: 3px;
+            border-radius: 0;
             font-size: 11px;
             font-weight: 500;
             margin-right: 6px;
             margin-bottom: 6px;
+            border: none;
         }
 
         .year-label {
             display: inline-block;
-            padding: 3px 8px;
-            background: #f8f9fa;
+            padding: 1px 0;
+            background: transparent;
             color: #868e96;
-            border-radius: 3px;
+            border-radius: 0;
             font-size: 11px;
             font-weight: 500;
             margin-right: 6px;
             margin-bottom: 6px;
+            border: none;
         }
 
         /* Software type link */
         .software-link {
             font-size: 12px;
             display: inline-block;
-            padding: 5px 12px;
-            background: white;
+            padding: 4px 10px;
+            background: transparent;
             color: #6c757d;
             text-decoration: none;
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
+            border: 1px solid #d6dbe1;
+            border-radius: 999px;
             margin-right: 6px;
             margin-bottom: 6px;
             transition: all 0.2s ease;
@@ -341,9 +341,9 @@ window.Quarto = {
         }
 
         .software-link:hover {
-            background: #f8f9fa;
+            background: #f4f6f8;
             color: #212529;
-            border-color: #6c757d;
+            border-color: #adb5bd;
         }
 
         .software-link::before {
@@ -357,12 +357,12 @@ window.Quarto = {
         .package-link {
             font-size: 12px;
             display: inline-block;
-            padding: 5px 12px;
-            background: white;
+            padding: 4px 10px;
+            background: transparent;
             color: #0b5ed7;
             text-decoration: none;
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
+            border: 1px solid #d6dbe1;
+            border-radius: 999px;
             margin-right: 6px;
             margin-bottom: 6px;
             transition: all 0.2s ease;
@@ -370,9 +370,9 @@ window.Quarto = {
         }
 
         .package-link:hover {
-            background: #f8f9fa;
+            background: #f4f6f8;
             color: #0952b3;
-            border-color: #0b5ed7;
+            border-color: #7fb2f0;
         }
 
         .package-link::before {
@@ -386,12 +386,12 @@ window.Quarto = {
         .github-link {
             font-size: 12px;
             display: inline-block;
-            padding: 5px 12px;
-            background: white;
+            padding: 4px 10px;
+            background: transparent;
             color: #212529;
             text-decoration: none;
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
+            border: 1px solid #d6dbe1;
+            border-radius: 999px;
             margin-right: 6px;
             margin-bottom: 6px;
             transition: all 0.2s ease;
@@ -399,9 +399,9 @@ window.Quarto = {
         }
 
         .github-link:hover {
-            background: #f8f9fa;
+            background: #f4f6f8;
             color: #000;
-            border-color: #212529;
+            border-color: #adb5bd;
         }
 
         .github-link::before {
@@ -415,12 +415,12 @@ window.Quarto = {
         .website-link {
             font-size: 12px;
             display: inline-block;
-            padding: 5px 12px;
-            background: white;
+            padding: 4px 10px;
+            background: transparent;
             color: #495057;
             text-decoration: none;
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
+            border: 1px solid #d6dbe1;
+            border-radius: 999px;
             margin-right: 6px;
             margin-bottom: 6px;
             transition: all 0.2s ease;
@@ -428,9 +428,9 @@ window.Quarto = {
         }
 
         .website-link:hover {
-            background: #f8f9fa;
+            background: #f4f6f8;
             color: #212529;
-            border-color: #495057;
+            border-color: #adb5bd;
         }
 
         .website-link::before {
@@ -443,7 +443,7 @@ window.Quarto = {
         /* Responsive design */
         @media (max-width: 768px) {
             .software-item {
-                padding: 10px 12px;
+                padding: 12px 0;
             }
             
             .software-name {
