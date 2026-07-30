@@ -29,7 +29,7 @@ I'm committed to open science practices. Together with collaborators, I built [o
 ::: {.news-timeline}
 <div class="news-row">
   <div class="news-date">July 2026</div>
-  <div class="news-entry">I was awarded a 3-year (~291k €) Individual Research Grant by the German Research Foundation.</div>
+  <div class="news-entry">I was awarded a 3-year (~300k €) Individual Research Grant by the German Research Foundation.</div>
 </div>
 <div class="news-row">
   <div class="news-date">July 2026</div>
