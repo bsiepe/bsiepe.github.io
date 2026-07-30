@@ -14,9 +14,11 @@ engine: knitr
 ```
 
 ::: {.home-content .justify}
-I am a postdoctoral researcher at [Marburg University, Germany](https://www.uni-marburg.de/de/fb04/team-heck/team/bjoern-siepe), where I recently finished my PhD in Psychological Methods. My [research](../publications) focuses on three areas: metascience of methodological research, time series modelling, and applied experience sampling research.
+I am a postdoctoral researcher at [Marburg University, Germany](https://www.uni-marburg.de/de/fb04/team-heck/team/bjoern-siepe), where I recently finished my PhD in Psychological Methods. My [research](../publications) focuses on three areas: metascience of methodological research, time series modelling, and applied experience sampling research. Throughout these, I build open source software tools and try to promote open science practices.
 
-My methodological work influences my metascientific work, where I study how we can conduct methodological research in a transparent, robust, and reproducible way. One result of this work was the introduction of [ADEMP-PreReg](https://github.com/bsiepe/ADEMP-PreReg), a protocol for reporting and preregistering simulation studies. I'm currently (co-)chairing two working groups on quality standards for simulation studies, and I'm always open to chat about novel ideas to improve methodological research.
+In my work on time series modelling, I develop and evaluate novel multilevel models for time series data, with a particular emphasis on quantifying and communicating uncertainty in model outputs. To help researchers applying these methods, I have (co-)developed multiple [software](../software) packages for R and Python. 
+
+This methodological work influences my metascientific work, where I study how we can conduct methodological research in a transparent, robust, and reproducible way. One result of this work was the introduction of [ADEMP-PreReg](https://github.com/bsiepe/ADEMP-PreReg), a protocol for reporting and preregistering simulation studies. I'm currently (co-)chairing two working groups on quality standards for simulation studies, and I'm always open to chat about novel ideas to improve methodological research.
 
 I have always enjoyed teaching statistics and programming to students and researchers. Over the years, I have given multiple workshops on reproducible research and time series modelling, for which you can find the materials on my [workshop page](../workshops).
 
@@ -27,7 +29,7 @@ I'm committed to open science practices. Together with collaborators, I built [o
 ::: {.news-timeline}
 <div class="news-row">
   <div class="news-date">July 2026</div>
-  <div class="news-entry">I was awarded with a 3-year Individual Research Grant by the German Research Foundation.</div>
+  <div class="news-entry">I was awarded a 3-year (~291k €) Individual Research Grant by the German Research Foundation.</div>
 </div>
 <div class="news-row">
   <div class="news-date">July 2026</div>
