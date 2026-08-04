@@ -1,14 +1,14 @@
 ---
 title: "Introducing openESM: A database of openly available experience sampling datasets"
 author: "Björn Siepe"
-date: "2026-06-16"
+date: "2026-08-05"
 categories: [Time Series, EMA, openESM, open science]
 image: "openesm_icon.png"
 engine: knitr
 comments: false
 execute:
   freeze: true
-description: "Talk at Oxford, NTU, MITNB, AMPC, and APS."
+description: "Talk at Oxford, NTU, MITNB, AMPC, APS, SDMH, and SAA"
 license: "CC BY"
 cv:
   pdf1: "openESM-Talk-AMPC-Siepe.pdf"
@@ -17,9 +17,10 @@ cv:
   pdf4: "openESM-Talk-NTU-Siepe-2026.pdf"
   pdf5: "APS-openESM-Talk-Siepe-2026.pdf"
   pdf6: "openESM-Talk-SDMH-Siepe-2026.pdf"
+  pdf7: "openESM-Talk-SAA-Siepe-2026.pdf"
 ---
 
-See [here](https://doi.org/10.31234/osf.io/qfdtb_v1) for the preprint introducing [openESM](https://openesmdata.org).
+See [here](https://doi.org/10.3758/s13428-026-03112-y) for the paper introducing [openESM](https://openesmdata.org).
 
 ```{css echo=FALSE}
 .embed-container {
@@ -40,6 +41,19 @@ See [here](https://doi.org/10.31234/osf.io/qfdtb_v1) for the preprint introducin
 }
 ```
 
+
+Find the slides for the talk at SAA here: 
+
+```{=html}
+<p class="text-center">
+  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf7`" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download PDF Slides
+  </a>
+</p>
+<div class="embed-container">
+  <iframe src="`r rmarkdown::metadata$cv$pdf7`" style="border: 0.5px"></iframe>
+</div>
+```
 
 Find the slides for the talk at SDMH here: 
 
