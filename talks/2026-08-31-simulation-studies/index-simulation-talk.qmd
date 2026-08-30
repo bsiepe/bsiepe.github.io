@@ -1,0 +1,28 @@
+---
+title: "Simulation Studies in Psychology"
+author: "Björn Siepe"
+date: "2026-08-31"
+categories: [Simulation Studies, Open Science, Metascience]
+image: "sim-studies-quote.png"
+engine: knitr
+comments: false
+execute:
+  freeze: true
+description: "Keynote at the 1st Interdisciplinary Symposium on Meta Science for Methods Research 2026."
+cv:
+  pdf1: "MSMR-Siepe-2026.pdf"
+---
+
+Find the slides here:
+
+```{=html}
+<p class="text-center">
+  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf1`" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download Slides
+  </a>
+</p>
+<div class="embed-container">
+  <iframe src="`r rmarkdown::metadata$cv$pdf1`" style="border: 0.5px"></iframe>
+</div>
+```
+
