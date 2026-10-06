@@ -12,6 +12,7 @@
   {
     "listing": "/talks/index.html",
     "items": [
+      "/talks/2026-10-06-jumi-benchmarking/index-jumi-benchmark.html",
       "/talks/2026-08-31-simulation-studies/index-simulation-talk.html",
       "/talks/2025-11-17-introducing-openesm/index-openesm.html",
       "/talks/2025-04-16-berlin-methods-kolloquium/index-simulation-berlin-kolloquium.html",
@@ -32,13 +33,13 @@
     ]
   },
   {
-    "listing": "/software/index.html",
-    "items": []
-  },
-  {
     "listing": "/blog/index.html",
     "items": [
       "/blog/2026-05-20_varcheck/index.html"
     ]
+  },
+  {
+    "listing": "/software/index.html",
+    "items": []
   }
 ]

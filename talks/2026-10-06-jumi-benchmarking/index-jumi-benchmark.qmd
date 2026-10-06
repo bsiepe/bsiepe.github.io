@@ -1,0 +1,27 @@
+---
+title: "Towards Benchmarking of Psychological Time Series"
+author: "Björn Siepe"
+date: "2026-10-06"
+categories: [Simulation Studies, Open Science, Metascience]
+image: "jumi-talk-screenshot.png"
+engine: knitr
+comments: false
+execute:
+  freeze: true
+description: "Talk at the ECR Meeting of the DGPs Methods and Evaluation Section 2026, Frankfurt, Germany."
+cv:
+  pdf1: "JuMi-Retreat-Siepe-2026.pdf"
+---
+
+Find the slides here:
+
+```{=html}
+<p class="text-center">
+  <a class="btn btn-primary btn-lg cv-download" href="`r rmarkdown::metadata$cv$pdf1`" target="_blank">
+    <i class="fa-solid fa-file-arrow-down"></i>&ensp;Download Slides
+  </a>
+</p>
+<div class="embed-container">
+  <iframe src="`r rmarkdown::metadata$cv$pdf1`" style="border: 0.5px"></iframe>
+</div>
+```
