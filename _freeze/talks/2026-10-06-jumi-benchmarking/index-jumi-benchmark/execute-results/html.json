@@ -1,8 +1,8 @@
 {
-  "hash": "a8fd3c6c76924bd982c183a56d417b4d",
+  "hash": "39800964bd8e02e1188883c1856d76f6",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"Simulation Studies in Psychology\"\nauthor: \"Björn Siepe\"\ndate: \"2026-08-31\"\ncategories: [Simulation Studies, Open Science, Metascience]\nimage: \"sim-studies-quote.png\"\nengine: knitr\ncomments: false\nexecute:\n  freeze: true\ndescription: \"Keynote at the 1st Interdisciplinary Symposium on Meta Science for Methods Research 2026.\"\ncv:\n  pdf1: \"MSMR-Siepe-2026.pdf\"\n---\n\nFind the slides here:\n\n```{=html}\n<p class=\"text-center\">\n  <a class=\"btn btn-primary btn-lg cv-download\" href=\"MSMR-Siepe-2026.pdf\" target=\"_blank\">\n    <i class=\"fa-solid fa-file-arrow-down\"></i>&ensp;Download Slides\n  </a>\n</p>\n<div class=\"embed-container\">\n  <iframe src=\"MSMR-Siepe-2026.pdf\" style=\"border: 0.5px\"></iframe>\n</div>\n```\n\n",
+    "markdown": "---\ntitle: \"Towards Benchmarking of Psychological Time Series\"\nauthor: \"Björn Siepe\"\ndate: \"2026-10-06\"\ncategories: [Simulation Studies, Open Science, Metascience]\nimage: \"jumi-talk-screenshot.png\"\nengine: knitr\ncomments: false\nexecute:\n  freeze: true\ndescription: \"Talk at the ECR Meeting of the DGPs Methods and Evaluation Section 2026, Frankfurt, Germany.\"\ncv:\n  pdf1: \"JuMi-Retreat-Siepe-2026.pdf\"\n---\n\nFind the slides here:\n\n```{=html}\n<p class=\"text-center\">\n  <a class=\"btn btn-primary btn-lg cv-download\" href=\"JuMi-Retreat-Siepe-2026.pdf\" target=\"_blank\">\n    <i class=\"fa-solid fa-file-arrow-down\"></i>&ensp;Download Slides\n  </a>\n</p>\n<div class=\"embed-container\">\n  <iframe src=\"JuMi-Retreat-Siepe-2026.pdf\" style=\"border: 0.5px\"></iframe>\n</div>\n```",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
