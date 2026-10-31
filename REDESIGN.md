@@ -121,6 +121,17 @@ Verified in stage 0 (2026-10-31).
 
 Files in `data/`. Field lists are minimums; propose additions in stage 1.
 
+Stage 1 result (approved 2026-10-31): `schema/*.schema.json` is the binding
+definition and supersedes the field lists below where they differ. Decisions:
+talk events have `roles` (a list, incl. `coauthor`) and optional per-event
+`title`; workshops have `sessions` like talk events; editorial positions are
+`service.yml` entries with `kind: editorial`; internships live in
+`research_stays.yml`; `hidden: true` marks commented-out legacy content;
+file paths equal URL paths; countries are ISO alpha-2 codes; dates are quoted
+strings (unquoted dates fail validation); titles are plain text, long-text
+fields allow inline Markdown only; publication ids are `<first-author>-<keywords>`
+without year; packages released for R and Python are two software entries.
+
 - `profile.yml`: name, current position and affiliation, email, ORCID, GitHub,
   Bluesky, LinkedIn, Twitter, short research profile for the CV, and contact data
   for the Impressum. My institution changes soon; contact data must live only here.
@@ -287,18 +298,17 @@ Files in `data/`. Field lists are minimums; propose additions in stage 1.
 1. Crossref/DataCite during migration: "never read back automatically" conflicts
    with "fields filled from Crossref, marked as such". Proposal: migration may fill
    only fields no repo source has, each fill listed in the report. Needed by stage 2.
+   Applied as proposed in stage 2a (publications), pending confirmation.
 2. GoatCounter is an external request at page load, which conflicts with the
    privacy rule. Options: drop, self-host the script, or explicit exception.
    Needed by stage 5.
-3. Dates in YAML must be quoted strings (JS YAML parsers turn unquoted dates into
-   Date objects; Typst reads them differently). Settle in stage 1.
-4. Markup inside YAML fields (italics in titles, Markdown in news): minimal subset
-   renderable by both Typst (`cmarker`) and Astro, or plain text only. Stage 1.
+3. Resolved in stage 1: dates are quoted strings.
+4. Resolved in stage 1: titles plain text, long-text fields inline Markdown.
 5. Astro schemas generated from JSON Schema, or no Astro schema at all with
    `scripts/validate` as the only gate. Stage 5.
 6. Ship the Typst CV to `main` (replacing `cv/cv_siepe.pdf`) right after stage 3,
    before the website is done.
-7. Split stage 2 into chunks with separate reports: publications, then talks,
-   then the rest.
+7. Resolved: stage 2 is split into 2a publications, 2b talks and workshops,
+   2c everything else, each with its own report section and review.
 8. Thumbnail fallback for talks without a PDF (HTML slides, or no slides).
    Stage 5.

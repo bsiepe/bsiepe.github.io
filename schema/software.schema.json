@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "software.schema.json",
   "title": "Software and research infrastructure",
-  "description": "One entry per published artifact. A package released for R and Python under one name is one entry with two languages.",
+  "description": "One entry per published artifact. A package released for R and for Python is two entries (e.g. openesm on CRAN and on PyPI).",
   "type": "array",
   "items": {
     "type": "object",
