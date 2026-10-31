@@ -12,7 +12,7 @@
     - { family: Hehlmann, given: Miriam Ina }
     - { family: Deisenhofer, given: Anne-Katharina }
     - { family: Wester, given: Robin Anno }
-    - { family: Rubel, given: J. A. }
+    - { family: Rubel, given: Julian }
   venue: PsyArXiv
   year: 2026
   status: preprint
@@ -20,6 +20,8 @@
   links:
     code: "https://osf.io/gtf2z"
     prereg: "https://osf.io/gtf2z"
+  areas: [ simulation ]
+  abstract: "Objective: Multilevel modelling of therapist effects (TE) and institutional effects (IE) is standard in psychotherapy research, yet empirical sample-size guidance is scarce for TE and virtually absent for IE. Existing recommendations rely on rules of thumb from two-level designs that vary widely across sources and do not extend to three-level structures. We aimed to provide empirically derived design recommendations for reliably detecting TE and IE in three-level psychotherapy studies. Methods: We conducted a fully factorial Monte Carlo simulation crossing six design factors: true TE, true IE, patient allocation (balanced vs. unbalanced), patients per therapist, therapists per institution, and number of institutions. This yielded 52,488 unique conditions, each with 1,000 replications. For every condition we fitted a three-level random-intercept model and derived parametric bootstrap 95% confidence intervals for both intraclass correlations, evaluating bias, RMSE, coverage, and statistical power at three pre-registered thresholds. Results: Detecting TE was feasible across a wide range of realistic designs, requiring as few as 10 to 40 total therapists for moderate effects (TE ≥ 0.05). Detecting IE, in contrast, was strongly constrained by the number of institutions: no design with fewer than four institutions reached 80% power at the primary threshold, and adequate detection of small to moderate IE (≤ 0.20) required at least five institutions with substantial within-institution sampling. Conclusion: Reliably detecting IE imposes qualitatively different design requirements than TE, particularly regarding the minimum number of institutions. We provide cutoff tables and a Shiny application to support empirically informed sample-size decisions."
 
 - id: siepe-dynamic-network-features-treatment-selection
   type: article
@@ -35,11 +37,13 @@
   year: 2026
   status: advance-online
   doi: "10.1037/met0000872"
-  preprint_doi: "10.31234/osf.io/2c8xf_v1"
+  preprint_doi: "10.31234/osf.io/2c8xf_v2"
   links:
     code: "https://osf.io/njvgc/"
     data: "https://osf.io/njvgc/"
     prereg: "https://osf.io/a96dt/overview"
+  areas: [ timeseries ]
+  abstract: Multivariate time series models are commonly used in psychology to investigate person-specific associations between multiple variables. They are often represented and interpreted as dynamic network models, where features such as the centrality of nodes can potentially guide treatment selection and outcome prediction. Researchers typically rely on point estimates of specific network features while ignoring estimation uncertainty, which can lead to wrong inferences and over-optimistic claims. We introduce a one-step Bayesian approach for estimating multilevel vector autoregressive models (BmlVAR), which enables uncertainty quantification for person-specific network features and the regression of external outcomes on such features. In a preregistered simulation study, we compare the new model with several popular methods for network estimation. We also apply all methods to empirical data to highlight their differences. Our simulation results indicate that all methods perform mediocrely in estimating different centrality measures in practically relevant settings. BmlVAR still outperforms the other methods in many simulation conditions, especially regarding the statistical power to detect associations with an outcome. However, estimating the model properly can be challenging with limited data. Overall, all methods require a lot of data or very large effects to produce reasonably accurate results. Thus, although centrality measures based on dynamic networks have been widely used, our simulation study suggests they are unlikely to work well for achieving major goals of interest, such as guiding treatment selection and outcome prediction. We provide a new model that incorporates estimation uncertainty into the modelling process, thereby protecting against premature conclusions.
 
 - id: vogelsmeier-careless-responding-ema
   type: article
@@ -56,7 +60,7 @@
     - { family: Tutunji, given: Rayyan }
     - { family: Dejonckheere, given: Egon }
     - { family: Kuppens, given: Peter }
-    - { family: Fried, given: E. I. F. }
+    - { family: Fried, given: Eiko I. }
   venue: Psychological Methods
   year: 2026
   status: advance-online
@@ -64,6 +68,8 @@
   preprint_doi: "10.31234/osf.io/4dfbz_v1"
   links:
     code: "https://osf.io/rqgdf"
+  areas: [ esm ]
+  abstract: Collecting intensive longitudinal data via methods like ecological momentary assessment (EMA) is necessary to study dynamics in psychological constructs. However, detecting careless responding is more important than ever, as this methodology burdens participants more than traditional single survey studies. If undetected, careless responding reduces data quality and can lead to invalid findings by distorting correlations between items and constructs and compromising the psychometric properties of scales. In turn, this hinders progress toward cumulative psychological science. In recent years, several data-driven approaches have been proposed that assess whether an individual was attentive or careless for each timepoint-specific measurement after data collection. However, the variety and complexity of available methods can be overwhelming for researchers. In this paper, we summarized, applied, and compared 13 methods that flag careless responses in a rich EMA dataset from the WARN-D study with 206,318 observations (from n = 1194 participants). Together with our detailed supplementary tutorials, the paper serves as a guide for researchers to evaluate and report careless responding in their own data. At the same time, we show that the development of methods for careless responding detection is still in its early stages, as the studied approaches produced very different results. We provide recommendations for which methods are currently most promising based on our findings and discuss important next steps in validating them empirically.
 
 - id: siepe-openesm
   type: article
@@ -74,7 +80,7 @@
     - { family: Kloft, given: Matthias }
     - { family: Büchner, given: Anabel }
     - { family: Zhang, given: Yong }
-    - { family: Fried, given: E. I. F. }
+    - { family: Fried, given: Eiko I. }
     - { family: Heck, given: Daniel W. }
   venue: Behavior Research Methods
   volume: "58"
@@ -87,12 +93,14 @@
   links:
     code: "https://github.com/openesm-project/"
     website: "https://openesmdata.org"
+  areas: [ esm ]
+  abstract: "Experience sampling via mobile devices enables unprecedented insights into daily life. However, individual studies often cannot answer research questions conclusively, and open data are scattered across repositories in different formats. This impedes research into robustness, generalizability, and heterogeneity. We address this issue by introducing, an open-source database of openly available experience sampling datasets in a harmonized format. The growing database currently comprises 60 datasets with more than 16,000 participants and more than 740,000 observations. Metadata can be searched via our website ( openesmdata.org ) to select and download datasets via packages in R and Python. We demonstrate the potential of through an analysis of within-person correlations of positive and negative affect in 39 datasets, providing evidence for a large negative momentary correlation ( $$-0.49$$ - 0.49, 95% CI: [ $$-0.54$$ - 0.54, $$-0.42$$ - 0.42 ]). We end by discussing the design principles that will allow to become a continuously evolving community resource for cumulative experience sampling research."
 
 - id: haslbeck-model-checking-var
   type: article
   title: "Model Checking for Vector Autoregressive Models"
   authors:
-    - { family: Haslbeck, given: Jonas M. B. }
+    - { family: Haslbeck, given: Jonas }
     - { family: Jongerling, given: Joran }
     - { family: Siepe, given: Björn S., me: true }
     - { family: Epskamp, given: Sacha }
@@ -105,6 +113,8 @@
   links:
     code: "https://github.com/jmbh/ModelCheckingForVAR"
     data: "https://github.com/jmbh/ModelCheckingForVAR"
+  areas: [ timeseries ]
+  abstract: Time series have become pervasive in psychological research and Vector Autoregressive (VAR) models have become one of the most popular classes of models to study within-person dynamics in such data. However, systematic checking of how well a VAR model fits the data is hardly ever performed. This is a problem, because model misfit can lead both to incorrect interpretations of model parameters and to missing effects in the data that would be theoretically interesting. We provide a tutorial that explains the theory behind model checking, introduces the most common types of VAR model misspecification in the context of psychological time series, and introduces diagnostics for them, using plots and simulations. We then apply these tools to assess model fit for a multilevel VAR model estimated on a typical empirical dataset of emotion measurements over three weeks of 179 persons. We conclude by discussing three complementary areas of research that could improve the modeling of psychological time series in the future.
 
 - id: siepe-preregister-simulation-study
   type: preprint
@@ -112,21 +122,23 @@
   authors:
     - { family: Siepe, given: Björn S., me: true }
     - { family: Bartoš, given: František }
-    - { family: Peikert, given: Aaron }
-    - { family: Heck, given: Daniel W. }
-    - { family: Sarafoglou, given: Alexandra }
     - { family: Boulesteix, given: Anne-Laure }
+    - { family: Heck, given: Daniel W. }
+    - { family: Peikert, given: Aaron }
+    - { family: Sarafoglou, given: Alexandra }
     - { family: Pawel, given: Samuel }
   venue: PsyArXiv
   year: 2026
   status: preprint
-  preprint_doi: "10.31234/osf.io/cxjrb"
+  preprint_doi: "10.31234/osf.io/cxjrb_v1"
+  areas: [ simulation ]
+  abstract: Simulation studies play a central role in methodological research by providing evidence about the empirical performance of statistical methods. At the same time, they involve substantial researcher degrees of freedom in the choice of data-generating mechanisms, methods, performance measures, and reporting decisions, which can undermine the credibility of their results. Preregistration has been proposed as a tool to increase transparency and reduce such flexibility, yet its role in simulation studies remains contested. In this paper, we discuss why researchers should or should not preregister their simulation studies, elaborating on the theoretical and pragmatic benefits as well as disadvantages of preregistration. Drawing on philosophical accounts, we argue that preregistration primarily reduces epistemic uncertainty about which simulation conditions were considered and why, which enables honest evaluation of whether results support the conclusions drawn. We argue that the resulting benefits depend critically on the aims of a study and its position within the methodological research cycle. Late-phase studies that investigate mature methods tend to benefit more, while early-phase studies investigating newly proposed methods generally benefit less from preregistration. We further discuss practical challenges specific to simulation studies, including the timing of preregistration, the role of preliminary simulations, and safeguards against post hoc registration. Finally, we outline concrete guidance on how to preregister simulation studies and discuss Registered Reports as a particularly promising format. Overall, we argue for a nuanced, purpose-driven use of preregistration that supports rather than hinders methodological progress.
 
 - id: huth-social-connection-loneliness
   type: preprint
   title: "Social connection features predicting loneliness: A longitudinal, interpretable machine-learning analysis"
   authors:
-    - { family: Huth, given: K. B. S. }
+    - { family: Huth, given: Karoline }
     - { family: Wijnen, given: Senne Maria Catharina Elisabeth }
     - { family: Skjerdingstad, given: Nora }
     - { family: Bartoš, given: František }
@@ -137,7 +149,7 @@
     - { family: van Bilsen, given: Céline }
     - { family: Bosma, given: Hans }
     - { family: Schumacher, given: Lea }
-    - { family: Dukers-Muijrers, given: N. H. }
+    - { family: Dukers-Muijrers, given: Nicole }
   venue: PsyArXiv
   year: 2026
   status: preprint
@@ -145,6 +157,7 @@
   links:
     code: "https://osf.io/5hmcd"
     data: { url: "https://osf.io/5hmcd", note: synthetic data }
+  abstract: "Background: Loneliness is increasingly recognized as a major global health concern. As a marker of poor social health, loneliness may emerge when certain aspects of social connection are missing. Yet, it remains unclear to what extent and which features of social connection contribute to a vulnerability of loneliness. In this study, we examined how 24 features of individuals’ social connections spanning structural, functional and quality dimensions predict loneliness both at the same time point and over a two-year follow-up. Methods: Using fine-grained, tie-specific data from a population-based Dutch cohort aged 18–93 years at baseline (N = 6,852) and at follow-up (N = 3,175), we evaluated which social connection features are predictive of loneliness using random-forest models at both timepoints and across age groups. Findings: Across both analyses, network quality was the strongest predictor of loneliness. Good-quality and strained relationships, friends-know-family, and network size consistently predicted loneliness. Being in a steady relationship was a top predictor at baseline but less important at follow-up. Functional aspects were generally less predictive. Models explained 24% of baseline and 44% of follow-up variance.Interpretation: These findings suggest that loneliness is most strongly linked to the quality of one’s social ties rather than their function, and that individuals embedded in low-quality or strained networks are particularly vulnerable. The results also underscore that loneliness is shaped by a broader constellation of factors beyond social connections."
 
 - id: bartos-living-synthetic-benchmarks
   type: preprint
@@ -160,6 +173,8 @@
   links:
     code: "https://github.com/FBartos/PublicationBiasBenchmark"
     data: "https://github.com/FBartos/PublicationBiasBenchmark"
+  areas: [ simulation ]
+  abstract: Simulation studies are widely used to evaluate statistical methods. However, new methods are often introduced and evaluated using data-generating mechanisms (DGMs) devised by the same authors. This coupling creates misaligned incentives, e.g., the need to demonstrate the superiority of new methods, potentially compromising the neutrality of simulation studies. Furthermore, results of simulation studies are often difficult to compare due to differences in DGMs, competing methods, and performance measures. This fragmentation can lead to conflicting conclusions, hinder methodological progress, and delay the adoption of effective methods. To address these challenges, we introduce the concept of living synthetic benchmarks. The key idea is to disentangle method and simulation study development and continuously update the benchmark whenever a new DGM, method, or performance measure becomes available. This separation benefits the neutrality of method evaluation, emphasizes the development of both methods and DGMs, and enables systematic comparisons. In this paper, we outline a blueprint for building and maintaining such benchmarks, discuss the technical and organizational challenges of implementation, and demonstrate feasibility with a prototype benchmark for publication bias adjustment methods. We conclude that living synthetic benchmarks have the potential to foster neutral, reproducible, and cumulative evaluation of methods, benefiting both method developers and users.
 
 - id: pfadt-methodological-metamorphosis
   type: preprint
@@ -219,6 +234,7 @@
     code: "https://osf.io/r7u23/"
     data: "https://osf.io/r7u23/"
     prereg: "https://osf.io/6hc9w/"
+  abstract: The field of psychology is in the midst of a methodological revolution. To quantify the changes, we tracked the adoption of Bayesian inference and open science practices across 28,738 articles from six top-tier (15,634 articles) and six mid-tier (13,104 articles) psychology journals over a twenty-year period (2004–2024). For the top-tier journals, human (50%) and LLM-assisted (50%) full-text coding revealed that in 2024, about 1 in every 4 articles (26%) reported a Bayesian analysis, about 2 in every 5 articles (41%) included a preregistration, and about 3 in every 4 articles (73%) provided open data. For the mid-tier journals, LLM full-text coding showed that in 2024, about 1 in every 6 articles (16%) contained a Bayesian analysis, about 1 in every 5 articles (18%) was preregistered, and about 2 in every 5 articles (40%) openly shared data. From 2004 to 2012, these practices were virtually nonexistent. Application of a Bayesian logistic growth model suggests these practices will continue to rise in the future, although the extent of their growth remains uncertain. In addition, our review revealed that mixed-effects models have become more prevalent; software reporting has improved, with growing use of R alongside a relative decline of SPSS; and that estimation-focused reporting showed only modest gains. Despite considerable heterogeneity between journals, our results present a detailed account of the ways in which articles from 2024 differ methodologically from those that were published only a decade before.
 
 - id: hehlmann-affect-dynamics-treatment-outcome
   type: article
@@ -245,6 +261,8 @@
     code: "https://osf.io/nhy9s"
     data: "https://osf.io/nhy9s"
     prereg: "https://osf.io/nhy9s/files/squn2"
+  areas: [ timeseries, esm ]
+  abstract: Ecological momentary assessment (EMA) is increasingly used to assess affect dynamics for predicting treatment outcome. While multiple methodological approaches exist, their added predictive value remains unclear, with previous results suggesting a low predictive value beyond mean level (M), standard deviation (SD) or initial impairment (II). To this end, this study aims to evaluate the predictive value of different affect dynamic measures (ADM) for psychological treatment outcome using a naturalistic dataset. 140 white outpatients (63.6% female, 33.6% male) from the psychotherapy clinic of the Trier University reported positive affect and negative affect four times daily over two weeks. We applied continuous-time dynamic modeling (CTDM), drop- and recovery rates, time-varying change point analyses, control charts, and multilevel modeling to each patient’s time series. Interdependencies among indicators were analyzed using principal component analysis. Each ADM's performance for predicting treatment outcome beyond II was assessed via R². The model with the optimal predictor combination (using elastic net regularization) was compared in predictive performance to a model including M and SD of positive and negative affect. Significant interdependencies were found among ADMs. The predictor selection identified the cross-effect of positive affect on negative affect (from the CTDM) as the best predictor, while the model including M and SD of positive and negative affect had the greatest predictive power. In this naturalistic clinical sample, complex ADMs offered limited additional predictive value beyond M or SD for treatment outcome. Considerations and R scripts for each ADM are provided.
 
 - id: kloft-interval-consensus-model
   type: article
@@ -258,22 +276,23 @@
   issue: "1"
   pages: "199-222"
   year: 2025
-  status: advance-online
+  status: published
   doi: "10.1017/psy.2025.10058"
   preprint_doi: "10.31234/osf.io/dzvw2"
   links:
     code: "https://osf.io/r32by/"
     data: "https://osf.io/r32by/"
+  abstract: Cultural consensus theory (CCT) leverages shared knowledge between individuals to optimally aggregate answers to questions for which the underlying truth is unknown. Existing CCT models have predominantly focused on unidimensional point truths using dichotomous, polytomous, or continuous response formats. However, certain domains, such as risk assessment or interpretation of verbal quantifiers, may require a consensus focused on intervals, capturing a range of relevant values. We introduce the interval consensus model (ICM), a novel extension of CCT designed to estimate consensus intervals from continuous bounded interval responses. We use a Bayesian hierarchical modeling approach to estimate latent consensus intervals. In a simulation study, we show that, under the conditions studied, the ICM performs better than using simple means and medians of the responses. We then apply the model to empirical judgments of verbal quantifiers.
 
 - id: pawel-missingness-simulation-studies
   type: article
-  title: "Handling Missingness, Failures, and Non-Convergence in Simulation Studies: A Review of Present Practices and Recommendations"
+  title: "Handling Missingness, Failures, and Non-Convergence in Simulation Studies: A Review of Current Practices and Recommendations"
   authors:
     - { family: Pawel, given: Samuel }
     - { family: Bartoš, given: František }
     - { family: Siepe, given: Björn S., me: true }
     - { family: Lohmann, given: Anna }
-  shared_second: [2, 3, 4]
+  shared_second: [ 2, 3, 4 ]
   venue: The American Statistician
   volume: "80"
   issue: "1"
@@ -285,6 +304,8 @@
   links:
     code: "https://github.com/SamCH93/missSim"
     data: "https://github.com/SamCH93/missSim"
+  areas: [ simulation ]
+  abstract: Simulation studies are commonly used in methodological research for the empirical evaluation of data analysis methods. They generate artificial data sets under specified mechanisms and compare the performance of methods across conditions. However, simulation repetitions do not always produce valid outputs, e.g., due to non-convergence or other algorithmic failures. This phenomenon complicates the interpretation of results, especially when its occurrence differs between methods and conditions. Despite the potentially serious consequences of such "missingness", quantitative data on its prevalence and specific guidance on how to deal with it are currently limited. To this end, we reviewed 482 simulation studies published in various methodological journals and systematically assessed the prevalence and handling of missingness. We found that only 23% (111/482) of the reviewed simulation studies mention missingness, with even fewer reporting frequency (92/482 = 19%) or how it was handled (67/482 = 14%). We propose a classification of missingness and possible solutions. We give various recommendations, most notably to always quantify and report missingness, even if none was observed, to align missingness handling with study goals, and to share code and data for reproduction and reanalysis. Using a case study on publication bias adjustment methods, we illustrate common pitfalls and solutions.
 
 - id: siepe-ema-passive-sensors
   type: article
@@ -305,6 +326,8 @@
   preprint_doi: "10.31234/osf.io/ybns6"
   links:
     code: "https://osf.io/txgnq/"
+  areas: [ esm ]
+  abstract: Ecological momentary assessment (EMA) increases ecological validity but can be burdensome. To reduce this burden and to better understand psychological constructs in daily life, a growing chorus of voices has called for augmenting or replacing EMA data with data passively collected from wearable devices. It is thus critical to investigate the quality of wearable data and its overlap with typical self-report measures. Here we compared results from passive sensing and EMA data from the WARN-D project in a large sample of 781 students. For 3 months, participants wore a Garmin VivoSmart 4 watch and answered EMA surveys (up to 352 measurement points). We investigated whether and to what extent passive sensor metrics were concurrently associated with different self-report measures purportedly measuring the same constructs. We focused on stress, tiredness, and sleep, all of which are relevant to mental health and can arguably be assessed with self-report and physiological measures. We used longitudinal mixed-effects models to estimate average momentary associations and their inter-individual heterogeneity. Self-report and wearable measures of sleep-related variables showed the strongest associations, whereas measures of stress showed a lack of overlap for most individuals. These findings suggest that wearable data and their corresponding self-report measures may not necessarily measure similar constructs. We provide several explanations for this result, including semantic differences and measurement issues, and offer insights and ways forward for research designs combining wearable and self-report data.
 
 - id: siepe-multiverse-dynamic-networks
   type: article
@@ -325,6 +348,8 @@
     data: "https://github.com/bsiepe/network-multiverse"
     prereg: "https://osf.io/ahcx5"
     app: "https://bsiepe.shinyapps.io/shiny-app/"
+  areas: [ timeseries ]
+  abstract: Specifying complex time series models typically allows for a wide range of plausible analysis strategies. However, researchers typically perform and report only a single, preferred analysis while ignoring alternatives that could yield different conclusions. As a remedy, we propose multiverse analysis to investigate the robustness of dynamic network analysis to arbitrary modeling choices. We focus on group iterative multiple model estimation (GIMME), a highly data-driven approach, and re-analyze two datasets (combined *n* = 199). We vary seven modeling parameters, resulting in 3,888 fitted models. Group-level and to a lesser extent subgroup-level results were mostly stable. Individual-level estimates were more heterogeneous, with some decisions strongly influencing results and conclusions. The robustness of GIMME to alternative modeling choices depends on the level of analysis. For some individuals, results may differ strongly even when changing the algorithm only slightly. Multiverse analysis is a valuable tool for checking the robustness of results from time series models.
 
 - id: cloos-visual-analog-scales
   type: article
@@ -333,13 +358,13 @@
     - { family: Cloos, given: Leonie }
     - { family: Siepe, given: Björn S., me: true }
     - { family: Piccirillo, given: Marilyn L. }
-    - { family: Fried, given: E. I. }
+    - { family: Fried, given: Eiko }
     - { family: Wang, given: Shirley B. }
     - { family: Helmich, given: Marieke A. }
     - { family: Johnson, given: Sverre Urnes }
     - { family: Hoffart, given: Asle }
     - { family: Ebrahimi, given: Omid V. }
-  shared_first: [1, 2]
+  shared_first: [ 1, 2 ]
   venue: "Collabra: Psychology"
   volume: "11"
   issue: "1"
@@ -351,10 +376,12 @@
   links:
     code: "https://osf.io/utdjq/"
     data: { url: "https://osf.io/utdjq/", note: synthetic data }
+  areas: [ esm ]
+  abstract: The ubiquity of digital technologies has increased assessments of thoughts, behaviors, and experiences via electronic devices. Surveys on smartphones or laptops often implement Visual Analogue Scales (VAS), recording responses on a continuous slider (0-100). This is particularly relevant for data collection in daily life, such as ecological momentary assessments (EMA), which repeatedly present items on mobile devices. However, the accuracy of digital VAS has been questioned, particularly regarding tactile precision (e.g., ability to accurately select values) and the consistency of scale interpretation both between- and within-persons over time (e.g., change in scale interpretation or reactivity to repeated measures). Participants (N = 3,761, 67.03% female; Mage = 47.09; SD = 14.41) from the Critical Incidents and Psychological Adaptation (CIPA) Study completed a 30-day EMA assessment. We investigated the accuracy of VAS in terms of (1) tactile precision, (2) respondents’ perception of the neutral point post-EMA, and (3) test-retest consistency of affect ratings pre- and post-EMA. (1) Tactile precision was assessed by asking participants to enter exactly 31 on a 0-100 slider. Results showed high precision (M = 31.01; SD = 3.28; 87.0% scored between 30-32). (2) Between-person agreement on scale perception was assessed by asking participants to determine the neutral score on two affect items (unipolar and bipolar). 82.19% and 88.89% indicated the expected scale midpoint (50 and 0, ± 5) as neutral, respectively. Neutral points deviating from the expected midpoint were correlated (r =.71-.73) with the person-specific means across the EMA period on the respective item. (3) Test-retest consistency was evaluated by asking participants to rate how happy/sad they/others would rate affective events (e.g., a serious argument) pre- and post-EMA. Consistency across time was high (median change = 0-5). Findings support the accuracy and consistency of digital VAS, within the scope of the current methods.
 
 - id: siepe-understanding-ema-data
   type: article
-  title: "Understanding EMA Data: A Tutorial on Exploring Item Performance in Ecological Momentary Assessment Data"
+  title: "Understanding Ecological-Momentary-Assessment Data: A Tutorial on Exploring Item Performance in Ecological-Momentary-Assessment Data"
   authors:
     - { family: Siepe, given: Björn S., me: true }
     - { family: Rieble, given: Carlotta L. }
@@ -374,6 +401,8 @@
   links:
     code: "https://osf.io/yf3up/"
     data: { url: "https://osf.io/yf3up/", note: synthetic data }
+  areas: [ esm ]
+  abstract: The use of ecological-momentary-assessment (EMA) data to study individuals in their everyday lives is popular in many areas of social and life sciences. At the same time, EMA data sets are complex, the psychometric properties of EMA items are often not investigated systematically, and scales are often neither standardized nor validated beyond their face validity. Here, we present different descriptive statistics and data-visualization techniques to increase the understanding of the performance of EMA items. We apply these techniques to a wide range of items used in a large EMA data set (599 participants, 360 time points) collected in the WARN-D study to investigate their distributions, contextual influences, change over time, sources of variability, and relationship with classical static measures of psychopathology. We discuss the theoretical and substantive implications of our findings and provide researchers with R code that they can adapt to their own EMA data, as well as literature recommendations for each topic. We hope to inspire more researchers to share in-depth descriptive summaries of their experience-sampling data such that the field can move forward in understanding the performance of EMA measures across contexts.
 
 - id: freeborn-language-learning-temporal-networks
   type: chapter
@@ -393,6 +422,8 @@
   year: 2025
   status: published
   doi: "10.1075/rmal.14.08fre"
+  areas: [ timeseries ]
+  abstract: "In this chapter, we use temporal network analysis to model longitudinal associations among six variables. We present three different networks to illustrate the threefold framework that temporal network analysis offers for analysing time-series data ( Blanchard et al., 2023 ): a temporal network (how variables predict one another from one timepoint to the next), a contemporaneous network (how variables are related within the same timeframe), and a between-subjects network (how variables are related across individuals). Conceptually, a network approach has many affordances for CDST-inspired research. Temporal network analysis is an exploratory, data-driven method that is conceptually aligned with many aspects of CDST. Methodologically however, temporal network analysis presents several challenges, including the large number of data points needed, assumptions of linearity, and considerations for handling missing data."
 
 - id: siepe-robustness-reproduction-cox
   type: report
@@ -430,6 +461,8 @@
     code: "https://github.com/bsiepe/SimPsychReview"
     data: "https://github.com/bsiepe/SimPsychReview"
     prereg: "https://osf.io/dfgvu/registrations"
+  areas: [ simulation ]
+  abstract: Simulation studies are widely used for evaluating the performance of statistical methods in psychology. However, the quality of simulation studies can vary widely in terms of their design, execution, and reporting. In order to assess the quality of typical simulation studies in psychology, we reviewed 321 articles published in Psychological Methods, Behavioral Research Methods, and Multivariate Behavioral Research in 2021 and 2022, among which 100/321 = 31.2% report a simulation study. We find that many articles do not provide complete and transparent information about key aspects of the study, such as justifications for the number of simulation repetitions, Monte Carlo uncertainty estimates, or code and data to reproduce the simulation studies. To address this problem, we provide a summary of the ADEMP (Aims, Data-generating mechanism, Estimands and other targets, Methods, Performance measures) design and reporting framework from Morris, White, and Crowther (2019) adapted to simulation studies in psychology. Based on this framework, we provide ADEMP-PreReg, a step-by-step template for researchers to use when designing, potentially preregistering, and reporting their simulation studies. We give formulae for estimating common performance measures, their Monte Carlo standard errors, and for calculating the number of simulation repetitions to achieve a desired Monte Carlo standard error. Finally, we give a detailed tutorial on how to apply the ADEMP framework in practice using an example simulation study on the evaluation of methods for the analysis of pre–post measurement experiments.
 
 - id: siepe-bayesian-idiographic-networks
   type: article
@@ -447,36 +480,11 @@
     code: "https://github.com/bsiepe/var-compare"
     data: "https://github.com/bsiepe/var-compare"
     supplement: "https://osf.io/9byaj/"
+  areas: [ timeseries ]
   abstract: >-
-    Idiographic network models are estimated on time-series data of a single
-    individual and allow researchers to investigate person-specific associations
-    between multiple variables over time. The most common approach for fitting such
-    graphical vector autoregressive (gVAR) models uses LASSO regularization to
-    estimate a contemporaneous network and a temporal network. However, estimation
-    of idiographic networks can be unstable in relatively small data sets typical for
-    psychological research. This bears the risk of misinterpreting differences in
-    estimated networks as spurious heterogeneity between individuals. As a remedy, we
-    evaluate the performance of a Bayesian alternative for fitting gVAR models that
-    allows for regularization of parameters while accounting for estimation
-    uncertainty. We first compare Bayesian and LASSO approaches across a range of
-    conditions and performance measures in a simulation study. Overall, LASSO
-    estimation performed well, while Bayesian gVAR may perform better when the true
-    network is dense. We also develop a novel test, implemented in the tsnet package
-    in R, which assesses whether differences between estimated networks are reliable
-    based on matrix norms. In a simulation study, the test was conservative and
-    showed good false-positive rates. Finally, we apply Bayesian estimation and the
-    novel testing approach in an empirical example using daily data on clinical
-    symptoms for 40 individuals. Overall, Bayesian gVAR modeling facilitates the
-    assessment of estimation uncertainty which is important for studying
-    inter-individual differences of intra-individual dynamics.
+    Idiographic network models are estimated on time-series data of a single individual and allow researchers to investigate person-specific associations between multiple variables over time. The most common approach for fitting graphical vector autoregressive (GVAR) models uses LASSO regularization to estimate a contemporaneous and a temporal network. However, estimation of idiographic networks can be unstable in relatively small data sets typical for psychological research. This bears the risk of misinterpreting differences in estimated networks as spurious heterogeneity between individuals. As a remedy, we evaluate the performance of a Bayesian alternative for fitting GVAR models that allows for regularization of parameters while accounting for estimation uncertainty. We also develop a novel test, implemented in the tsnet package in R, which assesses whether differences between estimated networks are reliable based on matrix norms. We first compare Bayesian and LASSO approaches across a range of conditions in a simulation study. Overall, LASSO estimation performs well, while a Bayesian GVAR without edge selection may perform better when the true network is dense. In an additional simulation study, the novel test is conservative and shows good false-positive rates. Finally, we apply Bayesian estimation and testing in an empirical example using daily data on clinical symptoms for 40 individuals. We additionally provide functionality to estimate Bayesian GVAR models in Stan within tsnet.Overall, Bayesian GVAR modelling facilitates the assessment of estimation uncertainty which is important for studying inter-individual differences of intra-individual dynamics. In doing so, the novel test serves as a safeguard against premature conclusions of heterogeneity.
   summary: >-
-    Idiographic networks are popular, but they contain a lot of uncertainty. Even
-    when based on same true model, resulting networks may "look different", creating
-    a false sense of heterogeneity. In this paper, we evaluate an existing Bayesian
-    method to estimate idiographic networks. Then, we propose a novel test that
-    evaluates the evidence that differences in edges between two models are not just
-    due to sampling variability. We then apply estimation & test methods to empirical
-    data and introduce the R Package `tsnet` that includes the proposed method.
+    Idiographic networks are popular, but they contain a lot of uncertainty. Even when based on same true model, resulting networks may "look different", creating a false sense of heterogeneity. In this paper, we evaluate an existing Bayesian method to estimate idiographic networks. Then, we propose a novel test that evaluates the evidence that differences in edges between two models are not just due to sampling variability. We then apply estimation & test methods to empirical data and introduce the R Package `tsnet` that includes the proposed method.
 
 - id: siepe-time-varying-networks-depression
   type: article
@@ -498,6 +506,8 @@
   links:
     code: "https://github.com/bsiepe/steady_tvvar"
     prereg: "https://osf.io/mnehzs"
+  areas: [ timeseries ]
+  abstract: "**Background:** As depression is highly heterogenous, an increasing number of studies investigate person-specific associations of depressive symptoms in longitudinal data. However, most studies in this area of research conceptualize symptom interrelations to be static and time invariant, which may lead to important temporal features of the disorder being missed. **Objective:** To reveal the dynamic nature of depression, we aimed to use a recently developed technique to investigate whether and how associations among depressive symptoms change over time. **Methods:** Using daily data (mean length 274, SD 82 d) of 20 participants with depression, we modeled idiographic associations among depressive symptoms, rumination, sleep, and quantity and quality of social contacts as dynamic networks using time-varying vector autoregressive models. **Results:** The resulting models showed marked interindividual and intraindividual differences. For some participants, associations among variables changed in the span of some weeks, whereas they stayed stable over months for others. Our results further indicated nonstationarity in all participants. **Conclusions:** Idiographic symptom networks can provide insights into the temporal course of mental disorders and open new avenues of research for the study of the development and stability of psychopathological processes."
 
 - id: westhoff-psychological-flexibility-daily-lives
   type: article
@@ -520,15 +530,16 @@
   links:
     code: "https://osf.io/ejtzs/"
     data: "https://osf.io/ejtzs/"
+  areas: [ timeseries, esm ]
+  abstract: "Psychological flexibility plays a crucial role in how young adults adapt to their evolving cognitive and emotional landscapes. Our study investigated a core aspect of psychological flexibility in young adults: adaptive variability and maladaptive rigidity in the capacity for behavior change. We examined the interplay of these elements with cognitive-affective processes within a dynamic network, uncovering their manifestation in everyday life. Through an Ecological Momentary Assessment design, we collected intensive longitudinal data over 3 weeks from 114 young adults ages 19 to 32. Using a dynamic network approach, we assessed the temporal dynamics and individual variability in flexibility in relation to cognitive-affective processes in this sample. Rigidity exhibited the strongest directed association with other variables in the temporal network as well as highest strength centrality, demonstrating particularly strong associations to other variables in the contemporaneous network. In conclusion, the results of this study suggest that rigidity in young adults is associated with negative affect and cognitions at the same time point and the immediate future."
 
 - id: langener-preregistering-passive-smartphone
   type: article
   title: "A Template and Tutorial for Preregistering Studies Using Passive Smartphone Measures"
   authors:
-    # Complete list from Crossref (both repo sources truncate it).
     - { family: Langener, given: Anna M. }
     - { family: Siepe, given: Björn S., me: true }
-    - { family: Elsherif, given: M. M. }
+    - { family: Elsherif, given: Mahmoud }
     - { family: Niemeijer, given: Koen }
     - { family: Andresen, given: Pia K. }
     - { family: Akre, given: Samir }
@@ -551,9 +562,11 @@
   issue: "8"
   pages: "8289-8307"
   year: 2024
-  status: advance-online
+  status: published
   doi: "10.3758/s13428-024-02474-5"
   preprint_doi: "10.31234/osf.io/p4xf8"
+  areas: [ esm ]
+  abstract: Passive smartphone measures hold significant potential and are increasingly employed in psychological and biomedical research to capture an individual's behavior. These measures involve the near-continuous and unobtrusive collection of data from smartphones without requiring active input from participants. For example, GPS sensors are used to determine the (social) context of a person, and accelerometers to measure movement. However, utilizing passive smartphone measures presents methodological challenges during data collection and analysis. Researchers must make multiple decisions when working with such measures, which can result in different conclusions. Unfortunately, the transparency of these decision-making processes is often lacking. The implementation of open science practices is only beginning to emerge in digital phenotyping studies and varies widely across studies. Well-intentioned researchers may fail to report on some decisions due to the variety of choices that must be made. To address this issue and enhance reproducibility in digital phenotyping studies, we propose the adoption of preregistration as a way forward. Although there have been some attempts to preregister digital phenotyping studies, a template for registering such studies is currently missing. This could be problematic due to the high level of complexity that requires a well-structured template. Therefore, our objective was to develop a preregistration template that is easy to use and understandable for researchers. Additionally, we explain this template and provide resources to assist researchers in making informed decisions regarding data collection, cleaning, and analysis. Overall, we aim to make researchers' choices explicit, enhance transparency, and elevate the standards for studies utilizing passive smartphone measures.
 
 - id: rimpler-fred
   type: article
@@ -567,13 +580,15 @@
   venue: Administration and Policy in Mental Health and Mental Health Services Research
   volume: "51"
   issue: "4"
-  pages: "1-11"
+  pages: "490-500"
   year: 2024
   status: published
   doi: "10.1007/s10488-023-01324-4"
   links:
     code: "https://osf.io/8q254/"
     app: "https://solo-fsw.shinyapps.io/FRED/"
+  areas: [ esm ]
+  abstract: Ecological Momentary Assessment (EMA) is a data collection approach utilizing smartphone applications or wearable devices to gather insights into daily life. EMA has advantages over traditional surveys, such as increasing ecological validity. However, especially prolonged data collection can burden participants by disrupting their everyday activities. Consequently, EMA studies can have comparably high rates of missing data and face problems of compliance. Giving participants access to their data via accessible feedback reports, as seen in citizen science initiatives, may increase participant motivation. Existing frameworks to generate such reports focus on single individuals in clinical settings and do not scale well to large datasets. Here, we introduce FRED (Feedback Reports on EMA Data) to tackle the challenge of providing personalized reports to many participants. FRED is an interactive online tool in which participants can explore their own personalized data reports. We showcase FRED using data from the WARN-D study, where 867 participants were queried for 85 consecutive days with four daily and one weekly survey, resulting in up to 352 observations per participant. FRED includes descriptive statistics, time-series visualizations, and network analyses on selected EMA variables. Participants can access the reports online as part of a Shiny app, developed via the R programming language. We make the code and infrastructure of FRED available in the hope that it will be useful for both research and clinical settings, given that it can be flexibly adapted to the needs of other projects with the goal of generating personalized data reports.
 
 - id: talia-attachment-group-psychotherapy
   type: article
@@ -598,6 +613,7 @@
   year: 2022
   status: published
   doi: "10.4081/ripppo.2022.653"
+  abstract: "Recently, attachment-informed researchers and clinicians have begun to show that attachment theory offers a useful framework for exploring group psychotherapy. However, it remains unclear whether patients with differing attachment classifications would behave and speak in distinct ways in group therapy sessions. Aim: In this study, we conducted an exploratory analysis of the discourse of patients in group therapy who had independently received different classifications with gold standard interview measures of attachment in adults. Each patient participant attended one of three mentalization-based parenting groups. Before treatment, the Adult Attachment Interview (AAI) or the Parent Development Interview (PDI) were administered to each patient, and interviews were transcribed and coded to obtain the patient’s attachment classification. Groups included 2, 5, and 5 patients, respectively, and any session was led by at least two co-therapists. A total of 14 group sessions were transcribed verbatim. Sessions were analysed through a semi-inductive method, in order to identify markers that would typify patients of different attachment classifications in session. Through transcript excerpts and narrative descriptions, we report on the differing ways in which patients of different attachment classifications communicate in group psychotherapy, with the therapist and with each other. Our work provides useful information for group therapists and researchers regarding how differences in attachment status may play out in group sessions."
 
 - id: talia-bindungsmuster-psychotherapie
   type: chapter

@@ -298,7 +298,9 @@ without year; packages released for R and Python are two software entries.
 1. Crossref/DataCite during migration: "never read back automatically" conflicts
    with "fields filled from Crossref, marked as such". Proposal: migration may fill
    only fields no repo source has, each fill listed in the report. Needed by stage 2.
-   Applied as proposed in stage 2a (publications), pending confirmation.
+   Resolved after the 2a review (2026-10-31): Crossref/DataCite wins for
+   bibliographic fields whenever it has a record. This is a one-time migration
+   step; afterwards data/ stays the only ground truth.
 2. GoatCounter is an external request at page load, which conflicts with the
    privacy rule. Options: drop, self-host the script, or explicit exception.
    Needed by stage 5.
