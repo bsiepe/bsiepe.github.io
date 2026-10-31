@@ -1,9 +1,12 @@
 {
-  "name": "astro-scholar",
+  "name": "bsiepe-site",
   "type": "module",
-  "version": "0.6.1",
+  "version": "0.1.0",
   "scripts": {
+    "sync": "node scripts/sync-assets.mjs",
+    "predev": "node scripts/sync-assets.mjs",
     "dev": "astro dev",
+    "prebuild": "node scripts/sync-assets.mjs",
     "build": "astro build",
     "postbuild": "pagefind --site dist",
     "preview": "astro preview",
@@ -13,17 +16,16 @@
     "@astrojs/mdx": "^6.0.3",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.3",
-    "@resvg/resvg-js": "^2.6.2",
     "astro": "^6.4.5",
-    "bibliography": "^0.1.0",
+    "katex": "^0.19.1",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
-    "satori": "^0.25.0",
-    "satori-html": "^0.3.2",
-    "sharp": "^0.34.3"
+    "yaml": "^2.9.1"
   },
   "devDependencies": {
     "@pagefind/default-ui": "^1.5.0",
     "pagefind": "^1.4.0"
-  }
+  },
+  "private": true,
+  "description": "Website. Based on astro-scholar (MIT, see LICENSE); reads ../data and ../content."
 }

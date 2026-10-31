@@ -1,0 +1,87 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import PublicationEntry from '../../components/PublicationEntry.astro';
+import { SITE_TITLE } from '../../consts';
+import { publications, talks, type Talk } from '../../lib/data';
+import { AREA_LABELS, TALK_TYPES, formatDate, fullName, place, urlOf } from '../../lib/format';
+import { md } from '../../lib/markdown';
+import { url } from '../../utils/paths';
+
+export function getStaticPaths() {
+	return talks().map((t) => ({ params: { id: t.id }, props: { talk: t } }));
+}
+
+const { talk: t } = Astro.props as { talk: Talk };
+const related = publications().filter((p) => t.publications?.includes(p.id));
+const abstract = t.abstract ? await md(t.abstract) : '';
+const roleNote = (roles: string[]) =>
+	roles.includes('speaker') ? '' : roles.map((r) => r.charAt(0).toUpperCase() + r.slice(1)).join(', ');
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`${t.title} | ${SITE_TITLE}`} description={`Talk by ${SITE_TITLE}: ${t.title}`} />
+		<style>
+			.events { list-style: none; padding: 0; margin: 0; }
+			.events li {
+				display: grid;
+				grid-template-columns: 8rem 1fr auto;
+				gap: 1rem;
+				padding: 0.75rem 0;
+				border-bottom: 1px solid var(--color-border);
+				align-items: baseline;
+			}
+			.events time { color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
+			.event-title { display: block; font-style: italic; color: var(--color-text-muted); }
+			.event-meta { display: block; font-size: 0.9rem; color: var(--color-text-muted); }
+			@media (max-width: 720px) {
+				.events li { grid-template-columns: 1fr; gap: 0.2rem; }
+			}
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<p><a href={url('/talks/')}>All talks</a></p>
+			<h1>{t.title}</h1>
+			{t.areas && t.areas.length > 0 && (
+				<ul class="areas">{t.areas.map((a) => <li class={`area area-${a}`}>{AREA_LABELS[a] ?? a}</li>)}</ul>
+			)}
+			{abstract && <div set:html={abstract} />}
+			{t.links && (
+				<ul class="slots">{Object.entries(t.links).map(([k, v]) => <li><a href={urlOf(v)}>{k === 'repo' ? 'Repository' : k.charAt(0).toUpperCase() + k.slice(1)}</a></li>)}</ul>
+			)}
+
+			<h2>{t.events.length === 1 ? 'Event' : 'Events'}</h2>
+			<ul class="events">
+				{t.events.map((e) => (
+					<li>
+						<time datetime={e.date}>{formatDate(e.date)}</time>
+						<span>
+							{TALK_TYPES[e.type] ?? e.type}, {e.venue}{place(e) && `, ${place(e)}`}
+							{e.title && e.title !== t.title && <span class="event-title">{e.title}</span>}
+							{(roleNote(e.roles) || e.coauthors?.length || e.award) && (
+								<span class="event-meta">
+									{[roleNote(e.roles), e.coauthors?.length ? `with ${e.coauthors.map(fullName).join(', ')}` : '', e.award].filter(Boolean).join(' · ')}
+								</span>
+							)}
+						</span>
+						<span>{e.file ? <a href={url(`/${e.file}`)}>Slides</a> : <span class="missing">No slides</span>}</span>
+					</li>
+				))}
+			</ul>
+
+			{related.length > 0 && (
+				<>
+					<h2>Related publications</h2>
+					{related.map((p) => <PublicationEntry pub={p} abstract={false} />)}
+				</>
+			)}
+			{t.license && <p class="item-meta">Slides licensed under {t.license.replace(/-/g, ' ')}.</p>}
+		</main>
+		<Footer />
+	</body>
+</html>

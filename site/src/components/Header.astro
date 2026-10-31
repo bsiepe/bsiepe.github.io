@@ -11,25 +11,14 @@ const cvHref = CV_URL ? url(CV_URL) : null;
 		<h2><a href={url('/')}>{SITE_TITLE}</a></h2>
         
 		<div class="internal-links">
-			<HeaderLink href={url('/')}>Home</HeaderLink>
 			<HeaderLink href={url('/publications')}>Publications</HeaderLink>
-			<HeaderLink href={url('/projects')}>Projects</HeaderLink>
-			<HeaderLink href={url('/team')}>Team</HeaderLink>
-			<div class="dropdown">
-				<button class="dropbtn">Blog</button>
-				<div class="dropdown-content">
-					<HeaderLink href={url('/blog')}>News</HeaderLink>
-					<HeaderLink href={url('/tags')}>Tags</HeaderLink>
-					<HeaderLink href={url('/archive')}>Archive</HeaderLink>
-				</div>
-			</div>
-			{cvHref && <HeaderLink href={cvHref} target="_blank">CV</HeaderLink>}
+			<HeaderLink href={url('/talks')}>Talks</HeaderLink>
+			<HeaderLink href={url('/software')}>Software</HeaderLink>
+			<HeaderLink href={url('/blog')}>Blog</HeaderLink>
+			{cvHref && <HeaderLink href={cvHref}>CV</HeaderLink>}
 		</div>
 
         <div class="header-actions">
-            <a href="https://github.com/shravanngoswamii/astro-scholar" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="GitHub Repository" title="GitHub Repository">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-            </a>
             <button id="search-toggle-desktop" class="search-toggle" aria-label="Search site">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
             </button>
@@ -53,15 +42,10 @@ const cvHref = CV_URL ? url(CV_URL) : null;
         </div>
         <a href={url('/')}>Home</a>
         <a href={url('/publications')}>Publications</a>
-        <a href={url('/projects')}>Projects</a>
-        <a href={url('/team')}>Team</a>
-        <span class="mobile-menu-section">Blog</span>
-        <div class="mobile-submenu">
-            <a href={url('/blog')}>News</a>
-            <a href={url('/tags')}>Tags</a>
-            <a href={url('/archive')}>Archive</a>
-        </div>
-        {cvHref && <a href={cvHref} target="_blank">CV</a>}
+        <a href={url('/talks')}>Talks</a>
+        <a href={url('/software')}>Software</a>
+        <a href={url('/blog')}>Blog</a>
+        {cvHref && <a href={cvHref}>CV</a>}
     </div>
 </header>
 
@@ -261,7 +245,7 @@ const cvHref = CV_URL ? url(CV_URL) : null;
         font-weight: 600;
         color: var(--color-text-muted);
         padding-left: 0.5rem;
-        text-transform: uppercase;
+        
         letter-spacing: 0.05em;
     }
 
@@ -319,7 +303,7 @@ const cvHref = CV_URL ? url(CV_URL) : null;
         font-weight: 600;
         font-size: 0.9rem;
         color: var(--color-text-muted);
-        text-transform: uppercase;
+        
         letter-spacing: 0.05em;
         margin-top: 0.5rem;
         border-top: 1px solid var(--color-border);

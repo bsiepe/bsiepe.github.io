@@ -1,0 +1,56 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+import { software } from '../lib/data';
+import { fullName } from '../lib/format';
+
+const all = software().sort((a, b) => (b.contribution_year ?? b.year) - (a.contribution_year ?? a.year));
+const groups = [
+	{ title: 'Databases and websites', items: all.filter((s) => s.kind !== 'package') },
+	{ title: 'R packages', items: all.filter((s) => s.kind === 'package' && s.languages?.includes('R')) },
+	{ title: 'Python packages', items: all.filter((s) => s.kind === 'package' && s.languages?.includes('Python')) },
+].filter((g) => g.items.length > 0);
+
+const links = (s: any) =>
+	[
+		s.doi && { label: 'CRAN', href: `https://doi.org/${s.doi}` },
+		!s.doi && s.links?.cran && { label: 'CRAN', href: s.links.cran },
+		s.links?.pypi && { label: 'PyPI', href: s.links.pypi },
+		s.links?.github && { label: 'GitHub', href: s.links.github },
+		s.links?.website && { label: 'Website', href: s.links.website },
+		s.links?.docs && { label: 'Documentation', href: s.links.docs },
+	].filter(Boolean) as { label: string; href: string }[];
+const roles = (s: any) => s.roles.map((r: string) => r.replace('-', ' ')).join(', ');
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Software | ${SITE_TITLE}`} description={`Software by ${SITE_TITLE}`} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Software</h1>
+			{groups.map((g) => (
+				<section>
+					<h2>{g.title}</h2>
+					{g.items.map((s) => (
+						<article class="item">
+							<h3 class="item-title">{s.name}</h3>
+							<p class="item-desc">{s.description}</p>
+							<p class="item-meta">
+								{s.contribution_year ?? s.year} · {roles(s)}
+								{s.authors && s.authors.length > 1 && <> · {s.authors.map(fullName).join(', ')}</>}
+							</p>
+							<ul class="slots">{links(s).map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+						</article>
+					))}
+				</section>
+			))}
+		</main>
+		<Footer />
+	</body>
+</html>

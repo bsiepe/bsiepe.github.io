@@ -1,0 +1,32 @@
+---
+// DRAFT. Only the contact block from profile.yml. The legal text (DDG, Datenschutz)
+// is still to be drafted and approved before cutover (see REDESIGN.md).
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { PROFILE, SITE_TITLE } from '../consts';
+
+const i = PROFILE.impressum;
+---
+
+<!doctype html>
+<html lang="de">
+	<head>
+		<BaseHead title={`Impressum | ${SITE_TITLE}`} description="Impressum" />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Impressum</h1>
+			<p class="lead">Entwurf. Der vollständige Text folgt.</p>
+			<address>
+				{i.name}<br />
+				{i.street}<br />
+				{i.postcode} {i.city}<br />
+				{i.phone && <>Telefon: {i.phone}<br /></>}
+				{i.email && <>E-Mail: <a href={`mailto:${i.email}`}>{i.email}</a></>}
+			</address>
+		</main>
+		<Footer />
+	</body>
+</html>

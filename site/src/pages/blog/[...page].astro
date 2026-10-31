@@ -5,14 +5,14 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
-import AuthorLink from '../../components/AuthorLink.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { fullName } from '../../lib/format';
 import { url } from '../../utils/paths';
 
 export async function getStaticPaths() {
-    const posts = (await getCollection('blog')).sort(
-        (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-    );
+    const posts = (await getCollection('blog'))
+        .filter((p) => !p.data.draft)
+        .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
     const pageSize = 4;
     const totalPages = Math.ceil(posts.length / pageSize);
@@ -109,7 +109,7 @@ const { posts, currentPage, totalPages, nextPage, prevPage } = Astro.props;
                 flex-wrap: wrap;
                 gap: 0.5rem;
                 align-items: center;
-                text-transform: uppercase;
+                
                 letter-spacing: 0.05em;
                 font-weight: 500;
             }
@@ -160,10 +160,7 @@ const { posts, currentPage, totalPages, nextPage, prevPage } = Astro.props;
 	<body>
 		<Header />
 		<main>
-			<h1>Lab News & Updates</h1>
-            <p style="margin-bottom: 2rem; max-width: 700px; color: var(--color-text-muted);">
-                Explore our latest research highlights, tutorials, and announcements.
-            </p>
+			<h1>Blog</h1>
 
             <div class="blog-list">
                 {
@@ -175,29 +172,9 @@ const { posts, currentPage, totalPages, nextPage, prevPage } = Astro.props;
                                 </h2>
 
                                 <div class="blog-meta">
-                                    <FormattedDate date={post.data.pubDate} />
-
-                                    {post.data.authors && post.data.authors.length > 0 && (
-                                        <>
-                                            <span class="meta-divider">&bull;</span>
-                                            {post.data.authors.map((authorId, i) => (
-                                                <span>
-                                                    <AuthorLink nameOrSlug={authorId} />
-                                                    {i < post.data.authors!.length - 1 ? ', ' : ''}
-                                                </span>
-                                            ))}
-                                        </>
-                                    )}
-                                    {post.data.tags && post.data.tags.length > 0 && (
-                                        <>
-                                            <span class="meta-divider">&bull;</span>
-                                            <span class="blog-tags" style="display: inline-flex; gap: 0.25rem;">
-                                                {post.data.tags.map((tag) => (
-                                                    <a href={url(`/tags/${tag}`)} style="text-decoration: none; color: var(--color-accent); font-weight: 600;">#{tag}</a>
-                                                ))}
-                                            </span>
-                                        </>
-                                    )}
+                                    <FormattedDate date={post.data.date} />
+                                    <span class="meta-divider">&bull;</span>
+                                    <span>{post.data.authors.map(fullName).join(', ')}</span>
                                 </div>
 
                                 <p class="blog-desc">
@@ -207,13 +184,11 @@ const { posts, currentPage, totalPages, nextPage, prevPage } = Astro.props;
                                 <a href={url(`/blog/${post.id}/`)} class="read-more">Read Article &rarr;</a>
                             </div>
 
-                            <a href={url(`/blog/${post.id}/`)} class="blog-thumb">
-                                {post.data.heroImage ? (
-                                    <Image width={560} height={315} src={post.data.heroImage} alt={post.data.title} />
-                                ) : (
-                                    <img src={url(`/blog/${post.id}.png`)} alt={post.data.title} />
-                                )}
-                            </a>
+                            {post.data.image && (
+                                <a href={url(`/blog/${post.id}/`)} class="blog-thumb">
+                                    <Image width={560} height={315} src={post.data.image} alt="" />
+                                </a>
+                            )}
                         </article>
                     ))
                 }

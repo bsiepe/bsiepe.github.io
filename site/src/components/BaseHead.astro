@@ -1,7 +1,8 @@
 ---
+import 'katex/dist/katex.min.css';
 import '../styles/global.css';
 import type { ImageMetadata } from 'astro';
-import { SITE_TITLE, UMAMI_SRC, UMAMI_WEBSITE_ID } from '../consts';
+import { PROFILE, SITE_TITLE, UMAMI_SRC, UMAMI_WEBSITE_ID } from '../consts';
 import { url } from '../utils/paths';
 
 interface Props {
@@ -12,19 +13,8 @@ interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-let defaultImg = '/og.png';
-const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
-let currentPath = Astro.url.pathname;
-if (currentPath.startsWith(basePath)) {
-    currentPath = currentPath.substring(basePath.length);
-}
-currentPath = currentPath.replace(/^\/|\/$/g, '');
-
-if (currentPath === '') {
-    defaultImg = '/og.png';
-} else {
-    defaultImg = `/${currentPath}.png`;
-}
+// Social preview image: the photo from profile.yml (copied into public/ by scripts/sync-assets.mjs).
+const defaultImg = `/${PROFILE.social_image}`;
 
 const { title, description, image = defaultImg } = Astro.props;
 const atkinsonRegular = url('/fonts/atkinson-regular.woff');
@@ -73,7 +63,7 @@ const imageUrl = typeof image === 'string'
 		--color-bg-header: rgba(255, 255, 255, 0.85);
 		--color-text-main: #1a1a1a;
 		--color-text-muted: #555555;
-		--color-accent: #003366;
+		--color-accent: #0047AB;
 		--color-border: #eaeaea;
 	}
 	[data-theme='dark'] {
@@ -82,7 +72,7 @@ const imageUrl = typeof image === 'string'
 		--color-bg-header: rgba(15, 23, 42, 0.8);
 		--color-text-main: #e2e8f0;
 		--color-text-muted: #94a3b8;
-		--color-accent: #60a5fa;
+		--color-accent: #7aa7ff;
 		--color-border: #334155;
 	}
 	html, body { min-height: 100%; background-color: var(--color-bg); }
@@ -114,8 +104,6 @@ const imageUrl = typeof image === 'string'
 		background-color: var(--color-bg-offset);
 		border-color: var(--color-border);
 	}
-	.team-hero h1 { color: var(--color-text-main); }
-	.team-hero p { color: var(--color-text-muted); }
 	body {
 		background-color: var(--color-bg);
 		color: var(--color-text-main);
@@ -161,7 +149,6 @@ const imageUrl = typeof image === 'string'
 />
 
 <link rel="canonical" href={canonicalURL} />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
 
 <title>{title}</title>
 <meta name="title" content={title} />

@@ -1,0 +1,44 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import { SITE_TITLE } from '../../consts';
+import { talks } from '../../lib/data';
+import { AREA_LABELS, TALK_TYPES, formatDate } from '../../lib/format';
+import { url } from '../../utils/paths';
+
+// One entry per talk, sorted by its most recent event.
+const all = talks();
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Talks | ${SITE_TITLE}`} description={`Talks by ${SITE_TITLE}`} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Talks</h1>
+			<p class="lead">Each talk has its own page with every event and its slides.</p>
+			{all.map((t) => {
+				const latest = t.events[0];
+				const slides = t.events.filter((e) => e.file).length;
+				return (
+					<article class="item">
+						<h3 class="item-title"><a href={url(`/talks/${t.id}/`)}>{t.title}</a></h3>
+						<p class="item-meta">
+							{formatDate(latest.date)} · {TALK_TYPES[latest.type] ?? latest.type}, {latest.venue}
+							{t.events.length > 1 && <> · {t.events.length} events</>}
+							{slides > 0 && <> · {slides === 1 ? 'slides' : `${slides} slide decks`}</>}
+						</p>
+						{t.areas && t.areas.length > 0 && (
+							<ul class="areas">{t.areas.map((a) => <li class={`area area-${a}`}>{AREA_LABELS[a] ?? a}</li>)}</ul>
+						)}
+					</article>
+				);
+			})}
+		</main>
+		<Footer />
+	</body>
+</html>

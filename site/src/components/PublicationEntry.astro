@@ -1,0 +1,60 @@
+---
+// One publication: authors, year, title, venue, fixed artifact slots, areas, abstract.
+import type { Publication } from '../lib/data';
+import { AREA_LABELS, artifactSlots, extraLinks, shortName, shownAuthors, venueParts } from '../lib/format';
+import { md } from '../lib/markdown';
+
+interface Props { pub: Publication; abstract?: boolean }
+const { pub: p, abstract = true } = Astro.props;
+
+const sf = p.shared_first ?? [];
+const ss = p.shared_second ?? [];
+const { venue, rest } = venueParts(p);
+const slots = artifactSlots(p);
+const extras = extraLinks(p);
+const abstractHtml = abstract && p.abstract ? await md(p.abstract) : '';
+const shown = shownAuthors(p.authors);
+// Separator before item k: ", & " before the last named author, ", " otherwise.
+const sep = (k: number) => (k === 0 ? '' : shown[k] === null ? ', ' : k === shown.length - 1 && shown[k - 1] !== null ? ', & ' : ', ');
+---
+
+<article class="pub" id={p.id}>
+	<p class="pub-authors">
+		{shown.map((i, k) => (
+			<>
+				{sep(k)}
+				{i === null ? '…' : (
+					<>
+						{p.authors[i].me ? <strong>{shortName(p.authors[i])}</strong> : shortName(p.authors[i])}
+						{sf.includes(i + 1) && <sup>†</sup>}
+						{ss.includes(i + 1) && <sup>‡</sup>}
+					</>
+				)}
+			</>
+		))}
+		<span class="pub-year"> ({p.year})</span>
+	</p>
+	<h3 class="pub-title">{p.title}</h3>
+	<p class="pub-venue">
+		{venue && <em>{venue}</em>}{venue && rest ? ', ' : ''}{rest}
+	</p>
+	<div class="pub-meta">
+		<ul class="slots" aria-label="Materials">
+			{slots.map((s) => (
+				<li>{s.href ? <a href={s.href}>{s.label}</a> : <span class="missing" title="Not available">{s.label}</span>}</li>
+			))}
+			{extras.map((s) => <li><a href={s.href}>{s.label}</a></li>)}
+		</ul>
+		{p.areas && p.areas.length > 0 && (
+			<ul class="areas" aria-label="Research areas">
+				{p.areas.map((a) => <li class={`area area-${a}`}>{AREA_LABELS[a] ?? a}</li>)}
+			</ul>
+		)}
+	</div>
+	{abstractHtml && (
+		<details class="pub-abstract">
+			<summary>Abstract</summary>
+			<div set:html={abstractHtml} />
+		</details>
+	)}
+</article>
