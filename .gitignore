@@ -5,3 +5,5 @@
 
 /.quarto/
 .positai
+
+node_modules/

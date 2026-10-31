@@ -1,0 +1,14 @@
+{
+  "name": "bsiepe-data",
+  "private": true,
+  "description": "Data, validation, and export scripts for the CV and website. Independent of the site framework.",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs"
+  },
+  "devDependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "yaml": "2.9.1"
+  }
+}
