@@ -1,0 +1,615 @@
+# Publications. One entry per paper. Schema: schema/publications.schema.json
+# Migrated 2026-10-31 from publications/index.qmd, cv-legacy/latex/cv_english.tex,
+# and the Hugo preprint entry. See MIGRATION_REPORT.md for every value that was
+# filled from Crossref/DataCite, derived, or disputed between sources.
+
+- id: pena-loray-sample-size-institutional-effects
+  type: preprint
+  title: "Beyond Rules of Thumb: Empirical Sample Size Requirements for Detecting Institutional Effects in the Context of Therapist Effects"
+  authors:
+    - { family: Pena Loray, given: Juan Segundo }
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Hehlmann, given: Miriam Ina }
+    - { family: Deisenhofer, given: Anne-Katharina }
+    - { family: Wester, given: Robin Anno }
+    - { family: Rubel, given: J. A. }
+  venue: PsyArXiv
+  year: 2026
+  status: preprint
+  preprint_doi: "10.31234/osf.io/gswc9_v1"
+  links:
+    code: "https://osf.io/gtf2z"
+    prereg: "https://osf.io/gtf2z"
+
+- id: siepe-dynamic-network-features-treatment-selection
+  type: article
+  title: "Using features of dynamic networks to guide treatment selection and outcome prediction: The central role of uncertainty"
+  authors:
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Kloft, given: Matthias }
+    - { family: Zhang, given: Yong }
+    - { family: Petersen, given: Fridtjof }
+    - { family: Bringmann, given: Laura F. }
+    - { family: Heck, given: Daniel W. }
+  venue: Psychological Methods
+  year: 2026
+  status: advance-online
+  doi: "10.1037/met0000872"
+  preprint_doi: "10.31234/osf.io/2c8xf_v1"
+  links:
+    code: "https://osf.io/njvgc/"
+    data: "https://osf.io/njvgc/"
+    prereg: "https://osf.io/a96dt/overview"
+
+- id: vogelsmeier-careless-responding-ema
+  type: article
+  title: "Identifying careless responding in ecological momentary assessment: Inconsistent signals from different detection methods in the WARN-D data"
+  authors:
+    - { family: Vogelsmeier, given: Leonie V. D. E. }
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Ulitzsch, given: Esther }
+    - { family: Eisele, given: Gudrun }
+    - { family: Geeraerts, given: Joran }
+    - { family: Klocek, given: Adam }
+    - { family: Proppert, given: Ricarda K. K. }
+    - { family: Rieble, given: Carlotta L. }
+    - { family: Tutunji, given: Rayyan }
+    - { family: Dejonckheere, given: Egon }
+    - { family: Kuppens, given: Peter }
+    - { family: Fried, given: E. I. F. }
+  venue: Psychological Methods
+  year: 2026
+  status: advance-online
+  doi: "10.1037/met0000845"
+  preprint_doi: "10.31234/osf.io/4dfbz_v1"
+  links:
+    code: "https://osf.io/rqgdf"
+
+- id: siepe-openesm
+  type: article
+  title: "Introducing openESM: A database of openly available experience sampling datasets"
+  authors:
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Haslbeck, given: Jonas M. B. }
+    - { family: Kloft, given: Matthias }
+    - { family: Büchner, given: Anabel }
+    - { family: Zhang, given: Yong }
+    - { family: Fried, given: E. I. F. }
+    - { family: Heck, given: Daniel W. }
+  venue: Behavior Research Methods
+  volume: "58"
+  issue: "8"
+  article_number: "240"
+  year: 2026
+  status: published
+  doi: "10.3758/s13428-026-03112-y"
+  preprint_doi: "10.31234/osf.io/qfdtb_v2"
+  links:
+    code: "https://github.com/openesm-project/"
+    website: "https://openesmdata.org"
+
+- id: haslbeck-model-checking-var
+  type: article
+  title: "Model Checking for Vector Autoregressive Models"
+  authors:
+    - { family: Haslbeck, given: Jonas M. B. }
+    - { family: Jongerling, given: Joran }
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Epskamp, given: Sacha }
+    - { family: Waldorp, given: Lourens }
+  venue: Psychological Methods
+  year: 2026
+  status: advance-online
+  doi: "10.1037/met0000855"
+  preprint_doi: "10.31234/osf.io/k6uz4_v2"
+  links:
+    code: "https://github.com/jmbh/ModelCheckingForVAR"
+    data: "https://github.com/jmbh/ModelCheckingForVAR"
+
+- id: siepe-preregister-simulation-study
+  type: preprint
+  title: "Why, when, and how to (or not to) preregister a simulation study"
+  authors:
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Bartoš, given: František }
+    - { family: Peikert, given: Aaron }
+    - { family: Heck, given: Daniel W. }
+    - { family: Sarafoglou, given: Alexandra }
+    - { family: Boulesteix, given: Anne-Laure }
+    - { family: Pawel, given: Samuel }
+  venue: PsyArXiv
+  year: 2026
+  status: preprint
+  preprint_doi: "10.31234/osf.io/cxjrb"
+
+- id: huth-social-connection-loneliness
+  type: preprint
+  title: "Social connection features predicting loneliness: A longitudinal, interpretable machine-learning analysis"
+  authors:
+    - { family: Huth, given: K. B. S. }
+    - { family: Wijnen, given: Senne Maria Catharina Elisabeth }
+    - { family: Skjerdingstad, given: Nora }
+    - { family: Bartoš, given: František }
+    - { family: Finnemann, given: Adam }
+    - { family: Ebrahimi, given: Omid V. }
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Steijvers, given: Lisanne Catharina Johanna }
+    - { family: van Bilsen, given: Céline }
+    - { family: Bosma, given: Hans }
+    - { family: Schumacher, given: Lea }
+    - { family: Dukers-Muijrers, given: N. H. }
+  venue: PsyArXiv
+  year: 2026
+  status: preprint
+  preprint_doi: "10.31234/osf.io/mt76k_v1"
+  links:
+    code: "https://osf.io/5hmcd"
+    data: { url: "https://osf.io/5hmcd", note: synthetic data }
+
+- id: bartos-living-synthetic-benchmarks
+  type: preprint
+  title: "Living synthetic benchmarks: A neutral and cumulative framework for simulation studies"
+  authors:
+    - { family: Bartoš, given: František }
+    - { family: Pawel, given: Samuel }
+    - { family: Siepe, given: Björn S., me: true }
+  venue: arXiv
+  year: 2025
+  status: preprint
+  preprint_doi: "10.48550/arXiv.2510.19489"
+  links:
+    code: "https://github.com/FBartos/PublicationBiasBenchmark"
+    data: "https://github.com/FBartos/PublicationBiasBenchmark"
+
+- id: pfadt-methodological-metamorphosis
+  type: preprint
+  title: "A methodological metamorphosis: The rapid rise of Bayesian inference and open science practices in psychology"
+  authors:
+    # Complete list from Crossref (both repo sources truncate it).
+    - { family: Pfadt, given: Julius M. }
+    - { family: Bartoš, given: František }
+    - { family: Godmann, given: Henrik R. }
+    - { family: Waaijers, given: Meike }
+    - { family: Groot, given: Laura }
+    - { family: Heo, given: Ihnwhi }
+    - { family: Mensink, given: Lotte }
+    - { family: Nak, given: Jason }
+    - { family: De Ruiter, given: Jan Peter }
+    - { family: Sarafoglou, given: Alexandra }
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Arena, given: Giuseppe }
+    - { family: Akrong, given: Emma }
+    - { family: Aust, given: Frederik }
+    - { family: van den Bergh, given: Don }
+    - { family: Brenner, given: Wilhelmine }
+    - { family: Doekemeijer, given: Roos Arwen }
+    - { family: Donzallaz, given: Michelle C. }
+    - { family: van Doorn, given: Johnny }
+    - { family: Echevarria, given: Nicolas Ormeno }
+    - { family: Finnemann, given: Adam }
+    - { family: Geller, given: Gali }
+    - { family: Hato, given: Tuğba }
+    - { family: Koskinen, given: Emily }
+    - { family: Krijgsman, given: Bruny }
+    - { family: Kulbe, given: Lars }
+    - { family: Lüken, given: Malte }
+    - { family: Marsman, given: Maarten }
+    - { family: Ott, given: Vincent L. }
+    - { family: Pawel, given: Samuel }
+    - { family: Piestrak, given: Olga }
+    - { family: de Ron, given: Jill }
+    - { family: Sekulovski, given: Nikola }
+    - { family: Serry, given: Marlene }
+    - { family: Stefanów, given: Alan }
+    - { family: Stevenson, given: Niek }
+    - { family: Sadowski, given: Bartek }
+    - { family: Sopuch, given: Míra }
+    - { family: Vasileiou, given: Antreas }
+    - { family: Visser, given: Ingmar }
+    - { family: Völler, given: Marcell }
+    - { family: Wiechert, given: Sera }
+    - { family: de Wit, given: Kay }
+    - { family: Wuth, given: Julian }
+    - { family: Wagenmakers, given: Eric-Jan }
+  venue: PsyArXiv
+  year: 2025
+  status: preprint
+  preprint_doi: "10.31234/osf.io/ck3js_v1"
+  links:
+    code: "https://osf.io/r7u23/"
+    data: "https://osf.io/r7u23/"
+    prereg: "https://osf.io/6hc9w/"
+
+- id: hehlmann-affect-dynamics-treatment-outcome
+  type: article
+  title: "Exploring the predictive value of different affect dynamics for psychological treatment outcome"
+  authors:
+    - { family: Hehlmann, given: Miriam I. }
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Mink, given: Fabienne }
+    - { family: Peña Loray, given: Juan Segundo }
+    - { family: Gomez Penedo, given: Juan Martín }
+    - { family: Fritz, given: Jessica }
+    - { family: Moggia, given: Danilo }
+    - { family: Rubel, given: Julian A. }
+    - { family: Lutz, given: Wolfgang }
+  venue: Psychological Assessment
+  volume: "37"
+  issue: "11"
+  pages: "656-669"
+  year: 2025
+  status: published
+  doi: "10.1037/pas0001384"
+  preprint_doi: "10.31234/osf.io/3r9q6_v1"
+  links:
+    code: "https://osf.io/nhy9s"
+    data: "https://osf.io/nhy9s"
+    prereg: "https://osf.io/nhy9s/files/squn2"
+
+- id: kloft-interval-consensus-model
+  type: article
+  title: "The Interval Consensus Model: Aggregating Continuous Bounded Interval Responses"
+  authors:
+    - { family: Kloft, given: Matthias }
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Heck, given: Daniel W. }
+  venue: Psychometrika
+  volume: "91"
+  issue: "1"
+  pages: "199-222"
+  year: 2025
+  status: advance-online
+  doi: "10.1017/psy.2025.10058"
+  preprint_doi: "10.31234/osf.io/dzvw2"
+  links:
+    code: "https://osf.io/r32by/"
+    data: "https://osf.io/r32by/"
+
+- id: pawel-missingness-simulation-studies
+  type: article
+  title: "Handling Missingness, Failures, and Non-Convergence in Simulation Studies: A Review of Present Practices and Recommendations"
+  authors:
+    - { family: Pawel, given: Samuel }
+    - { family: Bartoš, given: František }
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Lohmann, given: Anna }
+  shared_second: [2, 3, 4]
+  venue: The American Statistician
+  volume: "80"
+  issue: "1"
+  pages: "31-48"
+  year: 2025
+  status: published
+  doi: "10.1080/00031305.2025.2540002"
+  preprint_doi: "10.48550/arXiv.2409.18527"
+  links:
+    code: "https://github.com/SamCH93/missSim"
+    data: "https://github.com/SamCH93/missSim"
+
+- id: siepe-ema-passive-sensors
+  type: article
+  title: "Associations between ecological momentary assessment and passive sensor data in a large student sample"
+  authors:
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Tutunji, given: Rayyan }
+    - { family: Rieble, given: Carlotta L. }
+    - { family: Proppert, given: Ricarda K. K. }
+    - { family: Fried, given: Eiko I. }
+  venue: Journal of Psychopathology and Clinical Science
+  volume: "134"
+  issue: "8"
+  pages: "912-925"
+  year: 2025
+  status: published
+  doi: "10.1037/abn0001013"
+  preprint_doi: "10.31234/osf.io/ybns6"
+  links:
+    code: "https://osf.io/txgnq/"
+
+- id: siepe-multiverse-dynamic-networks
+  type: article
+  title: "Multiverse analysis for dynamic network models: Investigating the influence of plausible alternative modeling choices"
+  authors:
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Heck, given: Daniel W. }
+  venue: Methodology
+  volume: "21"
+  issue: "2"
+  pages: "123-143"
+  year: 2025
+  status: published
+  doi: "10.5964/meth.15665"
+  preprint_doi: "10.31219/osf.io/etm3u"
+  links:
+    code: "https://github.com/bsiepe/network-multiverse"
+    data: "https://github.com/bsiepe/network-multiverse"
+    prereg: "https://osf.io/ahcx5"
+    app: "https://bsiepe.shinyapps.io/shiny-app/"
+
+- id: cloos-visual-analog-scales
+  type: article
+  title: "Accuracy and Consistency of Visual Analog Scales in Ecological Momentary Assessment and Digital Studies"
+  authors:
+    - { family: Cloos, given: Leonie }
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Piccirillo, given: Marilyn L. }
+    - { family: Fried, given: E. I. }
+    - { family: Wang, given: Shirley B. }
+    - { family: Helmich, given: Marieke A. }
+    - { family: Johnson, given: Sverre Urnes }
+    - { family: Hoffart, given: Asle }
+    - { family: Ebrahimi, given: Omid V. }
+  shared_first: [1, 2]
+  venue: "Collabra: Psychology"
+  volume: "11"
+  issue: "1"
+  article_number: "142735"
+  year: 2025
+  status: published
+  doi: "10.1525/collabra.142735"
+  preprint_doi: "10.31219/osf.io/h2p4w_v1"
+  links:
+    code: "https://osf.io/utdjq/"
+    data: { url: "https://osf.io/utdjq/", note: synthetic data }
+
+- id: siepe-understanding-ema-data
+  type: article
+  title: "Understanding EMA Data: A Tutorial on Exploring Item Performance in Ecological Momentary Assessment Data"
+  authors:
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Rieble, given: Carlotta L. }
+    - { family: Tutunji, given: Rayyan }
+    - { family: Rimpler, given: Aljoscha }
+    - { family: März, given: Julius }
+    - { family: Proppert, given: Ricarda K. K. }
+    - { family: Fried, given: Eiko I. }
+  venue: Advances in Methods and Practices in Psychological Science
+  volume: "8"
+  issue: "1"
+  article_number: "25152459241286877"
+  year: 2025
+  status: published
+  doi: "10.1177/25152459241286877"
+  preprint_doi: "10.31234/osf.io/dvj8g"
+  links:
+    code: "https://osf.io/yf3up/"
+    data: { url: "https://osf.io/yf3up/", note: synthetic data }
+
+- id: freeborn-language-learning-temporal-networks
+  type: chapter
+  title: "Unravelling the dynamics of language learning: Insights from temporal network analysis"
+  authors:
+    - { family: Freeborn, given: Lani }
+    - { family: Siepe, given: Björn S., me: true }
+  editors:
+    - { family: Lowie, given: Wander }
+    - { family: Rosmawati }
+    - { family: De Wilde, given: Vanessa }
+  book_title: "Research Methods in CDST Approaches to SLD"
+  series: Research Methods in Applied Linguistics
+  volume: "14"
+  pages: "143-166"
+  publisher: John Benjamins Publishing Company
+  year: 2025
+  status: published
+  doi: "10.1075/rmal.14.08fre"
+
+- id: siepe-robustness-reproduction-cox
+  type: report
+  title: "A Robustness Reproduction of Cox et al. (2023)"
+  authors:
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Kloft, given: M. }
+    - { family: Aktepe, given: S. C. }
+    - { family: Heck, given: D. W. }
+  venue: I4R Discussion Paper Series
+  report_number: "196"
+  year: 2025
+  status: published
+  url: "https://hdl.handle.net/10419/308794"
+  links:
+    code: "https://osf.io/ukfrc/"
+    data: "https://osf.io/ukfrc/"
+
+- id: siepe-simulation-studies-template
+  type: article
+  title: "Simulation Studies for Methodological Research in Psychology: A Standardized Template for Planning, Preregistration, and Reporting"
+  authors:
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Bartoš, given: František }
+    - { family: Morris, given: Tim P. }
+    - { family: Boulesteix, given: Anne-Laure }
+    - { family: Heck, given: Daniel W. }
+    - { family: Pawel, given: Samuel }
+  venue: Psychological Methods
+  year: 2024
+  status: advance-online
+  doi: "10.1037/met0000695"
+  preprint_doi: "10.31234/osf.io/ufgy6"
+  links:
+    code: "https://github.com/bsiepe/SimPsychReview"
+    data: "https://github.com/bsiepe/SimPsychReview"
+    prereg: "https://osf.io/dfgvu/registrations"
+
+- id: siepe-bayesian-idiographic-networks
+  type: article
+  title: "Bayesian Estimation and Comparison of Idiographic Network Models"
+  authors:
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Kloft, given: Matthias }
+    - { family: Heck, given: Daniel W. }
+  venue: Psychological Methods
+  year: 2024
+  status: advance-online
+  doi: "10.1037/met0000672"
+  preprint_doi: "10.31234/osf.io/uwfjc"
+  links:
+    code: "https://github.com/bsiepe/var-compare"
+    data: "https://github.com/bsiepe/var-compare"
+    supplement: "https://osf.io/9byaj/"
+  abstract: >-
+    Idiographic network models are estimated on time-series data of a single
+    individual and allow researchers to investigate person-specific associations
+    between multiple variables over time. The most common approach for fitting such
+    graphical vector autoregressive (gVAR) models uses LASSO regularization to
+    estimate a contemporaneous network and a temporal network. However, estimation
+    of idiographic networks can be unstable in relatively small data sets typical for
+    psychological research. This bears the risk of misinterpreting differences in
+    estimated networks as spurious heterogeneity between individuals. As a remedy, we
+    evaluate the performance of a Bayesian alternative for fitting gVAR models that
+    allows for regularization of parameters while accounting for estimation
+    uncertainty. We first compare Bayesian and LASSO approaches across a range of
+    conditions and performance measures in a simulation study. Overall, LASSO
+    estimation performed well, while Bayesian gVAR may perform better when the true
+    network is dense. We also develop a novel test, implemented in the tsnet package
+    in R, which assesses whether differences between estimated networks are reliable
+    based on matrix norms. In a simulation study, the test was conservative and
+    showed good false-positive rates. Finally, we apply Bayesian estimation and the
+    novel testing approach in an empirical example using daily data on clinical
+    symptoms for 40 individuals. Overall, Bayesian gVAR modeling facilitates the
+    assessment of estimation uncertainty which is important for studying
+    inter-individual differences of intra-individual dynamics.
+  summary: >-
+    Idiographic networks are popular, but they contain a lot of uncertainty. Even
+    when based on same true model, resulting networks may "look different", creating
+    a false sense of heterogeneity. In this paper, we evaluate an existing Bayesian
+    method to estimate idiographic networks. Then, we propose a novel test that
+    evaluates the evidence that differences in edges between two models are not just
+    due to sampling variability. We then apply estimation & test methods to empirical
+    data and introduce the R Package `tsnet` that includes the proposed method.
+
+- id: siepe-time-varying-networks-depression
+  type: article
+  title: "Time-Varying Network Models for the Temporal Dynamics of Depressive Symptomatology in Patients With Depressive Disorders: Secondary Analysis of Longitudinal Observational Data"
+  authors:
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Sander, given: Christian }
+    - { family: Schultze, given: Martin }
+    - { family: Kliem, given: Andreas }
+    - { family: Ludwig, given: Sascha }
+    - { family: Hegerl, given: Ulrich }
+    - { family: Reich, given: Hanna }
+  venue: JMIR Mental Health
+  volume: "11"
+  article_number: "e50136"
+  year: 2024
+  status: published
+  doi: "10.2196/50136"
+  links:
+    code: "https://github.com/bsiepe/steady_tvvar"
+    prereg: "https://osf.io/mnehzs"
+
+- id: westhoff-psychological-flexibility-daily-lives
+  type: article
+  title: "Psychological flexibility and cognitive-affective processes in young adults' daily lives"
+  authors:
+    - { family: Westhoff, given: Marlon }
+    - { family: Heshmati, given: Saida }
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Vogelbacher, given: Christoph }
+    - { family: Ciarrochi, given: Joseph }
+    - { family: Hayes, given: Steven C. }
+    - { family: Hofmann, given: Stefan G. }
+  venue: Scientific Reports
+  volume: "14"
+  issue: "1"
+  article_number: "8182"
+  year: 2024
+  status: published
+  doi: "10.1038/s41598-024-58598-3"
+  links:
+    code: "https://osf.io/ejtzs/"
+    data: "https://osf.io/ejtzs/"
+
+- id: langener-preregistering-passive-smartphone
+  type: article
+  title: "A Template and Tutorial for Preregistering Studies Using Passive Smartphone Measures"
+  authors:
+    # Complete list from Crossref (both repo sources truncate it).
+    - { family: Langener, given: Anna M. }
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Elsherif, given: M. M. }
+    - { family: Niemeijer, given: Koen }
+    - { family: Andresen, given: Pia K. }
+    - { family: Akre, given: Samir }
+    - { family: Bringmann, given: Laura F. }
+    - { family: Cohen, given: Zachary D. }
+    - { family: Choukas, given: Nathaniel R. }
+    - { family: Drexl, given: Konstantin }
+    - { family: Fassi, given: Luisa }
+    - { family: Green, given: James }
+    - { family: Hoffmann, given: Tabea }
+    - { family: Jagesar, given: Raj R. }
+    - { family: Kas, given: Martien J. H. }
+    - { family: Kurten, given: Sebastian }
+    - { family: Schoedel, given: Ramona }
+    - { family: Stulp, given: Gert }
+    - { family: Turner, given: Georgia }
+    - { family: Jacobson, given: Nicholas C. }
+  venue: Behavior Research Methods
+  volume: "56"
+  issue: "8"
+  pages: "8289-8307"
+  year: 2024
+  status: advance-online
+  doi: "10.3758/s13428-024-02474-5"
+  preprint_doi: "10.31234/osf.io/p4xf8"
+
+- id: rimpler-fred
+  type: article
+  title: "Introducing FRED: Software for Generating Feedback Reports for Ecological Momentary Assessment Data"
+  authors:
+    - { family: Rimpler, given: Aljoscha }
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Rieble, given: Carlotta L. }
+    - { family: Proppert, given: Ricarda K. K. }
+    - { family: Fried, given: Eiko I. }
+  venue: Administration and Policy in Mental Health and Mental Health Services Research
+  volume: "51"
+  issue: "4"
+  pages: "1-11"
+  year: 2024
+  status: published
+  doi: "10.1007/s10488-023-01324-4"
+  links:
+    code: "https://osf.io/8q254/"
+    app: "https://solo-fsw.shinyapps.io/FRED/"
+
+- id: talia-attachment-group-psychotherapy
+  type: article
+  title: "An exploratory study on how attachment classifications manifest in group psychotherapy"
+  authors:
+    # Complete list from Crossref (the website lists 7 of 11 without marking the gap).
+    - { family: Talia, given: Alessandro }
+    - { family: Georg, given: Anna }
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Gullo, given: Salvatore }
+    - { family: Miller-Bottome, given: Madeleine }
+    - { family: Volkert, given: Jana }
+    - { family: Neukel, given: Corinne }
+    - { family: Kaess, given: Michael }
+    - { family: Bempohl, given: Felix }
+    - { family: Herpertz, given: Sabine C. }
+    - { family: Taubner, given: Svenja }
+  venue: "Research in Psychotherapy: Psychopathology, Process and Outcome"
+  volume: "25"
+  issue: "3"
+  pages: "286-298"
+  year: 2022
+  status: published
+  doi: "10.4081/ripppo.2022.653"
+
+- id: talia-bindungsmuster-psychotherapie
+  type: chapter
+  language: de
+  title: "Von der Wiege bis in den Behandlungsraum: Zur Manifestation von Bindungsmustern in der Psychotherapie"
+  authors:
+    - { family: Talia, given: A. }
+    - { family: Siepe, given: Björn S., me: true }
+  editors:
+    - { family: Brisch }
+  book_title: "Bindung und psychische Störungen: Ursachen, Behandlung und Prävention"
+  pages: "230-247"
+  publisher: Klett Cotta
+  year: 2021
+  status: published
