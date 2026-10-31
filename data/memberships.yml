@@ -1,0 +1,12 @@
+# Professional memberships. Schema: schema/memberships.schema.json
+# Migrated 2026-10-31 from the LaTeX CV.
+
+- organization: "Society for Ambulatory Assessment"
+  abbreviation: SAA
+  start: "2025"
+  end: present
+
+- organization: "German Society for Psychology"
+  abbreviation: DGPS
+  start: "2023"
+  end: present

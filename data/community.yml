@@ -1,0 +1,25 @@
+# Community service. Schema: schema/community.schema.json
+# Migrated 2026-10-31 from the LaTeX CV.
+
+- role: "Volunteer"
+  organization: "CorrelAid"
+  start: "2024"
+  end: present
+- role: "Student tutor"
+  organization: "Asylarbeitskreis Heidelberg"
+  description: "Refugee aid"
+  start: "2015"
+  end: "2021"
+- role: "Co-host of yearly after-school orientation day"
+  organization: "Hölderlin-Gymnasium"
+  start: "2019"
+  end: "2021"
+- role: "Involvement"
+  organization: "Jugend Rettet"
+  description: "Refugee aid"
+  start: "2017"
+  end: "2018"
+- role: "Assistant coach, youth soccer team"
+  organization: "ASC Neuenheim"
+  start: "2013"
+  end: "2014"

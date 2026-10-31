@@ -1,0 +1,19 @@
+# Awards. Schema: schema/awards.schema.json
+# Migrated 2026-10-31 from the LaTeX CV and the news on index.qmd.
+
+- name: "SIPS Commendation"
+  awarder: "Society for the Improvement of Psychological Science (SIPS)"
+  date: "2026-06"
+  for: openESM
+  related: [openesm-database]
+  url: "https://improvingpsych.org/mission/awards/"
+
+- name: "Best Poster Award"
+  awarder: "Society for Ambulatory Assessment"
+  date: "2025-05"
+  for: "Taking uncertainty into account is central when using dynamic network features as predictors"
+  related: [uncertainty-network-features-poster]
+
+- name: "Student Teaching Award"
+  awarder: "Student council psychology, Marburg University"
+  date: "2024-07"

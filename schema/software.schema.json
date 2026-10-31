@@ -23,6 +23,7 @@
         "$ref": "common.schema.json#/$defs/people"
       },
       "year": { "description": "Year of first release.", "$ref": "common.schema.json#/$defs/year" },
+      "contribution_year": { "description": "For contributor roles: the year of my contribution.", "$ref": "common.schema.json#/$defs/year" },
       "doi": { "$ref": "common.schema.json#/$defs/doi" },
       "links": {
         "type": "object",

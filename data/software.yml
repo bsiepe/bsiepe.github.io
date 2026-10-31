@@ -1,0 +1,135 @@
+# Software and research infrastructure. Schema: schema/software.schema.json
+# Migrated 2026-10-31 from software/index.qmd and the LaTeX CV; package titles,
+# authors, and first-release years from the CRAN DOI records (Crossref).
+# See MIGRATION_REPORT.md section 2c.
+
+- id: openesm-database
+  name: openESM
+  description: "Open database of experience sampling datasets"
+  kind: database
+  roles: [lead-developer, maintainer]
+  authors:
+    - { family: Siepe, given: Björn S., me: true }
+  year: 2025
+  links:
+    website: "https://openesmdata.org"
+    github: "https://github.com/openesm-project/"
+  publications: [siepe-openesm]
+  areas: [esm]
+  tags: [open-science, openesm]
+
+- id: varcheck
+  name: VARcheck
+  description: "Visual Diagnostic Checks for Vector Autoregressive Models"
+  kind: package
+  languages: [R]
+  roles: [maintainer, author]
+  authors:
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Haslbeck, given: Jonas M. B. }
+  year: 2026
+  doi: "10.32614/CRAN.package.VARcheck"
+  links:
+    github: "https://github.com/bsiepe/VARcheck"
+  publications: [haslbeck-model-checking-var]
+  areas: [timeseries]
+
+- id: openesm-r
+  name: openesm
+  description: "Access the Open Experience Sampling Method Database"
+  kind: package
+  languages: [R]
+  roles: [maintainer, author]
+  authors:
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Kloft, given: Matthias }
+  year: 2025
+  doi: "10.32614/CRAN.package.openesm"
+  links:
+    github: "https://github.com/openesm-project/"
+  publications: [siepe-openesm]
+  areas: [esm]
+  tags: [openesm]
+
+- id: openesm-python
+  name: openesm
+  description: "Access openESM experience sampling datasets"
+  kind: package
+  languages: [Python]
+  roles: [maintainer, author]
+  authors:
+    - { family: Siepe, given: Björn S., me: true }
+  year: 2025
+  links:
+    pypi: "https://pypi.org/project/openesm/"
+    github: "https://github.com/openesm-project/"
+  publications: [siepe-openesm]
+  areas: [esm]
+  tags: [openesm]
+
+- id: intervalpsych
+  name: intervalpsych
+  description: "Analyzing Interval Data in Psychometrics"
+  kind: package
+  languages: [R]
+  roles: [author]
+  authors:
+    - { family: Kloft, given: Matthias }
+    - { family: Siepe, given: Björn S., me: true }
+  year: 2025
+  links:
+    cran: "https://cran.r-project.org/package=intervalpsych"
+  publications: [kloft-interval-consensus-model]
+
+- id: publicationbiasbenchmark
+  name: PublicationBiasBenchmark
+  description: "Benchmark for Publication Bias Correction Methods"
+  kind: package
+  languages: [R]
+  roles: [author]
+  authors:
+    - { family: Bartoš, given: František }
+    - { family: Pawel, given: Samuel }
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Čala, given: Petr }
+  year: 2025
+  doi: "10.32614/CRAN.package.PublicationBiasBenchmark"
+  links:
+    github: "https://github.com/FBartos/PublicationBiasBenchmark"
+  publications: [bartos-living-synthetic-benchmarks]
+  areas: [simulation]
+
+- id: gimme
+  name: gimme
+  description: "Group Iterative Multiple Model Estimation"
+  kind: package
+  languages: [R]
+  roles: [contributor]
+  authors:
+    - { family: Lane, given: Stephanie }
+    - { family: Gates, given: Kathleen M. }
+    - { family: Fisher, given: Zachary }
+    - { family: Arizmendi, given: Cara }
+    - { family: Molenaar, given: Peter }
+  year: 2014
+  contribution_year: 2025
+  doi: "10.32614/CRAN.package.gimme"
+  areas: [timeseries]
+  tags: [network-analysis]
+
+- id: tsnet
+  name: tsnet
+  description: "Fitting, Comparing, and Visualizing Networks Based on Time Series Data"
+  kind: package
+  languages: [R]
+  roles: [maintainer, author]
+  authors:
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Kloft, given: Matthias }
+  year: 2024
+  doi: "10.32614/CRAN.package.tsnet"
+  links:
+    github: "https://github.com/bsiepe/tsnet"
+  publications: [siepe-bayesian-idiographic-networks]
+  areas: [timeseries]
+  tags: [bayesian, network-analysis]

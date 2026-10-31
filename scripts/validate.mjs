@@ -99,7 +99,29 @@ if (data.profile) {
   checkPath("profile.yml", "/social_image", data.profile.social_image);
 }
 
-const files = Object.keys(data).length;
+// Blog posts: content/blog/<slug>/index.md front matter.
+const blogDir = path.join(root, "content", "blog");
+const validatePost = ajv.getSchema("blog.schema.json");
+let posts = 0;
+if (fs.existsSync(blogDir)) {
+  for (const slug of fs.readdirSync(blogDir).filter((d) => fs.statSync(path.join(blogDir, d)).isDirectory())) {
+    const rel = `content/blog/${slug}/index.md`;
+    const file = path.join(blogDir, slug, "index.md");
+    if (!fs.existsSync(file)) { err(rel, "", "missing"); continue; }
+    if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(slug)) err(rel, "", `folder name "${slug}" is not a valid slug`);
+    const m = fs.readFileSync(file, "utf8").match(/^---\r?\n([\s\S]*?)\r?\n---/);
+    if (!m) { err(rel, "", "no front matter"); continue; }
+    let fm;
+    try { fm = YAML.parse(m[1], { schema: "yaml-1.1", uniqueKeys: true }); } catch (e) { err(rel, "", `YAML error: ${e.message}`); continue; }
+    posts++;
+    if (!validatePost(fm)) for (const e of validatePost.errors) err(rel, e.instancePath || "/", e.message);
+    for (const f of [fm.image, fm.source].filter(Boolean)) checkPath(rel, "", `content/blog/${slug}/${f}`);
+    for (const ref of fm.publications ?? []) if (!pubIds.has(ref)) err(rel, "/publications", `unknown publication id "${ref}"`);
+    for (const ref of fm.software ?? []) if (!(ids.software ?? new Set()).has(ref)) err(rel, "/software", `unknown software id "${ref}"`);
+  }
+}
+
+const files = Object.keys(data).length + posts;
 if (errors.length) {
   console.error(errors.join("\n"));
   console.error(`\n${errors.length} error(s) in ${files} file(s).`);

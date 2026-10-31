@@ -1,0 +1,64 @@
+# Grants, stipends, and scholarships. Schema: schema/grants.schema.json
+# Migrated 2026-10-31 from the LaTeX CV ("Research Grants", "Travel Grants & Scholarships").
+
+- name: "DFG Individual Research Grant"
+  funder: "DFG"
+  kind: research-grant
+  role: pi
+  project_title: "Empirical Benchmarking of Time Series Models in Psychology: Building a Foundation for Personalized Prediction"
+  amount: { value: 299771, currency: EUR }
+  date: "2026-07"
+
+- name: "DYNAMIC Center Mini Grant"
+  funder: "DYNAMIC Center"
+  kind: internal-grant
+  purpose: "Financing research project in Singapore"
+  amount: { value: 4136.91, currency: EUR }
+  date: "2026-01"
+
+- name: "DAAD Conference Stipend"
+  funder: "DAAD"
+  kind: travel-grant
+  purpose: "Travel to APS 2026"
+  amount: { value: 873, currency: EUR }
+  date: "2026-05"
+
+- name: "DAAD Research Travel Stipend"
+  funder: "DAAD"
+  kind: travel-grant
+  purpose: "Financing research stay in Groningen"
+  amount: { value: 2259, currency: EUR }
+  date: "2024-08"
+
+- name: "DAAD Conference Stipend"
+  funder: "DAAD"
+  kind: travel-grant
+  purpose: "Travel to the IMPS 2024 Annual Meeting"
+  amount: { value: 950, currency: EUR }
+  date: "2024-07"
+
+- name: "Marburg Research Academy Conference Funding"
+  funder: "Marburg Research Academy"
+  kind: conference-funding
+  role: co-applicant
+  purpose: "On behalf of the Open Science Initiative at Marburg University"
+  amount: { value: 1500, currency: EUR }
+  date: "2024-07"
+
+- name: "APS Conference Financial Assistance"
+  funder: "APS"
+  kind: travel-grant
+  amount: { value: 400, currency: USD }
+  date: "2023-03"
+
+- name: "Erasmus Internship Stipend"
+  kind: scholarship
+  purpose: "Financing research stay in Leiden"
+  amount: { value: 1089, currency: EUR }
+  date: "2022-03"
+
+- name: "German Federal Scholarship (Deutschlandstipendium)"
+  kind: scholarship
+  amount: { value: 3600, currency: EUR }
+  amount_note: "over one year"
+  date: "2021-10"

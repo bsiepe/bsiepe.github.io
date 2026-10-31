@@ -1,0 +1,51 @@
+# Media coverage. Schema: schema/media.schema.json
+# Migrated 2026-10-31 from the LaTeX CV. Dates are taken from the URLs where
+# the URL contains one; no source states them otherwise.
+
+- outlet: "Leiden University"
+  kind: press-release
+  date: "2025-07"
+  url: "https://www.universiteitleiden.nl/en/news/2025/07/does-your-smartwatch-say-youre-stressed-it-may-often-be-wrong"
+  about: [siepe-ema-passive-sensors]
+
+- outlet: "The Guardian"
+  kind: article
+  date: "2025-08-08"
+  url: "https://www.theguardian.com/technology/2025/aug/08/smartwatches-offer-little-insight-into-stress-levels-researchers-find"
+  about: [siepe-ema-passive-sensors]
+
+- outlet: "GQ"
+  kind: article
+  url: "https://www.gq.com/story/can-a-wearable-make-you-happier-with-mood-tracking"
+  about: [siepe-ema-passive-sensors]
+
+- outlet: "Lifehacker"
+  kind: article
+  url: "https://lifehacker.com/health/your-smartwatch-doesnt-actually-know-how-stressed-you-are"
+  about: [siepe-ema-passive-sensors]
+
+- outlet: "Athletech"
+  kind: article
+  url: "https://athletechnews.com/smartwatch-stress-scores-rarely-match-reality-researchers-say/"
+  about: [siepe-ema-passive-sensors]
+
+- outlet: "Techspot"
+  kind: article
+  url: "https://www.techspot.com/news/109027-smartwatches-useless-measuring-actual-stress-levels-study.html"
+  about: [siepe-ema-passive-sensors]
+
+- outlet: "Gizmodo"
+  kind: article
+  url: "https://gizmodo.com/new-study-finds-smartwatches-arent-that-good-at-measuring-stress-2000640868"
+  about: [siepe-ema-passive-sensors]
+
+- outlet: "The Signal (newsletter of the Society for Ambulatory Assessment)"
+  kind: interview
+  date: "2025-12"
+  url: "https://ambulatory-assessment.org/newsletter-december-2025/"
+
+- outlet: "Center for Open Science Blog"
+  kind: interview
+  title: "Interview about preregistration for simulation studies"
+  url: "https://www.cos.io/blog/introducing-the-simulation-studies-preregistration-template"
+  about: [siepe-simulation-studies-template]

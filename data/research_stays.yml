@@ -1,0 +1,47 @@
+# Research stays and internships. Schema: schema/research_stays.schema.json
+# Migrated 2026-10-31 from the LaTeX CV ("Research Visits & Internships").
+
+- kind: research-visit
+  role: "Visiting Doctoral Student"
+  institution: "National University of Singapore"
+  unit: "Department of Psychology, Lab of Methods, Data Science & AI"
+  host: { family: Epskamp, given: Sacha }
+  city: Singapore
+  country: SG
+  start: "2026-02"
+  end: "2026-03"
+
+- kind: research-visit
+  role: "Visiting Doctoral Student"
+  institution: "University of Groningen"
+  unit: "Psychometrics and Statistics Department"
+  host: { family: Bringmann, given: Laura }
+  city: Groningen
+  country: NL
+  start: "2024-09"
+  end: "2024-10"
+
+- kind: research-internship
+  role: "Research Intern"
+  institution: "Leiden University"
+  project: "ERC-funded WARN-D Project"
+  host: { family: Fried, given: Eiko }
+  city: Leiden
+  country: NL
+  start: "2022-03"
+  end: "2022-06"
+  description: "Working with experience sampling and passive sensor data in a project aiming to build an early-warning system for depression."
+
+- kind: research-internship
+  role: "Research Intern"
+  institution: "German Depression Foundation, Research Center"
+  project: "STEADY project"
+  host: { family: Hegerl, given: Ulrich }
+  start: "2021-03"
+  end: "2021-04"
+
+- kind: clinical-internship
+  role: "Clinical Intern"
+  institution: "PZN Nordbaden (Psychiatric Clinic)"
+  start: "2020-02"
+  end: "2020-03"

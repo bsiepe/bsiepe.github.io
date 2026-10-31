@@ -1,0 +1,97 @@
+# Academic service and editorial positions. Schema: schema/service.schema.json
+# Migrated 2026-10-31 from the LaTeX CV ("Academic Service", "Editorial Positions").
+
+- role: "Editorial Fellow"
+  organization: "Advances in Methods and Practices in Psychological Science"
+  kind: editorial
+  start: "2026"
+  end: "2027"
+
+- role: "Editorial Team"
+  organization: "Journal of European Psychology Students"
+  kind: editorial
+  start: "2021"
+  end: "2023"
+
+- role: "Organizer"
+  organization: "Online Lunch Talk Series on Simulation Studies"
+  kind: organizing
+  years: ["2026"]
+  url: "https://bsiepe.github.io/simulation-talk-series/"
+
+- role: "Contributor"
+  organization: "PandaR Teaching Resources"
+  kind: other
+  years: ["2025", "2026"]
+  url: "https://pandar.netlify.app/authors/bjorn-siepe/"
+
+- role: "Second Chair"
+  organization: "Task Force on Quality Standards for Simulation Studies of the Psychometric Society"
+  kind: working-group
+  start: "2025"
+  end: present
+
+- role: "Member"
+  organization: "Tenure Track Commission, Department of Psychology, Marburg University"
+  kind: committee
+  start: "2025"
+  end: present
+
+- role: "Member"
+  organization: "Professorship Appointment Committee for a Clinical Professorship, Department of Psychology, Marburg University"
+  kind: committee
+  start: "2025"
+  end: present
+  hidden: true
+
+- role: "Head"
+  organization: "Special Interest Group for Quality Standards for Simulation Studies of the Quantitative Methods Subgroup of the German Psychological Association"
+  kind: working-group
+  start: "2025"
+  end: present
+
+- role: "Website coordinator"
+  organization: "MITNB Consortium"
+  kind: other
+  start: "2024"
+  end: present
+  url: "https://mitnb.org"
+
+- role: "Member"
+  organization: "Doctoral Committee, Department of Psychology, Marburg University"
+  kind: committee
+  start: "2023"
+  end: present
+
+- role: "Board Member"
+  organization: "Open Science Initiative, Marburg University"
+  kind: board
+  start: "2022"
+  end: present
+
+- role: "Co-Organizer"
+  organization: "Brainhack Marburg"
+  kind: organizing
+  years: ["2023", "2024", "2025"]
+
+- role: "Co-Organizer"
+  organization: "Open Science Days Marburg"
+  kind: organizing
+  years: ["2023"]
+
+- role: "Co-Host"
+  organization: "ReproducibiliTea Frankfurt"
+  kind: organizing
+  years: ["2022"]
+
+- role: "Board Member"
+  organization: "Open Science Initiative, Goethe University Frankfurt"
+  kind: board
+  start: "2021"
+  end: "2022"
+
+- role: "Member"
+  organization: "Student Council Psychology, Goethe University Frankfurt"
+  kind: other
+  start: "2021"
+  end: "2022"

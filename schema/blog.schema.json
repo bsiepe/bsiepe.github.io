@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "blog.schema.json",
+  "title": "Blog post front matter",
+  "description": "Front matter of content/blog/<slug>/index.md. The folder name is the slug.",
+  "type": "object",
+  "required": ["title", "date", "authors"],
+  "additionalProperties": false,
+  "properties": {
+    "title": { "$ref": "common.schema.json#/$defs/text" },
+    "date": { "$ref": "common.schema.json#/$defs/date" },
+    "updated": { "$ref": "common.schema.json#/$defs/date" },
+    "authors": { "type": "array", "$ref": "common.schema.json#/$defs/people", "minItems": 1 },
+    "description": { "$ref": "common.schema.json#/$defs/text" },
+    "areas": { "$ref": "common.schema.json#/$defs/areas" },
+    "tags": { "$ref": "common.schema.json#/$defs/tags" },
+    "image": { "description": "Path relative to the post folder.", "type": "string" },
+    "publications": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/id" }, "uniqueItems": true },
+    "software": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/id" }, "uniqueItems": true },
+    "source": { "description": "The .qmd this file was rendered from, relative to the post folder.", "type": "string" },
+    "draft": { "type": "boolean" }
+  }
+}

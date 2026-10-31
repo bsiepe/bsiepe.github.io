@@ -1,0 +1,8 @@
+# Supervision. Schema: schema/supervision.schema.json
+# Migrated 2026-10-31 from the LaTeX CV. as_of: unknown; set it when you update the counts.
+
+counts:
+  - { role: first, level: bachelor, count: 9 }
+  - { role: first, level: master, count: 3 }
+  - { role: second, level: bachelor, count: 10 }
+  - { role: second, level: master, count: 15 }

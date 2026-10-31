@@ -1,0 +1,48 @@
+# Education. Schema: schema/education.schema.json
+# Migrated 2026-10-31 from the LaTeX CV. Grades and the M.Sc. thesis were
+# commented out there; templates do not print grades, and the thesis is hidden.
+
+- level: doctorate
+  degree: "Dr. rer. nat."
+  field: Psychological Methods
+  institution: "Marburg University"
+  start: "2022-10"
+  end: "2026-07"
+  distinction: "summa cum laude"
+  thesis:
+    title: "Uncertainty in Dynamic Network Modeling: Estimation, Specification, and Inference"
+
+- level: master
+  degree: "M.Sc."
+  field: Psychology
+  institution: "Goethe University Frankfurt"
+  start: "2020-11"
+  end: "2022-09"
+  distinction: "with distinction"
+  grade: { value: "1,0", scale: "5-point German rating scale" }
+  thesis:
+    title: "Temporal Dynamics of Depressive Symptomatology: An Idiographic Time Series Analysis"
+    hidden: true
+
+- level: bachelor
+  degree: "B.Sc."
+  field: Psychology
+  institution: "Heidelberg University"
+  start: "2017-10"
+  end: "2020-09"
+  grade: { value: "1,2", scale: "5-point German rating scale" }
+
+- level: bachelor
+  degree: "B.Sc."
+  field: Economics
+  institution: "Mannheim University"
+  start: "2014-10"
+  end: "2017-08"
+  grade: { value: "2,0", scale: "5-point German rating scale" }
+
+- level: school
+  degree: "Abitur"
+  institution: "Hölderlin-Gymnasium Heidelberg"
+  start: "2005-09"
+  end: "2013-06"
+  grade: { value: "1,0", scale: "5-point German rating scale" }

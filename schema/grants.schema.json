@@ -5,7 +5,7 @@
   "type": "array",
   "items": {
     "type": "object",
-    "required": ["name", "funder", "kind", "date"],
+    "required": ["name", "kind", "date"],
     "additionalProperties": false,
     "properties": {
       "name": { "description": "Name of the grant or programme as the funder calls it.", "$ref": "common.schema.json#/$defs/text" },

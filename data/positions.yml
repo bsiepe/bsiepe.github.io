@@ -1,0 +1,53 @@
+# Positions. Schema: schema/positions.schema.json
+# Migrated 2026-10-31 from the LaTeX CV ("Work Experience").
+
+- title: "Scientific Assistant"
+  institution: "Marburg University"
+  unit: "Psychological Methods Lab"
+  kind: research
+  pi: { family: Heck, given: Daniel }
+  start: "2022-10"
+  end: present
+
+- title: "Statistical Consultant"
+  institution: "LOEWE Center DYNAMIC"
+  kind: consulting
+  start: "2025-02"
+  end: present
+  description: "Creation of consulting service on conceptualization, study planning, statistical analyses, and statistical programming."
+
+- title: "Statistical Consultant"
+  institution: "Marburg University"
+  unit: "Center for Translational Clinical Psychology"
+  kind: consulting
+  start: "2024-02"
+  end: present
+  description: "Consulting on conceptualization, study planning, statistical analyses, and statistical programming."
+
+- title: "Statistical Consultant"
+  institution: "Freelance Work"
+  kind: freelance
+  start: "2022-11"
+  end: present
+  description: "Consulting on conceptualization, study planning, statistical analyses, and statistical programming for clinical psychological researchers from multiple research groups and clinics."
+
+- title: "Student Assistant"
+  institution: "Goethe University Frankfurt"
+  unit: "Departments for Psychological Methods"
+  kind: student-assistant
+  start: "2021-11"
+  end: "2022-08"
+
+- title: "Student Assistant"
+  institution: "University Hospital Frankfurt"
+  kind: student-assistant
+  project: "Horizon 2020-funded Eat2BeNice project"
+  pi: { family: Matura, given: Silke }
+  start: "2020-10"
+  end: "2021-10"
+
+- title: "Student Assistant"
+  institution: "Institute for Psychosocial Prevention Heidelberg"
+  kind: student-assistant
+  start: "2019-10"
+  end: "2019-12"

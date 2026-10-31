@@ -1,0 +1,71 @@
+# Reviewing. Schema: schema/reviewing.schema.json
+# Migrated 2026-10-31 from the LaTeX CV. Journal names from the printed list;
+# dates from the commented-out per-review list.
+
+- venue: "Administration and Policy in Mental Health and Mental Health Services Research"
+  kind: journal
+  dates: ["2023-06"]
+- venue: "Behavior Research Methods"
+  abbreviation: BRM
+  kind: journal
+  dates: ["2024-09"]
+- venue: "Brain, Behavior, & Immunity - Health"
+  kind: journal
+  dates: ["2024-02"]
+- venue: "Acta Psychiatrica Scandinavica"
+  kind: journal
+  dates: ["2024-05"]
+- venue: "Advances in Methods and Practices in Psychological Science"
+  abbreviation: AMPPS
+  kind: journal
+  dates: ["2024-06", "2026-02", "2026-07"]
+- venue: "Child Psychiatry & Human Development"
+  kind: journal
+  dates: ["2024-07"]
+- venue: "Journal of Consulting & Clinical Psychology"
+  abbreviation: JCCP
+  kind: journal
+  dates: ["2024-11"]
+- venue: "Psychological Methods"
+  kind: journal
+  dates: ["2025-01"]
+- venue: "npj Digital Medicine"
+  kind: journal
+  dates: ["2025-03"]
+- venue: "Nature Human Behaviour"
+  abbreviation: NHB
+  kind: journal
+  dates: ["2025-03"]
+- venue: "Multivariate Behavioral Research"
+  abbreviation: MBR
+  kind: journal
+  dates: ["2025-03", "2025-12"]
+- venue: "Journal of Open Source Software"
+  abbreviation: JOSS
+  kind: journal
+  dates: ["2025-03"]
+- venue: "Cognitive Therapy and Research"
+  abbreviation: CTAR
+  kind: journal
+  dates: ["2025-05", "2026-05"]
+- venue: "Journal of Robustness Reports"
+  abbreviation: JORR
+  kind: journal
+  dates: ["2025-09"]
+- venue: "Journal of Mathematical Psychology"
+  abbreviation: JMP
+  kind: journal
+  dates: ["2026-02"]
+- venue: "British Journal of Mathematical and Statistical Psychology"
+  abbreviation: BJMSP
+  kind: journal
+  dates: ["2026-07"]
+- venue: "PCI Psychology"
+  kind: preprint-review
+  dates: ["2026-07"]
+- venue: "Bi-Annual Meeting of the German Psychological Society (DGPS)"
+  kind: conference
+  dates: ["2024"]
+- venue: "Annual Meeting of the Society for Ambulatory Assessment"
+  kind: conference
+  dates: ["2026"]

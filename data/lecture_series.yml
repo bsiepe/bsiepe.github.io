@@ -1,0 +1,82 @@
+# Lecture series. Schema: schema/lecture_series.schema.json
+# Migrated 2026-10-31 from simulation-talk-series/index.qmd and
+# Simulation-Lecture-Dates.ics. The .ics file will be generated from this.
+
+id: simulation-lunch-lectures
+title: "Lunch Lectures on Monte Carlo Simulation Studies"
+schedule: "Noon (Berlin time) on the first Wednesday of each month (except August and September)"
+organizer: 'Working Group "Quality Standards of Simulation Studies" of the Methods and Evaluation Division of the German Psychological Society (DGPs)'
+contact_email: "bjoern.siepe@uni-marburg.de"
+timezone: Europe/Berlin
+duration_minutes: 60
+about: |
+  This is a recurring talk series on Monte Carlo simulation studies in psychology and related fields, intended for a broad audience:
+
+  - **Students** interested in learning about simulation studies
+  - **Applied researchers** who want to learn more about methodological research
+  - **Methodologists** wishing to stay up to date on the latest developments
+
+  Talks are held in **English** and are **free to attend** for everyone.
+
+  The series starts with two introductory talks on the design and implementation of simulation studies in R, followed by talks on questionable research practices, the state of the art and potential solutions, synthetic benchmarking, and reporting and open science practices.
+
+  These talks cover topics currently discussed in the scientific community. Opinions may differ, and the talks do not necessarily reflect the views of all working group members — they aim to provide a platform for learning and discussion.
+
+  For students and early career researchers, the youth member representatives of the Methods and Evaluation Division of the DGPs organize a yearly online hands-on workshop on simulation studies (in German). If you are interested in joining the next round, contact [jungmitglieder.me@gmail.com](mailto:jungmitglieder.me@gmail.com).
+sessions:
+  - date: "2026-04-01"
+    time: "12:00"
+    speakers:
+      - { family: Strobl, given: Carolin }
+      - { family: Henninger, given: Mirka }
+      - { family: Debelak, given: Rudolf }
+    title: "Design of simulation studies and first implementation in R"
+    links:
+      join: "https://epfl.zoom.us/j/63087259191?pwd=ciyJwUb2sO0uSUkodBHDEEoF1o7CHT.1"
+      slides: "https://osf.io/3zycp"
+      recording: "https://youtu.be/PpvDiFrXcd4"
+  - date: "2026-05-06"
+    time: "12:00"
+    speakers:
+      - { family: Strobl, given: Carolin }
+      - { family: Henninger, given: Mirka }
+      - { family: Debelak, given: Rudolf }
+    title: "Tips and tricks for simulation studies in R"
+    links:
+      join: "https://epfl.zoom.us/j/65242326604?pwd=HElSDJD4X4BOaYfMEuFHRAjO3ctkdf.1"
+      slides: "https://osf.io/8hrb5"
+      recording: "https://youtu.be/42rGI9LbkSM"
+  - date: "2026-06-03"
+    time: "12:00"
+    speakers:
+      - { family: Pawel, given: Samuel }
+    title: "Researcher degrees of freedom and questionable research practices in simulation studies"
+    links:
+      join: "https://webconf.hrz.uni-marburg.de/n/rooms/wvp-c2q-ibf-qw8/join"
+      slides: "https://osf.io/b29kn"
+      recording: "https://youtu.be/CN7brYr5vVA"
+  - date: "2026-07-01"
+    time: "12:00"
+    speakers:
+      - { family: Siepe, given: Björn, me: true }
+    title: "Simulation studies in psychology: State of the art, problems, and potential solutions"
+    links:
+      join: "https://webconf.hrz.uni-marburg.de/n/rooms/wvp-c2q-ibf-qw8/join"
+      slides: "https://osf.io/4cbgy"
+      recording: "https://youtu.be/qczPPIC5sY4"
+  - date: "2026-10-07"
+    time: "12:00"
+    speakers:
+      - { family: Bartoš, given: František }
+    title: "Synthetic benchmarking for simulation studies"
+    links:
+      join: "https://webconf.hrz.uni-marburg.de/n/rooms/wvp-c2q-ibf-qw8/join"
+      slides: "https://osf.io/sj2bq"
+      recording: "https://youtu.be/-UVsN8VAwgw"
+  - date: "2026-11-04"
+    time: "12:00"
+    speakers:
+      - { family: Bouma, given: Anouk }
+    title: "Reporting practices, open science practices, and trustworthiness of simulation studies in psychology"
+    links:
+      join: "https://webconf.hrz.uni-marburg.de/n/rooms/wvp-c2q-ibf-qw8/join"

@@ -1,0 +1,35 @@
+# Teaching. Schema: schema/teaching.schema.json
+# Migrated 2026-10-31 from the LaTeX CV ("Teaching Experience").
+
+- title: "Modelling and data analysis in R"
+  institution: "Marburg University"
+  level: master
+  kind: seminar
+  description: "Statistical programming seminar"
+  years: ["2025"]
+
+- title: "Critical reading of research papers"
+  institution: "Marburg University"
+  level: bachelor
+  kind: seminar
+  description: "Seminar about methodological criteria of research"
+  years: ["2023", "2024", "2025"]
+
+- title: "Multivariate Statistics"
+  institution: "Marburg University"
+  level: bachelor
+  kind: seminar
+  description: "Seminar about regression and latent variable modeling"
+  years: ["2022", "2023", "2024"]
+
+- title: "Introduction to git/GitHub, Introduction to Machine Learning in Python, Introduction to Open Data, Introduction to Data Visualization in Python"
+  institution: "Brainhack School"
+  kind: tutorial
+  years: ["2023"]
+
+- title: "Research Methods and Evaluation II"
+  institution: "Goethe University Frankfurt"
+  level: master
+  kind: seminar
+  description: "Seminar about latent variable modeling"
+  years: ["2022"]

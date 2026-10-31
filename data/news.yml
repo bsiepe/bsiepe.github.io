@@ -1,0 +1,9 @@
+# News. Schema: schema/news.schema.json
+# Migrated 2026-10-31 from the News timeline on index.qmd. Newest first.
+
+- date: "2026-07"
+  text: "I was awarded a 3-year (~300k €) Individual Research Grant by the German Research Foundation."
+- date: "2026-07"
+  text: "I just defended my PhD in Psychological Methods."
+- date: "2026-07"
+  text: "openESM received a [SIPS commendation](https://improvingpsych.org/mission/awards/)."

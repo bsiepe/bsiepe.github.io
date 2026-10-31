@@ -1,0 +1,31 @@
+# Professional training. Schema: schema/training.schema.json
+# Migrated 2026-10-31 from the LaTeX CV.
+
+- title: "Combining R and C++"
+  provider: "DAGStat"
+  kind: workshop
+  date: "2025"
+- title: "Linear Algebra for Machine Learning"
+  provider: "Imperial College London"
+  platform: Coursera
+  kind: online-course
+  date: "2022"
+- title: "Modeling the Dynamics of Intensive Longitudinal Data"
+  provider: "Utrecht Summer School"
+  kind: summer-school
+  date: "2021"
+- title: "Introduction to Statistical Learning"
+  provider: "StanfordOnline"
+  platform: edX
+  kind: online-course
+  date: "2021"
+- title: "Practical Time Series Analysis"
+  provider: "SUNY"
+  platform: Coursera
+  kind: online-course
+  date: "2021"
+- title: "Improving your Statistical Inferences"
+  provider: "TU Eindhoven"
+  platform: Coursera
+  kind: online-course
+  date: "2020"
