@@ -3,12 +3,19 @@
 //
 // Build:   node scripts/build-cv.mjs
 // Preview: typst watch --root . --font-path fonts --ignore-system-fonts cv/variants/academic.typ
+// Font:    serif by default; `--input font=sans` switches to IBM Plex Sans.
 
 #let cobalt = rgb("#0047AB")
-#let font = "IBM Plex Sans"
-// The static Plex files register SemiBold as its own family.
-#let font-semibold = "IBM Plex Sans SmBld"
-#let semibold(body) = text(font: font-semibold, weight: 600, body)
+#let muted = luma(95)
+#let rule = luma(190)
+#let date-w = 3.6cm
+
+// The static Plex files register SemiBold as its own family, so `strong`
+// is mapped to it explicitly in `cv()`.
+#let families = (
+  serif: (body: "IBM Plex Serif", strong: "IBM Plex Serif SmBld"),
+  sans: (body: "IBM Plex Sans", strong: "IBM Plex Sans SmBld"),
+)
 
 #let load(name) = yaml("/data/" + name + ".yml")
 #let get(d, key, default: none) = d.at(key, default: default)
@@ -54,10 +61,12 @@
 // ---------------------------------------------------------------- text helpers
 
 #let dash(s) = str(s).replace("-", "–")
-#let label-link(url, label) = box(link(url, text(size: 0.82em, fill: cobalt, label)))
+#let sep = h(0.4em) + text(fill: muted, "·") + h(0.4em)
+#let label-link(url, label) = box(link(url, text(size: 0.85em, label)))
 #let url-of(v) = if type(v) == dictionary { v.url } else { v }
 #let note-of(v) = if type(v) == dictionary { get(v, "note") } else { none }
 #let end-punct(s) = if s.ends-with(".") or s.ends-with("?") or s.ends-with("!") { s } else { s + "." }
+#let cap(s) = if s.len() == 0 { s } else { upper(s.first()) + s.slice(1) }
 #let amount(a) = {
   let v = a.value
   let whole = calc.floor(v)
@@ -92,70 +101,81 @@
 #let editor-name(p) = { let g = initials(get(p, "given")); if g == "" { p.family } else { g + " " + p.family } }
 #let and-join(xs) = if xs.len() <= 1 { xs.join() } else if xs.len() == 2 { xs.at(0) + " & " + xs.at(1) } else { xs.slice(0, -1).join(", ") + ", & " + xs.last() }
 
-// ---------------------------------------------------------------- layout
+// ---------------------------------------------------------------- layout primitives
 
-#let indent = 0.55cm
-#let rule-color = luma(165)
-
-#let section(title) = block(above: 1.9em, below: 0.8em, sticky: true, {
-  text(fill: cobalt, size: 13pt, semibold(title))
+#let section(title) = block(above: 1.9em, below: 0.9em, sticky: true, {
+  text(size: 12.5pt, fill: cobalt, strong(title))
   v(-0.55em)
-  line(length: 100%, stroke: 0.5pt + rule-color)
+  line(length: 100%, stroke: 0.4pt + rule)
 })
-#let subsection(title) = block(above: 1.1em, below: 0.6em, sticky: true,
-  pad(left: indent, semibold(title)))
-// Body indented under the heading, dates right-aligned on the first line.
-#let entry(when, body) = block(above: 0.7em, below: 0.7em, breakable: false,
-  pad(left: indent, grid(columns: (1fr, auto), column-gutter: 1.2em,
-    body, align(right, text(number-type: "lining", number-width: "tabular", when)))))
-#let detail(body) = block(above: 0.35em,
-  grid(columns: (0.9em, 1fr), [–], text(size: 0.95em, body)))
-#let plain(body) = block(above: 0.7em, below: 0.7em, pad(left: indent, body))
 
-// ---------------------------------------------------------------- sections
+#let subsection(title) = block(above: 1.3em, below: 0.7em, sticky: true,
+  text(size: 0.8em, tracking: 0.08em, fill: muted, upper(title)))
+
+// Every entry has the same shape:
+//   title ....................................... date
+//   sub (muted)
+//   – detail
+#let entry(title, date: none, sub: none, details: ()) = {
+  let cells = (title, align(right, text(size: 0.9em, fill: muted, number-type: "lining", if date == none { [] } else { date })))
+  // Only the first line carries a date, so the lines below use the full width.
+  if sub != none { cells.push(grid.cell(colspan: 2, text(fill: muted, sub))) }
+  for d in details { cells.push(grid.cell(colspan: 2, grid(columns: (0.9em, 1fr), text(fill: muted, "–"), d))) }
+  block(above: 0.75em, below: 0.75em, breakable: false,
+    grid(columns: (1fr, date-w), column-gutter: 1em, row-gutter: 0.35em, ..cells))
+}
+
+#let plain(body) = block(above: 0.8em, below: 0.8em, body)
+
+// ---------------------------------------------------------------- header
 
 #let header(profile) = {
   let n = profile.name
-  let display = n.given + " " + get(n, "middle", default: "") + " " + n.family
-  set align(center)
-  block(below: 1.1em, text(size: 22pt, semibold(display.replace("  ", " "))))
-  block(below: 0.45em, text(size: 1.1em, profile.position))
-  block(below: 0.7em, [#profile.affiliation.institution#if get(profile.affiliation, "unit") != none [, #profile.affiliation.unit]])
+  let display = (n.given, get(n, "middle"), n.family).filter(x => x != none).join(" ")
   let email = profile.email.at(get(profile.email, "cv", default: "work"))
-  let parts = (
+  let line1 = (
     link("mailto:" + email, email),
-    if get(profile, "phone") != none { profile.phone },
+    get(profile, "phone"),
     link(profile.website, profile.website.replace("https://", "")),
+  ).filter(x => x != none)
+  let line2 = (
     link("https://orcid.org/" + profile.orcid, "ORCID " + profile.orcid),
     link("https://github.com/" + profile.github, "github.com/" + profile.github),
   ) + get(profile, "extra_links", default: ()).map(l => link(l.url, l.label))
-  text(size: 0.92em, parts.filter(p => p != none).map(p => box(p)).join(h(0.5em) + "·" + h(0.5em)))
+  align(center, {
+    block(below: 1.2em, text(size: 24pt, strong(display)))
+    block(below: 0.35em, text(size: 1.1em, profile.position))
+    block(below: 1em, text(fill: muted, [#profile.affiliation.institution#if get(profile.affiliation, "unit") != none [, #profile.affiliation.unit]]))
+    block(below: 0.35em, text(size: 0.92em, line1.map(box).join(sep)))
+    text(size: 0.92em, line2.map(box).join(sep))
+  })
 }
 
 #let research-profile(profile) = {
   let p = get(profile, "research_profile")
-  if p != none { block(above: 1.5em, pad(x: 0.8cm, par(justify: true, p))) }
+  if p != none { block(above: 1.8em, p) }
 }
+
+// ---------------------------------------------------------------- sections
 
 #let positions-section(cfg) = {
   section("Positions")
   let rank = (research: "3", consulting: "2", freelance: "2", student-assistant: "1")
   for p in visible(load("positions")).sorted(key: p => rank.at(p.kind) + end-key(p) + str(p.start)).rev() {
-    let pi = get(p, "pi")
-    entry(period-months(p.start, p.end))[
-      *#p.title*, #p.institution#if get(p, "unit") != none [, #p.unit]#if get(p, "project") != none [, #p.project]#if pi != none [ (PI: #full-name(pi))]
-      #if cfg.descriptions and get(p, "description") != none { detail(p.description) }
-    ]
+    let where = (p.institution, get(p, "unit")).filter(x => x != none).join(", ")
+    let extra = (get(p, "project"), if get(p, "pi") != none { "PI: " + full-name(p.pi) }).filter(x => x != none)
+    entry(strong(p.title), date: period-months(p.start, p.end),
+      sub: ((where,) + extra).join(sep),
+      details: if cfg.descriptions and get(p, "description") != none { (p.description,) } else { () })
   }
 }
 
 #let stays-section(cfg) = {
   section("Research stays")
   for s in visible(load("research_stays")).sorted(key: s => s.start).rev() {
-    let host = get(s, "host")
-    entry(period-months(s.start, s.end))[
-      *#s.role*, #s.institution#if get(s, "unit") != none [, #s.unit]#if get(s, "project") != none [, #s.project]#if host != none [ (Host: #full-name(host))]
-    ]
+    let where = (s.institution, get(s, "unit")).filter(x => x != none).join(", ")
+    let extra = (get(s, "project"), if get(s, "host") != none { "Host: " + full-name(s.host) }).filter(x => x != none)
+    entry(strong(s.role), date: period-months(s.start, s.end), sub: ((where,) + extra).join(sep))
   }
 }
 
@@ -165,19 +185,22 @@
   let big = gs.filter(g => g.kind in ("research-grant", "internal-grant"))
   let small = gs.filter(g => g.kind not in ("research-grant", "internal-grant"))
   for g in big {
-    let lead = g.kind == "research-grant"
-    entry(year-of(g.date))[
-      #if lead [*#g.name*] else [#g.name]#if get(g, "amount") != none [, #amount(g.amount)]#if get(g, "amount_note") != none [ (#g.amount_note)]#if get(g, "role") == "pi" [, principal investigator]
-      #if get(g, "project_title") != none { detail["#g.project_title"] }
-      #if get(g, "purpose") != none { detail(g.purpose) }
-    ]
+    let facts = (
+      if get(g, "amount") != none { amount(g.amount) + if get(g, "amount_note") != none { " (" + g.amount_note + ")" } else { "" } },
+      if get(g, "role") == "pi" { "Principal investigator" },
+      get(g, "purpose"),
+    ).filter(x => x != none)
+    entry(strong(g.name), date: year-of(g.date), sub: facts.join(sep),
+      details: if get(g, "project_title") != none { (emph(g.project_title),) } else { () })
   }
   if small.len() > 0 {
     subsection("Travel grants and scholarships")
     for g in small {
-      entry(year-of(g.date))[
-        #g.name#if get(g, "amount") != none [, #amount(g.amount)]#if get(g, "amount_note") != none [ (#g.amount_note)]#if get(g, "purpose") != none [. #g.purpose]
-      ]
+      let facts = (
+        if get(g, "amount") != none { amount(g.amount) + if get(g, "amount_note") != none { " (" + g.amount_note + ")" } else { "" } },
+        get(g, "purpose"),
+      ).filter(x => x != none)
+      entry([#g.name#if facts.len() > 0 { sep + text(fill: muted, facts.join(sep)) }], date: year-of(g.date))
     }
   }
 }
@@ -187,10 +210,10 @@
   let levels = if cfg.school { ("doctorate", "master", "bachelor", "school") } else { ("doctorate", "master", "bachelor") }
   for e in visible(load("education")).filter(e => e.level in levels).sorted(key: e => e.start).rev() {
     let thesis = get(e, "thesis")
-    entry(period-years(e.start, e.end))[
-      *#e.degree#if get(e, "field") != none [ in #e.field]*, #e.institution#if get(e, "distinction") != none [, #e.distinction]
-      #if thesis != none and not get(thesis, "hidden", default: false) { detail[Thesis: #thesis.title] }
-    ]
+    let title = e.degree + if get(e, "field") != none { " in " + e.field } else { "" }
+    entry(strong(title), date: period-years(e.start, e.end),
+      sub: (e.institution, get(e, "distinction")).filter(x => x != none).join(sep),
+      details: if thesis != none and not get(thesis, "hidden", default: false) { ([Thesis: #emph(thesis.title)],) } else { () })
   }
 }
 
@@ -203,31 +226,24 @@
   let one(a, i) = {
     let mark = if (i + 1) in sf { super("†") } else if (i + 1) in ss { super("‡") } else { [] }
     let name = short-name(a)
-    if get(a, "me", default: false) { [*#name*#mark] } else { [#name#mark] }
+    if get(a, "me", default: false) { [#strong(name)#mark] } else { [#name#mark] }
   }
   let shown = range(n)
-  let gap = false
   if n > max {
     // APA 7: first 19, ellipsis, last. Keep my own entry if it falls in the gap.
     let me = p.authors.position(a => get(a, "me", default: false))
     shown = range(max - 1) + (if me != none and me >= max - 1 and me < n - 1 { (me,) } else { () }) + (n - 1,)
-    gap = true
   }
-  let parts = shown.map(i => one(p.authors.at(i), i))
-  if gap {
-    // join with ellipsis before the last shown item(s) that follow a gap
-    let out = []
-    for (k, i) in shown.enumerate() {
-      if k > 0 {
-        let prev = shown.at(k - 1)
-        out += if i != prev + 1 { [, … ] } else { [, ] }
-      }
-      out += parts.at(k)
+  let out = []
+  for (k, i) in shown.enumerate() {
+    if k > 0 {
+      let gap = i != shown.at(k - 1) + 1
+      let last = k == shown.len() - 1
+      out += if gap { [, … ] } else if last { [, & ] } else { [, ] }
     }
-    out
-  } else if parts.len() == 1 { parts.first() }
-  else if parts.len() == 2 { [#parts.at(0), & #parts.at(1)] }
-  else { parts.slice(0, -1).join([, ]) + [, & ] + parts.last() }
+    out += one(p.authors.at(i), i)
+  }
+  out
 }
 
 #let venue-details(p) = {
@@ -258,21 +274,21 @@
   let items = ()
   if get(p, "doi") != none { items.push(label-link("https://doi.org/" + p.doi, "Paper")) }
   else if get(p, "url") != none { items.push(label-link(p.url, "Full text")) }
-  if get(p, "preprint_doi") != none and p.type != "preprint" { items.push(label-link("https://doi.org/" + p.preprint_doi, "Preprint")) }
-  else if get(p, "preprint_doi") != none { items.push(label-link("https://doi.org/" + p.preprint_doi, "Preprint")) }
+  if get(p, "preprint_doi") != none { items.push(label-link("https://doi.org/" + p.preprint_doi, "Preprint")) }
   else if get(ls, "preprint") != none { items.push(label-link(url-of(ls.preprint), "Preprint")) }
   let code = get(ls, "code")
   let data = get(ls, "data")
+  let synthetic = note-of(data) == "synthetic data"
   if code != none and data != none and url-of(code) == url-of(data) {
-    items.push(label-link(url-of(code), if note-of(data) == "synthetic data" { "Code & Synthetic Data" } else { "Code & Data" }))
+    items.push(label-link(url-of(code), if synthetic { "Code & Synthetic Data" } else { "Code & Data" }))
   } else {
     if code != none { items.push(label-link(url-of(code), "Code")) }
-    if data != none { items.push(label-link(url-of(data), if note-of(data) == "synthetic data" { "Synthetic Data" } else { "Data" })) }
+    if data != none { items.push(label-link(url-of(data), if synthetic { "Synthetic Data" } else { "Data" })) }
   }
   for (key, lab) in (("materials", "Materials"), ("prereg", "Preregistration"), ("supplement", "Supplement"), ("app", "App"), ("website", "Website")) {
     if get(ls, key) != none { items.push(label-link(url-of(ls.at(key)), lab)) }
   }
-  if items.len() > 0 { h(0.6em) + items.join(h(0.7em)) }
+  items
 }
 
 // The last author's initials already end in a period, unless the name has no
@@ -283,12 +299,15 @@
   if initials(get(p.authors.last(), "given")) == "" or marked { "." } else { "" }
 }
 
-#let pub-entry(p, cfg) = block(above: 0.7em, below: 0.7em, breakable: false,
-  pad(left: indent, par(hanging-indent: 1.2em)[
-  #format-authors(p, max: cfg.max-authors)#if cfg.year-in-text [ (#p.year).] else [#authors-end(p)] #end-punct(p.title) #venue-details(p)
-  #if cfg.contributions and get(p, "contribution") != none { detail[_Contribution:_ #p.contribution] }
-  #pub-links(p)
-]))
+#let hang = 1.4em
+#let pub-entry(p, cfg) = block(above: 0.75em, below: 0.75em, breakable: false, {
+  par(hanging-indent: hang)[#format-authors(p, max: cfg.max-authors)#if cfg.year-in-text [ (#p.year).] else [#authors-end(p)] #end-punct(p.title) #venue-details(p)]
+  if cfg.contributions and get(p, "contribution") != none {
+    block(above: 0.4em, pad(left: hang, text(fill: muted)[Contribution: #p.contribution]))
+  }
+  let links = pub-links(p)
+  if links.len() > 0 { block(above: 0.4em, pad(left: hang, links.join(h(0.9em)))) }
+})
 
 #let publications-section(cfg) = {
   section(if cfg.selected-only { "Selected publications" } else { "Publications" })
@@ -309,9 +328,8 @@
     subsection(title)
     for p in items.sorted(key: p => p.year).rev() { pub-entry(p, cfg) }
   }
-  let any-shared = ps.any(p => get(p, "shared_first") != none or get(p, "shared_second") != none)
-  if any-shared {
-    block(above: 0.9em, pad(left: indent, text(size: 0.85em)[#super("†") Shared first authorship. #h(0.6em) #super("‡") Shared second authorship.]))
+  if ps.any(p => get(p, "shared_first") != none or get(p, "shared_second") != none) {
+    block(above: 1em, text(size: 0.85em, fill: muted)[#super("†") Shared first authorship. #h(0.8em) #super("‡") Shared second authorship.])
   }
 }
 
@@ -319,11 +337,10 @@
 
 #let software-section(cfg) = {
   section("Software and research infrastructure")
-  let kinds = (package: "package", database: "database", website: "website", app: "app")
   for s in visible(load("software")).sorted(key: s => get(s, "contribution_year", default: s.year)).rev() {
     let ls = get(s, "links", default: (:))
     let langs = get(s, "languages", default: ())
-    let what = if s.kind == "package" and langs.len() > 0 { langs.join(" and ") + " package" } else { kinds.at(s.kind) }
+    let what = if s.kind == "package" and langs.len() > 0 { langs.join(" and ") + " package" } else { cap(s.kind) }
     let items = ()
     if get(s, "doi") != none { items.push(label-link("https://doi.org/" + s.doi, "CRAN")) }
     else if get(ls, "cran") != none { items.push(label-link(ls.cran, "CRAN")) }
@@ -331,23 +348,21 @@
     if get(ls, "github") != none { items.push(label-link(ls.github, "GitHub")) }
     if get(ls, "website") != none { items.push(label-link(ls.website, "Website")) }
     if get(ls, "docs") != none { items.push(label-link(ls.docs, "Docs")) }
-    let roles = s.roles.map(r => r.replace("-", " ")).join(", ")
-    entry(str(get(s, "contribution_year", default: s.year)))[
-      *#s.name* (#what)#if get(s, "description") != none [: #s.description]. #upper(roles.first())#roles.slice(1).
-      #if items.len() > 0 { h(0.6em) + items.join(h(0.7em)) }
-    ]
+    let roles = cap(s.roles.map(r => r.replace("-", " ")).join(", "))
+    entry([#strong(s.name)#sep#text(fill: muted, what)], date: str(get(s, "contribution_year", default: s.year)),
+      sub: (get(s, "description"), roles).filter(x => x != none).join(sep),
+      details: if items.len() > 0 { (items.join(h(0.9em)),) } else { () })
   }
 }
 
 // --- talks
 
 #let venue-year(e) = { let y = year-of(e.date); if e.venue.contains(y) { e.venue } else { e.venue + " " + y } }
-#let where(e) = {
+#let place(e) = {
   let inst = get(e, "institution")
   let city = get(e, "city")
   if inst != none and city != none and inst.contains(city) { city = none }
-  let parts = (inst, if get(e, "online", default: false) { "online" } else { city })
-  parts.filter(p => p != none).join(", ")
+  (inst, if get(e, "online", default: false) { "online" } else { city }).filter(p => p != none).join(", ")
 }
 
 #let talks-section(cfg) = {
@@ -355,21 +370,20 @@
   let talks = visible(load("talks")).map(t => (..t, events: visible(t.events)))
   let flat = talks.map(t => t.events.map(e => (talk: t, ev: e))).flatten()
 
-  // 1. Keynotes, invited talks, colloquia: one line per event.
+  // Keynotes, invited talks, colloquia: one entry per event.
   let invited = flat.filter(x => x.ev.type in ("keynote", "invited", "colloquium")).sorted(key: x => str(x.ev.date)).rev()
   if invited.len() > 0 {
     subsection("Keynotes, invited talks, and colloquia")
     for x in invited {
       let e = x.ev
       let co = get(e, "coauthors", default: ())
-      let w = where(e)
-      entry(year-of(e.date))[
-        #if e.type == "keynote" [*Keynote.* ]#emph(end-punct(get(e, "title", default: x.talk.title))) #e.venue#if w != "" [, #w].#if co.len() > 0 [ With #and-join(co.map(full-name)).]
-      ]
+      let where = (e.venue, place(e)).filter(p => p != "").join(", ")
+      let sub = (if e.type == "keynote" { "Keynote" }, where, if co.len() > 0 { "with " + and-join(co.map(full-name)) }).filter(p => p != none)
+      entry(get(e, "title", default: x.talk.title), date: year-of(e.date), sub: sub.join(sep))
     }
   }
 
-  // 2. Conference presentations and 3. posters: one line per deck, venues combined.
+  // Conference presentations and posters: one entry per deck, venues combined.
   let per-deck(types) = talks.map(t => {
     let evs = t.events.filter(e => e.type in types and ("speaker" in e.roles or "coauthor" in e.roles)).sorted(key: e => str(e.date)).rev()
     (talk: t, evs: evs)
@@ -381,22 +395,19 @@
     for d in decks {
       let co-only = d.evs.all(e => "speaker" not in e.roles)
       let venues = d.evs.map(e => venue-year(e) + if get(e, "award") != none { " (" + e.award + ")" } else { "" })
-      entry(compress-years(d.evs.map(e => e.date)))[
-        #emph(end-punct(d.talk.title))#if co-only [ (Co-author.)] #venues.join("; ").
-      ]
+      entry(d.talk.title, date: compress-years(d.evs.map(e => e.date)),
+        sub: ((if co-only { ("Co-author",) } else { () }) + (venues.join("; "),)).join(sep))
     }
   }
 
-  // 4. Panels and sessions organized or chaired (without a talk of my own).
+  // Panels and sessions organized or chaired, without a talk of my own.
   let panels = flat.filter(x => x.ev.type == "panel" or ("speaker" not in x.ev.roles and "coauthor" not in x.ev.roles)).sorted(key: x => str(x.ev.date)).rev()
   if panels.len() > 0 {
     subsection("Panels and sessions")
     for x in panels {
       let e = x.ev
-      let roles = e.roles.join(" and ")
-      entry(year-of(e.date))[
-        #emph(end-punct(get(e, "title", default: x.talk.title))) #upper(roles.first())#roles.slice(1), #venue-year(e).
-      ]
+      entry(get(e, "title", default: x.talk.title), date: year-of(e.date),
+        sub: cap(e.roles.join(" and ")) + sep + venue-year(e))
     }
   }
 }
@@ -409,24 +420,22 @@
   for w in ws.sorted(key: w => w.sessions.map(s => str(s.date)).sorted().last()).rev() {
     let ss = w.sessions.sorted(key: s => str(s.date)).rev()
     let co = ss.map(s => get(s, "coinstructors", default: ())).flatten().dedup(key: p => p.family)
-    let place(s) = (s.host, get(s, "institution"), if get(s, "online", default: false) { "online" } else { none }).filter(b => b != none).join(", ")
-    let hours(s) = { let h = get(s, "duration_hours"); if h != none { str(h) + " h" } else { "" } }
+    let where(s) = (s.host, get(s, "institution"), if get(s, "online", default: false) { "online" } else { none }).filter(b => b != none).join(", ")
+    let hours(s) = { let h = get(s, "duration_hours"); if h != none { str(h) + "\u{a0}h" } else { "" } }
     let groups = ()
     for s in ss {
-      let k = place(s) + "|" + hours(s)
+      let k = where(s) + "|" + hours(s)
       let i = groups.position(g => g.key == k)
-      if i == none { groups.push((key: k, place: place(s), hours: hours(s), dates: (s.date,))) }
+      if i == none { groups.push((key: k, place: where(s), hours: hours(s), dates: (s.date,))) }
       else { groups.at(i).dates.push(s.date) }
     }
     // Years go in parentheses only when the workshop was held at several places.
     let parts = groups.map(g => {
-      let bits = (g.hours,) + (if groups.len() > 1 { (compress-years(g.dates),) } else { () })
-      let bits = bits.filter(x => x != "")
-      g.place + if bits.len() > 0 { " (" + bits.join("; ") + ")" } else { "" }
+      let bits = ((g.hours,) + (if groups.len() > 1 { (compress-years(g.dates),) } else { () })).filter(x => x != "")
+      g.place + if bits.len() > 0 { " (" + bits.join(", ") + ")" } else { "" }
     })
-    entry(compress-years(ss.map(s => s.date)))[
-      #emph(end-punct(w.title)) #parts.join("; ").#if co.len() > 0 [ With #and-join(co.map(full-name)).]
-    ]
+    let sub = (parts.join("; "), if co.len() > 0 { "with " + and-join(co.map(full-name)) }).filter(x => x != none)
+    entry(w.title, date: compress-years(ss.map(s => s.date)), sub: sub.join(sep))
   }
 }
 
@@ -434,12 +443,11 @@
 
 #let teaching-section(cfg) = {
   section("Teaching")
-  let levels = (bachelor: "bachelor’s level", master: "master’s level", doctoral: "doctoral level", mixed: "mixed levels")
+  let levels = (bachelor: "Bachelor’s level", master: "Master’s level", doctoral: "Doctoral level", mixed: "Mixed levels")
   for t in visible(load("teaching")).sorted(key: t => t.years.map(str).sorted().last()).rev() {
     let lv = get(t, "level")
-    entry(compress-years(t.years))[
-      #emph(t.title), #t.institution#if get(t, "description") != none [. #t.description]#if lv != none [ (#levels.at(lv))].
-    ]
+    let sub = (t.institution, get(t, "description"), if lv != none { levels.at(lv) }).filter(x => x != none)
+    entry(t.title, date: compress-years(t.years), sub: sub.join(sep))
   }
 }
 
@@ -447,13 +455,15 @@
   section("Supervision")
   let s = load("supervision")
   let c(role, level) = s.counts.filter(x => x.role == role and x.level == level).map(x => x.count).sum(default: 0)
-  plain[First supervisor: #c("first", "bachelor") bachelor's and #c("first", "master") master's theses. Second supervisor: #c("second", "bachelor") bachelor's and #c("second", "master") master's theses.]
+  entry([First supervisor#sep#text(fill: muted)[#c("first", "bachelor") bachelor’s and #c("first", "master") master’s theses]])
+  entry([Second supervisor#sep#text(fill: muted)[#c("second", "bachelor") bachelor’s and #c("second", "master") master’s theses]])
 }
 
 #let awards-section(cfg) = {
   section("Awards")
   for a in visible(load("awards")).sorted(key: a => a.date).rev() {
-    entry(year-of(a.date))[*#a.name*, #a.awarder#if get(a, "for") != none [, for #emph(a.for)].]
+    entry(strong(a.name), date: year-of(a.date),
+      sub: (a.awarder, if get(a, "for") != none { "for " + a.for }).filter(x => x != none).join(sep))
   }
 }
 
@@ -465,15 +475,18 @@
   let all = visible(load("service"))
   let ed = all.filter(s => s.kind == "editorial")
   let rest = all.filter(s => s.kind != "editorial")
-  for s in ed.sorted(key: span-key).rev() + rest.sorted(key: span-key).rev() {
-    entry(span(s))[#s.role, #s.organization]
+  if ed.len() > 0 {
+    subsection("Editorial")
+    for s in ed.sorted(key: span-key).rev() { entry([#s.role#sep#text(fill: muted, s.organization)], date: span(s)) }
   }
+  subsection("Academic service")
+  for s in rest.sorted(key: span-key).rev() { entry([#s.role#sep#text(fill: muted, s.organization)], date: span(s)) }
 }
 
 #let memberships-section(cfg) = {
   section("Memberships")
   for m in visible(load("memberships")).sorted(key: m => m.start).rev() {
-    entry(period-years(m.start, m.end))[#m.organization#if get(m, "abbreviation") != none [ (#m.abbreviation)]]
+    entry([#m.organization#if get(m, "abbreviation") != none [ (#m.abbreviation)]], date: period-years(m.start, m.end))
   }
 }
 
@@ -482,7 +495,7 @@
   let rs = visible(load("reviewing"))
   let journals = rs.filter(r => r.kind != "conference").map(r => r.venue).sorted(key: lower)
   let confs = rs.filter(r => r.kind == "conference")
-  plain[Ad-hoc reviewer for #journals.map(emph).join("; ").]
+  plain[Ad-hoc reviewer for #journals.map(emph).join(", ").]
   if confs.len() > 0 {
     plain[Conference reviewer for #confs.map(r => [#r.venue (#compress-years(get(r, "dates", default: ())))]).join("; ").]
   }
@@ -492,23 +505,22 @@
   section("Community service")
   let cs = visible(load("community")).filter(c => c.end == "present" or int(year-of(c.end)) >= cfg.community-from)
   for c in cs.sorted(key: end-key).rev() {
-    entry(period-years(c.start, c.end))[#c.role, #c.organization#if get(c, "description") != none [ (#c.description)]]
+    entry([#c.role#sep#text(fill: muted)[#c.organization#if get(c, "description") != none [ (#c.description)]]], date: period-years(c.start, c.end))
   }
 }
 
 #let media-section(cfg) = {
   section("Media coverage")
   for m in visible(load("media")) {
-    entry(if get(m, "date") != none { year-of(m.date) } else { "" })[
-      #link(m.url, m.outlet)#if get(m, "title") != none [: #m.title] (#m.kind.replace("-", " "))
-    ]
+    entry([#link(m.url, m.outlet)#sep#text(fill: muted, cap(m.kind.replace("-", " ")))],
+      date: if get(m, "date") != none { year-of(m.date) })
   }
 }
 
 #let training-section(cfg) = {
   section("Training")
   for t in visible(load("training")).sorted(key: t => t.date).rev() {
-    entry(year-of(t.date))[#emph(t.title), #t.provider#if get(t, "platform") != none [ (#t.platform)]]
+    entry([#t.title#sep#text(fill: muted)[#t.provider#if get(t, "platform") != none [, #t.platform]]], date: year-of(t.date))
   }
 }
 
@@ -544,6 +556,7 @@
 #let cv(
   sections: academic-sections,
   title: "Curriculum Vitae",
+  font: sys.inputs.at("font", default: "serif"),  // "serif" or "sans"
   selected-only: false,   // publications: only entries with selected: true
   contributions: false,   // publications: print the one-line contribution statement
   max-authors: 20,        // publications: truncate longer author lists (APA 7 style)
@@ -553,23 +566,24 @@
   descriptions: true,     // positions: print descriptions
 ) = {
   let profile = load("profile")
-  let cfg = (selected-only: selected-only, contributions: contributions, max-authors: max-authors, year-in-text: year-in-text,
-    school: school, community-from: community-from, descriptions: descriptions)
+  let fam = families.at(font)
+  let cfg = (selected-only: selected-only, contributions: contributions, max-authors: max-authors,
+    year-in-text: year-in-text, school: school, community-from: community-from, descriptions: descriptions)
   let built = sys.inputs.at("date", default: datetime.today().display())
-  let me = profile.name.given + " " + get(profile.name, "middle", default: "") + " " + profile.name.family
+  let me = (profile.name.given, get(profile.name, "middle"), profile.name.family).filter(x => x != none).join(" ")
 
   set document(title: title + ", " + me, author: me)
-  set text(font: font, size: 9.5pt, lang: "en", number-type: "lining")
-  set par(leading: 0.62em, spacing: 0.8em)
+  set text(font: fam.body, size: if font == "serif" { 9.75pt } else { 9.5pt }, lang: "en", number-type: "lining", hyphenate: false)
+  set par(leading: 0.62em, spacing: 0.8em, justify: false)
   set page(
     paper: "a4",
-    margin: (x: 2.2cm, top: 2cm, bottom: 2.2cm),
-    footer: context text(size: 0.8em)[
-      #me, #lower(title) #h(1fr) Updated #built #h(1fr) #counter(page).display() / #counter(page).final().first()
+    margin: (x: 2.3cm, top: 2.2cm, bottom: 2.2cm),
+    footer: context text(size: 0.8em, fill: muted)[
+      #me #h(1fr) Updated #built #h(1fr) #counter(page).display() / #counter(page).final().first()
     ],
   )
+  show strong: it => text(font: fam.strong, weight: 600, it.body)
   show link: set text(fill: cobalt)
-  show strong: it => semibold(it.body)
 
   header(profile)
   for s in sections {
