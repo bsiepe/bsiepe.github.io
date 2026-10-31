@@ -1,0 +1,572 @@
+# Talks. One entry per deck (or per session I chaired / panel I joined).
+# Schema: schema/talks.schema.json
+# Migrated 2026-10-31 from talks/*/ (website), cv-legacy/latex/cv_english.tex, and
+# cv-legacy/latex/my_pubs.bib. See MIGRATION_REPORT.md section 2b.
+
+# ---------------------------------------------------------------- 2026
+
+- id: benchmarking-psychological-time-series
+  title: "Towards Benchmarking of Psychological Time Series"
+  areas: [simulation]
+  tags: [open-science, metascience]
+  events:
+    - date: "2026-10-06"
+      venue: "ECR Meeting of the DGPs Methods and Evaluation Section 2026"
+      city: Frankfurt
+      country: DE
+      online: false
+      type: conference
+      roles: [speaker]
+      file: "talks/2026-10-06-jumi-benchmarking/JuMi-Retreat-Siepe-2026.pdf"
+
+- id: research-abroad-panel
+  title: "Research abroad"
+  events:
+    - date: "2026-10"
+      venue: "ECR Meeting of the DGPs Methods and Evaluation Section 2026"
+      city: Frankfurt
+      country: DE
+      online: false
+      type: panel
+      roles: [panelist]
+
+- id: improving-methodological-research
+  title: "Improving Methodological Research in Psychology: Preregistration, Transparent Reporting, and Benchmarking"
+  areas: [simulation]
+  tags: [open-science, metascience]
+  license: "CC-BY-4.0"
+  events:
+    - date: "2026-06-25"
+      venue: "Leibniz Institute for Educational Trajectories (LIfBi)"
+      city: Bamberg
+      country: DE
+      online: false
+      type: invited
+      roles: [speaker]
+      file: "talks/2026-06-24-improving-methods-research/LIFBI-Talk-Siepe-2026.pdf"
+
+- id: benchmarking-time-series-methods
+  title: "Benchmarking psychological time series methods"
+  areas: [timeseries]
+  events:
+    - date: "2026-05"
+      venue: "DynaNet Meeting"
+      institution: "University of Amsterdam"
+      city: Amsterdam
+      country: NL
+      online: false
+      type: invited
+      roles: [speaker]
+
+- id: dynamic-network-features-uncertainty
+  title: "Using features of dynamic networks to guide treatment selection and outcome prediction: The central role of uncertainty"
+  areas: [timeseries, esm]
+  tags: [network-analysis]
+  publications: [siepe-dynamic-network-features-treatment-selection]
+  license: "CC-BY-4.0"
+  events:
+    - date: "2026-05-26"
+      venue: "Association for Psychological Science (APS) Annual Convention 2026"
+      city: Barcelona
+      country: ES
+      online: false
+      type: symposium
+      roles: [speaker]
+      file: "talks/2026-05-26-centrality-uncertainty/APS-Centrality-Talk-Siepe-2026.pdf"
+
+- id: uncertainty-network-features-poster
+  title: "Taking uncertainty into account is central when using dynamic network features as predictors"
+  areas: [timeseries]
+  publications: [siepe-dynamic-network-features-treatment-selection]
+  events:
+    - date: "2025-05"
+      venue: "Annual Meeting of the Society for Ambulatory Assessment 2025"
+      city: Leuven
+      country: BE
+      online: false
+      type: poster
+      roles: [speaker]
+      award: "Best Poster Award"
+    - date: "2025"
+      venue: "Conference of the DGPs Methods and Evaluation Section 2025"
+      city: Berlin
+      country: DE
+      online: false
+      type: poster
+      roles: [speaker]
+
+- id: introducing-openesm
+  title: "Introducing openESM: A database of openly available experience sampling datasets"
+  areas: [esm, timeseries]
+  tags: [open-science, openesm]
+  publications: [siepe-openesm]
+  links:
+    materials: "https://openesmdata.org"
+  license: "CC-BY-4.0"
+  events:
+    - date: "2026"
+      venue: "Annual Meeting of the Society for Ambulatory Assessment 2026"
+      city: Vienna
+      country: AT
+      online: false
+      type: symposium
+      roles: [speaker]
+      file: "talks/2025-11-17-introducing-openesm/openESM-Talk-SAA-Siepe-2026.pdf"
+    - date: "2026"
+      venue: "Society for Digital Mental Health Annual Meeting 2026"
+      online: true
+      type: lightning
+      roles: [speaker]
+      file: "talks/2025-11-17-introducing-openesm/openESM-Talk-SDMH-Siepe-2026.pdf"
+    - date: "2026"
+      venue: "Association for Psychological Science (APS) Annual Convention 2026"
+      city: Barcelona
+      country: ES
+      online: false
+      type: symposium
+      roles: [speaker]
+      file: "talks/2025-11-17-introducing-openesm/APS-openESM-Talk-Siepe-2026.pdf"
+    - date: "2026"
+      venue: "Australasian Mathematical Psychology Conference 2026"
+      city: Singapore
+      country: SG
+      online: false
+      type: conference
+      roles: [speaker]
+      file: "talks/2025-11-17-introducing-openesm/openESM-Talk-AMPC-Siepe.pdf"
+    - date: "2026-03"
+      venue: "Psychology Lunch Seminar"
+      institution: "Nanyang Technological University"
+      city: Singapore
+      country: SG
+      online: false
+      type: invited
+      roles: [speaker]
+      file: "talks/2025-11-17-introducing-openesm/openESM-Talk-NTU-Siepe-2026.pdf"
+    - date: "2026-03"
+      venue: "Measurement is the New Black (MITNB) consortium meeting"
+      online: true
+      type: invited
+      roles: [speaker]
+      file: "talks/2025-11-17-introducing-openesm/openESM-Talk-MITNB-Siepe.pdf"
+    - date: "2025-11-17"
+      venue: "Group Meeting of the Oxford Emotional Disorder Genesis and Evolution (EDGE) Lab"
+      institution: "University of Oxford"
+      online: true
+      type: invited
+      roles: [speaker]
+      file: "talks/2025-11-17-introducing-openesm/openESM-Talk-EDGE-Siepe.pdf"
+
+- id: simulation-studies-state-of-the-art
+  title: "Simulation Studies for Methodological Research: State of the Art, Issues, and Potential Solutions"
+  areas: [simulation]
+  tags: [open-science, metascience]
+  publications: [siepe-simulation-studies-template]
+  license: "CC-BY-4.0"
+  events:
+    - date: "2026-08-31"
+      title: "Simulation Studies for Methodological Research: Status Quo, Issues, and Potential Solutions"
+      venue: "1st Interdisciplinary Symposium on Meta Science for Methods Research"
+      institution: "University of Zurich"
+      city: Zurich
+      country: CH
+      online: false
+      type: keynote
+      roles: [speaker]
+      file: "talks/2026-08-31-simulation-studies/MSMR-Siepe-2026.pdf"
+    - date: "2026-08"
+      title: "Simulation Studies for Methodological Research: Status Quo, Issues, and Potential Solutions"
+      venue: "Flake Lab"
+      institution: "University of British Columbia"
+      online: true
+      type: invited
+      roles: [speaker]
+    - date: "2026-07-01"
+      venue: "Online Lunch Lectures on Monte Carlo Simulation Studies"
+      online: true
+      type: invited
+      roles: [speaker]
+      file: "talks/2025-04-16-berlin-methods-kolloquium/Sim-Lunch-Lectures-Siepe-2026.pdf"
+    - date: "2025-06"
+      venue: "Colloquium of the Statistics and Psychological Methods Working Unit"
+      institution: "University of Münster"
+      city: Münster
+      country: DE
+      online: false
+      type: colloquium
+      roles: [speaker]
+      file: "talks/2025-04-16-berlin-methods-kolloquium/Muenster_Kolloquium25-Siepe.pdf"
+    - date: "2025"
+      title: "Simulation studies for methodological research: Status quo, problems, and potential solutions"
+      venue: "Conference of the DGPs Methods and Evaluation Section 2025"
+      city: Berlin
+      country: DE
+      online: false
+      type: symposium
+      roles: [speaker]
+      file: "talks/2025-04-16-berlin-methods-kolloquium/FGME_Talk_Siepe.pdf"
+    - date: "2025-04-16"
+      venue: "Colloquium of the Methods and Evaluation / Quality Assurance Unit"
+      institution: "Freie Universität Berlin"
+      online: true
+      type: colloquium
+      roles: [speaker]
+      coauthors:
+        - { family: Pawel, given: Samuel }
+      file: "talks/2025-04-16-berlin-methods-kolloquium/FU_Kolloquium25-Pawel-Siepe.pdf"
+
+# ---------------------------------------------------------------- 2025
+
+- id: ml-mixed-effects-symposium
+  title: "Combining machine learning with mixed effects models"
+  events:
+    - date: "2025"
+      venue: "Conference of the DGPs Methods and Evaluation Section 2025"
+      city: Berlin
+      country: DE
+      online: false
+      type: symposium
+      roles: [organizer, chair]
+
+- id: quality-standards-simulation-panel-dgps
+  title: "Panel Discussion: Quality Standards for Simulation Studies"
+  areas: [simulation]
+  events:
+    - date: "2025"
+      venue: "Conference of the DGPs Methods and Evaluation Section 2025"
+      city: Berlin
+      country: DE
+      online: false
+      type: panel
+      roles: [organizer, panelist]
+
+- id: ema-passive-sensor-associations
+  title: "Associations between ecological momentary assessment and passive sensor data in a large student sample"
+  areas: [esm, timeseries]
+  tags: [measurement]
+  publications: [siepe-ema-passive-sensors]
+  license: "CC-BY-4.0"
+  events:
+    - date: "2025-05-28"
+      venue: "Annual Meeting of the Society for Ambulatory Assessment 2025"
+      city: Leuven
+      country: BE
+      online: false
+      type: symposium
+      roles: [speaker]
+      file: "talks/2025-05-28-saa-sensors/SAA-2025-Sensors-Siepe.pdf"
+
+- id: multiverse-dynamic-networks
+  title: "GIMME, GIMME more (network models): Multiverse analysis for dynamic network models"
+  areas: [timeseries, esm]
+  tags: [network-analysis]
+  publications: [siepe-multiverse-dynamic-networks]
+  license: "CC-BY-4.0"
+  events:
+    - date: "2025-05-26"
+      venue: "Annual Meeting of the Society for Ambulatory Assessment 2025"
+      city: Leuven
+      country: BE
+      online: false
+      type: symposium
+      roles: [speaker, chair]
+      file: "talks/2025-05-26-saa-multiverse/SAA-2025-Multiverse-Siepe.pdf"
+
+- id: why-when-how-preregister
+  title: "Why, when, and how (not) to preregister"
+  tags: [preregistration, open-science]
+  events:
+    - date: "2025-02"
+      venue: "Neurophysics Group Meeting, Department of Physics"
+      institution: "Marburg University"
+      city: Marburg
+      country: DE
+      online: false
+      type: invited
+      roles: [speaker]
+
+# ---------------------------------------------------------------- 2024
+
+- id: simulation-studies-psychology
+  title: "Simulation Studies for Methodological Research in Psychology"
+  areas: [simulation]
+  tags: [open-science, metascience]
+  publications: [siepe-simulation-studies-template]
+  license: "CC-BY-4.0"
+  events:
+    - date: "2025-03-27"
+      venue: "7th Joint Statistical Meeting of the German Statistical Working Group (DAGStat)"
+      city: Berlin
+      country: DE
+      online: false
+      type: symposium
+      roles: [speaker]
+      file: "talks/2025-03-27-dagstat-ademp/DagStat25-Bjoern-Siepe.pdf"
+    - date: "2024"
+      venue: "Virtual Meeting of the Society for the Improvement of Psychological Science (SIPS)"
+      online: true
+      type: lightning
+      roles: [speaker]
+      file: "talks/2024-06-22-simulation-studies/SIPS24-Bjoern-Siepe.pdf"
+    - date: "2024"
+      venue: "Virtual Meeting of the Society for Mathematical Psychology"
+      online: true
+      type: conference
+      roles: [speaker]
+      file: "talks/2024-06-22-simulation-studies/VMP24-Bjoern-Siepe.pdf"
+
+- id: quality-standards-simulation-panel-imps
+  title: "Quality Standards for Simulation Studies in Psychometrics"
+  areas: [simulation]
+  license: "CC-BY-4.0"
+  events:
+    - date: "2024"
+      venue: "International Meeting of the Psychometric Society (IMPS)"
+      city: Prague
+      country: CZ
+      online: false
+      type: panel
+      roles: [panelist]
+      file: "talks/2024-06-22-simulation-studies/IMPS24-Bjoern-Siepe.pdf"
+
+- id: bayesian-idiographic-networks
+  title: "Bayesian Estimation and Comparison of Idiographic Network Models"
+  areas: [timeseries]
+  tags: [bayesian, network-analysis]
+  publications: [siepe-bayesian-idiographic-networks]
+  license: "CC-BY-4.0"
+  events:
+    - date: "2024-07-16"
+      venue: "International Meeting of the Psychometric Society (IMPS)"
+      city: Prague
+      country: CZ
+      online: false
+      type: symposium
+      roles: [speaker]
+      file: "talks/2024-07-16_imps-bayesian-idiographic-nets/IMPS_2024_Siepe_Networks.pdf"
+    - date: "2023-09-12"
+      venue: "Meeting of the German Society for Methods & Evaluation in Psychology (FGME)"
+      city: Konstanz
+      country: DE
+      online: false
+      type: symposium
+      roles: [speaker]
+      file: "talks/2023-10-09_fgme-bayesian-idiographic-nets/FGME_2023_Presentation.pdf"
+
+- id: exploration-ema-data
+  title: "Exploration of Ecological Momentary Assessment Data"
+  areas: [esm, timeseries]
+  tags: [data-visualization]
+  publications: [siepe-understanding-ema-data]
+  license: "CC-BY-4.0"
+  events:
+    - date: "2024-04-16"
+      venue: "Measurement is the New Black (MITNB) consortium meeting"
+      online: true
+      type: invited
+      roles: [speaker]
+      file: "talks/2024-04-16_mitnb-ema-exploration/MITNB2024_item-validation_slides.pdf"
+
+- id: forecasting-literature-trends
+  title: "Historical and Recent Trends in the Forecasting Literature"
+  areas: [timeseries]
+  tags: [forecasting, machine-learning]
+  links:
+    repo: "https://github.com/bsiepe/forecast-literature-talk"
+  license: "CC-BY-4.0"
+  events:
+    - date: "2024-02-15"
+      venue: "WARN-D Group Friday Science Meeting"
+      institution: "Leiden University"
+      online: true
+      type: invited
+      roles: [speaker]
+      file: "talks/2024-02-16_fsm-forecasting-literature/forecast-literature-slides.html"
+
+# ---------------------------------------------------------------- 2023
+
+- id: good-practices-simulation-studies
+  title: "Good Practices for Simulation Studies"
+  areas: [simulation]
+  tags: [open-science, metascience]
+  publications: [siepe-simulation-studies-template]
+  license: "CC-BY-4.0"
+  events:
+    - date: "2023-11-22"
+      venue: "ReproducibiliTea Frankfurt"
+      online: true
+      type: invited
+      roles: [speaker]
+      file: "talks/2023-11-22-ffm-reprotea-simulation/Session2_winterterm_22-23_ReproTeaFrankfurt_Siepe.pdf"
+
+- id: warn-d-ema-items
+  title: "Developing EMA Items to Build an Early Warning System for Depression (WARN-D Study)"
+  areas: [esm, timeseries]
+  tags: [data-visualization]
+  license: "CC-BY-4.0"
+  events:
+    - date: "2023-05-28"
+      venue: "Annual Convention of the Association for Psychological Science (APS)"
+      city: Washington, D.C.
+      country: US
+      online: false
+      type: symposium
+      roles: [speaker]
+
+- id: augmenting-self-reports-passive-sensors
+  title: "Augmenting Self-Reports with Passive Sensor Data to Understand Changes in Mental Health"
+  areas: [esm]
+  events:
+    - date: "2023-05"
+      venue: "Annual Convention of the Association for Psychological Science (APS)"
+      city: Washington, D.C.
+      country: US
+      online: false
+      type: symposium
+      roles: [coauthor]
+      coauthors:
+        - { family: Rieble, given: Carlotta }
+        - { family: Proppert, given: Ricarda }
+        - { family: Fried, given: Eiko I. }
+
+- id: passive-sensors-mental-health-icps
+  title: "Using passive sensor data to understand changes in mental health outcomes"
+  areas: [esm]
+  events:
+    - date: "2023-03"
+      venue: "International Convention of Psychological Science (ICPS)"
+      city: Brussels
+      country: BE
+      online: false
+      type: symposium
+      roles: [coauthor]
+      coauthors:
+        - { family: Proppert, given: Ricarda }
+        - { family: Rieble, given: Carlotta }
+        - { family: Fried, given: Eiko I. }
+
+# ---------------------------------------------------------------- 2022
+
+- id: temporal-dynamics-depression
+  title: "Temporal Dynamics of Depressive Symptomatology"
+  areas: [esm, timeseries]
+  tags: [network-analysis]
+  publications: [siepe-time-varying-networks-depression]
+  license: "CC-BY-4.0"
+  events:
+    - date: "2023-05-13"
+      title: "Zeitliche Dynamik depressiver Symptome: Eine idiografische Netzwerkanalyse bei Patient:innen mit depressiven Störungen"
+      venue: "German Psychotherapy Congress (DPK) 2023"
+      city: Berlin
+      country: DE
+      online: false
+      type: symposium
+      roles: [speaker]
+    - date: "2022-11-28"
+      venue: "Annual Meeting of the German Society for Psychiatry and Psychotherapy (DGPPN)"
+      city: Berlin
+      country: DE
+      online: false
+      type: symposium
+      roles: [speaker]
+
+# ---------------------------------------------------------------- 2021
+
+- id: efpsa-academic-writing-primer
+  title: "Journal of European Psychology Students & Academic Writing Primer"
+  events:
+    - date: "2021-07"
+      venue: "EFPSA Research Summer School"
+      online: true
+      type: invited
+      roles: [speaker]
+
+# ---------------------------------------------------------------- hidden
+# Commented out in the LaTeX CV, or only in my_pubs.bib.
+
+- id: validating-ema-activity-tracking
+  title: "Validating subjective EMA measures with objective activity tracking"
+  hidden: true
+  areas: [esm]
+  events:
+    - date: "2022-05-25"
+      venue: "Annual Convention of the Association for Psychological Science (APS)"
+      city: Chicago
+      country: US
+      online: false
+      type: symposium
+      roles: [coauthor]
+      coauthors:
+        - { family: Proppert, given: Ricarda }
+        - { family: Rieble, given: Carlotta }
+        - { family: Fried, given: Eiko I. }
+
+- id: sleep-voice-mdd
+  title: "Ideographic time-series analyses of objective sleep and voice data in Major Depressive Disorder"
+  hidden: true
+  areas: [timeseries]
+  events:
+    - date: "2022-11"
+      venue: "Annual Meeting of the German Society for Psychiatry and Psychotherapy (DGPPN)"
+      city: Berlin
+      country: DE
+      online: false
+      type: symposium
+      roles: [coauthor]
+      coauthors:
+        - { family: Reich, given: Hanna }
+        - { family: Sander, given: Christian }
+        - { family: Oppenheimer, given: Hanna }
+        - { family: Wetzel, given: Elif }
+        - { family: Ludwig, given: Sascha }
+        - { family: Kliem, given: Andreas }
+        - { family: Hegerl, given: Ulrich }
+
+- id: triangulating-self-reports
+  title: "Changes in mental health: Triangulating information from different self-reports"
+  hidden: true
+  areas: [esm]
+  events:
+    - date: "2023-03"
+      venue: "International Convention of Psychological Science (ICPS)"
+      city: Brussels
+      country: BE
+      online: false
+      type: symposium
+      roles: [coauthor]
+      coauthors:
+        - { family: Rieble, given: Carlotta }
+        - { family: Proppert, given: Ricarda }
+        - { family: Fried, given: Eiko I. }
+
+- id: multimodal-mental-health-poster
+  title: "How Should We Assess Changes in Mental Health? A Multimodal Perspective"
+  hidden: true
+  areas: [esm]
+  events:
+    - date: "2023-05"
+      venue: "Annual Convention of the Association for Psychological Science (APS)"
+      city: Washington, D.C.
+      country: US
+      online: false
+      type: poster
+      roles: [coauthor]
+      coauthors:
+        - { family: Rieble, given: Carlotta }
+        - { family: Proppert, given: Ricarda }
+        - { family: Fried, given: Eiko I. }
+
+- id: psychosocial-processes-covid-poster
+  title: "Examining Psychosocial Processes of change in Students' Daily Lives during COVID-19: An Ecological Momentary Assessment"
+  hidden: true
+  areas: [esm]
+  events:
+    - date: "2023-05"
+      venue: "German Psychotherapy Congress (DPK) 2023"
+      city: Berlin
+      country: DE
+      online: false
+      type: poster
+      roles: [coauthor]
+      coauthors:
+        - { family: Westhoff, given: Marlon }

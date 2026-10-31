@@ -2,8 +2,8 @@
 
 Stage 2 is reviewed in three parts. This file grows with each part.
 
-- **2a Publications** (this section, 2026-10-31, revised after review)
-- 2b Talks and workshops (pending)
+- **2a Publications** (2026-10-31, revised after review)
+- **2b Talks and workshops** (2026-10-31, see below)
 - 2c Everything else (pending)
 
 ## 2a Publications
@@ -108,3 +108,118 @@ remaining title differences are expected:
 ### Link check
 
 48 links, 32 unique URLs, checked 2026-10-31. All return 200.
+
+## 2b Talks and workshops
+
+### Rules applied
+
+- No Crossref equivalent exists, so a fixed rule decides between sources:
+  - **LaTeX CV** for title, venue, type, and role.
+  - **Website** for day-precision dates and slides files.
+  - **`my_pubs.bib`** for coauthors and months of 2022/23 talks.
+- One entry per deck. Website folders whose talks have the **same CV title** are
+  merged into one entry. Different titles stay separate entries.
+- An event keeps its own `title` when the CV used a different title for it.
+- Areas come from the website categories (Simulation Studies -> simulation,
+  Time Series -> timeseries, EMA -> esm). The rest of each category list
+  becomes tags. LaTeX-only talks: areas proposed by me.
+
+### Counts
+
+| Source | Talks | Workshops |
+|---|---|---|
+| LaTeX CV | 16 invited, 21 conference, 2 posters (+1 commented out) | 10 |
+| Website | 18 pages, 26 slides files (25 PDF, 1 HTML) | 5 pages, 2 slides files |
+| `my_pubs.bib` | 11 talk/poster entries (4 not in the CV) | |
+| `data/` | 29 entries, 45 events (5 hidden) | 8 entries, 10 sessions |
+
+All 28 slides files are referenced exactly once. All 7 external links return 200.
+
+### Decide
+
+1. **Merged decks.** Merged because the CV titles are identical. Split any you
+   want as separate pages:
+   - temporal-dynamics-depression: DGPPN 2022 + DPK 2023 (two website folders)
+   - bayesian-idiographic-networks: FGME 2023 + IMPS 2024 (two folders)
+   - simulation-studies-psychology: VMP 2024 + SIPS 2024 + DAGStat 2025 (two folders)
+   - simulation-studies-state-of-the-art: FU Berlin, DGPs 2025, Münster, Lunch
+     Lectures, Flake Lab, MSMR keynote (berlin-methods-kolloquium folder + MSMR folder)
+2. **IMPS 2024.** The website files `IMPS24-Bjoern-Siepe.pdf` under the 2024
+   simulation talk. The CV lists IMPS 2024 only as the panel "Quality Standards for
+   Simulation Studies in Psychometrics". Data: a **separate panel entry with that PDF**.
+3. **Titles where the website differs from the CV.** Data uses the CV title:
+
+   | Entry | CV (in data) | Website |
+   |---|---|---|
+   | MSMR keynote | Simulation Studies for Methodological Research: Status Quo, Issues, and Potential Solutions | Simulation Studies in Psychology |
+   | warn-d-ema-items | Developing EMA Items to Build an Early Warning System for Depression (WARN-D Study) | Item Validation in the WARN-D Study |
+   | multiverse-dynamic-networks | GIMME, GIMME more (network models): Multiverse analysis for dynamic network models | Multiverse Analysis for Dynamic Network Models |
+   | Lunch Lectures event | ...State of the Art, Issues, and Potential Solutions | series page: Simulation studies in psychology: State of the art, problems, and potential solutions |
+   | preregistration-workshop | Preregistration in psychology and related fields | When, how, and why (not) to preregister |
+   | openesm-workshop | ...Experience Sampling Datasets | ...experience sampling research |
+   | introduction-dynamic-network-analysis (2024) | Introduction to Dynamic Network Analysis | Introduction to Dynamic Networks |
+   | dynamic-network-analysis-r (2023) | Dynamic Network Analysis in R | Introduction to Dynamic Networks |
+
+4. **Did you present these?** APS 2023 "Augmenting Self-Reports..." and ICPS 2023
+   "Using passive sensor data...": the CV footnote says "shared first-authorship or
+   coauthor with significant contributions". The bib lists Rieble or Proppert first.
+   Data: **roles [coauthor]**. The same applies to the 5 hidden entries.
+5. **2023 dynamic networks workshop.** The website has one "two part" page dated
+   2023-06-28. The CV has two workshops: March 2023 "Introduction to Dynamic Network
+   Analysis" (1.5h) and June 2023 "Dynamic Network Analysis in R" (3h). Data: **two
+   entries**. The March one is a second session of the 2024 introduction workshop
+   (same title), and the website page maps to June. Was March the first part of the
+   two-part workshop?
+6. **Dates where sources disagree.**
+   - MITNB 2024: website **2024-04-16**, CV May 2024.
+   - APS 2023 WARN-D items: website **2023-05-28**, bib June 2023.
+   - Folder names differ from the front matter for DGPPN (**11-28** vs 11-01),
+     APS 2023 (**05-28** vs 05-26), FGME 2023 (**09-12** vs 10-09), FSM
+     (**02-15** vs 02-16), LIfBi (**06-25** vs 06-24). Front matter used.
+   - Not used: the openESM page date 2026-08-05 and the 2024 simulation page date
+     2024-06-07 (one date for several events).
+7. **Hidden entries from `my_pubs.bib` only** (not in the CV): sleep and voice data
+   (DGPPN 2022), triangulating self-reports (ICPS 2023), multimodal poster (APS 2023),
+   Westhoff poster (DPK 2023; the bib lists only Westhoff as author). Plus the APS
+   2022 talk that was commented out in the CV. Keep them hidden or delete?
+
+### Derived (not stated as such in any source)
+
+- License: the website says "CC BY" without version. Data: **CC-BY-4.0**, because
+  the two workshop pages that name a version say 4.0. MSMR and JuMi pages state no
+  license; their entries have none.
+- Dates:
+  - FU Berlin 2025-04-16 and Oxford EDGE 2025-11-17 come from the folder names
+    (they match the CV month).
+  - Research abroad panel 2026-10 (same meeting as the JuMi talk, 2026-10-06).
+  - SAA 2025 poster 2025-05 (Best Poster Award dated 05/2025).
+  - Lunch Lectures 2026-07-01 (series page).
+  - APS 2022 2022-05-25 (commented-out CV line).
+- Host of "Research on research methods": the youth member representatives of the
+  DGPs Methods and Evaluation Division, taken from the lecture series page, which
+  describes their yearly online workshop on simulation studies in German.
+- `publications` links come from the talk pages, except two that I proposed:
+  temporal-dynamics-depression -> siepe-time-varying-networks-depression, and the
+  uncertainty poster -> siepe-dynamic-network-features-treatment-selection.
+- Areas proposed by me (LaTeX-only entries): benchmarking-time-series-methods
+  (timeseries), uncertainty poster (timeseries), both quality-standards panels
+  (simulation), research-on-research-methods (simulation), augmenting and ICPS
+  talks and the hidden ones (esm, timeseries for sleep/voice). No area: research
+  abroad panel, ML symposium, preregistration talk, EFPSA primer, several
+  workshops. "Towards Benchmarking of Psychological Time Series" has only
+  simulation (from its website categories); timeseries may fit too.
+- Posters: role speaker (the CV lists them as your poster presentations).
+- Workshop descriptions are the website text, shortened only by dropping "The
+  workshop consisted of". One typo fixed ("beneficts").
+
+### Not carried over
+
+- The per-talk images (thumbnails will come from the PDFs, as decided).
+- The Zenodo link on the reproducibility workshop page: it credits the preview
+  image (The Turing Way), not workshop material.
+
+### Empty
+
+- `abstract` for all talks (no source has one).
+- Event dates at year precision only: 11 of 45. Month precision: 15.
+- `city` for online events. `online` for the preregistration workshop (not stated).

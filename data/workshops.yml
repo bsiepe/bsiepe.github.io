@@ -1,0 +1,136 @@
+# Workshops. One entry per workshop, one session per time it was held.
+# Schema: schema/workshops.schema.json
+# Migrated 2026-10-31 from workshops/*/ (website) and cv-legacy/latex/cv_english.tex.
+# See MIGRATION_REPORT.md section 2b.
+
+- id: research-on-research-methods
+  title: "Research on research methods"
+  description: "Workshop on simulation studies for German students and PhD candidates."
+  areas: [simulation]
+  sessions:
+    - date: "2026-05"
+      host: "Youth member representatives of the DGPs Methods and Evaluation Division"
+      online: true
+      duration_hours: 3
+      coinstructors:
+        - { family: Frick, given: Susanne }
+        - { family: Irmer, given: Julien }
+    - date: "2025-05"
+      host: "Youth member representatives of the DGPs Methods and Evaluation Division"
+      online: true
+      duration_hours: 3
+      coinstructors:
+        - { family: Frick, given: Susanne }
+        - { family: Irmer, given: Julien }
+
+- id: openesm-workshop
+  title: "Introducing openESM: A Database of Openly Available Experience Sampling Datasets"
+  description: "One-hour introduction to openESM, its software packages, and to modeling multi-dataset experience sampling data."
+  areas: [esm, timeseries]
+  tags: [open-science, openesm]
+  links:
+    materials: "https://github.com/bsiepe/Talks/tree/main/rStats-Psych-Club2026"
+  license: "CC-BY-4.0"
+  sessions:
+    - date: "2026-04-30"
+      host: "Psych #rstats Club"
+      online: true
+      duration_hours: 1
+      file: "workshops/2026-04-30_introduction-openESM/rStatsClub-Talk-Siepe-2026.pdf"
+
+- id: reproducible-research-r-quarto
+  title: "Reproducible research in R and Quarto"
+  description: "Introduction to the topic, easy wins, hands-on exercises on creating reproducible manuscripts in Quarto, and an outlook to advanced topics like version control and containerization. Slides and exercises are in German."
+  tags: [open-science, reproducibility, statistics]
+  links:
+    repo: "https://github.com/bsiepe/repro-workshop"
+    osf: "https://osf.io/zgs9u/"
+  license: "CC-BY-4.0"
+  sessions:
+    - date: "2025-06-27"
+      host: "Graduate School of Education"
+      institution: "University of Wuppertal"
+      city: Wuppertal
+      country: DE
+      online: false
+      duration_hours: 6
+
+- id: preregistration-workshop
+  title: "Preregistration in psychology and related fields"
+  description: "Overview of the historical background of preregistration, its theoretical benefits, the current evidence on implementation, and discussions and guidance on deviations from preregistration as well as reviewing them."
+  tags: [preregistration, open-science, philosophy-of-science]
+  links:
+    materials: { url: "https://osf.io/xqrz2", note: "Slides & Exercises" }
+  license: "CC-BY-4.0"
+  sessions:
+    - date: "2025-01-31"
+      host: "Berlin University Alliance"
+      city: Berlin
+      country: DE
+      duration_hours: 4
+      coinstructors:
+        - { family: Büchner, given: Anabel }
+
+- id: data-visualization-r
+  title: "Introduction to Data Visualization in R"
+  tags: [data-visualization, statistics]
+  sessions:
+    - date: "2024-11"
+      host: "CorrelAid R Learning Program"
+      online: true
+      duration_hours: 1
+      format: "Interactive session"
+
+- id: introduction-dynamic-network-analysis
+  title: "Introduction to Dynamic Network Analysis"
+  description: "Theoretical and short practical introduction to dynamic network analyses in psychology."
+  areas: [timeseries, esm]
+  tags: [network-analysis]
+  links:
+    repo: "https://github.com/bsiepe/dynamical-networks-workshop"
+  license: "CC-BY-4.0"
+  sessions:
+    - date: "2024-10-21"
+      host: "DYNAMIC Center ECR Day"
+      institution: "Goethe University Frankfurt"
+      city: Frankfurt
+      country: DE
+      online: false
+      duration_hours: 2
+      file: "workshops/2024-10-21_dynamic-networks-workshop-ecr/dynamic-networks-ffm24.html"
+    - date: "2023-03"
+      host: "Department of Clinical Psychology and Psychotherapy"
+      institution: "Goethe University Frankfurt"
+      city: Frankfurt
+      country: DE
+      online: false
+      duration_hours: 1.5
+
+- id: pre-post-designs
+  title: "Analysis of Pre-Post Designs"
+  tags: [statistics]
+  sessions:
+    - date: "2024-03"
+      host: "Department of Clinical Psychology and Psychotherapy"
+      institution: "Marburg University"
+      city: Marburg
+      country: DE
+      online: false
+      duration_hours: 1.5
+
+- id: dynamic-network-analysis-r
+  title: "Dynamic Network Analysis in R"
+  description: "Two-part workshop with a theoretical and practical introduction to dynamic network analysis in psychology. The first workshop consisted of a theoretical introduction to network analysis in psychology, with a focus on dynamic networks. The second workshop consisted of more hands-on coding, looking deeply into data preprocessing and modelling with GIMME and graphicalVAR."
+  areas: [timeseries, esm]
+  tags: [network-analysis]
+  links:
+    repo: "https://github.com/bsiepe/dynamical-networks-workshop"
+  license: "CC-BY-4.0"
+  sessions:
+    - date: "2023-06-28"
+      host: "Department of Clinical Psychology and Psychotherapy"
+      institution: "Goethe University Frankfurt"
+      city: Frankfurt
+      country: DE
+      online: false
+      duration_hours: 3
