@@ -1,0 +1,734 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Medium Length Professional CV
+% LaTeX Template
+% Version 2.0 (8/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Trey Hunner (http://www.treyhunner.com/)
+%
+% Important note:
+% This template requires the resume.cls file to be in the same directory as the
+% .tex file. The resume.cls file provides the resume style used for structuring the
+% document.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
+\usepackage{etaremune}
+\usepackage[symbol]{footmisc}
+\usepackage{footmisc} % footnotes
+\usepackage{amsmath}
+\usepackage{apacite}
+\usepackage{bibentry}
+\usepackage{tabularx}
+\makeatletter\let\saved@bibitem\@bibitem\makeatother
+\usepackage[colorlinks=true]{hyperref}
+\makeatletter\let\@bibitem\saved@bibitem\makeatother
+\usepackage{hanging}
+\newcommand\publication[1]{%
+	\smallskip\par\hangpara{1.5em}{1}\bibentry{#1}\smallskip
+}
+
+% \definecolor{pigment}{rgb}{0.2, 0.2, 0.6}
+
+\usepackage{xcolor}
+\definecolor{contactgrey}{rgb}{0.3,0.3,0.3}
+\definecolor{linkblue}{rgb}{0.1, 0.2, 0.6}
+
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks   = true, %Colours links instead of ugly boxes
+  urlcolor     = linkblue, %Colour for external hyperlinks
+  linkcolor    = linkblue, %Colour of internal links
+  citecolor   = linkblue %Colour of citations
+}
+
+
+% change fonts
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\renewcommand{\familydefault}{\sfdefault}
+
+% change heading
+\renewcommand{\printname}{
+  \begingroup
+    {\Large\bf Dr. Björn S. Siepe} \hfill {\large\color{contactgrey} Curriculum Vitae}
+  \endgroup
+  \par\nobreak\smallskip
+  \hrule height 0.4pt
+  \smallskip
+}
+
+
+
+\name{Dr. Björn S. Siepe} % Your name
+\address{Marburg, Germany} % Your address
+\address{\today} % Your secondary addess (optional)
+\address{
+\begin{tabular}{@{}l@{\hspace{1.5em}}l@{\hspace{1.5em}}l@{\hspace{1.5em}}l@{}}
+\faEnvelope\ \href{mailto:bjoernsiepe@gmail.com}{bjoernsiepe@gmail.com} &
+  \faPhone\ +49 6421 28-23616 & % change to mobile for applications
+  \faGlobe\ \href{https://bsiepe.github.io}{bsiepe.github.io} &
+  \faDatabase\ \href{https://openesmdata.org}{openesmdata.org} \\
+\faGithub\ \href{https://github.com/bsiepe}{bsiepe} &
+  \faOrcid\ \href{https://orcid.org/0000-0002-9558-4648}{0000-0002-9558-4648} &
+  \faDatabase\ \href{https://osf.io/9gmn4/}{osf.io/9gmn4/} &
+  \faCloud\ \href{https://bsky.app/profile/bsiepe.bsky.social}{@bsiepe} \\
+\end{tabular}
+}
+
+
+
+\begin{document}
+
+\pagestyle{plain}
+\thispagestyle{plain}
+
+%  see https://github.com/rgeirhos/academic-cv-publications/blob/master/cv/cv.tex
+\nobibliography{my_pubs.bib}
+\bibliographystyle{apacite}
+
+%----------------------------------------------------------------------------------------
+%	RESEARCH INTERESTS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Research Interests}
+    \begin{itemize}
+        \item Design of research software and infrastructure 
+        \item Metascience of methodological research 
+        \item Multivariate time series methods for intensive longitudinal data
+        \item Applied experience sampling research
+    \end{itemize}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+
+\begin{rSubsection}{Marburg University} {10/2022 - 07/2026}{Doctoral Degree (Dr. rer. nat, summa cum laude)}\
+\item[] Thesis: Uncertainty in Dynamic Network Modeling: Estimation, Specification, and Inference
+\end{rSubsection}
+
+\begin{rSubsection}{Goethe University Frankfurt} {11/2020 - 09/2022}{M.Sc. Psychology}\ 
+ % \item[]Thesis: Temporal Dynamics of Depressive Symptomatology: An Idiographic Time Series Analysis 
+ %\item[]GPA: 1,0 (very good, with distinction, 5-point German rating scale) \
+\end{rSubsection}
+
+\begin{rSubsection}{Heidelberg University} {10/2017 - 09/2020}{B.Sc. Psychology}\
+ %\item[]GPA: 1,2 (very good, 5-point German rating scale)
+\end{rSubsection}
+
+\begin{rSubsection}{Mannheim University} {10/2014 - 08/2017}{B.Sc. Economics}\
+ %\item[]GPA: 2,0 (good, 5-point German rating scale)
+\end{rSubsection}
+
+\begin{rSubsection}{Hölderlin-Gymnasium Heidelberg} {09/2005 - 06/2013}{Abitur (A-levels)}\
+ %\item[]GPA: 1,0 (very good, 5-point German rating scale)
+\end{rSubsection}
+\end{rSection}
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+
+
+\begin{rSection}{Work Experience}
+
+
+
+\begin{rSubsection}{Marburg University}{10/2022 - present}{Scientific Assistant, Psychological Methods Lab (PI: Daniel Heck)}
+
+\end{rSubsection}
+
+\begin{rSubsection}{LOEWE Center DYNAMIC}{02/2025 - present}{Statistical Consultant}
+\item 
+\item[] Creation of consulting service on conceptualization, study planning, statistical analyses, and statistical programming. 
+\end{rSubsection}
+
+\begin{rSubsection}{Marburg University}{02/2024 - present}{Statistical Consultant, Center for Translational Clinical Psychology}
+\item 
+\item[] Consulting on conceptualization, study planning, statistical analyses, and statistical programming. 
+\end{rSubsection}
+
+\begin{rSubsection}{Freelance Work}{11/2022 - present}{Statistical Consultant}
+\item
+\item[] Consulting on conceptualization, study planning, statistical analyses, and statistical programming for clinical psychological researchers from multiple research groups and clinics. 
+\end{rSubsection}
+
+
+
+\begin{rSubsection}{Goethe University Frankfurt}{11/2021 - 08/2022}{Student Assistant, Departments for Psychological Methods}
+
+\end{rSubsection}
+
+\begin{rSubsection}{University Hospital Frankfurt}{10/2020 - 10/2021}{Student Assistant, Horizon 2020-funded Eat2BeNice project (PI: Silke Matura)}
+
+\end{rSubsection}
+
+\begin{rSubsection}{Institute for Psychosocial Prevention Heidelberg}{10/2019 - 12/2019}{Student Assistant}
+
+\end{rSubsection}
+
+\end{rSection}
+
+
+\begin{rSection}{Research Visits \& Internships}
+
+
+\begin{rSubsection}{National University of Singapore}{02/2026 - 03/2026}{Visiting Doctoral Student (PI: Sacha Epskamp)}
+\item
+\item[] Research visit in the Department of Psychology, Lab of Methods, Data Science \& AI
+\end{rSubsection}    
+
+\begin{rSubsection}{University of Groningen}{09/2024 - 10/2024}{Visiting Doctoral Student (PI: Laura Bringmann)}
+\item
+\item[] Research visit in the Psychometrics and Statistics Department
+\end{rSubsection}
+
+\begin{rSubsection}{Leiden University}{03/2022 - 06/2022}{Research Intern, ERC-funded WARN-D Project (PI: Eiko Fried)}
+\item
+\item[] Working with experience sampling and passive sensor data in a project aiming to build an early-warning system for depression
+\end{rSubsection}
+
+\begin{rSubsection}{German Depression Foundation, Research Center}{03/2021 - 04/2021}{Research Intern, STEADY project (PI: Ulrich Hegerl)} 
+
+\end{rSubsection}
+
+
+
+\begin{rSubsection}{PZN Nordbaden (Psychiatric Clinic)}{02/2020 - 03/2020}{Clinical Intern}
+
+\end{rSubsection}
+
+
+
+
+\end{rSection}
+%----------------------------------------------------------------------------------------
+%	Teaching Experience SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Teaching Experience}
+
+\begin{rSubsection}{Marburg University}{2025}{}
+\item
+\item[] Modelling and data analysis in R (master's level statistical programming seminar)
+\end{rSubsection}
+
+\begin{rSubsection}{Marburg University}{2023 \& 2024 \& 2025}{}
+\item
+\item[] Critical reading of research papers (bachelor's level seminar about methodological criteria of research)
+\end{rSubsection}
+
+\begin{rSubsection}{Marburg University}{2022 \& 2023 \& 2024}{}
+\item
+\item[] Multivariate Statistics (bachelor's level seminar about regression and latent variable modeling)
+\end{rSubsection}
+
+\begin{rSubsection}{Brainhack School}{2023}{}
+\item
+\item[] Introduction to git/GitHub, Introduction to Machine Learning in Python, Introduction to Open Data, Introduction to Data Visualization in Python
+\end{rSubsection}
+
+
+\begin{rSubsection}{Goethe University Frankfurt}{2022}{}
+\item
+\item[] Research Methods and Evaluation II (master's level seminar about latent variable modeling)
+\end{rSubsection}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Publications SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Publications}
+\textbf{\large Preprints}
+
+
+\underline{2026}
+\begin{etaremune}
+    \item Pena Loray, J. S., \textbf{Siepe, B. S.}, Hehlmann, M. I., Deisenhofer, A., Wester, R. A., \& Rubel, J. (2026). Beyond Rules of Thumb: Empirical Sample Size Requirements for Detecting Institutional Effects in the Context of Therapist Effects. \textit{PsyArXiv Preprint}. \\
+    \url{https://doi.org/10.31234/osf.io/gswc9_v1}
+    \item \textbf{Siepe, B. S.}, Bartoš, F., Peikert, A., Heck, D. W., Sarafoglou, A., Boulesteix, A.-L., \& Pawel, S. (2026). Why, when, and how to (or not to) preregister a simulation study. \textit{PsyArXiv Preprint}. \\
+    \url{https://doi.org/10.31234/osf.io/cxjrb}
+    \item Huth, K. B. S., Wijnen, S. M. C. E., Skjerdingstad, N., Bartoš, F., Finnemann, A., Ebrahimi, O. V., \textbf{Siepe, B. S.}, Steijvers, L. C. J., van Bilsen, C., Bosma, H., Schumacher, L., \& Dukers-Muijrers, N. H. (2026). Social connection features predicting loneliness: A longitudinal, interpretable machine-learning analysis. \textit{PsyArXiv Preprint}. \\
+\url{https://doi.org/10.31234/osf.io/mt76k_v1}
+
+\hspace{-0.75cm}\underline{2025}
+
+    \item  Bartoš, F., Pawel, S., \textbf{Siepe, B. S.} (2025). Living synthetic benchmarks: A neutral and cumulative framework for simulation studies. \textit{arXiv Preprint}. \\
+\url{https://doi.org/10.48550/arXiv.2510.19489}
+    \item  Pfadt, J. M., Bartoš, F., Godmann, H. R., \ldots, \textbf{Siepe, B. S.}, \ldots, de Wit, K., Wuth, J., \& Wagenmakers, E.-J. (2025). A methodological metamorphosis: The rapid rise of Bayesian inference and open science practices in psychology. \textit{PsyArXiv Preprint}. \\
+\url{https://doi.org/10.31234/osf.io/ck3js}
+    \item \textbf{Siepe, B. S.}, Kloft, M., Aktepe, S. C., \& Heck, D. W. (2025). A Robustness Reproduction of Cox et al. (2023). \textit{I4R Discussion Paper Series No. 196.}\\
+\url{https://hdl.handle.net/10419/308794}
+\end{etaremune}
+
+\textbf{\large Peer-Reviewed Articles}
+
+\underline{2026}
+
+\begin{etaremune}
+    \item \textbf{Siepe, B. S.}, Kloft, M., Zhang, Y., Petersen, F., Bringmann, L. F., \& Heck, D. W. (2026). Using features of dynamic networks to guide treatment selection and outcome prediction: The central role of uncertainty. \textit{Psychological Methods}, Advance Online Publication.\\
+\url{https://doi.org/10.1037/met0000872}
+    \item Haslbeck, J. M. B., Jongerling, J., \textbf{Siepe, B. S.}, Epskamp, S., \& Waldorp, L. (2026). Model Checking for Vector Autoregressive Models. \textit{Psychological Methods}, Advance Online Publication.\\
+\url{https://doi.org/10.1037/met0000855}
+    \item Vogelsmeier, L. V. D. E., \textbf{Siepe, B. S.} , Ulitzsch, E., Eisele, G., Geeraerts, J., Klocek, A., Proppert, R. K. K., Rieble, C., Tutunji, R., Dejonckheere, E., Kuppens, P. \& Fried, E. I. F. (2026). Identifying careless responding in ecological momentary assessment: Inconsistent signals from different detection methods in the WARN-D data. \textit{Psychological Methods}, Advance Online Publication. \\ 
+    \url{https://doi.org/10.1037/met0000845}
+    \item \textbf{Siepe, B. S.}, Haslbeck, J. M. B., Kloft, M., Büchner, A., Zhang, Y., Fried, E. I. F., Heck, D. W. (2026). Introducing openESM: A database of openly available experience sampling datasets. \textit{Behavior Research Methods} 58, 240. \\ \url{https://doi.org/10.3758/s13428-026-03112-y}
+    
+\hspace{-0.75cm}\underline{2025}
+    \item  Hehlmann, M. I., \textbf{Siepe, B.S.}, Mink, F., Peña Loray, J. S., Gomez Penedo, J. M., Fritz, J., Moggia, D., Rubel, J. A., \& Lutz, W. (2025). Exploring the predictive value of different affect dynamics for psychological treatment outcome. \textit{Psychological Assessment}, 37(11), 656–669\\
+\url{https://doi.org/10.1037/pas0001384}
+    \item Kloft, M., \textbf{Siepe, B. S.} \& Heck, D. W. (2025). The Interval Consensus Model: Aggregating Continuous Bounded Interval Responses. \textit{Psychometrika}, Advance Online Publication. \\ \url{https://doi.org/10.1017/psy.2025.10058}
+    \item Pawel, S., Bartoš, F.\footnote[2]{Shared second authorship}, \textbf{Siepe, B. S.}\textsuperscript{\textdagger} \& Lohmann, A.\textsuperscript{\textdagger}(2025). Handling missingness, failures, and non-convergence in simulation studies: A review of present practices and recommendations. \textit{The American Statistician}.\\
+\url{https://doi.org/10.1080/00031305.2025.2540002}
+    \item \textbf{Siepe, B. S.}, Tutunji, R., Rieble, C. L., Proppert, R. K. K., \& Fried, E. I. (2025). Associations between ecological momentary assessment and passive sensor data in a large student sample. \textit{Journal of Psychopathology and Clinical Science}, 134(8), 912–925. \\ \url{https://doi.org/10.1037/abn0001013}
+    \item \textbf{Siepe, B. S.}, \& Heck, D. W. (2025). Multiverse analysis for dynamic network models: Investigating the influence of plausible alternative modeling choices. \textit{Methodology}. 21(2), 123–143,   \\ \url{https://doi.org/10.5964/meth.15665}
+    \item Cloos, Leonie\footnote[3]{Shared first authorship}, \textbf{Siepe, B.S.}\textsuperscript{$\ddagger$}, Piccirillo, M., Fried, E.I., Wang, S.B., Helmich, M.A., Johnson, S.U., Hoffart, A. \& Ebrahimi, O.V. (2025). Accuracy and Consistency of Visual Analog Scales in Ecological Momentary Assessment and Digital Studies. \textit{Collabra: Psychology}, 11 (1): 142735. \\
+\url{https://doi.org/10.1525/collabra.142735}
+    \item \textbf{Siepe, B. S.}, Rieble, C. L., Tutunji, R., Rimpler, A., März, J., Proppert, R. K. K., \& Fried, E. I. (2025). Understanding EMA Data: A Tutorial on Exploring Item Performance in Ecological Momentary Assessment Data. \textit{Advances in Methods and Practices in Psychological Science}, 8(1). \\ \url{https://doi.org/10.1177/25152459241286877}
+
+\hspace{-0.75cm}\underline{2024}
+
+
+\item \textbf{Siepe, B.S.}, Bartoš, F., Morris, T. P., Boulesteix, A., Heck, D. W., \& Pawel, S. (2024). Simulation Studies for Methodological Research in Psychology: A Standardized Template for Planning, Preregistration, and Reporting. \textit{Psychological Methods.} Advance Online Publication. \\ \url{https://doi.org/10.1037/met0000695}
+
+\item Langener, A., \textbf{Siepe, B. S.}, Elsherif, M. M., Niemeijer, K., Andresen, P. K., Akre, S., … Jacobson, N. C. (2024). A Template and Tutorial for Preregistering Studies Using Passive Smartphone Measures. \textit{Behavior Research Methods}. Advance Online Publication. \\ 
+\url{https://doi.org/10.3758/s13428-024-02474-5}
+
+\item \textbf{Siepe, B.S.}, Sander, C., Schultze, M., Kliem, A., Ludwig, S., Hegerl, U., \& Reich, H. (2024). Time-Varying Network Models for the Temporal Dynamics of Depressive Symptomatology in Patients With Depressive Disorders: Secondary Analysis of Longitudinal Observational Data. \textit{JMIR Mental Health}, 11:e50136. \\ \url{https://doi.org/10.2196/50136}
+
+\item \textbf{Siepe, B.S.}, Kloft, M., Heck, D.W. (2024). Bayesian Estimation and Comparison of Idiographic Network Models. \textit{Psychological Methods.} Advance Online Publication.  \\ \url{https://doi.org/10.1037/met0000672}
+
+\item Westhoff, M., Heshmati, S., \textbf{Siepe, B. S.}, Vogelbacher, C., Ciarrochi, J., Hayes, S. C., \& Hofmann, S. G. (2024). Psychological flexibility and cognitive-affective processes in young adults’ daily lives. \textit{Scientific Reports 14}, 8182. \\ \url{https://doi.org/10.1038/s41598-024-58598-3}
+
+
+\item Rimpler, A., \textbf{Siepe, B. S.}, Rieble, C. L., Proppert, R. K., \& Fried, E. I. (2024). Introducing FRED: Software for Generating Feedback Reports for Ecological Momentary Assessment Data. \textit{Administration and Policy in Mental Health and Mental Health Services Research}, 1-11. \\ \url{https://doi.org/10.1007/s10488-023-01324-4}
+
+
+
+
+
+\hspace{-0.75cm}\underline{2022}
+
+\item Talia, A., Georg, A., \textbf{Siepe, B.S.}, Gullo, S., Miller-Bottome, M., Volkert, J., ... \& Taubner, S. (2022). An exploratory study on how attachment classifications manifest in group psychotherapy. \textit{Research in Psychotherapy: Psychopathology, Process and Outcome, 25}(3), 286-298. \\ \url{https://doi.org/10.4081/ripppo.2022.653}
+
+
+
+\end{etaremune}
+
+
+
+\end{rSection}
+
+
+%----------------------------------------------------------------------------------------
+%	Book Chapters SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Book Chapters}
+\underline{2025}
+\begin{etaremune}
+
+\item Freeborn, L., \textbf{Siepe, B. S.} (2025). Unravelling the dynamics of language learning: Insights from temporal network analysis. In Lowie, Rosmawati, \& De Wilde (Eds.), \textit{Research Methods in Applied Linguistics} (Vol. 14, pp. 143--166). John Benjamins Publishing Company. \\
+\url{https://doi.org/10.1075/rmal.14.08fre}
+
+
+\hspace{-0.75cm}\underline{2021}
+\item Talia, A., \textbf{Siepe, B.S.} (2021). Von der Wiege bis in den Behandlungsraum: Zur Manifestation von Bindungsmustern in der Psychotherapie. In Brisch (Ed.), \textit{Bindung und psychische Störungen: Ursachen, Behandlung und Prävention} (pp. 230--247). Klett Cotta. \\
+
+\end{etaremune}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Software SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Software \& Research Infrastructure}
+\begin{etaremune}
+
+\item \textbf{Siepe, B.S.}  \& Haslbeck, J.M.B. (2026). \texttt{VARcheck}: Visual Diagnostic Checks for Vector Autoregressive Models (R Package). Available on CRAN (\url{https://doi.org/10.32614/CRAN.package.VARcheck}). Status: Maintainer, Author
+
+\item \textbf{Siepe, B.S.} (2025). \texttt{openESM}: Open database of experience sampling datasets\\  Website: \href{https://openesmdata.org}{openesmdata.org}. Status: Lead Developer, Maintainer
+
+\item \textbf{Siepe, B.S.} (2025). \texttt{openesm}: Accessing the openESM Database (R and Python Package). Available on CRAN (\url{https://doi.org/10.32614/CRAN.package.openesm}) and PyPi (\url{https://pypi.org/project/openesm/}). Status: Maintainer, Author
+
+\item Bartoš, F., Pawel, S., \textbf{Siepe, B. S.} \& Čala, P. (2025). \texttt{PublicationBiasBenchmark}: Benchmark for Publication Bias Correction Methods (R Package and Website). Available on CRAN (\url{https://doi.org/10.32614/CRAN.package.PublicationBiasBenchmark}). Status: Author
+
+\item Kloft, M. \& \textbf{Siepe, B.S.} (2025). \texttt{intervalpsych}: Analyzing Interval Data in Psychometrics (R Package). Available on CRAN (\url{https://doi.org/10.32614/CRAN.package.intervalpsych}). Status: Author
+
+\item Lane, S., Gates, K. M., Fisher, Z., Arizmendi, C., \& Molenaar, P. (2025). \texttt{gimme}: Group Iterative Multiple Model Estimation (R Package). Available on CRAN (\url{https://doi.org/10.32614/CRAN.package.gimme}). Status: Contributor
+
+
+\item \textbf{Siepe, B.S.} \& Kloft, M. (2024). \texttt{tsnet}: Comparing and Visualizing Networks based on Time Series Data (R Package). Available on CRAN (\url{https://doi.org/10.32614/CRAN.package.tsnet}). Status: Maintainer, Author
+
+\end{etaremune}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Talks SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Invited Talks \& Keynotes}
+
+\underline{2026}
+\begin{etaremune}
+
+\item \textit{Research abroad.} Panel discussion at the ECR Meeting of the DGPs Methods and Evaluation Section 2026, Frankfurt, Germany.
+
+\item \textit{Simulation Studies for Methodological Research: Status Quo, Issues, and Potential Solutions.} \textbf{Keynote}, 1st Interdisciplinary Symposium on Meta Science for Methods Research, University of Zurich (August 2026).
+
+\item \textit{Simulation Studies for Methodological Research: Status Quo, Issues, and Potential Solutions.} Flake Lab, University of British Columbia (August 2026), online. 
+
+\item \textit{Simulation Studies for Methodological Research: State of the Art, Issues, and Potential Solutions.} Online Lunch Lectures on Monte Carlo Simulation Studies (July 2026), online.
+
+\item \textit{Improving Methodological Research in Psychology: Preregistration, Transparent Reporting, and Benchmarking.} Leibniz Institute for Educational Trajectories (LIfBi), Bamberg (June 2026). 
+
+\item \textit{Benchmarking psychological time series methods.} DynaNet Meeting, University of Amsterdam (May 2026). 
+
+\item \textit{Introducing openESM: A database of openly available experience sampling datasets.} Psychology Lunch Seminar Talk, Nanyang Technological University Singapore (March 2026). 
+
+\item \textit{Introducing openESM: A database of openly available experience sampling datasets.} Measurement is the new black consortium meeting (March 2026), online.
+
+
+\hspace{-0.75cm}\underline{2025}
+
+\item \textit{Introducing openESM: A database of openly available experience sampling datasets.} Group Meeting of the Oxford Emotional Disorder Genesis and Evolution (EDGE) Lab, University of Oxford (November 2025), online. 
+
+\item \textit{Simulation Studies for Methodological Research: State of the Art, Issues, and Potential Solutions.} Colloquium of the Statistics and Psychological Methods Working Unit, University of Münster (June 2025).
+
+\item \textit{Simulation Studies for Methodological Research: State of the Art, Issues, and Potential Solutions.} With Samuel Pawel, Colloquium of the Methods and Evaluation / Quality Assurance Unit, Freie Universität Berlin (April 2025), online.
+
+\item \textit{Why, when, and how (not) to preregister.} Neurophysics Group Meeting, Department of Physics, Marburg University (February 2025).
+
+\hspace{-0.75cm}\underline{2024}
+\item \textit{Exploration of Ecological Momentary Assessment Data.} Measurement is the new black consortium meeting (May 2024), online.
+
+\item \textit{Historical and Recent Trends in the Forecasting Literature.} WARN-D Group Friday Science Meeting, Leiden University (February 2024), online.
+
+
+\hspace{-0.75cm}\underline{2023}
+ \item \textit{Good Practices for Simulation Studies.} ReproducibiliTea Frankfurt (November 2023), online.    
+
+\hspace{-0.75cm}\underline{2021}
+    \item \textit{Journal of European Psychology Students \& Academic Writing Primer}. EFPSA Research Summer School (July 2021), online.
+\end{etaremune}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Workshops SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Workshops}
+
+\underline{2026}
+\begin{etaremune}
+
+\item \textit{Research on research methods.} 3h workshop on simulation studies for German students and PhD candidates, with Susanne Frick \& Julien Irmer, online (May 2026).
+
+\item \textit{Introducing openESM: A Database of Openly Available Experience Sampling Datasets.}  1h workshop for the Psych \#rstats Club, online (April 2026).
+
+\hspace{-0.75cm}\underline{2025}
+\item \textit{Reproducible research in R and Quarto.} 6h workshop for the Graduate School of Education, University of Wuppertal (June 2025).
+
+\item \textit{Research on research methods.} 3h workshop on simulation studies for German students and PhD candidates, with Susanne Frick \& Julien Irmer, online (May 2025).
+
+\item \textit{Preregistration in psychology and related fields}. 4h Workshop, with Anabel Büchner, Berlin University Alliance (January 2025).
+
+
+\hspace{-0.75cm}\underline{2024}
+\item \textit{Introduction to Data Visualization in R}. 1h Interactive Session, Correlaid R Learning Program, Online (November 2024).
+
+\item \textit{Introduction to Dynamic Network Analysis}. 2h Workshop, DYNAMIC Center ECR Day, Goethe University Frankfurt (October 2024).
+
+\item \textit{Analysis of Pre-Post Designs}. 1.5h Workshop, Department of Clinical Psychology and Psychotherapy, Marburg University (March 2024).
+
+
+\hspace{-0.75cm}\underline{2023}
+\item \textit{Dynamic Network Analysis in R}. 3h Workshop, Department of Clinical Psychology and Psychotherapy, Goethe University Frankfurt (June 2023).
+
+\item \textit{Introduction to Dynamic Network Analysis}. 1.5h Workshop, Department of Clinical Psychology and Psychotherapy, Goethe University Frankfurt (March 2023).
+\end{etaremune}
+
+
+\end{rSection}
+
+
+%----------------------------------------------------------------------------------------
+%	Conferences SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Conference Presentations}
+\underline{2026} 
+\begin{etaremune}
+% \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\item \textit{Towards benchmarking of psychological time series.} Talk at the ECR Meeting of the DGPs Methods and Evaluation Section 2026, Frankfurt, Germany.
+
+\item \textit{Introducing openESM: A database of openly available experience sampling datasets.} Symposium Talk, Society for Ambulatory Assessment 2026, Vienna, Austria. 
+
+\item \textit{Introducing openESM: A database of openly available experience sampling datasets.} Flash Talk, Society for Digital Mental Health Annual Meeting 2026, online. 
+
+\item \textit{Introducing openESM: A database of openly available experience sampling datasets.} Symposium Presentation, Association for Psychological Science (APS) Annual Convention 2026, Barcelona, Spain. 
+
+\item \textit{Using features of dynamic networks to guide treatment selection and outcome prediction: The central role of uncertainty.} Symposium Presentation, Association for Psychological Science (APS) Annual Convention 2026, Barcelona, Spain. 
+
+\item \textit{Introducing openESM: A database of openly available experience sampling datasets.} Australasian Mathematical Psychology Conference 2026, Singapore. 
+
+\hspace{-0.75cm}\underline{2025}
+\item \textit{Simulation studies for methodological research: Status quo, problems, and potential solutions.} Symposium talk, Conference of the DGPs Methods and Evaluation Section 2025, Berlin, Germany.
+
+\item \textit{Combining machine learning with mixed effects models.} Symposium organizer and chair, Conference of the DGPs Methods and Evaluation Section 2025, Berlin, Germany.
+
+\item \textit{Panel Discussion: Quality Standards for Simulation Studies.} Panel discussion organizer and panelist, Conference of the DGPs Methods and Evaluation Section 2025, Berlin, Germany.
+
+\item \textit{Associations between ecological momentary assessment and passive sensor data in a large student sample.} Symposium Presentation, Annual Meeting of the Society for Ambulatory Assessment 2025, Leuven, Belgium. 
+
+\item \textit{GIMME, GIMME more (network models): Multiverse analysis for dynamic network models.} Symposium Presentation and Co-Chair of the Symposium, Annual Meeting of the Society for Ambulatory Assessment 2025, Leuven, Belgium. 
+
+\item \textit{Simulation Studies for Methodological Research in Psychology.} Symposium Presentation, 7th Joint Statistical Meeting of the German Statistical Working Group (DAGStat), Berlin, Germany.
+
+\hspace{-0.75cm}\underline{2024}
+\item \textit{Bayesian Estimation and Comparison of Idiographic Network Models.} Symposium Presentation, International Meeting of the Psychometric Society (IMPS), Prague, Czech Republic.
+
+\item \textit{Quality Standards for Simulation Studies in Psychometrics.} Panel Discussion Participant, International Meeting of the Psychometric Society (IMPS), Prague, Czech Republic. 
+
+\item \textit{Simulation Studies for Methodological Research in Psychology.} Lightning Talk, Virtual Meeting of the Society for the Improvement of Psychological Science (SIPS), online. 
+
+\item \textit{Simulation Studies for Methodological Research in Psychology.} Presentation, Virtual Meeting of the Society for Mathematical Psychology, online. 
+
+\hspace{-0.75cm}\underline{2023}
+
+\item \textit{Bayesian Estimation and Comparison of Idiographic Network Models.} Symposium Presentation, Meeting of the German Society for Methods \& Evaluation in Psychology (FGME), Konstanz, Germany. 
+
+\item \textit{Augmenting Self-Reports with Passive Sensor Data to Understand Changes in Mental Health.} Symposium Presentation, Annual Convention of the Association for Psychological Science (APS), Washington D.C., US.\footnote{Shared first-authorship or coauthor with significant contributions to presentation\label{refnote}}
+
+\item \textit{Developing EMA Items to Build an Early Warning System for Depression (WARN-D Study).} Symposium Presentation, Annual Convention of the Association for Psychological Science (APS), Washington D.C., US.
+
+\item \textit{Using passive sensor data to understand changes in mental health outcomes.} Symposium Presentation, International Convention of Psychological Science (ICPS), Brussels, Belgium.\footref{refnote}
+
+\hspace{-0.75cm}\underline{2022}
+
+\item \textit{Temporal Dynamics of Depressive Symptomatology.} Presentation, Annual Meeting of the German Society for Psychiatry and Psychotherapy (DGPPN), Berlin, Germany. 
+
+
+%\item Proppert, R., Rieble, C., \textbf{Siepe, B.S.}, Fried, E.I. (2022). Validating subjective EMA measures with objective activity tracking. \textit{American Psychological Society, Annual Convention}, 25th May, Chicago, US.  
+%\item \publication{proppertValidatingSubjectiveEMA2022}
+
+\end{etaremune}
+\end{rSection}
+
+\begin{rSection}{Poster Presentations}
+\underline{2025} 
+\begin{etaremune}
+\item \textit{Taking uncertainty into account is central when using dynamic network features as predictors.} Poster Presentation, Conference of the DGPs Methods and Evaluation Section 2025, Berlin, Germany.
+\item \textit{Taking uncertainty into account is central when using dynamic network features as predictors.} Poster Presentation, Annual Meeting of the Society for Ambulatory Assessment 2025, Leuven, Belgium.
+\end{etaremune}
+\end{rSection}
+
+
+
+%----------------------------------------------------------------------------------------
+%	Supervision Section
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Supervision}
+\textbf{First Supervisor:} 9 Bachelor's, 3 Master's theses  \\
+\textbf{Second Supervisor:} 10 Bachelor's, 15 Master's theses
+\end{rSection}
+    
+
+
+%----------------------------------------------------------------------------------------
+%	Grants & Awards Section
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Awards}
+
+
+\begin{rSubsection}{SIPS Commendation}{06/2026}{}
+\item Awarded by the Society for the Improvement of Psychological Science (SIPS) for openESM
+\end{rSubsection}
+
+\begin{rSubsection}{Best Poster Award}{05/2025}{}
+\item Awarded at the Society for Ambulatory Assessment Conference 2025 for the poster ``Taking uncertainty into account is central when using dynamic network features as predictors''    
+\end{rSubsection}
+
+\begin{rSubsection}{Student Teaching Award}{07/2024}{}
+\item Awarded by the student council psychology at Marburg University 
+\end{rSubsection}
+\end{rSection}
+
+
+\begin{rSection}{Research Grants}
+\begin{rSubsection}{DFG Individual Research Grant}{07/2026}{}
+\item Amount: 299.771€. Project: ``Empirical Benchmarking of Time Series Models in Psychology: Building a Foundation for Personalized Prediction'' (PI)
+\end{rSubsection}  
+
+\begin{rSubsection}{DYNAMIC Center Mini Grant}{01/2026}{}
+\item Amount: 4.136,91€ (internal grant). Financing research project in Singapore    
+\end{rSubsection}
+\end{rSection}
+
+
+\begin{rSection}{Travel Grants \& Scholarships}
+
+\begin{rSubsection}{DAAD Conference Stipend}{05/2026}{}
+\item Amount: 873€. Travel to APS 2026
+\end{rSubsection}
+
+\begin{rSubsection}{DAAD Research Travel Stipend}{08/2024}{}
+\item Amount: 2.259€. Financing research stay in Groningen
+\end{rSubsection}
+
+\begin{rSubsection}{DAAD Conference Stipend}{07/2024}{}
+\item Amount: 950€. Travel to the IMPS 2024 Annual Meeting
+\end{rSubsection}
+
+\begin{rSubsection}{Marburg Research Academy Conference Funding}{07/2024}{}
+\item Amount: 1.500€.  Co-Applicant on behalf of Open Science Initiative at Marburg University
+\end{rSubsection}
+
+\begin{rSubsection}{APS Conference Financial Assistance}{03/2023}{}
+\item Amount: 400\$
+\end{rSubsection}
+
+\begin{rSubsection}{Erasmus Internship Stipend}{03/2022}{}
+\item Amount: 1.089€. Financing research stay in Leiden
+\end{rSubsection}
+
+\begin{rSubsection}{German Federal Scholarship (Deutschlandstipendium)}{10/2021}{}
+\item Amount: 3.600€ (over one year)
+\end{rSubsection}
+
+\end{rSection}
+
+%\newpage
+%----------------------------------------------------------------------------------------
+%	Professional Training SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Professional Training}
+\textbf{Combining R and C++}, DAGStat \hfill 2025 \\
+\textbf{Linear Algebra for Machine Learning}, Imperial College London, Coursera \hfill 2022 \\
+\textbf{Modeling the Dynamics of Intensive Longitudinal Data}, Utrecht Summer School \hfill 2021 \\
+\textbf{Introduction to Statistical Learning}, StanfordOnline, edx Course \hfill 2021 \\
+\textbf{Practical Time Series Analysis}, SUNY, Coursera \hfill 2021 \\ 
+\textbf{Improving your Statistical Inferences}, TU Eindhoven, Coursera \hfill 2020 \\
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Academic Service SECTION
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Academic Service}
+Organizer of Online Lunch Talk Series on Simulation Studies \href{https://bsiepe.github.io/simulation-talk-series/}{\textcolor{linkblue}{(URL)}} \hfill 2026 \\
+Contributed to PandaR Teaching Resources \href{https://pandar.netlify.app/authors/bjorn-siepe/}{\textcolor{linkblue}{(URL)}} \hfill 2025 \& 2026 \\
+Second Chair of the Task Force on Quality Standards for Simulation Studies of the Psychometric\\ Society \hfill 2025 - present \\
+Member of Tenure Track Commission, Department of Psychology, Marburg University \hfill 2025 - present \\
+%Member of Professorship Appointment Committee for a Clinical Professorship, Department of Psychology, Uni Marburg \hfill 2025 - present \\
+Head of the Special Interest Group for Quality Standards for Simulation Studies of the Quantitative Methods Subgroup of the German Psychological Association \hfill 2025 - present\\
+Website coordinator, MITNB Consortium \href{https://mitnb.org}{\textcolor{linkblue}{(URL)}} \hfill 2024 - present\\
+Member of Doctoral Committee, Department of Psychology, Marburg University \hfill 2023 - present\\
+Board Member Open Science Initiative, Marburg University \hfill 2022 - present \\
+Co-Organizer Brainhack Marburg \hfill 2023 \& 2024 \& 2025 \\
+Co-Organizer Open Science Days Marburg \hfill 2023 \\
+Co-Host ReproducibiliTea Frankfurt \hfill 2022 \\
+Board Member Open Science Initiative, Goethe University Frankfurt \hfill 2021 - 2022 \\
+Student Council Psychology, Goethe University Frankfurt \hfill 2021 - 2022
+%Section content\ldots
+\end{rSection}
+
+
+\begin{rSection}{Professional Memberships}
+Member of the Society for Ambulatory Assessment (SAA) \hfill 2025 - present \\
+Member of the German Society for Psychology (DGPS) \hfill 2023 - present 
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Community Service SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Community Service}
+CorrelAid Volunteer \hfill 2024 - present \\
+Student tutor at Asylarbeitskreis Heidelberg (refugee aid) \hfill 2015 - 2021 \\
+Co-host of yearly after-school orientation day, Hölderlin-Gymnasium \hfill 2019 - 2021\\
+Involvement with Jugend Rettet (refugee aid) \hfill 2017 - 2018\\
+Assistant coach, youth soccer team of ASC Neuenheim \hfill 2013 - 2014
+%Section content\ldots
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Media Coverage SECTION 
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Media Coverage}
+Press release by Leiden University on our article ``Associations between ecological momentary assessment and passive sensor data in a large student sample'' \href{https://www.universiteitleiden.nl/en/news/2025/07/does-your-smartwatch-say-youre-stressed-it-may-often-be-wrong}{\textcolor{linkblue}{(URL)}} \\
+Article on the same paper in The Guardian \href{https://www.theguardian.com/technology/2025/aug/08/smartwatches-offer-little-insight-into-stress-levels-researchers-find}{\textcolor{linkblue}{(URL)}}, GQ \href{https://www.gq.com/story/can-a-wearable-make-you-happier-with-mood-tracking}{\textcolor{linkblue}{(URL)}}, Lifehacker \href{https://lifehacker.com/health/your-smartwatch-doesnt-actually-know-how-stressed-you-are}{\textcolor{linkblue}{(URL)}}, Athletech \href{https://athletechnews.com/smartwatch-stress-scores-rarely-match-reality-researchers-say/}{\textcolor{linkblue}{(URL)}}, Techspot \href{https://www.techspot.com/news/109027-smartwatches-useless-measuring-actual-stress-levels-study.html}{\textcolor{linkblue}{(URL)}}, and Gizmodo \href{https://gizmodo.com/new-study-finds-smartwatches-arent-that-good-at-measuring-stress-2000640868}{\textcolor{linkblue}{(URL)}}, and Interview by The Signal, the newsletter of the Society for Ambulatory Assessment \href{https://ambulatory-assessment.org/newsletter-december-2025/}{\textcolor{linkblue}{(URL)}}\\
+Interview on the Center for Open Science Blog about preregistration for simulation studies \href{https://www.cos.io/blog/introducing-the-simulation-studies-preregistration-template}{\textcolor{linkblue}{(URL)}}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	TECHNICAL STRENGTHS SECTION
+%----------------------------------------------------------------------------------------
+% \begin{rSection}{Skills}
+
+% \begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+% Languages & German (mother tongue), English (fluent), French (basic skills) \\
+
+% Programming & R,  Python, Stan,  Git, Docker\\
+
+% Analyses & Time Series Analysis, Network Analysis, Machine Learning,\\ & Bayesian Statistics \\
+
+% Other & GIMP, \LaTeX, Markdown, Quarto, reveal.js
+
+% \end{tabular}
+
+% \end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Editor Section
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Editorial Positions}
+Editorial Fellow, Advances in Methods and Practices in Psychological Science \hfill 2026 - 2027\\
+Editorial Team, Journal of European Psychology Students \hfill 2021 - 2023
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	Review Section
+%----------------------------------------------------------------------------------------
+% 1 Review  Administration and Policy in Mental Health and Mental Health Services Research (June 2023)
+% 1 Review Brain, Behavior, & Immunity - Health (February 2024)
+% 1 Review Acta Psychiatrica Scandinavica (May 2024)
+% 3 Review AMPPS (June 2024, February 2026, July 2026)
+% 1 Review Child Psychiatry & Human Development (July 2024)
+% 1 Review BRM (September 2024)
+% 1 Review JCCP (November 2024)
+% 1 Review PsychMethods (January 2025)
+% 1 Review npj Digital Medicine (March 2025)
+% 1 Review MBR (March 2025)
+% 1 Review NHB (March 2025)
+% 1 Review JOSS (March 2025)
+% 2 Review CTAR (May 2025, May 2026)
+% 1 Review JORR (September 2025)
+% 1 Review MBR (December 2025)
+% 1 Review JMP (February 2026)
+% 1 Review BJMSP (July 2026)
+% 1 Review PCI Psych (July 2026)
+\begin{rSection}{Reviewing}
+Ad-Hoc reviewer for \textit{Administration and Policy in Mental Health and Mental Health Services Research}; \textit{Behavior Research Methods}; \textit{Brain, Behavior, \& Immunity - Health}; \textit{Acta Psychiatrica Scandinavica};\ \textit{Advances in Methods and Practices in Psychological Science}; \textit{Child Psychiatry \& Human Development}; \textit{Journal of Consulting \& Clinical Psychology}; \textit{Psychological Methods}; \textit{npj Digital Medicine}; \textit{Nature Human Behaviour}; \textit{Multivariate Behavioral Research}; \textit{Journal of Open Source Software}; \textit{Cognitive Therapy and Research}; \textit{Journal of Robustness Reports}; \textit{Journal of Mathematical Psychology}; \textit{British Journal of Mathematical and Statistical Psychology}; \textit{PCI Psychology}.\\
+Reviewer for the Bi-Annual Meeting (2024) of the \textit{German Psychological Society (DGPS)} and the Annual Meeting (2026) of the \textit{Society for Ambulatory Assessment}.
+\end{rSection}
+%----------------------------------------------------------------------------------------
+%	EXAMPLE SECTION
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
