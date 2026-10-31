@@ -1,3 +1,6 @@
 {
-    "r.lsp.promptToInstall": false
+    "r.lsp.promptToInstall": false,
+    "tinymist.rootPath": "${workspaceFolder}",
+    "tinymist.fontPaths": ["${workspaceFolder}/fonts"],
+    "tinymist.systemFonts": false
 }

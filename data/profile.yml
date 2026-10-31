@@ -28,6 +28,8 @@ linkedin: "https://www.linkedin.com/in/bj%C3%B6rn-siepe-11a750219/"
 twitter: b_siepe
 extra_links:
   - { label: "openesmdata.org", url: "https://openesmdata.org" }
+# Draft written 2026-10-31 from the bio; to be edited.
+research_profile: "I develop and evaluate statistical methods for intensive longitudinal data, with a focus on quantifying uncertainty in multilevel time series and dynamic network models. A second line of my work is the metascience of methodological research: how simulation studies are planned, preregistered, and reported, and how methods can be benchmarked. I build open-source software and research infrastructure for this work, including the openESM database of experience sampling datasets and several R and Python packages."
 research_interests:
   - "Design of research software and infrastructure"
   - "Metascience of methodological research"

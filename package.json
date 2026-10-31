@@ -4,7 +4,8 @@
   "description": "Data, validation, and export scripts for the CV and website. Independent of the site framework.",
   "type": "module",
   "scripts": {
-    "validate": "node scripts/validate.mjs"
+    "validate": "node scripts/validate.mjs",
+    "cv": "node scripts/build-cv.mjs"
   },
   "devDependencies": {
     "ajv": "8.20.0",
