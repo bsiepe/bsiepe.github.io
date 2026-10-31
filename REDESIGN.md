@@ -52,42 +52,70 @@ questions, and wait for my explicit go-ahead.
 
 ## Inventory of the current repo (must all be migrated or deliberately retired)
 
-Based on the public `main` branch; verify in stage 0.
+Verified in stage 0 (2026-10-31).
 
-- `index.qmd`: bio text (about page, jolla template) and a News timeline
+- `index.qmd`: bio text (about page, jolla template), a photo
+  (`files/images/headshot_bjoern_siepe.jpg`), and a News timeline
   (`news-row` blocks, currently 3).
-- `publications/index.qmd`: about 25 publications as hand-written HTML blocks
-  (title, initials-style authors, venue, links: Paper, Preprint, Code, Code & Data,
-  Preregistration). The link data exists only here.
+- `publications/index.qmd`: 25 publications as hand-written HTML blocks
+  (title, initials-style authors, venue). Link labels: Paper, Preprint, Code,
+  Code & Data, Code & Synthetic Data, Preregistration, Shiny App, Website,
+  Chapter, Report. "Code & Data" is one URL for both. The link data exists only here.
+  The LaTeX CV has 26: the 2021 German chapter (Talia & Siepe, Klett-Cotta)
+  is not on the website.
 - `publications/2023-07-19_bayesian-idiographic-networks_siepe-heck/`: leftover
   Hugo-Academic-style entry with abstract, summary, and url fields. Migrate its
   abstract/summary into the publication entry, then retire the folder.
 - `talks/`: 18 folders, one `.qmd` each, with front matter (title, date,
   categories, image, description, license, `cv: pdf1..pdfN`). PDFs are per event:
   e.g. the openESM folder holds 7 PDFs for 7 venues. Pages embed the PDF in an
-  iframe and offer a download button. 27 talk PDFs in total.
-  Folder names and front-matter dates disagree for several talks; the description
-  line often lists several venues in one string.
+  iframe and offer a download button. 25 talk PDFs in `talks/`, plus one
+  (`rStatsClub-Talk-Siepe-2026.pdf`) in `workshops/`.
+  DGPPN 2022, DPK 2023, and APS 2023 have no slides file. FSM 2024 has
+  self-contained HTML slides (15 MB) instead of a PDF.
+  Folder names and front-matter dates disagree for 8 talks; the description
+  line often lists several venues in one string. Talk pages link to related
+  papers and repos. Page file names vary (`index-saa.qmd`, ...), so current URLs
+  do too.
+  The LaTeX CV lists 16 invited talks, 21 conference contributions, and 2 posters;
+  many have no website page. DPK 2023 is only on the website.
 - `workshops/`: 5 entries, some link to external repos (`bsiepe/dynamical-networks-workshop`,
   `bsiepe/repro-workshop`, `bsiepe/Talks`), OSF, and Zenodo. Folder
   `2025-02-31_preregistration-workshop` has an invalid date; front matter says 2025-01-31.
+  The reproducibility workshop page is named `prereg-workshop-index.qmd`.
+  The ECR 2024 workshop has self-contained HTML slides (20 MB).
+  The LaTeX CV lists 10 workshops.
 - `software/index.qmd`: 8 items in three groups (Websites & Databases, R packages,
-  Python packages), hand-written HTML.
+  Python packages), hand-written HTML. openESM R and Python packages are two
+  items here and one in the LaTeX CV (7 items).
 - `blog/`: one post (`2026-05-20_varcheck`) with executed R chunks (`freeze`, `cache`),
   figures, two authors.
 - `simulation-talk-series/index.qmd`: lunch lecture series schedule as an HTML
-  table (date, speakers, title, Join / slides / recording links).
+  table (date, speakers, title, Join / slides / recording links), plus
+  `Simulation-Lecture-Dates.ics`. The `.ics` is to be generated from
+  `lecture_series.yml` and served at its current URL.
+- `files/images/`: four photos of me. `headshot_bjoern_siepe.jpg` is on the home
+  page; `bjoern_headshot.png` (2.9 MB) is the social preview image.
 - `cv/index.qmd`: embeds `cv_siepe.pdf` (built outside the repo from LaTeX).
   The URL of that PDF is likely linked from applications and must keep working.
 - `impressum/impressum.qmd`: Impressum plus a short Datenschutz section.
 - `goatcounter.html`: GoatCounter analytics snippet.
 - Font Awesome and academicons via Quarto extensions and via cdnjs.
 - `docs/` is the committed render output that GitHub Pages serves; `_site/` and
-  `_freeze/` are Quarto artifacts.
+  `_freeze/` are Quarto artifacts (both tracked in git).
 - `cv-legacy/`: LaTeX source (`latex/cv_english.tex`, `latex/resume.cls`,
   `latex/my_pubs.bib`) and PDF of my current CV. Cross-check sources only.
+  `bjoern_siepe_cv_english.pdf` is the current CV; the served `cv/cv_siepe.pdf`
+  is older. `my_pubs.bib` is effectively unused (18 old entries, mostly 2022/23
+  conference abstracts); it only serves as a record of old talks and posters.
   There is no Zotero export: my Zotero library is not up to date and is not
   used as a source.
+- LaTeX CV sections without a data file yet: Research Interests (4 bullets; no
+  source has a research profile paragraph), Editorial Positions, Travel Grants &
+  Scholarships, internships (mixed with research visits). Supervision exists only
+  as counts. Commented-out content (MSc thesis, GPAs, a committee, skills,
+  per-journal review counts with months, one APS 2022 talk) is migrated into
+  `data/` and marked so that no template shows it by default.
 
 ## Data model
 
@@ -187,8 +215,9 @@ Files in `data/`. Field lists are minimums; propose additions in stage 1.
 
 ## Website
 
-- Distinctive through information structure, not ornament. No hero photo, no
-  sidebar avatar, no icon cards, no decorative elements that carry no information.
+- Distinctive through information structure, not ornament. One photo of me,
+  placed as the design handoff specifies; no icon cards, no decorative elements
+  that carry no information.
 - Pages: home (bio, news), publications, talks, workshops, software, blog,
   CV (download link, no iframe), lecture series, Impressum, Datenschutz.
 - Publications: fixed artifact slots per paper (preprint, data, code, materials,
@@ -196,7 +225,8 @@ Files in `data/`. Field lists are minimums; propose additions in stage 1.
   two areas make that visible.
 - Talks: one page per deck, sorted by most recent event, all events listed, each
   with its own PDF. Thumbnail from the first page of the most recent PDF
-  (`pdftoppm`) unless `thumbnail` is set.
+  (`pdftoppm`) unless `thumbnail` is set. The existing per-talk images are not
+  carried over. Talks without any PDF need a fallback (open question).
 - No metrics (download counts, citation counts) unless I ask.
 - Exports: `publications.bib` and `publications.json` (CSL-JSON, bibliographic
   core only) generated at build and served at stable URLs.
@@ -270,3 +300,5 @@ Files in `data/`. Field lists are minimums; propose additions in stage 1.
    before the website is done.
 7. Split stage 2 into chunks with separate reports: publications, then talks,
    then the rest.
+8. Thumbnail fallback for talks without a PDF (HTML slides, or no slides).
+   Stage 5.
