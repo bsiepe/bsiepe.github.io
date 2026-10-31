@@ -217,12 +217,19 @@ without year; packages released for R and Python are two software entries.
   only what differs. Planned variants: academic default, full, selected publications
   with one-line contribution statements. A conservative variant must remain possible
   over the same data.
-- Look: one typeface family, cobalt `#0047AB` only for section headings and links,
-  single column, no icons. Try years in a narrow left margin column.
-  No decoration that carries no information.
-- Fonts are committed in `fonts/` (open licenses only) so CI builds are reproducible.
-  Set PDF metadata (title, author). Print the build date.
+- Look (decided 2026-10-31, supersedes the earlier from-scratch design): the CV is
+  built on the Typst template `@preview/academicv` (pinned, Apache-2.0).
+  `cv/lib/cv.typ` is only an adapter from `data/` to academicv's layouts; its
+  own YAML format is not used. Template defaults stay: Libertinus Serif (built
+  into Typst), black section headings with rule, timeline with dates on the left.
+  Cobalt `#0047AB` for links. IBM Plex Serif/Sans remain selectable via
+  `--input font=plex-serif|plex-sans` (files in `fonts/`, OFL).
+- Set PDF metadata (title, author). Print the build date.
 - Output: the academic default must be served at the existing CV PDF URL.
+- Later design polish (deferred, not blocking):
+  - Collapse repeated years in the timeline (show a year once when consecutive
+    entries share it).
+  - Further spacing and detail tweaks to be collected while using the CV.
 
 ## Website
 
