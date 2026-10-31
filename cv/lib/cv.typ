@@ -9,7 +9,6 @@
 // The static Plex files register SemiBold as its own family.
 #let font-semibold = "IBM Plex Sans SmBld"
 #let semibold(body) = text(font: font-semibold, weight: 600, body)
-#let date-col = 2.9cm
 
 #let load(name) = yaml("/data/" + name + ".yml")
 #let get(d, key, default: none) = d.at(key, default: default)
@@ -18,14 +17,15 @@
 // ---------------------------------------------------------------- dates
 
 #let year-of(d) = str(d).slice(0, 4)
+#let months = ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 #let month-year(d) = {
   let s = str(d)
-  if s.len() >= 7 { s.slice(5, 7) + "/" + s.slice(0, 4) } else { s.slice(0, 4) }
+  if s.len() >= 7 { months.at(int(s.slice(5, 7)) - 1) + " " + s.slice(0, 4) } else { s.slice(0, 4) }
 }
 #let period-months(start, end) = {
   let a = month-year(start)
   let b = if end == "present" { "present" } else { month-year(end) }
-  if a == b { a } else { a + "–" + b }
+  if a == b { a } else { a + " – " + b }
 }
 #let period-years(start, end) = {
   let a = year-of(start)
@@ -54,7 +54,7 @@
 // ---------------------------------------------------------------- text helpers
 
 #let dash(s) = str(s).replace("-", "–")
-#let label-link(url, label) = link(url, text(size: 0.82em, fill: cobalt, label))
+#let label-link(url, label) = box(link(url, text(size: 0.82em, fill: cobalt, label)))
 #let url-of(v) = if type(v) == dictionary { v.url } else { v }
 #let note-of(v) = if type(v) == dictionary { get(v, "note") } else { none }
 #let end-punct(s) = if s.ends-with(".") or s.ends-with("?") or s.ends-with("!") { s } else { s + "." }
@@ -94,22 +94,33 @@
 
 // ---------------------------------------------------------------- layout
 
-#let section(title) = block(above: 1.5em, below: 0.75em, sticky: true,
-  text(fill: cobalt, size: 11pt, semibold(title)))
-#let subsection(title) = block(above: 1.1em, below: 0.55em, sticky: true,
-  semibold(title))
-#let entry(when, body) = block(above: 0.55em, below: 0.55em, breakable: false,
-  grid(columns: (date-col, 1fr), column-gutter: 0.6em,
-    text(number-type: "lining", number-width: "tabular", when), body))
-#let detail(body) = block(above: 0.25em, text(size: 0.92em, body))
+#let indent = 0.55cm
+#let rule-color = luma(165)
+
+#let section(title) = block(above: 1.9em, below: 0.8em, sticky: true, {
+  text(fill: cobalt, size: 13pt, semibold(title))
+  v(-0.55em)
+  line(length: 100%, stroke: 0.5pt + rule-color)
+})
+#let subsection(title) = block(above: 1.1em, below: 0.6em, sticky: true,
+  pad(left: indent, semibold(title)))
+// Body indented under the heading, dates right-aligned on the first line.
+#let entry(when, body) = block(above: 0.7em, below: 0.7em, breakable: false,
+  pad(left: indent, grid(columns: (1fr, auto), column-gutter: 1.2em,
+    body, align(right, text(number-type: "lining", number-width: "tabular", when)))))
+#let detail(body) = block(above: 0.35em,
+  grid(columns: (0.9em, 1fr), [–], text(size: 0.95em, body)))
+#let plain(body) = block(above: 0.7em, below: 0.7em, pad(left: indent, body))
 
 // ---------------------------------------------------------------- sections
 
 #let header(profile) = {
   let n = profile.name
   let display = n.given + " " + get(n, "middle", default: "") + " " + n.family
-  block(below: 0.7em, text(size: 20pt, semibold(display.replace("  ", " "))))
-  block(below: 0.6em, text(size: 1.05em)[#profile.position, #profile.affiliation.institution])
+  set align(center)
+  block(below: 1.1em, text(size: 22pt, semibold(display.replace("  ", " "))))
+  block(below: 0.45em, text(size: 1.1em, profile.position))
+  block(below: 0.7em, [#profile.affiliation.institution#if get(profile.affiliation, "unit") != none [, #profile.affiliation.unit]])
   let email = profile.email.at(get(profile.email, "cv", default: "work"))
   let parts = (
     link("mailto:" + email, email),
@@ -123,7 +134,7 @@
 
 #let research-profile(profile) = {
   let p = get(profile, "research_profile")
-  if p != none { block(above: 1.2em, par(justify: false, p)) }
+  if p != none { block(above: 1.5em, pad(x: 0.8cm, par(justify: true, p))) }
 }
 
 #let positions-section(cfg) = {
@@ -261,7 +272,7 @@
   for (key, lab) in (("materials", "Materials"), ("prereg", "Preregistration"), ("supplement", "Supplement"), ("app", "App"), ("website", "Website")) {
     if get(ls, key) != none { items.push(label-link(url-of(ls.at(key)), lab)) }
   }
-  if items.len() > 0 { block(above: 0.3em, items.join(h(0.9em))) }
+  if items.len() > 0 { h(0.6em) + items.join(h(0.7em)) }
 }
 
 // The last author's initials already end in a period, unless the name has no
@@ -272,11 +283,12 @@
   if initials(get(p.authors.last(), "given")) == "" or marked { "." } else { "" }
 }
 
-#let pub-entry(p, cfg) = entry(str(p.year))[
+#let pub-entry(p, cfg) = block(above: 0.7em, below: 0.7em, breakable: false,
+  pad(left: indent, par(hanging-indent: 1.2em)[
   #format-authors(p, max: cfg.max-authors)#if cfg.year-in-text [ (#p.year).] else [#authors-end(p)] #end-punct(p.title) #venue-details(p)
   #if cfg.contributions and get(p, "contribution") != none { detail[_Contribution:_ #p.contribution] }
   #pub-links(p)
-]
+]))
 
 #let publications-section(cfg) = {
   section(if cfg.selected-only { "Selected publications" } else { "Publications" })
@@ -299,7 +311,7 @@
   }
   let any-shared = ps.any(p => get(p, "shared_first") != none or get(p, "shared_second") != none)
   if any-shared {
-    block(above: 0.9em, text(size: 0.85em)[#super("†") Shared first authorship. #h(0.6em) #super("‡") Shared second authorship.])
+    block(above: 0.9em, pad(left: indent, text(size: 0.85em)[#super("†") Shared first authorship. #h(0.6em) #super("‡") Shared second authorship.]))
   }
 }
 
@@ -322,7 +334,7 @@
     let roles = s.roles.map(r => r.replace("-", " ")).join(", ")
     entry(str(get(s, "contribution_year", default: s.year)))[
       *#s.name* (#what)#if get(s, "description") != none [: #s.description]. #upper(roles.first())#roles.slice(1).
-      #if items.len() > 0 { block(above: 0.3em, items.join(h(0.9em))) }
+      #if items.len() > 0 { h(0.6em) + items.join(h(0.7em)) }
     ]
   }
 }
@@ -398,7 +410,7 @@
     let ss = w.sessions.sorted(key: s => str(s.date)).rev()
     let co = ss.map(s => get(s, "coinstructors", default: ())).flatten().dedup(key: p => p.family)
     let place(s) = (s.host, get(s, "institution"), if get(s, "online", default: false) { "online" } else { none }).filter(b => b != none).join(", ")
-    let hours(s) = { let h = get(s, "duration_hours"); if h != none { str(h) + " h" } else { "" } }
+    let hours(s) = { let h = get(s, "duration_hours"); if h != none { str(h) + " h" } else { "" } }
     let groups = ()
     for s in ss {
       let k = place(s) + "|" + hours(s)
@@ -435,7 +447,7 @@
   section("Supervision")
   let s = load("supervision")
   let c(role, level) = s.counts.filter(x => x.role == role and x.level == level).map(x => x.count).sum(default: 0)
-  [First supervisor: #c("first", "bachelor") bachelor's and #c("first", "master") master's theses. Second supervisor: #c("second", "bachelor") bachelor's and #c("second", "master") master's theses.]
+  plain[First supervisor: #c("first", "bachelor") bachelor's and #c("first", "master") master's theses. Second supervisor: #c("second", "bachelor") bachelor's and #c("second", "master") master's theses.]
 }
 
 #let awards-section(cfg) = {
@@ -470,10 +482,9 @@
   let rs = visible(load("reviewing"))
   let journals = rs.filter(r => r.kind != "conference").map(r => r.venue).sorted(key: lower)
   let confs = rs.filter(r => r.kind == "conference")
-  [Ad-hoc reviewer for #journals.map(emph).join("; ").]
+  plain[Ad-hoc reviewer for #journals.map(emph).join("; ").]
   if confs.len() > 0 {
-    parbreak()
-    [Conference reviewer for #confs.map(r => [#r.venue (#compress-years(get(r, "dates", default: ())))]).join("; ").]
+    plain[Conference reviewer for #confs.map(r => [#r.venue (#compress-years(get(r, "dates", default: ())))]).join("; ").]
   }
 }
 
@@ -536,7 +547,7 @@
   selected-only: false,   // publications: only entries with selected: true
   contributions: false,   // publications: print the one-line contribution statement
   max-authors: 20,        // publications: truncate longer author lists (APA 7 style)
-  year-in-text: false,    // publications: repeat the year after the authors (it is in the margin)
+  year-in-text: true,     // publications: year after the authors (APA)
   school: false,          // education: include school
   community-from: 2019,   // community service: drop entries that ended before this year
   descriptions: true,     // positions: print descriptions
@@ -552,7 +563,7 @@
   set par(leading: 0.62em, spacing: 0.8em)
   set page(
     paper: "a4",
-    margin: (x: 2cm, top: 1.8cm, bottom: 2cm),
+    margin: (x: 2.2cm, top: 2cm, bottom: 2.2cm),
     footer: context text(size: 0.8em)[
       #me, #lower(title) #h(1fr) Updated #built #h(1fr) #counter(page).display() / #counter(page).final().first()
     ],
