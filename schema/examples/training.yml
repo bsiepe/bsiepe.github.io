@@ -1,0 +1,5 @@
+# Example entry for data/training.yml.
+- title: "Modeling the Dynamics of Intensive Longitudinal Data"
+  provider: "Utrecht Summer School"
+  kind: summer-school
+  date: "2021"

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "positions.schema.json",
+  "title": "Positions",
+  "description": "Employment and consulting, month precision.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["title", "institution", "kind", "start", "end"],
+    "additionalProperties": false,
+    "properties": {
+      "title": { "$ref": "common.schema.json#/$defs/text" },
+      "institution": { "$ref": "common.schema.json#/$defs/text" },
+      "unit": { "$ref": "common.schema.json#/$defs/text" },
+      "kind": { "type": "string", "enum": ["research", "consulting", "freelance", "student-assistant"] },
+      "pi": { "$ref": "common.schema.json#/$defs/person" },
+      "project": { "description": "Project name and funding, e.g. Horizon 2020-funded Eat2BeNice project.", "$ref": "common.schema.json#/$defs/text" },
+      "start": { "$ref": "common.schema.json#/$defs/date" },
+      "end": { "$ref": "common.schema.json#/$defs/end_date" },
+      "description": { "$ref": "common.schema.json#/$defs/markdown" },
+      "hidden": { "$ref": "common.schema.json#/$defs/hidden" },
+      "note": { "$ref": "common.schema.json#/$defs/note" }
+    }
+  }
+}

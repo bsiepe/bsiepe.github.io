@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "research_stays.schema.json",
+  "title": "Research stays and internships",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["kind", "role", "institution", "start", "end"],
+    "additionalProperties": false,
+    "properties": {
+      "kind": { "type": "string", "enum": ["research-visit", "research-internship", "clinical-internship"] },
+      "role": { "$ref": "common.schema.json#/$defs/text" },
+      "institution": { "$ref": "common.schema.json#/$defs/text" },
+      "unit": { "$ref": "common.schema.json#/$defs/text" },
+      "host": { "description": "PI or host.", "$ref": "common.schema.json#/$defs/person" },
+      "project": { "$ref": "common.schema.json#/$defs/text" },
+      "city": { "$ref": "common.schema.json#/$defs/text" },
+      "country": { "$ref": "common.schema.json#/$defs/country" },
+      "start": { "$ref": "common.schema.json#/$defs/date" },
+      "end": { "$ref": "common.schema.json#/$defs/end_date" },
+      "description": { "$ref": "common.schema.json#/$defs/markdown" },
+      "hidden": { "$ref": "common.schema.json#/$defs/hidden" },
+      "note": { "$ref": "common.schema.json#/$defs/note" }
+    }
+  }
+}

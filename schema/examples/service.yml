@@ -1,0 +1,11 @@
+# Example entries for data/service.yml: one with a period, one with a list of years.
+# Editorial positions are service entries with kind: editorial.
+- role: "Editorial Fellow"
+  organization: "Advances in Methods and Practices in Psychological Science"
+  kind: editorial
+  start: "2026"
+  end: "2027"
+- role: "Co-Organizer"
+  organization: "Brainhack Marburg"
+  kind: organizing
+  years: ["2023", "2024", "2025"]

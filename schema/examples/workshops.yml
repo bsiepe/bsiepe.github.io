@@ -1,0 +1,22 @@
+# Example entry for data/workshops.yml.
+# Comment markers: NO SOURCE, DISAGREE, PROPOSED (my suggestion), DERIVED.
+- id: preregistration-workshop   # PROPOSED
+  # DISAGREE: website title "When, how, and why (not) to preregister";
+  # LaTeX title "Preregistration in psychology and related fields".
+  # (A Feb 2025 invited talk in the LaTeX CV is titled "Why, when, and how (not) to preregister".)
+  title: "When, how, and why (not) to preregister"
+  description: "Workshop on theoretical and practical questions around preregistration for the Berlin University Alliance, Berlin."
+  tags: [preregistration, open-science, philosophy-of-science]
+  # areas: none of simulation/timeseries/esm fits; left empty
+  links:
+    materials: { url: "https://osf.io/xqrz2", note: "Slides & Exercises" }
+  license: "CC-BY-4.0"   # DISAGREE: front matter says "CC BY" (no version)
+  sessions:
+    - date: "2025-01-31"   # front matter; folder name says 2025-02-31 (invalid); LaTeX says January 2025
+      host: "Berlin University Alliance"
+      city: Berlin
+      country: DE
+      online: false   # DERIVED: neither source says online
+      duration_hours: 4   # LaTeX only
+      coinstructors:
+        - { family: Büchner, given: Anabel }

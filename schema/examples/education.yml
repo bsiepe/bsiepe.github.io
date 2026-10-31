@@ -1,0 +1,13 @@
+# Example entry for data/education.yml.
+# Grade and thesis were commented out in the LaTeX CV; kept here, not shown by default.
+- level: master
+  degree: "M.Sc."
+  field: Psychology
+  institution: "Goethe University Frankfurt"
+  start: "2020-11"
+  end: "2022-09"
+  distinction: "with distinction"
+  grade: { value: "1,0", scale: "5-point German scale" }
+  thesis:
+    title: "Temporal Dynamics of Depressive Symptomatology: An Idiographic Time Series Analysis"
+    hidden: true

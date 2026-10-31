@@ -1,0 +1,7 @@
+# Example entry for data/media.yml.
+- outlet: "The Guardian"
+  kind: article
+  date: "2025-08-08"   # DERIVED: from the URL; no source states the date
+  url: "https://www.theguardian.com/technology/2025/aug/08/smartwatches-offer-little-insight-into-stress-levels-researchers-find"
+  about: [siepe-ema-passive-sensors]   # PROPOSED id
+  # title: NO SOURCE

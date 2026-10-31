@@ -1,0 +1,5 @@
+# Example entry for data/memberships.yml.
+- organization: "Society for Ambulatory Assessment"
+  abbreviation: SAA
+  start: "2025"
+  end: present

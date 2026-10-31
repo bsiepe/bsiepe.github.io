@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "education.schema.json",
+  "title": "Education",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["level", "degree", "institution", "start", "end"],
+    "additionalProperties": false,
+    "properties": {
+      "level": { "type": "string", "enum": ["school", "bachelor", "master", "doctorate"] },
+      "degree": { "description": "As written on the certificate, e.g. Dr. rer. nat., M.Sc., Abitur.", "$ref": "common.schema.json#/$defs/text" },
+      "field": { "$ref": "common.schema.json#/$defs/text" },
+      "institution": { "$ref": "common.schema.json#/$defs/text" },
+      "start": { "$ref": "common.schema.json#/$defs/date" },
+      "end": { "$ref": "common.schema.json#/$defs/end_date" },
+      "distinction": { "description": "e.g. summa cum laude, with distinction.", "$ref": "common.schema.json#/$defs/text" },
+      "grade": {
+        "description": "Not shown by default templates.",
+        "type": "object",
+        "required": ["value"],
+        "additionalProperties": false,
+        "properties": {
+          "value": { "type": "string" },
+          "scale": { "$ref": "common.schema.json#/$defs/text" }
+        }
+      },
+      "thesis": {
+        "type": "object",
+        "required": ["title"],
+        "additionalProperties": false,
+        "properties": {
+          "title": { "$ref": "common.schema.json#/$defs/text" },
+          "supervisors": { "$ref": "common.schema.json#/$defs/people" },
+          "hidden": { "$ref": "common.schema.json#/$defs/hidden" }
+        }
+      },
+      "hidden": { "$ref": "common.schema.json#/$defs/hidden" },
+      "note": { "$ref": "common.schema.json#/$defs/note" }
+    }
+  }
+}

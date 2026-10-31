@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "talks.schema.json",
+  "title": "Talks",
+  "description": "One entry per deck (or per session I chaired or a panel I joined), with one event per time it was given.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "title", "events"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "$ref": "common.schema.json#/$defs/id" },
+      "title": { "description": "Canonical title of the deck.", "$ref": "common.schema.json#/$defs/text" },
+      "areas": { "$ref": "common.schema.json#/$defs/areas" },
+      "tags": { "$ref": "common.schema.json#/$defs/tags" },
+      "abstract": { "$ref": "common.schema.json#/$defs/markdown" },
+      "publications": {
+        "description": "ids of related entries in publications.yml.",
+        "type": "array", "items": { "$ref": "common.schema.json#/$defs/id" }, "uniqueItems": true
+      },
+      "links": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "materials": { "$ref": "common.schema.json#/$defs/link" },
+          "repo":      { "$ref": "common.schema.json#/$defs/link" },
+          "video":     { "$ref": "common.schema.json#/$defs/link" }
+        }
+      },
+      "doi": { "description": "Only for decks I archive on Zenodo myself.", "$ref": "common.schema.json#/$defs/doi" },
+      "thumbnail": { "description": "Overrides the thumbnail generated from the most recent PDF.", "$ref": "common.schema.json#/$defs/path" },
+      "license": { "description": "SPDX identifier, e.g. CC-BY-4.0.", "type": "string" },
+      "hidden": { "$ref": "common.schema.json#/$defs/hidden" },
+      "note": { "$ref": "common.schema.json#/$defs/note" },
+      "events": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "required": ["date", "venue", "type", "roles"],
+          "additionalProperties": false,
+          "properties": {
+            "date": { "$ref": "common.schema.json#/$defs/date" },
+            "title": { "description": "Only when the title used at this event differs from the canonical title.", "$ref": "common.schema.json#/$defs/text" },
+            "venue": { "description": "Conference, meeting, colloquium, or series name.", "$ref": "common.schema.json#/$defs/text" },
+            "institution": { "description": "Hosting institution, when not part of the venue name.", "$ref": "common.schema.json#/$defs/text" },
+            "session": { "description": "Symposium or session title, if known.", "$ref": "common.schema.json#/$defs/text" },
+            "city": { "$ref": "common.schema.json#/$defs/text" },
+            "country": { "$ref": "common.schema.json#/$defs/country" },
+            "online": { "type": "boolean" },
+            "type": { "type": "string", "enum": ["keynote", "invited", "colloquium", "symposium", "conference", "lightning", "panel", "poster"] },
+            "roles": {
+              "type": "array", "minItems": 1, "uniqueItems": true,
+              "items": { "type": "string", "enum": ["speaker", "chair", "organizer", "panelist", "coauthor"] }
+            },
+            "coauthors": { "$ref": "common.schema.json#/$defs/people" },
+            "file": { "description": "Slides for this event. PDF or self-contained HTML. Path is also the URL path.", "$ref": "common.schema.json#/$defs/path" },
+            "url": { "description": "Event page.", "$ref": "common.schema.json#/$defs/url" },
+            "award": { "$ref": "common.schema.json#/$defs/text" },
+            "hidden": { "$ref": "common.schema.json#/$defs/hidden" },
+            "note": { "$ref": "common.schema.json#/$defs/note" }
+          }
+        }
+      }
+    }
+  }
+}

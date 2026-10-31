@@ -1,0 +1,55 @@
+# Example for data/profile.yml (the whole file).
+# Comment markers: NO SOURCE, DISAGREE, PROPOSED (my suggestion), DERIVED.
+name:
+  given: "Björn"
+  middle: "S."
+  family: Siepe
+  prefix: "Dr."
+position: "Postdoctoral Researcher"
+# DISAGREE: website bio says postdoctoral researcher; LaTeX CV says Scientific Assistant.
+affiliation:
+  institution: "Marburg University"
+  unit: "Psychological Methods Lab"
+  url: "https://www.uni-marburg.de/de/fb04/team-heck/team/bjoern-siepe"
+  city: Marburg
+  country: DE
+email:
+  work: "bjoern.siepe@uni-marburg.de"    # website navbar, Impressum
+  personal: "bjoernsiepe@gmail.com"      # LaTeX CV
+  cv: personal
+  website: work
+phone: "+49 6421 28-23616"
+website: "https://bsiepe.github.io"
+orcid: "0000-0002-9558-4648"
+github: bsiepe
+osf: 9gmn4
+bluesky: bsiepe.bsky.social
+linkedin: "https://www.linkedin.com/in/bj%C3%B6rn-siepe-11a750219/"
+twitter: b_siepe
+extra_links:
+  - { label: "openesmdata.org", url: "https://openesmdata.org" }
+research_interests:
+  - "Design of research software and infrastructure"
+  - "Metascience of methodological research"
+  - "Multivariate time series methods for intensive longitudinal data"
+  - "Applied experience sampling research"
+# research_profile: NO SOURCE. The CV paragraph has to be written.
+# bio: full text from index.qmd, shortened here. Its relative links
+# (../publications, ../software, ../workshops) need site-independent targets.
+bio: |
+  I am a postdoctoral researcher at [Marburg University, Germany](https://www.uni-marburg.de/de/fb04/team-heck/team/bjoern-siepe), where I recently finished my PhD in Psychological Methods. My [research](../publications) focuses on three areas: ...
+photo: "files/images/headshot_bjoern_siepe.jpg"
+social_image: "files/images/bjoern_headshot.png"
+skills_hidden: true   # the Skills section was commented out in the LaTeX CV
+skills:
+  - { category: Languages, items: ["German (mother tongue)", "English (fluent)", "French (basic skills)"] }
+  - { category: Programming, items: [R, Python, Stan, Git, Docker] }
+  - { category: Analyses, items: ["Time Series Analysis", "Network Analysis", "Machine Learning", "Bayesian Statistics"] }
+  - { category: Other, items: [GIMP, LaTeX, Markdown, Quarto, reveal.js] }
+impressum:
+  name: "Björn Siepe"
+  street: "Gutenbergstraße 18"
+  postcode: "35037"
+  city: Marburg
+  phone: "06421-2823616"
+  email: "bjoern.siepe@uni-marburg.de"

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "supervision.schema.json",
+  "title": "Supervision",
+  "description": "Counts of supervised theses. Individual theses can be listed later without changing this structure.",
+  "type": "object",
+  "required": ["counts"],
+  "additionalProperties": false,
+  "properties": {
+    "as_of": { "description": "Date the counts were last updated.", "$ref": "common.schema.json#/$defs/date" },
+    "counts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["role", "level", "count"],
+        "additionalProperties": false,
+        "properties": {
+          "role": { "type": "string", "enum": ["first", "second"] },
+          "level": { "type": "string", "enum": ["bachelor", "master"] },
+          "count": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "note": { "$ref": "common.schema.json#/$defs/note" }
+  }
+}

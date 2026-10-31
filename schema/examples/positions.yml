@@ -1,0 +1,10 @@
+# Example entry for data/positions.yml.
+- title: "Scientific Assistant"
+  # DISAGREE: the website bio says "postdoctoral researcher" (PhD finished 07/2026);
+  # the LaTeX CV still lists this position as "Scientific Assistant", 10/2022 - present.
+  institution: "Marburg University"
+  unit: "Psychological Methods Lab"
+  kind: research
+  pi: { family: Heck, given: Daniel }
+  start: "2022-10"
+  end: present

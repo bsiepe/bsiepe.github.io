@@ -1,0 +1,55 @@
+# Example entry for data/publications.yml.
+# Comment markers: NO SOURCE, DISAGREE, PROPOSED (my suggestion), DERIVED.
+- id: siepe-bayesian-idiographic-networks   # PROPOSED: id convention <first-author>-<keywords>
+  type: article
+  title: "Bayesian Estimation and Comparison of Idiographic Network Models"
+  authors:
+    # DISAGREE: LaTeX CV lists three authors (Siepe, Kloft, Heck).
+    # Website and the Hugo preprint entry list two (Siepe, Heck). Not resolved.
+    - { family: Siepe, given: "Björn S.", me: true }
+    - { family: Kloft, given: "M." }
+    - { family: Heck, given: "Daniel W." }
+  venue: "Psychological Methods"
+  year: 2024
+  status: advance-online   # LaTeX and website both say Advance Online Publication
+  doi: "10.1037/met0000672"
+  preprint_doi: "10.31234/osf.io/uwfjc"
+  links:
+    code: "https://github.com/bsiepe/var-compare"   # website label "Code & Data"
+    data: "https://github.com/bsiepe/var-compare"   # same URL, see above
+    supplement: "https://osf.io/9byaj/"             # only in the Hugo preprint entry
+  areas: [timeseries]          # PROPOSED: no source has areas
+  tags: [bayesian, network-analysis]   # PROPOSED: from talk categories
+  # selected: NO SOURCE
+  # contribution: NO SOURCE
+  abstract: >-
+    Idiographic network models are estimated on time-series data of a single
+    individual and allow researchers to investigate person-specific associations
+    between multiple variables over time. The most common approach for fitting such
+    graphical vector autoregressive (gVAR) models uses LASSO regularization to
+    estimate a contemporaneous network and a temporal network. However, estimation
+    of idiographic networks can be unstable in relatively small data sets typical for
+    psychological research. This bears the risk of misinterpreting differences in
+    estimated networks as spurious heterogeneity between individuals. As a remedy, we
+    evaluate the performance of a Bayesian alternative for fitting gVAR models that
+    allows for regularization of parameters while accounting for estimation
+    uncertainty. We first compare Bayesian and LASSO approaches across a range of
+    conditions and performance measures in a simulation study. Overall, LASSO
+    estimation performed well, while Bayesian gVAR may perform better when the true
+    network is dense. We also develop a novel test, implemented in the tsnet package
+    in R, which assesses whether differences between estimated networks are reliable
+    based on matrix norms. In a simulation study, the test was conservative and
+    showed good false-positive rates. Finally, we apply Bayesian estimation and the
+    novel testing approach in an empirical example using daily data on clinical
+    symptoms for 40 individuals. Overall, Bayesian gVAR modeling facilitates the
+    assessment of estimation uncertainty which is important for studying
+    inter-individual differences of intra-individual dynamics.
+  # The abstract is from the 2023 preprint entry. The published abstract may differ.
+  summary: >-
+    Idiographic networks are popular, but they contain a lot of uncertainty. Even
+    when based on same true model, resulting networks may "look different", creating
+    a false sense of heterogeneity. In this paper, we evaluate an existing Bayesian
+    method to estimate idiographic networks. Then, we propose a novel test that
+    evaluates the evidence that differences in edges between two models are not just
+    due to sampling variability. We then apply estimation & test methods to empirical
+    data and introduce the R Package `tsnet` that includes the proposed method.

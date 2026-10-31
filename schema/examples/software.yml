@@ -1,0 +1,18 @@
+# Example entry for data/software.yml.
+# Comment markers: NO SOURCE, DISAGREE, PROPOSED (my suggestion), DERIVED.
+- id: tsnet
+  name: tsnet
+  description: "Comparing and Visualizing Networks based on Time Series Data"
+  kind: package
+  languages: [R]
+  roles: [maintainer, author]
+  authors:
+    - { family: Siepe, given: "B. S.", me: true }
+    - { family: Kloft, given: "M." }
+  year: 2024
+  doi: "10.32614/CRAN.package.tsnet"
+  links:
+    github: "https://github.com/bsiepe/tsnet"
+    # cran: the website's CRAN link is the DOI above, so no separate URL
+  publications: [siepe-bayesian-idiographic-networks]   # PROPOSED: the paper introduces tsnet
+  areas: [timeseries]   # PROPOSED

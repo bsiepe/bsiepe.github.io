@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "media.schema.json",
+  "title": "Media coverage",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["outlet", "kind", "url"],
+    "additionalProperties": false,
+    "properties": {
+      "outlet": { "$ref": "common.schema.json#/$defs/text" },
+      "kind": { "type": "string", "enum": ["press-release", "article", "interview", "blog"] },
+      "title": { "$ref": "common.schema.json#/$defs/text" },
+      "date": { "$ref": "common.schema.json#/$defs/date" },
+      "url": { "$ref": "common.schema.json#/$defs/url" },
+      "about": {
+        "description": "ids of the publications or projects covered.",
+        "type": "array", "items": { "$ref": "common.schema.json#/$defs/id" }, "uniqueItems": true
+      },
+      "hidden": { "$ref": "common.schema.json#/$defs/hidden" },
+      "note": { "$ref": "common.schema.json#/$defs/note" }
+    }
+  }
+}

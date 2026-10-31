@@ -1,0 +1,10 @@
+# Example entry for data/research_stays.yml.
+- kind: research-visit
+  role: "Visiting Doctoral Student"
+  institution: "National University of Singapore"
+  unit: "Department of Psychology, Lab of Methods, Data Science & AI"
+  host: { family: Epskamp, given: Sacha }
+  city: Singapore
+  country: SG
+  start: "2026-02"
+  end: "2026-03"

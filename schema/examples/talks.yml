@@ -1,0 +1,36 @@
+# Example entry for data/talks.yml.
+# Comment markers: NO SOURCE, DISAGREE, PROPOSED (my suggestion), DERIVED.
+- id: simulation-studies-psychology-2024   # PROPOSED
+  title: "Simulation Studies for Methodological Research in Psychology"
+  # DISAGREE (deck identity): DAGStat 2025 uses the same title but has its own
+  # folder. Whether it is the same deck is your call.
+  areas: [simulation]
+  tags: [open-science, metascience]   # from categories; "Simulation Studies" is the area
+  publications: [siepe-ademp-template]   # PROPOSED id; the talk page links met0000695
+  license: "CC-BY-4.0"   # DISAGREE: front matter says "CC BY" (no version)
+  # abstract: NO SOURCE
+  events:
+    - date: "2024"   # LaTeX gives the year only; the page has one date (2024-06-07) for all three
+      venue: "Virtual Meeting of the Society for Mathematical Psychology"
+      online: true
+      type: conference
+      roles: [speaker]
+      file: "talks/2024-06-22-simulation-studies/VMP24-Bjoern-Siepe.pdf"
+    - date: "2024"
+      venue: "Virtual Meeting of the Society for the Improvement of Psychological Science (SIPS)"
+      online: true
+      type: lightning
+      roles: [speaker]
+      file: "talks/2024-06-22-simulation-studies/SIPS24-Bjoern-Siepe.pdf"
+    - date: "2024"
+      # DISAGREE: the website lists IMPS 2024 as a talk with this deck. The LaTeX CV
+      # lists IMPS 2024 only as "Quality Standards for Simulation Studies in
+      # Psychometrics", panel discussion participant. Shown here as in LaTeX.
+      title: "Quality Standards for Simulation Studies in Psychometrics"
+      venue: "International Meeting of the Psychometric Society (IMPS)"
+      city: Prague
+      country: CZ
+      online: false
+      type: panel
+      roles: [panelist]
+      file: "talks/2024-06-22-simulation-studies/IMPS24-Bjoern-Siepe.pdf"

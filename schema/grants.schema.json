@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "grants.schema.json",
+  "title": "Grants, stipends, and scholarships",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["name", "funder", "kind", "date"],
+    "additionalProperties": false,
+    "properties": {
+      "name": { "description": "Name of the grant or programme as the funder calls it.", "$ref": "common.schema.json#/$defs/text" },
+      "funder": { "$ref": "common.schema.json#/$defs/text" },
+      "programme": { "description": "Funding line, e.g. a DFG programme name.", "$ref": "common.schema.json#/$defs/text" },
+      "kind": { "type": "string", "enum": ["research-grant", "internal-grant", "travel-grant", "conference-funding", "scholarship"] },
+      "role": { "type": "string", "enum": ["pi", "co-pi", "co-applicant", "recipient"] },
+      "project_title": { "$ref": "common.schema.json#/$defs/text" },
+      "purpose": { "description": "e.g. Travel to APS 2026.", "$ref": "common.schema.json#/$defs/text" },
+      "amount": { "$ref": "common.schema.json#/$defs/amount" },
+      "amount_note": { "description": "e.g. over one year.", "$ref": "common.schema.json#/$defs/text" },
+      "date": { "description": "Date awarded.", "$ref": "common.schema.json#/$defs/date" },
+      "start": { "description": "Funding period, if any.", "$ref": "common.schema.json#/$defs/date" },
+      "end": { "$ref": "common.schema.json#/$defs/end_date" },
+      "url": { "$ref": "common.schema.json#/$defs/url" },
+      "hidden": { "$ref": "common.schema.json#/$defs/hidden" },
+      "note": { "$ref": "common.schema.json#/$defs/note" }
+    }
+  }
+}

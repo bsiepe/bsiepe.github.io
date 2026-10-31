@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "training.schema.json",
+  "title": "Professional training",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["title", "provider", "kind", "date"],
+    "additionalProperties": false,
+    "properties": {
+      "title": { "$ref": "common.schema.json#/$defs/text" },
+      "provider": { "description": "Institution offering the course.", "$ref": "common.schema.json#/$defs/text" },
+      "platform": { "description": "e.g. Coursera, edX.", "$ref": "common.schema.json#/$defs/text" },
+      "kind": { "type": "string", "enum": ["online-course", "summer-school", "workshop"] },
+      "date": { "$ref": "common.schema.json#/$defs/date" },
+      "hidden": { "$ref": "common.schema.json#/$defs/hidden" },
+      "note": { "$ref": "common.schema.json#/$defs/note" }
+    }
+  }
+}

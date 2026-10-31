@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "awards.schema.json",
+  "title": "Awards",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["name", "awarder", "date"],
+    "additionalProperties": false,
+    "properties": {
+      "name": { "$ref": "common.schema.json#/$defs/text" },
+      "awarder": { "$ref": "common.schema.json#/$defs/text" },
+      "date": { "$ref": "common.schema.json#/$defs/date" },
+      "for": { "description": "What the award was for, e.g. a poster title or a project.", "$ref": "common.schema.json#/$defs/text" },
+      "related": {
+        "description": "ids of related entries (publications, talks, software).",
+        "type": "array", "items": { "$ref": "common.schema.json#/$defs/id" }, "uniqueItems": true
+      },
+      "url": { "$ref": "common.schema.json#/$defs/url" },
+      "hidden": { "$ref": "common.schema.json#/$defs/hidden" },
+      "note": { "$ref": "common.schema.json#/$defs/note" }
+    }
+  }
+}

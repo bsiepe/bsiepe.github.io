@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "workshops.schema.json",
+  "title": "Workshops",
+  "description": "One entry per workshop, with one session per time it was held. Same structure as talks.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "title", "sessions"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "$ref": "common.schema.json#/$defs/id" },
+      "title": { "$ref": "common.schema.json#/$defs/text" },
+      "description": { "$ref": "common.schema.json#/$defs/markdown" },
+      "areas": { "$ref": "common.schema.json#/$defs/areas" },
+      "tags": { "$ref": "common.schema.json#/$defs/tags" },
+      "links": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "materials": { "$ref": "common.schema.json#/$defs/link" },
+          "repo":      { "$ref": "common.schema.json#/$defs/link" },
+          "osf":       { "$ref": "common.schema.json#/$defs/link" },
+          "zenodo":    { "$ref": "common.schema.json#/$defs/link" }
+        }
+      },
+      "doi": { "$ref": "common.schema.json#/$defs/doi" },
+      "license": { "description": "SPDX identifier, e.g. CC-BY-4.0.", "type": "string" },
+      "thumbnail": { "$ref": "common.schema.json#/$defs/path" },
+      "hidden": { "$ref": "common.schema.json#/$defs/hidden" },
+      "note": { "$ref": "common.schema.json#/$defs/note" },
+      "sessions": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "object",
+          "required": ["date", "host"],
+          "additionalProperties": false,
+          "properties": {
+            "date": { "$ref": "common.schema.json#/$defs/date" },
+            "end_date": { "description": "For multi-day workshops.", "$ref": "common.schema.json#/$defs/date" },
+            "title": { "description": "Only when the title used for this session differs.", "$ref": "common.schema.json#/$defs/text" },
+            "host": { "description": "Who the workshop was held for, e.g. a department or program.", "$ref": "common.schema.json#/$defs/text" },
+            "institution": { "$ref": "common.schema.json#/$defs/text" },
+            "city": { "$ref": "common.schema.json#/$defs/text" },
+            "country": { "$ref": "common.schema.json#/$defs/country" },
+            "online": { "type": "boolean" },
+            "duration_hours": { "type": "number", "exclusiveMinimum": 0 },
+            "format": { "description": "e.g. interactive session, two-part workshop.", "$ref": "common.schema.json#/$defs/text" },
+            "coinstructors": { "$ref": "common.schema.json#/$defs/people" },
+            "file": { "$ref": "common.schema.json#/$defs/path" },
+            "hidden": { "$ref": "common.schema.json#/$defs/hidden" },
+            "note": { "$ref": "common.schema.json#/$defs/note" }
+          }
+        }
+      }
+    }
+  }
+}

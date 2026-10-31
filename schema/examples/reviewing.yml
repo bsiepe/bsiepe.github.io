@@ -1,0 +1,6 @@
+# Example entry for data/reviewing.yml.
+# Dates come from the commented-out per-review list in the LaTeX CV.
+- venue: "Advances in Methods and Practices in Psychological Science"
+  abbreviation: AMPPS
+  kind: journal
+  dates: ["2024-06", "2026-02", "2026-07"]

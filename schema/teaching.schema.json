@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "teaching.schema.json",
+  "title": "Teaching",
+  "description": "One entry per course; years lists every term it was taught.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["title", "institution", "years"],
+    "additionalProperties": false,
+    "properties": {
+      "title": { "$ref": "common.schema.json#/$defs/text" },
+      "institution": { "$ref": "common.schema.json#/$defs/text" },
+      "level": { "type": "string", "enum": ["bachelor", "master", "doctoral", "mixed"] },
+      "kind": { "type": "string", "enum": ["seminar", "lecture", "tutorial", "summer-school"] },
+      "description": { "description": "Short description, e.g. what the seminar covers.", "$ref": "common.schema.json#/$defs/text" },
+      "years": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "common.schema.json#/$defs/date" } },
+      "hidden": { "$ref": "common.schema.json#/$defs/hidden" },
+      "note": { "$ref": "common.schema.json#/$defs/note" }
+    }
+  }
+}

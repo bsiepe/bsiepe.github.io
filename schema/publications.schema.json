@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "publications.schema.json",
+  "title": "Publications",
+  "description": "One entry per paper, not per version. The preprint and the published article are the same entry.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "type", "title", "authors", "year", "status"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "$ref": "common.schema.json#/$defs/id" },
+      "type": { "type": "string", "enum": ["article", "preprint", "chapter", "report", "thesis"] },
+      "title": { "$ref": "common.schema.json#/$defs/text" },
+      "authors": {
+        "description": "Complete author list in order. Truncation is a template decision.",
+        "type": "array",
+        "$ref": "common.schema.json#/$defs/people",
+        "minItems": 1
+      },
+      "shared_first": {
+        "description": "1-based author positions sharing first authorship.",
+        "type": "array", "items": { "type": "integer", "minimum": 1 }, "minItems": 2, "uniqueItems": true
+      },
+      "shared_second": {
+        "description": "1-based author positions sharing second authorship.",
+        "type": "array", "items": { "type": "integer", "minimum": 2 }, "minItems": 2, "uniqueItems": true
+      },
+      "venue": { "description": "Journal, preprint server, or report series.", "$ref": "common.schema.json#/$defs/text" },
+      "volume": { "type": "string" },
+      "issue": { "type": "string" },
+      "pages": { "description": "Page range with a plain hyphen, e.g. 656-669.", "type": "string", "pattern": "^[0-9A-Za-z]+(-[0-9A-Za-z]+)?$" },
+      "article_number": { "description": "e.g. e50136, 142735, 8182.", "type": "string" },
+      "report_number": { "type": "string" },
+      "book_title": { "$ref": "common.schema.json#/$defs/text" },
+      "editors": { "$ref": "common.schema.json#/$defs/people" },
+      "publisher": { "$ref": "common.schema.json#/$defs/text" },
+      "year": { "$ref": "common.schema.json#/$defs/year" },
+      "status": { "type": "string", "enum": ["preprint", "in-press", "advance-online", "published"] },
+      "doi": { "description": "DOI of the published version.", "$ref": "common.schema.json#/$defs/doi" },
+      "preprint_doi": { "$ref": "common.schema.json#/$defs/doi" },
+      "url": { "description": "Only when there is no DOI (e.g. a handle).", "$ref": "common.schema.json#/$defs/url" },
+      "language": { "description": "BCP 47 tag when not English, e.g. de.", "type": "string", "pattern": "^[a-z]{2}$" },
+      "links": {
+        "description": "Artifact links. links.preprint only when the preprint has no DOI. Combined links such as \"Code & Data\" set both slots to the same URL.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "preprint":   { "$ref": "common.schema.json#/$defs/link" },
+          "code":       { "$ref": "common.schema.json#/$defs/link" },
+          "data":       { "$ref": "common.schema.json#/$defs/link" },
+          "materials":  { "$ref": "common.schema.json#/$defs/link" },
+          "prereg":     { "$ref": "common.schema.json#/$defs/link" },
+          "supplement": { "$ref": "common.schema.json#/$defs/link" },
+          "slides":     { "$ref": "common.schema.json#/$defs/link" },
+          "app":        { "$ref": "common.schema.json#/$defs/link" },
+          "website":    { "$ref": "common.schema.json#/$defs/link" }
+        }
+      },
+      "areas": { "$ref": "common.schema.json#/$defs/areas" },
+      "tags": { "$ref": "common.schema.json#/$defs/tags" },
+      "selected": { "type": "boolean" },
+      "contribution": { "description": "One-line statement of my contribution, for the selected-publications CV.", "$ref": "common.schema.json#/$defs/text" },
+      "abstract": { "$ref": "common.schema.json#/$defs/markdown" },
+      "summary": { "$ref": "common.schema.json#/$defs/markdown" },
+      "hidden": { "$ref": "common.schema.json#/$defs/hidden" },
+      "note": { "$ref": "common.schema.json#/$defs/note" }
+    },
+    "allOf": [
+      {
+        "if": { "properties": { "type": { "const": "chapter" } } },
+        "then": { "required": ["book_title", "editors", "publisher"] }
+      }
+    ]
+  }
+}

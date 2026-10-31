@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "memberships.schema.json",
+  "title": "Professional memberships",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["organization", "start", "end"],
+    "additionalProperties": false,
+    "properties": {
+      "organization": { "$ref": "common.schema.json#/$defs/text" },
+      "abbreviation": { "type": "string" },
+      "start": { "$ref": "common.schema.json#/$defs/date" },
+      "end": { "$ref": "common.schema.json#/$defs/end_date" },
+      "hidden": { "$ref": "common.schema.json#/$defs/hidden" },
+      "note": { "$ref": "common.schema.json#/$defs/note" }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+# Example entry for data/teaching.yml.
+- title: "Multivariate Statistics"
+  institution: "Marburg University"
+  level: bachelor
+  kind: seminar
+  description: "Regression and latent variable modeling"
+  years: ["2022", "2023", "2024"]

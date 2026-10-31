@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "common.schema.json",
+  "title": "Shared definitions",
+  "$defs": {
+    "id": {
+      "description": "Stable slug. Lowercase letters, digits, single hyphens. Never changes once published, because URLs and cross-references use it.",
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "date": {
+      "description": "ISO 8601 at the precision known: YYYY, YYYY-MM, or YYYY-MM-DD. Always a quoted string in YAML. Never padded with invented months or days.",
+      "type": "string",
+      "pattern": "^[0-9]{4}(-(0[1-9]|1[0-2])(-(0[1-9]|[12][0-9]|3[01]))?)?$"
+    },
+    "end_date": {
+      "description": "End of a period: a date, or \"present\" for ongoing.",
+      "oneOf": [
+        { "$ref": "#/$defs/date" },
+        { "const": "present" }
+      ]
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 1990,
+      "maximum": 2100
+    },
+    "doi": {
+      "description": "Bare DOI without resolver prefix, e.g. 10.1037/met0000672.",
+      "type": "string",
+      "pattern": "^10\\.[0-9]{4,9}/\\S+$"
+    },
+    "url": {
+      "type": "string",
+      "pattern": "^https?://\\S+$"
+    },
+    "path": {
+      "description": "Path relative to the repo root. For files served on the site, the path is also the URL path.",
+      "type": "string",
+      "pattern": "^[^/\\\\][^\\\\]*$"
+    },
+    "area": {
+      "type": "string",
+      "enum": ["simulation", "timeseries", "esm"]
+    },
+    "areas": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/area" },
+      "uniqueItems": true
+    },
+    "tags": {
+      "description": "Finer topic tags. Lowercase, hyphenated, one spelling per concept.",
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+      "uniqueItems": true
+    },
+    "text": {
+      "description": "Plain text. No markup.",
+      "type": "string",
+      "minLength": 1
+    },
+    "markdown": {
+      "description": "Inline Markdown subset only: *italic*, **bold**, `code`, [links](https://...). Rendered by both Typst (cmarker) and Astro.",
+      "type": "string",
+      "minLength": 1
+    },
+    "person": {
+      "type": "object",
+      "required": ["family"],
+      "additionalProperties": false,
+      "properties": {
+        "family": { "type": "string", "minLength": 1 },
+        "given": {
+          "description": "Given names as far as known, full or initials. Never expanded from initials by guessing.",
+          "type": "string",
+          "minLength": 1
+        },
+        "me": { "description": "Marks my own entry.", "const": true },
+        "orcid": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$" }
+      }
+    },
+    "people": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/person" }
+    },
+    "link": {
+      "description": "A URL, or a URL with a short note (e.g. \"synthetic data\").",
+      "oneOf": [
+        { "$ref": "#/$defs/url" },
+        {
+          "type": "object",
+          "required": ["url"],
+          "additionalProperties": false,
+          "properties": {
+            "url": { "$ref": "#/$defs/url" },
+            "note": { "$ref": "#/$defs/text" }
+          }
+        }
+      ]
+    },
+    "country": {
+      "description": "ISO 3166-1 alpha-2 code, e.g. DE, BE, US. Templates render the name.",
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "amount": {
+      "type": "object",
+      "required": ["value", "currency"],
+      "additionalProperties": false,
+      "properties": {
+        "value": { "type": "number", "minimum": 0 },
+        "currency": { "type": "string", "enum": ["EUR", "USD", "GBP", "CHF", "SGD"] }
+      }
+    },
+    "hidden": {
+      "description": "Kept in the data, but no template shows it by default. Used for content that was commented out in the legacy CV.",
+      "type": "boolean"
+    },
+    "note": {
+      "description": "Free-text note for me. Never rendered.",
+      "type": "string"
+    }
+  }
+}

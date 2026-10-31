@@ -1,0 +1,22 @@
+# Example for data/lecture_series.yml (the whole file, one session shown).
+# The .ics file is generated from this.
+id: simulation-lunch-lectures
+title: "Lunch Lectures on Monte Carlo Simulation Studies"
+# The LaTeX CV calls it "Online Lunch Lectures on Monte Carlo Simulation Studies";
+# the .ics calls it "Simulation Lunch Lectures".
+schedule: "Noon (Berlin time) on the first Wednesday of each month (except August and September)"
+organizer: 'Working Group "Quality Standards of Simulation Studies" of the Methods and Evaluation Division of the German Psychological Society (DGPs)'
+contact_email: "bjoern.siepe@uni-marburg.de"
+timezone: Europe/Berlin
+duration_minutes: 60   # from the .ics (12:00 to 13:00)
+# about: the intro text of the page goes here (Markdown), omitted in this example
+sessions:
+  - date: "2026-07-01"
+    time: "12:00"
+    speakers:
+      - { family: Siepe, given: "Björn", me: true }
+    title: "Simulation studies in psychology: State of the art, problems, and potential solutions"
+    links:
+      join: "https://webconf.hrz.uni-marburg.de/n/rooms/wvp-c2q-ibf-qw8/join"
+      slides: "https://osf.io/4cbgy"
+      recording: "https://youtu.be/qczPPIC5sY4"

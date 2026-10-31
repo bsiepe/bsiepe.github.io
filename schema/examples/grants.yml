@@ -1,0 +1,11 @@
+# Example entry for data/grants.yml.
+# Comment markers: NO SOURCE, DISAGREE, PROPOSED (my suggestion), DERIVED.
+- name: "DFG Individual Research Grant"
+  funder: "DFG"
+  # programme: NO SOURCE. The plan calls it "Eigene Stelle"; no repo source does.
+  kind: research-grant
+  role: pi
+  project_title: "Empirical Benchmarking of Time Series Models in Psychology: Building a Foundation for Personalized Prediction"
+  amount: { value: 299771, currency: EUR }
+  date: "2026-07"
+  # start, end: NO SOURCE. The news item says "3-year".

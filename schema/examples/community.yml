@@ -1,0 +1,6 @@
+# Example entry for data/community.yml.
+- role: "Student tutor"
+  organization: "Asylarbeitskreis Heidelberg"
+  description: "Refugee aid"
+  start: "2015"
+  end: "2021"

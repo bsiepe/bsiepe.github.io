@@ -1,0 +1,7 @@
+# Example for data/supervision.yml (the whole file).
+# as_of: NO SOURCE (date the counts were last updated)
+counts:
+  - { role: first, level: bachelor, count: 9 }
+  - { role: first, level: master, count: 3 }
+  - { role: second, level: bachelor, count: 10 }
+  - { role: second, level: master, count: 15 }

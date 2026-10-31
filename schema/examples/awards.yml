@@ -1,0 +1,7 @@
+# Example entry for data/awards.yml.
+- name: "SIPS Commendation"
+  awarder: "Society for the Improvement of Psychological Science (SIPS)"
+  date: "2026-06"   # DISAGREE: LaTeX says 06/2026; the news item is dated July 2026
+  for: openESM
+  related: [openesm]
+  url: "https://improvingpsych.org/mission/awards/"   # from the news item

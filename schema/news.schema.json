@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "news.schema.json",
+  "title": "News",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["date", "text"],
+    "additionalProperties": false,
+    "properties": {
+      "date": { "$ref": "common.schema.json#/$defs/date" },
+      "text": { "$ref": "common.schema.json#/$defs/markdown" },
+      "link": { "$ref": "common.schema.json#/$defs/url" },
+      "hidden": { "$ref": "common.schema.json#/$defs/hidden" },
+      "note": { "$ref": "common.schema.json#/$defs/note" }
+    }
+  }
+}

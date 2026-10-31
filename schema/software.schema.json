@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "software.schema.json",
+  "title": "Software and research infrastructure",
+  "description": "One entry per published artifact. A package released for R and Python under one name is one entry with two languages.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["id", "name", "kind", "roles", "year"],
+    "additionalProperties": false,
+    "properties": {
+      "id": { "$ref": "common.schema.json#/$defs/id" },
+      "name": { "description": "Exact name, case-sensitive.", "type": "string", "minLength": 1 },
+      "description": { "$ref": "common.schema.json#/$defs/text" },
+      "kind": { "type": "string", "enum": ["package", "website", "database", "app"] },
+      "languages": { "type": "array", "items": { "type": "string", "enum": ["R", "Python"] }, "uniqueItems": true },
+      "roles": {
+        "type": "array", "minItems": 1, "uniqueItems": true,
+        "items": { "type": "string", "enum": ["author", "maintainer", "contributor", "lead-developer"] }
+      },
+      "authors": {
+        "description": "Author list as in the package citation. I am not in it when my role is contributor only.",
+        "$ref": "common.schema.json#/$defs/people"
+      },
+      "year": { "description": "Year of first release.", "$ref": "common.schema.json#/$defs/year" },
+      "doi": { "$ref": "common.schema.json#/$defs/doi" },
+      "links": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "cran":    { "$ref": "common.schema.json#/$defs/url" },
+          "pypi":    { "$ref": "common.schema.json#/$defs/url" },
+          "github":  { "$ref": "common.schema.json#/$defs/url" },
+          "docs":    { "$ref": "common.schema.json#/$defs/url" },
+          "website": { "$ref": "common.schema.json#/$defs/url" }
+        }
+      },
+      "publications": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/id" }, "uniqueItems": true },
+      "areas": { "$ref": "common.schema.json#/$defs/areas" },
+      "tags": { "$ref": "common.schema.json#/$defs/tags" },
+      "hidden": { "$ref": "common.schema.json#/$defs/hidden" },
+      "note": { "$ref": "common.schema.json#/$defs/note" }
+    }
+  }
+}
