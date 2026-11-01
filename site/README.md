@@ -12,17 +12,23 @@ The site has no content of its own. It reads:
 
 ## Commands
 
-Node version in `.nvmrc`. First, in the repo root:
+Node version in `.nvmrc`. On Windows with fnm (PowerShell), each command runs
+through `fnm exec` with `npm.cmd`. First, in the repo root:
 
-    npm install
-    npm run cv        # CV PDFs (needs Typst)
-    npm run export    # publications.bib, publications.json, lecture series .ics
+    fnm exec --using=24 npm.cmd install
+    fnm exec --using=24 npm.cmd run cv        # CV PDFs (needs Typst)
+    fnm exec --using=24 npm.cmd run export    # publications.bib, publications.json, lecture series .ics
 
-Then in this folder:
+Then in this folder (`cd site`):
 
-    npm install
-    npm run dev       # local preview at http://localhost:4321
-    npm run build     # dist/, with search index and URL-mapping check
+    fnm exec --using=24 npm.cmd install
+    fnm exec --using=24 npm.cmd run dev       # local preview at http://localhost:4321
+    fnm exec --using=24 npm.cmd run build     # dist/, with search index and URL-mapping check
+    fnm exec --using=24 npm.cmd run preview   # serves dist/, including search
+
+Install steps are needed once (and after dependency changes). Rerun `cv` and
+`export` after changing `data/`; restart `dev` to pick up a new CV PDF.
+With fnm set up in the PowerShell profile, plain `npm install`, `npm run dev`, etc. work too.
 
 Talk thumbnails need `pdftoppm` (poppler); without it, talks get title cards.
 CI runs the same steps (`../.github/workflows/site.yml`).
