@@ -1,7 +1,8 @@
 // Copies files that live outside site/ into site/public/ under the same paths,
 // so that every file path in data/ is also its URL path (see REDESIGN.md):
 //   talks/**, workshops/** (slides), files/images/** (photos), and the CV PDF
-//   built by `npm run cv` in the repo root (build/cv/cv_siepe.pdf -> /cv/cv_siepe.pdf).
+//   built by `npm run cv` in the repo root (build/cv/cv_siepe.pdf -> /cv/cv_siepe.pdf),
+//   and the exports built by `npm run export` (build/exports/ -> see EXPORTS below).
 // The copies are git-ignored. Runs before `astro dev` and `astro build`.
 
 import fs from 'node:fs';
@@ -43,4 +44,22 @@ if (fs.existsSync(cv)) {
 } else {
 	console.warn('sync-assets: build/cv/cv_siepe.pdf not found; run `npm run cv` in the repo root first.');
 }
+// Exports from ../scripts/export.mjs and the URLs they are served at.
+const EXPORTS = {
+	'publications.bib': 'publications.bib',
+	'publications.json': 'publications.json',
+	'Simulation-Lecture-Dates.ics': 'simulation-talk-series/Simulation-Lecture-Dates.ics',
+};
+counts.exports = 0;
+for (const [file, dest] of Object.entries(EXPORTS)) {
+	const from = path.join(repo, 'build', 'exports', file);
+	if (!fs.existsSync(from)) {
+		console.warn(`sync-assets: build/exports/${file} not found; run \`npm run export\` in the repo root first.`);
+		continue;
+	}
+	fs.mkdirSync(path.dirname(path.join(pub, dest)), { recursive: true });
+	fs.copyFileSync(from, path.join(pub, dest));
+	counts.exports++;
+}
+
 console.log('sync-assets:', Object.entries(counts).map(([k, v]) => `${k} ${v}`).join(', '));

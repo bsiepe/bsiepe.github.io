@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "validate": "node scripts/validate.mjs",
-    "cv": "node scripts/build-cv.mjs"
+    "cv": "node scripts/build-cv.mjs",
+    "export": "node scripts/export.mjs"
   },
   "devDependencies": {
     "ajv": "8.20.0",
