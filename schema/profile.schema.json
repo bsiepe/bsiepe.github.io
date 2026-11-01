@@ -79,20 +79,6 @@
         }
       }
     },
-    "skills_hidden": { "$ref": "common.schema.json#/$defs/hidden" },
-    "impressum": {
-      "description": "Contact block for the Impressum (DDG section 5).",
-      "type": "object",
-      "required": ["name", "street", "postcode", "city"],
-      "additionalProperties": false,
-      "properties": {
-        "name": { "type": "string" },
-        "street": { "type": "string" },
-        "postcode": { "type": "string" },
-        "city": { "type": "string" },
-        "phone": { "type": "string" },
-        "email": { "type": "string", "format": "email" }
-      }
-    }
+    "skills_hidden": { "$ref": "common.schema.json#/$defs/hidden" }
   }
 }
