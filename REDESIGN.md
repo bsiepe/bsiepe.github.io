@@ -148,7 +148,6 @@ without year; packages released for R and Python are two software entries.
 - `talks.yml`, one entry per deck:
   `id`, `title`, `areas`, `abstract`, `links` (e.g. materials repo),
   optional `doi` (only decks I archive on Zenodo, manually),
-  optional `thumbnail` (otherwise generated from the first PDF page),
   `events`: list of `{date, venue, city, country, online, type, role, file, coauthors}`.
   `type`: keynote, invited, colloquium, symposium, conference, lightning, panel, poster.
   `role`: speaker, chair, organizer, panelist.
@@ -237,15 +236,15 @@ without year; packages released for R and Python are two software entries.
   placed as the design handoff specifies; no icon cards, no decorative elements
   that carry no information.
 - Pages: home (bio, news), publications, talks, workshops, software, blog,
-  CV (download link, no iframe), lecture series, Impressum, Datenschutz.
+  CV (download link and inline PDF view; changed 2026-11-01), lecture series, Impressum, Datenschutz.
 - Publications: artifact links per paper in a fixed order (paper, preprint, code,
   data, materials, prereg); only the ones that exist are shown (changed 2026-11-01,
   previously missing ones were greyed out). Area tags visible; papers spanning
   two areas make that visible.
 - Talks: one page per deck, sorted by most recent event, all events listed, each
-  with its own PDF. Thumbnail from the first page of the most recent PDF
-  (`pdftoppm`) unless `thumbnail` is set. The existing per-talk images are not
-  carried over. Talks without any PDF need a fallback (open question).
+  with its own PDF. No thumbnails (removed 2026-11-01: generated slide previews
+  were not useful without hand-crafting). The existing per-talk images are not
+  carried over.
 - No metrics (download counts, citation counts) unless I ask.
 - Exports: `publications.bib` and `publications.json` (CSL-JSON, bibliographic
   core only) generated at build and served at stable URLs.
@@ -326,7 +325,8 @@ without year; packages released for R and Python are two software entries.
    2c everything else, each with its own report section and review.
 8. Thumbnail fallback for talks without a PDF (HTML slides, or no slides).
    Stage 5.
-   Resolved (2026-11-01): a plain title card.
+   Resolved (2026-11-01): a plain title card. Superseded the same day: no
+   thumbnails at all.
 9. Resolved (2026-11-01): site search stays (Pagefind, no external service).
    Area filtering is a small vanilla script on the publications and talks pages
    (`?area=<key>`), not static pages per area.
