@@ -165,7 +165,10 @@ without year; packages released for R and Python are two software entries.
 - `news.yml`: `date`, `text` (Markdown), optional `link`.
 - `lecture_series.yml`: series metadata plus sessions
   `{date, time, speakers, title, links: {join, slides, recording}}`.
-- Area tags: `simulation`, `timeseries`, `esm`. Entries can have several.
+- Area tags (topics): `simulation`, `timeseries`, `esm`, `bayesian`, `networks`,
+  `open-science`, `metascience` (the last four added 2026-11-01). Entries can have
+  several. Time series is for modelling work, experience sampling for data
+  collection, measurement and data resources; both only when a work does both.
   Finer topic tags are allowed but normalized (one spelling, one case).
 - Dates: ISO 8601 (`YYYY`, `YYYY-MM`, or `YYYY-MM-DD`, at the precision known).
   Never pad unknown precision with invented days or months.
@@ -239,8 +242,8 @@ without year; packages released for R and Python are two software entries.
   CV (download link and inline PDF view; changed 2026-11-01), lecture series, Impressum, Datenschutz.
 - Publications: artifact links per paper in a fixed order (paper, preprint, code,
   data, materials, prereg); only the ones that exist are shown (changed 2026-11-01,
-  previously missing ones were greyed out). Area tags visible; papers spanning
-  two areas make that visible.
+  previously missing ones were greyed out). Topics visible as plain labels,
+  all of an entry's topics shown.
 - Talks: one page per deck, sorted by most recent event, all events listed, each
   with its own PDF. No thumbnails (removed 2026-11-01: generated slide previews
   were not useful without hand-crafting). The existing per-talk images are not

@@ -39,15 +39,12 @@ Self-hosted woff2, latin and latin-ext subsets, OFL 1.1. Files and license texts
 | --- | --- | --- |
 | ground | `#ffffff` | `#131518` |
 | ink (text, headings) | `#1b1c1e` | `#e6e7e9` |
-| ink-2 (journal names, area labels) | `#36383c` | `#cdd0d4` |
+| ink-2 (journal names) | `#36383c` | `#cdd0d4` |
 | muted (role, authors, venue, dates) | `#56595e` | `#a2a6ab` |
 | step (footer background) | `#f2f3f5` | `#1c1f23` |
 | accent (links) | `#0047ab` | `#8db1ff` |
-| area: simulation | `#2556a0` | `#8eb0ea` |
-| area: time series | `#23867a` | `#6cc4b8` |
-| area: experience sampling | `#a7661f` | `#dda66a` |
 
-The area colours are softened versions of the brief's `#0047ab`, `#2a9d8f`, `#c77d2a`.
+Topics have no colours (changed 2026-11-01, when the three areas became seven topics).
 Running text is always full ink. No gradients, shadows, divider lines or uppercase labels.
 
 ## Type scale
@@ -60,7 +57,7 @@ Running text is always full ink. No gradients, shadows, divider lines or upperca
 | Wordmark, footer name | 21 px | Crimson Pro 500 |
 | Body | 17 px / 1.65 | Atkinson 400 |
 | Role line | 16 px | Atkinson 400, muted |
-| Navigation, authors, venue, materials, areas, contact | 15 px (22 px line height in entries) | Atkinson 400 |
+| Navigation, authors, venue, materials, topics, contact | 15 px (22 px line height in entries) | Atkinson 400 |
 | News dates, publication years | 17 px, lining tabular figures | Crimson Pro 400, muted |
 
 Phones (≤ 560 px): h1 32 px, h2 24 px, dates and years 15 px.
@@ -98,7 +95,7 @@ Selected publications
 2026       Authors (muted)
            Title (serif)
            Journal, volume(issue), pages
-           Paper · Preprint · Code      ● Area
+           Paper · Preprint · Code      Topic · Topic
 ```
 
 - The photo's top lines up with the first line of the bio (32 px + 6 px below the role).
@@ -123,10 +120,10 @@ venue          15/22 px, muted; journal name and volume italic in ink-2
   8 px
 materials      15 px, accent, regular weight, underline only on hover,
                separated by a muted middle dot with 8 px on each side
-  32 px gap    area labels on the same line: 8 px coloured dot, 8 px gap, label in muted
+  32 px gap    topic labels on the same line, muted, separated by middle dots
 ```
 
-40 px between entries. Papers in two areas show two labels side by side.
+40 px between entries. Topics always appear in the order of the topic list.
 
 ## Contact block
 
@@ -136,6 +133,6 @@ middle dots between links on one line. Values come from `data/profile.yml`
 
 ## Not decided here
 
-The other page types (publications list with the area filter, talks list and talk page,
+The other page types (publications list with the topic filter, talks list and talk page,
 workshops, software, blog, lecture series, legal pages) follow the same tokens and the
 publication entry above. Their layouts are designed in stage 5 and shown for review.
