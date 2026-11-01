@@ -26,9 +26,10 @@ const fullName = (p) => (p.given ? `${p.given} ${p.family}` : p.family);
 
 const BIB_TYPES = { article: "article", preprint: "misc", chapter: "incollection", report: "techreport", thesis: "phdthesis" };
 const bibEscape = (s) => String(s).replace(/([&%$#_])/g, "\\$1");
-// Already escaped (author, editor, title) or verbatim in biblatex (doi, url).
+// Escaped when built (author, editor via bibNames; title) or verbatim in biblatex (doi, url).
 const RAW_FIELDS = new Set(["author", "editor", "title", "doi", "url"]);
-const bibNames =(ps) => ps.map((p) => (p.given ? `${p.family}, ${p.given}` : `{${p.family}}`)).join(" and ");
+const bibNames = (ps) =>
+  ps.map((p) => (p.given ? `${bibEscape(p.family)}, ${bibEscape(p.given)}` : `{${bibEscape(p.family)}}`)).join(" and ");
 
 function bibEntry(p) {
   const f = [

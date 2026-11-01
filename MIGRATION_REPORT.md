@@ -302,6 +302,8 @@ Profile, software, CV sections, news, lecture series, blog.
 ### Empty
 
 - profile `research_profile` (the CV paragraph still has to be written).
+  Update (stage 3): a draft was written from the bio at your request and is
+  used by the CV. It is new prose, not sourced text; review and edit it.
 - supervision `as_of`.
 - DFG grant: funding period and programme name.
 - City for the German Depression Foundation internship.
