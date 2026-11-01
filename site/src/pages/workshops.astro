@@ -24,19 +24,19 @@ const where = (s: WorkshopSession) => [s.host, place(s)].filter(Boolean).join(',
 	<head>
 		<BaseHead title={`Workshops | ${SITE_TITLE}`} description={`Workshops taught by ${SITE_TITLE}`} />
 		<style>
-			.sessions { list-style: none; padding: 0; margin: var(--s2) 0 var(--s1); font-size: 15px; }
-			.sessions li {
-				display: grid;
-				grid-template-columns: 8rem 1fr auto;
-				gap: var(--s3);
-				padding: 4px 0;
-				align-items: baseline;
-			}
-			.sessions time { font-family: var(--font-serif); font-size: 17px; color: var(--color-text-muted); font-variant-numeric: lining-nums tabular-nums; }
-			.session-meta { display: block; color: var(--color-text-muted); }
-			.item-desc :global(p) { margin: 0.25rem 0 0; }
-			@media (max-width: 720px) {
-				.sessions li { grid-template-columns: 1fr; gap: 0.1rem; }
+			.workshop { margin-bottom: var(--s8); }
+			.workshop .areas { margin-top: var(--s1); }
+			.item-desc :global(p) { margin: 4px 0 0; }
+			.sessions { list-style: none; padding: 0; margin: var(--s3) 0 0; display: grid; gap: var(--s2); }
+			.sessions > li { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); column-gap: var(--s3); }
+			.sessions time { font-family: var(--font-serif); font-size: 17px; line-height: 1.5; color: var(--color-text-muted); font-variant-numeric: lining-nums tabular-nums; }
+			.session-where { margin: 0; }
+			.session-meta { margin: 0; font-size: 15px; color: var(--color-text-muted); }
+			.sessions .slots { margin-top: 2px; }
+			.license { margin-top: var(--s2); font-size: 15px; color: var(--color-text-muted); }
+			@media (max-width: 560px) {
+				.sessions > li { grid-template-columns: 1fr; }
+				.sessions time { font-size: 15px; }
 			}
 		</style>
 	</head>
@@ -44,40 +44,40 @@ const where = (s: WorkshopSession) => [s.host, place(s)].filter(Boolean).join(',
 		<Header />
 		<main data-pagefind-body>
 			<h1>Workshops</h1>
-			{all.map((w) => (
-				<article class="item" id={w.id}>
-					<h3 class="item-title">{w.title}</h3>
-					{w.html && <div class="item-desc" set:html={w.html} />}
-					{w.areas && w.areas.length > 0 && (
-						<ul class="areas">{w.areas.map((a) => <li class={`area area-${a}`}>{AREA_LABELS[a] ?? a}</li>)}</ul>
-					)}
-					{w.links && (
-						<ul class="slots">
-							{Object.entries(w.links).map(([k, v]) => <li><a href={urlOf(v)}>{noteOf(v) ?? LINK_LABELS[k] ?? k}</a></li>)}
+			{all.map((w) => {
+				// The workshop's own links appear with every session, after that session's slides.
+				const shared = Object.entries(w.links ?? {}).map(([k, v]) => ({ label: noteOf(v) ?? LINK_LABELS[k] ?? k, href: urlOf(v) }));
+				return (
+					<article class="workshop" id={w.id}>
+						<h3 class="item-title">{w.title}</h3>
+						{w.html && <div class="item-desc" set:html={w.html} />}
+						{w.areas && w.areas.length > 0 && (
+							<ul class="areas">{w.areas.map((a) => <li class={`area area-${a}`}>{AREA_LABELS[a] ?? a}</li>)}</ul>
+						)}
+						<ul class="sessions">
+							{w.sessions.map((s) => {
+								const links = [...(s.file ? [{ label: 'Slides', href: url(`/${s.file}`) }] : []), ...shared];
+								const meta = [s.format, hours(s.duration_hours), s.coinstructors?.length ? `with ${s.coinstructors.map(fullName).join(', ')}` : '']
+									.filter(Boolean)
+									.join(' · ');
+								return (
+									<li>
+										<time datetime={s.date}>{formatDate(s.date)}</time>
+										<div>
+											<p class="session-where">{s.title && s.title !== w.title && <em>{s.title}. </em>}{where(s)}</p>
+											{meta && <p class="session-meta">{meta}</p>}
+											{links.length > 0 && (
+												<ul class="slots" aria-label="Materials">{links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+											)}
+										</div>
+									</li>
+								);
+							})}
 						</ul>
-					)}
-					<ul class="sessions">
-						{w.sessions.map((s) => (
-							<li>
-								<time datetime={s.date}>{formatDate(s.date)}</time>
-								<span>
-									{s.title && s.title !== w.title && <em>{s.title}. </em>}
-									{where(s)}
-									{(s.duration_hours || s.format || s.coinstructors?.length) && (
-										<span class="session-meta">
-											{[s.format, hours(s.duration_hours), s.coinstructors?.length ? `with ${s.coinstructors.map(fullName).join(', ')}` : '']
-												.filter(Boolean)
-												.join(' · ')}
-										</span>
-									)}
-								</span>
-								<span>{s.file && <a href={url(`/${s.file}`)}>Slides</a>}</span>
-							</li>
-						))}
-					</ul>
-					{w.license && <p class="item-meta">Materials licensed under {w.license.replace(/-/g, ' ')}.</p>}
-				</article>
-			))}
+						{w.license && <p class="license">Materials licensed under {w.license.replace(/-/g, ' ')}.</p>}
+					</article>
+				);
+			})}
 		</main>
 		<Footer />
 	</body>

@@ -25,20 +25,18 @@ const roleNote = (roles: string[]) =>
 	<head>
 		<BaseHead title={`${t.title} | ${SITE_TITLE}`} description={`Talk by ${SITE_TITLE}: ${t.title}`} />
 		<style>
-			.events { list-style: none; padding: 0; margin: 0; }
-			.events li {
-				display: grid;
-				grid-template-columns: 8rem 1fr auto;
-				gap: var(--s3);
-				padding: var(--s1) 0;
-				align-items: baseline;
-			}
-			.events time { font-family: var(--font-serif); font-size: 17px; color: var(--color-text-muted); font-variant-numeric: lining-nums tabular-nums; }
-			.event-title { display: block; font-style: italic; color: var(--color-text-muted); }
-			.event-meta { display: block; font-size: 15px; color: var(--color-text-muted); }
-			.license { margin-top: var(--s6); }
-			@media (max-width: 720px) {
-				.events li { grid-template-columns: 1fr; gap: 0.2rem; }
+			.talk-areas { margin-bottom: var(--s3); }
+			.events { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--s2); }
+			.events > li { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); column-gap: var(--s3); }
+			.events time { font-family: var(--font-serif); font-size: 17px; line-height: 1.5; color: var(--color-text-muted); font-variant-numeric: lining-nums tabular-nums; }
+			.events p { margin: 0; }
+			.event-title { font-style: italic; color: var(--color-text-muted); }
+			.event-meta { font-size: 15px; color: var(--color-text-muted); }
+			.events .slots { margin-top: 2px; }
+			.license { margin-top: var(--s6); font-size: 15px; color: var(--color-text-muted); }
+			@media (max-width: 560px) {
+				.events > li { grid-template-columns: 1fr; }
+				.events time { font-size: 15px; }
 			}
 		</style>
 	</head>
@@ -48,7 +46,7 @@ const roleNote = (roles: string[]) =>
 			<p><a href={url('/talks/')}>All talks</a></p>
 			<h1>{t.title}</h1>
 			{t.areas && t.areas.length > 0 && (
-				<ul class="areas">{t.areas.map((a) => <li class={`area area-${a}`}>{AREA_LABELS[a] ?? a}</li>)}</ul>
+				<ul class="areas talk-areas">{t.areas.map((a) => <li class={`area area-${a}`}>{AREA_LABELS[a] ?? a}</li>)}</ul>
 			)}
 			{abstract && <div set:html={abstract} />}
 			{t.links && (
@@ -60,16 +58,16 @@ const roleNote = (roles: string[]) =>
 				{t.events.map((e) => (
 					<li>
 						<time datetime={e.date}>{formatDate(e.date)}</time>
-						<span>
-							{TALK_TYPES[e.type] ?? e.type}, {e.venue}{place(e) && `, ${place(e)}`}
-							{e.title && e.title !== t.title && <span class="event-title">{e.title}</span>}
+						<div>
+							<p>{TALK_TYPES[e.type] ?? e.type}, {e.venue}{place(e) && `, ${place(e)}`}</p>
+							{e.title && e.title !== t.title && <p class="event-title">{e.title}</p>}
 							{(roleNote(e.roles) || e.coauthors?.length || e.award) && (
-								<span class="event-meta">
+								<p class="event-meta">
 									{[roleNote(e.roles), e.coauthors?.length ? `with ${e.coauthors.map(fullName).join(', ')}` : '', e.award].filter(Boolean).join(' · ')}
-								</span>
+								</p>
 							)}
-						</span>
-						<span>{e.file ? <a href={url(`/${e.file}`)}>Slides</a> : <span class="missing">No slides</span>}</span>
+							{e.file && <ul class="slots" aria-label="Materials"><li><a href={url(`/${e.file}`)}>Slides</a></li></ul>}
+						</div>
 					</li>
 				))}
 			</ul>
@@ -80,7 +78,7 @@ const roleNote = (roles: string[]) =>
 					<div class="pub-list">{related.map((p, k) => <PublicationEntry pub={p} abstract={false} repeatYear={k > 0 && related[k - 1].year === p.year} />)}</div>
 				</>
 			)}
-			{t.license && <p class="item-meta license">Slides licensed under {t.license.replace(/-/g, ' ')}.</p>}
+			{t.license && <p class="license">Slides licensed under {t.license.replace(/-/g, ' ')}.</p>}
 		</main>
 		<Footer />
 	</body>
