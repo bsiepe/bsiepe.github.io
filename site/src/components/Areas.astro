@@ -1,0 +1,15 @@
+---
+// Topic labels of an entry, always in the order of AREA_LABELS.
+import { AREA_LABELS } from '../lib/format';
+
+interface Props { areas?: string[] }
+const { areas = [] } = Astro.props;
+const order = Object.keys(AREA_LABELS);
+const sorted = [...areas].sort((a, b) => order.indexOf(a) - order.indexOf(b));
+---
+
+{sorted.length > 0 && (
+	<ul class="areas" aria-label="Topics">
+		{sorted.map((a) => <li>{AREA_LABELS[a] ?? a}</li>)}
+	</ul>
+)}

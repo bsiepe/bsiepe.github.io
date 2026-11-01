@@ -13,9 +13,6 @@
 	--color-step: #f2f3f5;
 	--color-accent: #0047ab;
 	--color-border: #dfe1e5; /* tables, inputs, code blocks only */
-	--area-simulation: #2556a0;
-	--area-timeseries: #23867a;
-	--area-esm: #a7661f;
 
 	/* Older names still used by some components */
 	--color-bg-offset: var(--color-step);
@@ -44,9 +41,6 @@
 	--color-step: #1c1f23;
 	--color-accent: #8db1ff;
 	--color-border: #30343a;
-	--area-simulation: #8eb0ea;
-	--area-timeseries: #6cc4b8;
-	--area-esm: #dda66a;
 	--shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
 	--shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
 	--shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -163,12 +157,9 @@ strong, b { font-weight: 700; }
 .slots a:hover { text-decoration: underline; }
 .missing { display: none; }
 
-/* Research areas: a coloured dot and the label */
-.areas { gap: 0 var(--s2); color: var(--color-text-muted); }
-.area { display: inline-flex; align-items: center; gap: 8px; }
-.area::before { content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--area-simulation); }
-.area-timeseries::before { background: var(--area-timeseries); }
-.area-esm::before { background: var(--area-esm); }
+/* Topics: plain labels in the muted colour, separated by middle dots */
+.areas { color: var(--color-text-muted); }
+.areas li + li::before { content: "\00B7"; padding: 0 8px; }
 
 .pub-abstract { margin-top: var(--s1); font-size: 15px; }
 .pub-abstract summary { cursor: pointer; color: var(--color-accent); width: fit-content; }

@@ -1,5 +1,5 @@
 ---
-// Filter by research area. Entries carry data-areas="a b"; sections whose
+// Filter by topic. Entries carry data-areas="a b"; sections whose
 // entries are all hidden are hidden too. The choice is kept in ?area=<key> so a
 // filtered view can be linked. Without JavaScript the buttons stay hidden and
 // everything is shown.
@@ -10,10 +10,10 @@ const { counts } = Astro.props;
 const areas = Object.keys(AREA_LABELS).filter((a) => counts[a]);
 ---
 
-<div class="area-filter" role="group" aria-label="Filter by research area" hidden>
+<div class="area-filter" role="group" aria-label="Filter by topic" hidden>
 	<button type="button" data-area="" aria-pressed="true">All</button>
 	{areas.map((a) => (
-		<button type="button" data-area={a} aria-pressed="false" class={`area-${a}`}>
+		<button type="button" data-area={a} aria-pressed="false">
 			{AREA_LABELS[a]} <span class="count">{counts[a]}</span>
 		</button>
 	))}
@@ -36,9 +36,6 @@ const areas = Object.keys(AREA_LABELS).filter((a) => counts[a]);
 		cursor: pointer;
 	}
 	button:hover { color: var(--color-text-main); }
-	button[class^='area-']::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--area-simulation); }
-	button.area-timeseries::before { background: var(--area-timeseries); }
-	button.area-esm::before { background: var(--area-esm); }
 	button[aria-pressed='true'] { background: var(--color-step); color: var(--color-text-main); }
 	.count { font-variant-numeric: tabular-nums; }
 </style>

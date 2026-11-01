@@ -1,11 +1,12 @@
 ---
+import Areas from '../../components/Areas.astro';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import AreaFilter from '../../components/AreaFilter.astro';
 import Header from '../../components/Header.astro';
 import { SITE_TITLE } from '../../consts';
 import { talks } from '../../lib/data';
-import { AREA_LABELS, TALK_TYPES, formatDate } from '../../lib/format';
+import { TALK_TYPES, formatDate } from '../../lib/format';
 import { url } from '../../utils/paths';
 
 // One entry per talk, sorted by its most recent event.
@@ -51,9 +52,7 @@ for (const t of all) for (const a of t.areas ?? []) counts[a] = (counts[a] ?? 0)
 							{t.events.length > 1 && <> · {t.events.length} events</>}
 							{slides > 0 && <> · {slides === 1 ? 'slides' : `${slides} slide decks`}</>}
 						</p>
-						{t.areas && t.areas.length > 0 && (
-							<ul class="areas">{t.areas.map((a) => <li class={`area area-${a}`}>{AREA_LABELS[a] ?? a}</li>)}</ul>
-						)}
+						<Areas areas={t.areas} />
 						</div>
 					</article>
 				);

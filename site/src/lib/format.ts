@@ -44,6 +44,10 @@ export const AREA_LABELS: Record<string, string> = {
 	simulation: 'Simulation studies',
 	timeseries: 'Time series',
 	esm: 'Experience sampling',
+	bayesian: 'Bayesian statistics',
+	networks: 'Network analysis',
+	'open-science': 'Open science',
+	metascience: 'Metascience',
 };
 
 // Venue line for a publication, APA style, without the authors and title.

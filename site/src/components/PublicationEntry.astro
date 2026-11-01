@@ -1,8 +1,9 @@
 ---
 // One publication: year in the margin column, then authors, title, venue, materials, areas, abstract.
 // repeatYear hides the year when the entry above has the same one.
+import Areas from './Areas.astro';
 import type { Publication } from '../lib/data';
-import { AREA_LABELS, artifactSlots, extraLinks, shortName, shownAuthors, venueParts } from '../lib/format';
+import { artifactSlots, extraLinks, shortName, shownAuthors, venueParts } from '../lib/format';
 import { md } from '../lib/markdown';
 
 interface Props { pub: Publication; abstract?: boolean; repeatYear?: boolean }
@@ -39,11 +40,7 @@ const sep = (k: number) => (k === 0 ? '' : shown[k] === null ? ', ' : k === show
 				))}
 				{extras.map((s) => <li><a href={s.href}>{s.label}</a></li>)}
 			</ul>
-			{p.areas && p.areas.length > 0 && (
-				<ul class="areas" aria-label="Research areas">
-					{p.areas.map((a) => <li class={`area area-${a}`}>{AREA_LABELS[a] ?? a}</li>)}
-				</ul>
-			)}
+			<Areas areas={p.areas} />
 		</div>
 		{abstractHtml && (
 			<details class="pub-abstract">

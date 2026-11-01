@@ -1,11 +1,12 @@
 ---
+import Areas from '../../components/Areas.astro';
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import Header from '../../components/Header.astro';
 import PublicationEntry from '../../components/PublicationEntry.astro';
 import { SITE_TITLE } from '../../consts';
 import { publications, talks, type Talk } from '../../lib/data';
-import { AREA_LABELS, TALK_TYPES, formatDate, fullName, place, urlOf } from '../../lib/format';
+import { TALK_TYPES, formatDate, fullName, place, urlOf } from '../../lib/format';
 import { md } from '../../lib/markdown';
 import { url } from '../../utils/paths';
 
@@ -45,9 +46,7 @@ const roleNote = (roles: string[]) =>
 		<main data-pagefind-body>
 			<p><a href={url('/talks/')}>All talks</a></p>
 			<h1>{t.title}</h1>
-			{t.areas && t.areas.length > 0 && (
-				<ul class="areas talk-areas">{t.areas.map((a) => <li class={`area area-${a}`}>{AREA_LABELS[a] ?? a}</li>)}</ul>
-			)}
+			<div class="talk-areas"><Areas areas={t.areas} /></div>
 			{abstract && <div set:html={abstract} />}
 			{t.links && (
 				<ul class="slots">{Object.entries(t.links).map(([k, v]) => <li><a href={urlOf(v)}>{k === 'repo' ? 'Repository' : k.charAt(0).toUpperCase() + k.slice(1)}</a></li>)}</ul>

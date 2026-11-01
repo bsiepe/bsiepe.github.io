@@ -1,10 +1,11 @@
 ---
+import Areas from '../components/Areas.astro';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { SITE_TITLE } from '../consts';
 import { workshops, type WorkshopSession } from '../lib/data';
-import { AREA_LABELS, formatDate, fullName, noteOf, place, urlOf } from '../lib/format';
+import { formatDate, fullName, noteOf, place, urlOf } from '../lib/format';
 import { md } from '../lib/markdown';
 import { url } from '../utils/paths';
 
@@ -51,9 +52,7 @@ const where = (s: WorkshopSession) => [s.host, place(s)].filter(Boolean).join(',
 					<article class="workshop" id={w.id}>
 						<h3 class="item-title">{w.title}</h3>
 						{w.html && <div class="item-desc" set:html={w.html} />}
-						{w.areas && w.areas.length > 0 && (
-							<ul class="areas">{w.areas.map((a) => <li class={`area area-${a}`}>{AREA_LABELS[a] ?? a}</li>)}</ul>
-						)}
+						<Areas areas={w.areas} />
 						<ul class="sessions">
 							{w.sessions.map((s) => {
 								const links = [...(s.file ? [{ label: 'Slides', href: url(`/${s.file}`) }] : []), ...shared];
