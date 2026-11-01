@@ -18,7 +18,7 @@ const toc = headings.filter(
   !mobile && toc.length > 0 && (
     <nav class="toc-container">
       <div class="toc-inner">
-        <h2 class="toc-title">Table of Contents</h2>
+        <p class="toc-title">Contents</p>
         <ul class="toc-list">
           {toc.map((heading) => (
             <li class={`toc-item depth-${heading.depth}`}>
@@ -36,7 +36,7 @@ const toc = headings.filter(
   mobile && toc.length > 0 && (
     <details class="toc-mobile-details" {...(open ? { open: true } : {})}>
       <summary class="toc-mobile-summary">
-        Table of Contents
+        Contents
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="icon icon-tabler icon-tabler-chevron-down"
@@ -67,168 +67,61 @@ const toc = headings.filter(
 }
 
 <style>
-  /* Desktop Styles */
-  .toc-container {
-    display: none; /* Hidden by default */
-    margin-top: 1.5rem;
-  }
-
-  @media (min-width: 1200px) {
-    .toc-container {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 100%;
-      height: 100%;
-      width: 250px;
-      margin-left: 2rem;
-    }
-
-    .toc-inner {
-      position: sticky;
-      top: 6.5rem;
-      padding-left: 1rem;
-      border-left: 1px solid var(--color-border);
-      max-height: calc(100vh - 8rem);
-      overflow-y: auto;
-    }
+  /* Desktop: a column to the right of the text (see BlogPost.astro). */
+  .toc-container { display: none; }
+  @media (min-width: 1100px) {
+    .toc-container { display: block; height: 100%; }
+    .toc-inner { position: sticky; top: var(--s4); max-height: calc(100vh - 64px); overflow-y: auto; }
   }
 
   .toc-title {
-    font-weight: 700;
-    font-size: 0.82rem;
-    margin-top: 0;
-    margin-bottom: 0.45rem;
+    margin: 0 0 var(--s1);
+    font-family: var(--font-serif);
+    font-size: 21px;
+    font-weight: 500;
     color: var(--color-text-main);
-    
-    letter-spacing: 0.08em;
   }
 
-  .toc-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.02rem;
-    font-size: 0.86rem;
-    line-height: 1.22;
+  .toc-list,
+  .toc-list-mobile {
+    display: grid;
+    gap: 6px;
+    font-size: 15px;
+    line-height: 1.4;
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  .toc-item {
-    margin: 0;
-  }
+  .toc-item a,
+  .toc-item-mobile a { color: var(--color-text-muted); text-decoration: none; }
+  .toc-item a:hover,
+  .toc-item-mobile a:hover { color: var(--color-accent); }
+  .toc-item.active a,
+  .toc-item-mobile.active a { color: var(--color-text-main); }
+  .toc-item.depth-3,
+  .toc-item-mobile.depth-3 { margin-left: var(--s2); }
 
-  .toc-item a {
-    display: block;
-    border-left: 2px solid transparent;
-    padding-top: 0.06rem;
-    padding-bottom: 0.06rem;
-    padding-left: 1rem;
-    color: var(--color-text-muted);
-    text-decoration: none;
-    margin-left: -1.05rem;
-    transition: color 0.2s ease, border-color 0.2s ease;
+  /* Narrower screens: a collapsible block above the text */
+  .toc-mobile-details { margin: 0 0 var(--s6); background: var(--color-step); }
+  @media (min-width: 1100px) {
+    .toc-mobile-details { display: none; }
   }
-
-  .toc-item a:hover {
-    color: var(--color-accent);
-  }
-
-  .toc-item.active a {
-    color: var(--color-accent);
-    border-color: var(--color-accent);
-    font-weight: 500;
-  }
-
-  .toc-item.depth-3 {
-    margin-left: 0.75rem;
-  }
-
-  /* Mobile Inline Styles */
-  .toc-mobile-details {
-    margin-top: 1.5rem;
-    margin-bottom: 2rem;
-    border-radius: var(--radius);
-    border: 1px solid var(--color-border);
-    background: var(--color-bg-offset);
-  }
-
-  @media (min-width: 1200px) {
-    .toc-mobile-details {
-      display: none;
-    }
-  }
-
   .toc-mobile-summary {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
-    font-weight: 700;
-    color: var(--color-text-main);
+    padding: 12px var(--s2);
+    font-family: var(--font-serif);
+    font-size: 19px;
+    font-weight: 500;
     cursor: pointer;
     list-style: none;
   }
-
-  .toc-mobile-summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .toc-mobile-summary svg {
-    transition: transform 0.3s ease;
-  }
-
-  .toc-mobile-details[open] .toc-mobile-summary svg {
-    transform: rotate(180deg);
-  }
-
-  .toc-mobile-content {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 0.85rem;
-    border-top: 1px solid var(--color-border);
-    padding-top: 0.2rem;
-  }
-
-  .toc-list-mobile {
-    display: flex;
-    flex-direction: column;
-    gap: 0.02rem;
-    font-size: 0.86rem;
-    line-height: 1.22;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .toc-item-mobile {
-    margin: 0;
-  }
-
-  .toc-item-mobile a {
-    display: block;
-    padding-top: 0.1rem;
-    padding-bottom: 0.1rem;
-    color: var(--color-text-muted);
-    text-decoration: none;
-    transition: color 0.2s ease;
-  }
-
-  .toc-item-mobile a:hover {
-    color: var(--color-accent);
-  }
-
-  .toc-item-mobile.active a {
-    color: var(--color-accent);
-    font-weight: 500;
-  }
-
-  .toc-item-mobile.depth-3 {
-    margin-left: 0.75rem;
-    border-left: 1px solid var(--color-border);
-    padding-left: 0.75rem;
-  }
+  .toc-mobile-summary::-webkit-details-marker { display: none; }
+  .toc-mobile-summary svg { width: 20px; height: 20px; }
+  .toc-mobile-details[open] .toc-mobile-summary svg { transform: rotate(180deg); }
+  .toc-mobile-content { padding: 0 var(--s2) var(--s2); }
 </style>
 
 <script>
