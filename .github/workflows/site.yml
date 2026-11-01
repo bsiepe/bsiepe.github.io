@@ -1,0 +1,92 @@
+# Builds the CV, the exports, and the website from data/ and content/.
+# Every push and pull request builds; only pushes to main deploy to GitHub Pages
+# (requires the Pages source to be "GitHub Actions", set at cutover).
+#
+# Pinned versions: Node in .nvmrc, Typst below, npm dependencies in the lockfiles.
+
+name: Site
+
+on:
+  push:
+    branches: [main, redesign]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  TYPST_VERSION: "0.15.1"
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            site/package-lock.json
+
+      - name: Install Typst ${{ env.TYPST_VERSION }}
+        run: |
+          curl -fsSL "https://github.com/typst/typst/releases/download/v${TYPST_VERSION}/typst-x86_64-unknown-linux-musl.tar.xz" \
+            | tar -xJ -C "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/typst-x86_64-unknown-linux-musl" >> "$GITHUB_PATH"
+
+      - name: Cache Typst packages
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/typst/packages
+          key: typst-packages-${{ env.TYPST_VERSION }}-${{ hashFiles('cv/**/*.typ') }}
+
+      - name: Install pdftoppm (talk thumbnails)
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends poppler-utils
+
+      - name: Install data tools
+        run: npm ci
+
+      - name: Validate data
+        run: npm run validate
+
+      - name: Build CV
+        run: npm run cv
+
+      - name: Generate exports
+        run: npm run export
+
+      - name: Install site dependencies
+        working-directory: site
+        run: npm ci
+
+      # Also syncs assets, renders thumbnails, builds the search index, and checks
+      # the URL mapping against docs/ (see site/package.json).
+      - name: Build site
+        working-directory: site
+        run: npm run build
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site/dist
+
+  deploy:
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

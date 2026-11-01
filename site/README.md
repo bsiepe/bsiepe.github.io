@@ -12,10 +12,17 @@ The site has no content of its own. It reads:
 
 ## Commands
 
-Node 24 (see `.nvmrc`). Run from this folder:
+Node version in `.nvmrc`. First, in the repo root:
+
+    npm install
+    npm run cv        # CV PDFs (needs Typst)
+    npm run export    # publications.bib, publications.json, lecture series .ics
+
+Then in this folder:
 
     npm install
     npm run dev       # local preview at http://localhost:4321
-    npm run build     # static site in dist/, with the Pagefind search index
+    npm run build     # dist/, with search index and URL-mapping check
 
-Build the CV first (`npm run cv` in the repo root) so `/cv/cv_siepe.pdf` exists.
+Talk thumbnails need `pdftoppm` (poppler); without it, talks get title cards.
+CI runs the same steps (`../.github/workflows/site.yml`).
