@@ -40,12 +40,39 @@ export interface Talk {
 	links?: Record<string, Link>; license?: string; events: TalkEvent[]; hidden?: boolean;
 }
 
+export interface WorkshopSession {
+	date: string; end_date?: string; title?: string; host: string; institution?: string; city?: string; country?: string;
+	online?: boolean; duration_hours?: number; format?: string; coinstructors?: Person[]; file?: string; hidden?: boolean;
+}
+export interface Workshop {
+	id: string; title: string; description?: string; areas?: string[]; tags?: string[]; links?: Record<string, Link>;
+	doi?: string; license?: string; sessions: WorkshopSession[]; hidden?: boolean;
+}
+
+export interface LectureSession {
+	date: string; time: string; speakers: Person[]; title: string;
+	links?: { join?: string; slides?: string; recording?: string }; hidden?: boolean;
+}
+export interface LectureSeries {
+	id: string; title: string; about?: string; schedule?: string; organizer?: string; contact_email?: string;
+	timezone: string; duration_minutes: number; sessions: LectureSession[];
+}
+
 export const publications = () => visible(load<Publication[]>('publications'));
 export const talks = () =>
 	visible(load<Talk[]>('talks'))
 		.map((t) => ({ ...t, events: visible(t.events).sort((a, b) => b.date.localeCompare(a.date)) }))
 		.filter((t) => t.events.length > 0)
 		.sort((a, b) => b.events[0].date.localeCompare(a.events[0].date));
+export const workshops = () =>
+	visible(load<Workshop[]>('workshops'))
+		.map((w) => ({ ...w, sessions: visible(w.sessions).sort((a, b) => b.date.localeCompare(a.date)) }))
+		.filter((w) => w.sessions.length > 0)
+		.sort((a, b) => b.sessions[0].date.localeCompare(a.sessions[0].date));
+export const lectureSeries = () => {
+	const s = load<LectureSeries>('lecture_series');
+	return { ...s, sessions: visible(s.sessions).sort((a, b) => a.date.localeCompare(b.date)) };
+};
 export const software = () => visible(load<any[]>('software'));
 export const news = () => visible(load<any[]>('news')).sort((a, b) => String(b.date).localeCompare(String(a.date)));
 export const profile = () => load<any>('profile');

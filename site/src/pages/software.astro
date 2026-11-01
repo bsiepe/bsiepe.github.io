@@ -32,7 +32,7 @@ const roles = (s: any) => s.roles.map((r: string) => r.replace('-', ' ')).join('
 	</head>
 	<body>
 		<Header />
-		<main>
+		<main data-pagefind-body>
 			<h1>Software</h1>
 			{groups.map((g) => (
 				<section>

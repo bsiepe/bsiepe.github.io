@@ -48,7 +48,7 @@ const recent = publications().sort((a, b) => b.year - a.year).slice(0, 3);
 	</head>
 	<body>
 		<Header />
-		<main>
+		<main data-pagefind-body>
 			<section class="intro">
 				<div>
 					<h1>{SITE_TITLE}</h1>

@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import PublicationEntry from '../components/PublicationEntry.astro';
 import { SITE_TITLE } from '../consts';
 import { publications } from '../lib/data';
+import { url } from '../utils/paths';
 
 const pubs = publications().sort((a, b) => b.year - a.year);
 const groups = [
@@ -23,12 +24,13 @@ const shared = pubs.some((p) => p.shared_first || p.shared_second);
 	</head>
 	<body>
 		<Header />
-		<main>
+		<main data-pagefind-body>
 			<h1>Publications</h1>
 			<p class="lead">
 				Every paper lists the same materials: paper, preprint, code, data, materials, and
 				preregistration. Greyed-out entries are not available.
 				{shared && <> <sup>†</sup> shared first authorship, <sup>‡</sup> shared second authorship.</>}
+				All entries as <a href={url('/publications.bib')}>BibTeX</a> or <a href={url('/publications.json')}>CSL-JSON</a>.
 			</p>
 			{groups.map((g) => (
 				<section>

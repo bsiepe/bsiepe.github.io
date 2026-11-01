@@ -44,7 +44,7 @@ const roleNote = (roles: string[]) =>
 	</head>
 	<body>
 		<Header />
-		<main>
+		<main data-pagefind-body>
 			<p><a href={url('/talks/')}>All talks</a></p>
 			<h1>{t.title}</h1>
 			{t.areas && t.areas.length > 0 && (

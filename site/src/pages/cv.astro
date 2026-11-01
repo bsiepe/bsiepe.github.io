@@ -1,0 +1,28 @@
+---
+// CV page: a download link, no embedded viewer (see REDESIGN.md). The PDF keeps
+// its old URL, /cv/cv_siepe.pdf; it is built by `npm run cv` in the repo root.
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { CV_URL, SITE_TITLE } from '../consts';
+import { url } from '../utils/paths';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`CV | ${SITE_TITLE}`} description={`Curriculum vitae of ${SITE_TITLE}`} />
+	</head>
+	<body>
+		<Header />
+		<main data-pagefind-body>
+			<h1>CV</h1>
+			<p class="lead"><a class="btn" href={url(CV_URL)}>Download CV (PDF)</a></p>
+			<p class="lead">
+				Publications are also available as <a href={url('/publications.bib')}>BibTeX</a> and
+				<a href={url('/publications.json')}>CSL-JSON</a>.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>
