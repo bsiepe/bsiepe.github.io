@@ -1,5 +1,8 @@
 // GoatCounter: https://www.goatcounter.com
 // This file is released under the ISC license: https://opensource.org/licenses/ISC
+//
+// Modified for bsiepe.github.io: does not send the screen size (`s`).
+// Upstream: https://gc.zgo.at/count.v5.js
 ;(function() {
 	'use strict';
 
@@ -25,7 +28,6 @@
 			r: (vars.referrer === undefined ? goatcounter.referrer : vars.referrer),
 			t: (vars.title    === undefined ? goatcounter.title    : vars.title),
 			e: !!(vars.event || goatcounter.event),
-			s: [window.screen.width, window.screen.height, (window.devicePixelRatio || 1)],
 			b: is_bot(),
 			q: location.search,
 		}

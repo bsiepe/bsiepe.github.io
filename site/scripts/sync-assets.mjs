@@ -4,6 +4,11 @@
 //   built by `npm run cv` in the repo root (build/cv/cv_siepe.pdf -> /cv/cv_siepe.pdf),
 //   and the exports built by `npm run export` (build/exports/ -> see EXPORTS below).
 // The copies are git-ignored. Runs before `astro dev` and `astro build`.
+//
+// Self-contained HTML slides (Quarto/reveal.js exports) import Google Fonts at
+// page load. The served copies have that import removed (the originals stay
+// untouched), so the slides fall back to their other fonts and the site makes
+// no request to Google (REDESIGN.md, Privacy).
 
 import fs from 'node:fs';
 import path from 'node:path';
@@ -12,6 +17,22 @@ import { fileURLToPath } from 'node:url';
 const site = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const repo = path.resolve(site, '..');
 const pub = path.join(site, 'public');
+
+// The @import may be plain CSS or URL-encoded inside a data: stylesheet.
+const GOOGLE_FONTS = [
+	/%40import%22https%3A%2F%2Ffonts%2Egoogleapis%2Ecom.*?%22%3B/g,
+	/@import\s*(?:url\()?["']?https:\/\/fonts\.googleapis\.com[^;]*;/g,
+];
+let fontImports = 0;
+
+function copyHtml(from, to) {
+	let html = fs.readFileSync(from, 'utf8');
+	for (const re of GOOGLE_FONTS) html = html.replace(re, () => (fontImports++, ''));
+	if (/fonts\.(googleapis|gstatic)\.com|fonts%2E(googleapis|gstatic)%2Ecom/.test(html)) {
+		throw new Error(`sync-assets: ${path.relative(repo, from)} still references Google Fonts after patching`);
+	}
+	if (!fs.existsSync(to) || fs.readFileSync(to, 'utf8') !== html) fs.writeFileSync(to, html);
+}
 
 function copyTree(rel, exts) {
 	const src = path.join(repo, rel);
@@ -23,7 +44,8 @@ function copyTree(rel, exts) {
 		if (exts && !exts.includes(path.extname(entry.name).toLowerCase())) continue;
 		const to = path.join(pub, path.relative(repo, from));
 		fs.mkdirSync(path.dirname(to), { recursive: true });
-		if (!fs.existsSync(to) || fs.statSync(to).mtimeMs < fs.statSync(from).mtimeMs) fs.copyFileSync(from, to);
+		if (path.extname(from).toLowerCase() === '.html') copyHtml(from, to);
+		else if (!fs.existsSync(to) || fs.statSync(to).mtimeMs < fs.statSync(from).mtimeMs) fs.copyFileSync(from, to);
 		n++;
 	}
 	return n;
@@ -62,4 +84,5 @@ for (const [file, dest] of Object.entries(EXPORTS)) {
 	counts.exports++;
 }
 
+counts['google font imports removed'] = fontImports;
 console.log('sync-assets:', Object.entries(counts).map(([k, v]) => `${k} ${v}`).join(', '));
