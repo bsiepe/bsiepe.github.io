@@ -11,6 +11,9 @@ import remarkMath from 'remark-math';
 export default defineConfig({
 	site: 'https://bsiepe.github.io',
 	base: process.env.BASE_PATH || '/',
+	// Lossless whitespace handling, as in Astro 6. Astro 7's default ('jsx')
+	// drops spaces at line breaks between inline elements and text.
+	compressHTML: true,
 	integrations: [
 		mdx(),
 		sitemap()

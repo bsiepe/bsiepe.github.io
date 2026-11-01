@@ -20,17 +20,9 @@ const sep = (k: number) => (k === 0 ? '' : shown[k] === null ? ', ' : k === show
 
 <article class="pub" id={p.id} data-areas={(p.areas ?? []).join(' ')}>
 	<p class="pub-authors">
+		{/* One line per author on purpose: line breaks between these expressions would render as spaces. */}
 		{shown.map((i, k) => (
-			<>
-				{sep(k)}
-				{i === null ? '…' : (
-					<>
-						{p.authors[i].me ? <strong>{shortName(p.authors[i])}</strong> : shortName(p.authors[i])}
-						{sf.includes(i + 1) && <sup>†</sup>}
-						{ss.includes(i + 1) && <sup>‡</sup>}
-					</>
-				)}
-			</>
+			<>{sep(k)}{i === null ? '…' : <>{p.authors[i].me ? <strong>{shortName(p.authors[i])}</strong> : shortName(p.authors[i])}{sf.includes(i + 1) && <sup>†</sup>}{ss.includes(i + 1) && <sup>‡</sup>}</>}</>
 		))}
 		<span class="pub-year"> ({p.year})</span>
 	</p>

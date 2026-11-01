@@ -14,10 +14,11 @@
     "check-urls": "node scripts/check-urls.mjs"
   },
   "dependencies": {
-    "@astrojs/mdx": "^6.0.3",
-    "@astrojs/rss": "^4.0.18",
-    "@astrojs/sitemap": "^3.7.3",
-    "astro": "^6.4.5",
+    "@astrojs/markdown-remark": "^7.3.5",
+    "@astrojs/mdx": "^8.1.2",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.4.4",
     "katex": "^0.19.1",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
@@ -28,5 +29,8 @@
     "pagefind": "^1.4.0"
   },
   "private": true,
-  "description": "Website. Based on astro-scholar (MIT, see LICENSE); reads ../data and ../content."
+  "description": "Website. Based on astro-scholar (MIT, see LICENSE); reads ../data and ../content.",
+  "overrides": {
+    "katex": "$katex"
+  }
 }
