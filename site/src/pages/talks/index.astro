@@ -1,7 +1,9 @@
 ---
 import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
+import AreaFilter from '../../components/AreaFilter.astro';
 import Header from '../../components/Header.astro';
+import TalkThumb from '../../components/TalkThumb.astro';
 import { SITE_TITLE } from '../../consts';
 import { talks } from '../../lib/data';
 import { AREA_LABELS, TALK_TYPES, formatDate } from '../../lib/format';
@@ -9,23 +11,36 @@ import { url } from '../../utils/paths';
 
 // One entry per talk, sorted by its most recent event.
 const all = talks();
+const counts: Record<string, number> = {};
+for (const t of all) for (const a of t.areas ?? []) counts[a] = (counts[a] ?? 0) + 1;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={`Talks | ${SITE_TITLE}`} description={`Talks by ${SITE_TITLE}`} />
+		<style>
+			.talk { display: flex; gap: 1.25rem; align-items: flex-start; }
+			.talk-body { flex: 1; min-width: 0; }
+			.talk-body .item-title { margin-top: 0; }
+			@media (max-width: 720px) {
+				.talk { flex-direction: column; gap: 0.75rem; }
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main data-pagefind-body>
 			<h1>Talks</h1>
 			<p class="lead">Each talk has its own page with every event and its slides.</p>
+			<AreaFilter counts={counts} />
 			{all.map((t) => {
 				const latest = t.events[0];
 				const slides = t.events.filter((e) => e.file).length;
 				return (
-					<article class="item">
+					<article class="item talk" data-areas={(t.areas ?? []).join(' ')}>
+						<TalkThumb id={t.id} title={t.title} href={url(`/talks/${t.id}/`)} />
+						<div class="talk-body">
 						<h3 class="item-title"><a href={url(`/talks/${t.id}/`)}>{t.title}</a></h3>
 						<p class="item-meta">
 							{formatDate(latest.date)} · {TALK_TYPES[latest.type] ?? latest.type}, {latest.venue}
@@ -35,6 +50,7 @@ const all = talks();
 						{t.areas && t.areas.length > 0 && (
 							<ul class="areas">{t.areas.map((a) => <li class={`area area-${a}`}>{AREA_LABELS[a] ?? a}</li>)}</ul>
 						)}
+						</div>
 					</article>
 				);
 			})}

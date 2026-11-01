@@ -2,7 +2,7 @@
 import 'katex/dist/katex.min.css';
 import '../styles/global.css';
 import type { ImageMetadata } from 'astro';
-import { PROFILE, SITE_TITLE, UMAMI_SRC, UMAMI_WEBSITE_ID } from '../consts';
+import { GOATCOUNTER_ENDPOINT, PROFILE, SITE_TITLE } from '../consts';
 import { url } from '../utils/paths';
 
 interface Props {
@@ -166,7 +166,6 @@ const imageUrl = typeof image === 'string'
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={imageUrl} />
 
-<!-- Umami Analytics -->
-{UMAMI_WEBSITE_ID && (
-	<script is:inline defer src={UMAMI_SRC} data-website-id={UMAMI_WEBSITE_ID}></script>
+{import.meta.env.PROD && (
+	<script is:inline async src={url('/js/count.js')} data-goatcounter={GOATCOUNTER_ENDPOINT}></script>
 )}

@@ -20,6 +20,7 @@ export const SOCIAL_LINKS: ReadonlyArray<{ label: string; href: string }> = [
 	{ label: 'LinkedIn', href: p.linkedin },
 ];
 
-// Analytics stay off unless PUBLIC_UMAMI_WEBSITE_ID is set (decision pending, see REDESIGN.md).
-export const UMAMI_SRC = import.meta.env.PUBLIC_UMAMI_SRC ?? '';
-export const UMAMI_WEBSITE_ID = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID ?? '';
+// GoatCounter analytics, production builds only. The script is self-hosted
+// (public/js/count.js, ISC license); only the page-view beacon goes to this endpoint.
+// Explicit exception to the no-external-requests rule (REDESIGN.md, open question 2).
+export const GOATCOUNTER_ENDPOINT = 'https://bsiepe.goatcounter.com/count';

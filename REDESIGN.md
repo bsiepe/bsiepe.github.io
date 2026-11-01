@@ -311,6 +311,10 @@ without year; packages released for R and Python are two software entries.
 2. GoatCounter is an external request at page load, which conflicts with the
    privacy rule. Options: drop, self-host the script, or explicit exception.
    Needed by stage 5.
+   Resolved (2026-11-01): keep GoatCounter. The script is self-hosted
+   (`site/public/js/count.js`, ISC); the page-view beacon to
+   bsiepe.goatcounter.com is an explicit exception and must be covered in the
+   Datenschutz text. Loaded in production builds only.
 3. Resolved in stage 1: dates are quoted strings.
 4. Resolved in stage 1: titles plain text, long-text fields inline Markdown.
 5. Astro schemas generated from JSON Schema, or no Astro schema at all with
@@ -321,3 +325,7 @@ without year; packages released for R and Python are two software entries.
    2c everything else, each with its own report section and review.
 8. Thumbnail fallback for talks without a PDF (HTML slides, or no slides).
    Stage 5.
+   Resolved (2026-11-01): a plain title card.
+9. Resolved (2026-11-01): site search stays (Pagefind, no external service).
+   Area filtering is a small vanilla script on the publications and talks pages
+   (`?area=<key>`), not static pages per area.

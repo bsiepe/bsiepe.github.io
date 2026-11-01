@@ -18,7 +18,7 @@ const shown = shownAuthors(p.authors);
 const sep = (k: number) => (k === 0 ? '' : shown[k] === null ? ', ' : k === shown.length - 1 && shown[k - 1] !== null ? ', & ' : ', ');
 ---
 
-<article class="pub" id={p.id}>
+<article class="pub" id={p.id} data-areas={(p.areas ?? []).join(' ')}>
 	<p class="pub-authors">
 		{shown.map((i, k) => (
 			<>

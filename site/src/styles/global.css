@@ -329,6 +329,11 @@ a:hover {
 
 /* --- Site additions (bsiepe) --- */
 
+/* Used by the area filter; must win over component display rules. */
+[hidden] {
+	display: none !important;
+}
+
 .lead {
 	max-width: 46rem;
 }
