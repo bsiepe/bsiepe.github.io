@@ -1,0 +1,68 @@
+# URL mapping from the old Quarto site (docs/) to the new site.
+#
+# Every file in docs/ must either exist at the same path in the new build,
+# be listed under `redirects` (an HTML page that forwards to the new URL), or be
+# listed under `retired` with a reason. scripts/check-urls.mjs checks this after
+# every build, and also that every redirect target exists.
+#
+# Kept at the same path (not listed here): /, /publications/, /talks/, /software/,
+# /blog/, /cv/, /simulation-talk-series/, /workshops/, all talk and workshop
+# slide files (PDF and HTML), /cv/cv_siepe.pdf,
+# /simulation-talk-series/Simulation-Lecture-Dates.ics, /files/images/*.
+#
+# GitHub Pages has no server-side redirects, so redirects only work for HTML pages.
+
+redirects:
+  # Talks: one page per deck now, at /talks/<id>/.
+  /talks/2022-11-01_dgppn-temporal-dynamics/index.html: /talks/temporal-dynamics-depression/
+  /talks/2023-05-13_dpk-temporal-dynamics/index.html: /talks/temporal-dynamics-depression/
+  /talks/2023-05-26_aps-item-validation/index.html: /talks/warn-d-ema-items/
+  /talks/2023-10-09_fgme-bayesian-idiographic-nets/index.html: /talks/bayesian-idiographic-networks/
+  /talks/2023-11-22-ffm-reprotea-simulation/index.html: /talks/good-practices-simulation-studies/
+  /talks/2024-02-16_fsm-forecasting-literature/index.html: /talks/forecasting-literature-trends/
+  /talks/2024-04-16_mitnb-ema-exploration/talk_mitnb_ema_index.html: /talks/exploration-ema-data/
+  /talks/2024-06-22-simulation-studies/index-simulation-talk.html: /talks/simulation-studies-psychology/
+  /talks/2024-07-16_imps-bayesian-idiographic-nets/index-imps24-networks.html: /talks/bayesian-idiographic-networks/
+  /talks/2025-03-27-dagstat-ademp/index-simulation-dagstat.html: /talks/simulation-studies-psychology/
+  /talks/2025-04-16-berlin-methods-kolloquium/index-simulation-berlin-kolloquium.html: /talks/simulation-studies-state-of-the-art/
+  /talks/2025-05-26-saa-multiverse/index-saa.html: /talks/multiverse-dynamic-networks/
+  /talks/2025-05-28-saa-sensors/index-saa.html: /talks/ema-passive-sensor-associations/
+  /talks/2025-11-17-introducing-openesm/index-openesm.html: /talks/introducing-openesm/
+  /talks/2026-05-26-centrality-uncertainty/index-centrality.html: /talks/dynamic-network-features-uncertainty/
+  /talks/2026-06-24-improving-methods-research/index-methods.html: /talks/improving-methodological-research/
+  /talks/2026-08-31-simulation-studies/index-simulation-talk.html: /talks/simulation-studies-state-of-the-art/
+  /talks/2026-10-06-jumi-benchmarking/index-jumi-benchmark.html: /talks/benchmarking-psychological-time-series/
+
+  # Workshops: one page, one anchor per workshop.
+  /workshops/2023-06-28_dynamic-networks-workshop/index.html: /workshops/#dynamic-network-analysis-r
+  /workshops/2024-10-21_dynamic-networks-workshop-ecr/index.html: /workshops/#introduction-dynamic-network-analysis
+  /workshops/2025-02-31_preregistration-workshop/prereg-workshop-index.html: /workshops/#preregistration-workshop
+  /workshops/2025-06-27_reproducibility-workshop/prereg-workshop-index.html: /workshops/#reproducible-research-r-quarto
+  /workshops/2026-04-30_introduction-openESM/openESM-workshop-index.html: /workshops/#openesm-workshop
+
+  # Blog: post folders are named by slug, without the date.
+  /blog/2026-05-20_varcheck/index.html: /blog/varcheck/
+
+  # Leftover Hugo-style publication page; its abstract now sits in the publication entry.
+  /publications/2023-07-19_bayesian-idiographic-networks_siepe-heck/index.html: /publications/#siepe-bayesian-idiographic-networks
+
+  /impressum/impressum.html: /impressum/
+
+# Paths are matched exactly; `*` matches within one path segment.
+retired:
+  - path: /listings.json
+    reason: Quarto internal (listing index).
+  - path: /search.json
+    reason: Quarto internal (search index); the new site uses Pagefind.
+  - path: /site_libs/**
+    reason: Quarto runtime (JS, CSS, fonts).
+  - path: /talks/*/*.png
+    reason: Per-talk images are not carried over (REDESIGN.md, Talks).
+  - path: /workshops/*/*.png
+    reason: Per-workshop images, same as talks.
+  - path: /blog/2026-05-20_varcheck/*.png
+    reason: Old post assets; the post's images are now served under /blog/varcheck/ by Astro.
+  - path: /blog/2026-05-20_varcheck/*.svg
+    reason: Same as above.
+  - path: /blog/2026-05-20_varcheck/index_files/**
+    reason: Quarto figure output of the old post; the figures are now part of the new post.
