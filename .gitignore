@@ -8,3 +8,7 @@
 
 node_modules/
 build/
+
+# Screenshot pack for Claude Design (regenerable, large)
+design/input/site/
+design/input/cv/
