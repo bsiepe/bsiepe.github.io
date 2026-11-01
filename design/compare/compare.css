@@ -1,0 +1,294 @@
+/* Comparison page for three site directions.
+   .bench and .specs are the comparison tool; .mock is the design under review. */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: #e9eaec; color: #1b1d21; font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+img { display: block; max-width: 100%; height: auto; }
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* ---------- Comparison controls ---------- */
+.bench {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px 24px;
+  padding: 10px 32px; background: #24272c; color: #f2f3f5;
+}
+.bench-title { margin: 0; font-weight: 600; }
+.bench-controls { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.bench fieldset { display: flex; align-items: center; gap: 4px; margin: 0; padding: 0; border: 0; }
+.bench legend { float: left; margin-right: 8px; color: #b9bdc4; }
+.bench button {
+  font: inherit; color: #f2f3f5; background: #383c43; border: 0; border-radius: 0;
+  padding: 6px 12px; cursor: pointer;
+}
+.bench button:hover { background: #474c55; }
+.bench button[aria-pressed="true"] { background: #f2f3f5; color: #1b1d21; }
+.bench button:focus-visible { outline: 2px solid #8db1ff; outline-offset: 2px; }
+.bench-hint { margin: 0 0 0 auto; color: #b9bdc4; }
+
+/* ---------- Spec sheet ---------- */
+.specs { max-width: 1040px; margin: 0 auto; padding: 64px 32px 96px; }
+.specs h2 { font-size: 24px; margin: 0 0 24px; }
+.specs h3 { font-size: 17px; margin: 48px 0 16px; }
+.spec { display: none; }
+.spec.on { display: block; }
+.spec-lede { font-size: 15px; max-width: 68ch; margin: 0 0 24px; }
+.specs dl { display: grid; grid-template-columns: 11rem 1fr; gap: 10px 24px; margin: 0; }
+.specs dt { font-weight: 600; }
+.specs dd { margin: 0; max-width: 72ch; }
+.specs code { font: 13px/1 ui-monospace, Consolas, monospace; background: #dcdee2; padding: 2px 4px; }
+
+/* ================================================================
+   The mock
+   ================================================================ */
+.mock {
+  /* shared spacing scale */
+  --s1: 8px; --s2: 16px; --s3: 24px; --s4: 32px; --s6: 48px; --s8: 64px; --s12: 96px;
+  --frame: 32px;
+  background: var(--ground); color: var(--ink);
+  font-family: var(--f-text); font-size: var(--t-body); line-height: var(--lh-body);
+  font-kerning: normal; text-rendering: optimizeLegibility;
+}
+.mock .wrap { max-width: calc(1040px + 2 * var(--frame)); margin-inline: auto; padding-inline: var(--frame); }
+.mock a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.18em; text-decoration-color: color-mix(in srgb, var(--accent) 45%, transparent); }
+.mock a:hover { text-decoration-color: var(--accent); }
+.mock a:focus-visible, .mock button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.mock h1, .mock h2, .mock h3 { font-family: var(--f-head); font-weight: var(--w-head); color: var(--ink); margin: 0; }
+.mock p { margin: 0; }
+.mock ol, .mock ul { list-style: none; margin: 0; padding: 0; }
+.mock b { font-weight: 600; color: var(--ink); }
+
+/* Header */
+.site-header { padding-top: var(--s3); }
+.mock main > .intro:first-child { padding-top: var(--s6); }
+.header-row { display: flex; align-items: baseline; gap: var(--s4); }
+.wordmark { font-family: var(--f-head); font-weight: var(--w-head); font-size: var(--t-h3); color: var(--ink) !important; text-decoration: none; letter-spacing: -0.01em; }
+.site-header nav { display: flex; flex-wrap: wrap; gap: 4px var(--s3); margin-left: auto; font-family: var(--f-ui); font-size: var(--t-ui); }
+.site-header nav a { color: var(--ink); text-decoration: none; }
+.site-header nav a:hover { color: var(--accent); }
+.header-tools { display: flex; gap: var(--s1); align-self: center; }
+.icon-btn { display: grid; place-items: center; width: 36px; height: 36px; padding: 0; border: 0; background: none; color: var(--ink); cursor: pointer; }
+.icon-btn:hover { color: var(--accent); }
+
+
+/* Intro: name, role, photo, bio */
+.intro { display: grid; grid-template-columns: minmax(0, var(--measure)) auto; grid-template-areas: "head photo" "bio photo"; column-gap: var(--s8); justify-content: space-between; padding-top: var(--s6); }
+.intro-head { grid-area: head; }
+.photo { grid-area: photo; margin: 0; width: var(--photo-w); }
+.photo img { width: 100%; aspect-ratio: var(--photo-ratio); object-fit: cover; object-position: 50% 30%; border-radius: var(--photo-r); }
+.bio { grid-area: bio; margin-top: var(--s4); }
+.bio p + p { margin-top: 1em; }
+.intro h1 { font-size: var(--t-h1); line-height: 1.05; letter-spacing: var(--track-h1); }
+.role { margin-top: var(--s1); font-family: var(--f-ui); font-size: var(--t-ui); color: var(--muted); }
+
+/* Sections */
+.news, .pubs { margin-top: var(--s12); }
+.mock h2 { font-size: var(--t-h2); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: var(--s4); }
+
+.news-list { display: grid; gap: var(--s2); max-width: 880px; }
+.news-list li { display: grid; grid-template-columns: var(--date-col) 1fr; gap: var(--s3); }
+.news-list time { font-family: var(--f-meta); font-size: var(--t-meta); color: var(--muted); font-variant-numeric: tabular-nums; padding-top: var(--meta-nudge); }
+
+/* Publication entry */
+.pub-list { display: grid; gap: var(--pub-gap); }
+.pub { display: grid; grid-template-columns: var(--year-col) minmax(0, 1fr); column-gap: var(--year-gap); }
+.year { font-family: var(--f-meta); font-size: var(--t-meta); color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 2px; }
+.pub-body { min-width: 0; }
+.authors, .title, .venue { max-width: 76ch; }
+.authors { font-family: var(--f-ui); font-size: var(--t-ui); color: var(--muted); line-height: 1.5; }
+.title { font-size: var(--t-h3); line-height: 1.3; margin-top: 4px !important; }
+.title a { color: var(--ink); text-decoration: none; }
+.title a:hover { color: var(--accent); text-decoration: underline; text-decoration-color: var(--accent); }
+.venue { margin-top: 2px !important; font-size: var(--t-venue); color: var(--ink-2); }
+.pub-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--s1) var(--s3); margin-top: var(--s2); }
+.slots { display: flex; flex-wrap: wrap; gap: 4px var(--slot-gap); font-family: var(--f-slot); font-size: var(--t-slot); }
+.slot { display: inline-block; }
+a.slot { font-weight: var(--w-slot); }
+.slot.off { color: var(--off); }
+.areas { display: flex; flex-wrap: wrap; gap: 4px var(--s2); font-family: var(--f-slot); font-size: var(--t-slot); color: var(--ink-2); }
+.area { display: inline-flex; align-items: center; gap: 8px; }
+.area::before { content: ""; flex: none; background: var(--area); }
+.a-sim { --area: var(--c-sim); }
+.a-ts  { --area: var(--c-ts); }
+.a-esm { --area: var(--c-esm); }
+.more { margin-top: var(--s6) !important; font-family: var(--f-ui); font-size: var(--t-ui); }
+
+/* Footer */
+.site-footer { margin-top: var(--s12); padding: var(--s6) 0 var(--s8); background: var(--step); }
+.footer-row { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--s2) var(--s4); }
+.footer-name { font-family: var(--f-head); font-weight: var(--w-head); font-size: var(--t-h3); }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 4px var(--s3); font-family: var(--f-ui); font-size: var(--t-ui); }
+
+/* ================================================================
+   Direction 1: Editorial (Source Serif 4 + Source Sans 3)
+   ================================================================ */
+.mock[data-dir="editorial"] {
+  --f-text: "Source Serif 4", Georgia, serif;
+  --f-head: "Source Serif 4", Georgia, serif;
+  --f-ui: "Source Sans 3", system-ui, sans-serif;
+  --f-meta: var(--f-ui); --f-slot: var(--f-ui);
+  --w-head: 600; --w-slot: 600;
+  --t-body: 18px; --lh-body: 1.6;
+  --t-h1: 40px; --t-h2: 28px; --t-h3: 19px; --t-venue: 17px;
+  --t-ui: 15px; --t-meta: 15px; --t-slot: 15px; --meta-nudge: 3px;
+  --track-h1: -0.01em;
+  --measure: 68ch;
+  --photo-w: 208px; --photo-ratio: 4 / 5; --photo-r: 0;
+  --date-col: 6.5rem; --year-col: 0; --year-gap: 0; --pub-gap: var(--s6); --slot-gap: 16px;
+  --ground: #fdfcfa; --ink: #1a1c20; --ink-2: #33363b; --muted: #55585e; --off: #6c6f75; --step: #f3f1ec;
+  --accent: #0047ab;
+  --c-sim: #2556a0; --c-ts: #23867a; --c-esm: #a7661f;
+}
+.mock[data-dir="editorial"][data-theme="dark"] {
+  --ground: #15171b; --ink: #e7e5e0; --ink-2: #cfccc6; --muted: #a3a6ab; --off: #8a8e95; --step: #1e2126;
+  --accent: #8db1ff;
+  --c-sim: #8eb0ea; --c-ts: #6cc4b8; --c-esm: #dda66a;
+}
+.mock[data-dir="editorial"] .pub { display: block; }
+.mock[data-dir="editorial"] .year { display: block; margin-bottom: 2px; }
+.mock[data-dir="editorial"] .venue i { font-style: italic; }
+.mock[data-dir="editorial"] .area::before { width: 10px; height: 10px; }
+
+/* ================================================================
+   Direction 2: Technical (IBM Plex Sans + IBM Plex Mono)
+   ================================================================ */
+.mock[data-dir="technical"] {
+  --f-text: "IBM Plex Sans", system-ui, sans-serif;
+  --f-head: var(--f-text); --f-ui: var(--f-text);
+  --f-meta: "IBM Plex Mono", ui-monospace, monospace; --f-slot: var(--f-meta);
+  --w-head: 600; --w-slot: 400;
+  --t-body: 17px; --lh-body: 1.6;
+  --t-h1: 36px; --t-h2: 24px; --t-h3: 17px; --t-venue: 15px;
+  --t-ui: 15px; --t-meta: 13px; --t-slot: 13px; --meta-nudge: 4px;
+  --track-h1: -0.02em;
+  --measure: 68ch;
+  --photo-w: 120px; --photo-ratio: 1; --photo-r: 0;
+  --date-col: 64px; --year-col: 64px; --year-gap: var(--s3); --pub-gap: var(--s4); --slot-gap: 4px;
+  --ground: #ffffff; --ink: #121417; --ink-2: #2e3238; --muted: #555b63; --off: #6f747b; --step: #f1f3f5;
+  --accent: #0b5d6b;
+  --c-sim: #2556a0; --c-ts: #23867a; --c-esm: #a7661f;
+}
+.mock[data-dir="technical"][data-theme="dark"] {
+  --ground: #0f1214; --ink: #e4e7ea; --ink-2: #c9ced3; --muted: #9aa1a8; --off: #868c93; --step: #1a1e22;
+  --accent: #6cc0cc;
+  --c-sim: #8eb0ea; --c-ts: #6cc4b8; --c-esm: #dda66a;
+}
+/* photo sits beside name and role, bio below at full measure */
+.mock[data-dir="technical"] .intro { grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "photo head" "bio bio"; column-gap: var(--s4); justify-content: start; align-items: end; }
+.mock[data-dir="technical"] .bio { max-width: var(--measure); }
+/* news moves into the right column beside the bio */
+@media (min-width: 861px) {
+  .mock[data-dir="technical"] main { display: grid; grid-template-columns: minmax(0, 1fr) 300px; column-gap: var(--s8); max-width: calc(1040px + 2 * var(--frame)); margin-inline: auto; padding-inline: var(--frame); }
+  .mock[data-dir="technical"] main > .wrap { max-width: none; padding-inline: 0; margin-inline: 0; }
+  .mock[data-dir="technical"] .intro { grid-column: 1; grid-row: 1; }
+  .mock[data-dir="technical"] .news { grid-column: 2; grid-row: 1; margin-top: 0; padding-top: calc(var(--s6) + 120px + var(--s4)); }
+  .mock[data-dir="technical"] .news h2 { font-size: var(--t-h3); margin-bottom: var(--s2); }
+  .mock[data-dir="technical"] .news-list li { grid-template-columns: 1fr; gap: 0; }
+  .mock[data-dir="technical"] .news-list p { font-size: 15px; }
+  .mock[data-dir="technical"] .pubs { grid-column: 1 / -1; }
+}
+.mock[data-dir="technical"] .wordmark { font-size: 17px; }
+.mock[data-dir="technical"] .venue i { font-style: normal; }
+.mock[data-dir="technical"] .year.same { color: var(--off); }
+.mock[data-dir="technical"] .title { font-weight: 600; }
+.mock[data-dir="technical"] .slot { padding: 2px 8px; }
+.mock[data-dir="technical"] a.slot { background: var(--step); text-decoration: none; }
+.mock[data-dir="technical"] a.slot:hover { background: var(--accent); color: var(--ground); }
+.mock[data-dir="technical"] .area::before { width: 3px; height: 1.1em; }
+.mock[data-dir="technical"] .pub-foot { margin-top: 12px; }
+
+/* ================================================================
+   Direction 3: Scholarly (Newsreader + Atkinson Hyperlegible)
+   ================================================================ */
+.mock[data-dir="scholarly"] {
+  --f-text: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --f-head: "Libertinus Serif", Georgia, serif;
+  --f-ui: var(--f-text); --f-meta: var(--f-head); --f-slot: var(--f-text);
+  --w-head: 600; --w-title: 600; --w-slot: 400;
+  --t-body: 17px; --lh-body: 1.65;
+  --t-h1: 48px; --t-h2: 30px; --t-h3: 20px; --t-venue: 15px;
+  --t-ui: 15px; --t-meta: 17px; --t-slot: 15px; --meta-nudge: 0;
+  --track-h1: -0.01em;
+  --measure: 66ch;
+  --photo-w: 240px; --photo-ratio: 4 / 5; --photo-r: 4px;
+  --date-col: 80px; --year-col: 80px; --year-gap: var(--s3); --pub-gap: 40px; --slot-gap: 0;
+  --ground: #fbfaf7; --ink: #1e1c1a; --ink-2: #3a3632; --muted: #5d5953; --off: #78736c; --step: #f2efe9;
+  --accent: #7a2333;
+  --c-sim: #2556a0; --c-ts: #23867a; --c-esm: #a7661f;
+}
+.mock[data-dir="scholarly"][data-theme="dark"] {
+  --ground: #171514; --ink: #ebe7e1; --ink-2: #d2cdc5; --muted: #a9a49c; --off: #8f8a83; --step: #211e1c;
+  --accent: #e5939f;
+  --c-sim: #8eb0ea; --c-ts: #6cc4b8; --c-esm: #dda66a;
+}
+/* serif candidates for headings and titles */
+.mock[data-dir="scholarly"][data-serif="literata"]   { --f-head: "Literata", Georgia, serif; --w-head: 500; --w-title: 500; --t-h3: 19px; }
+.mock[data-dir="scholarly"][data-serif="crimson"]    { --f-head: "Crimson Pro", Georgia, serif; --w-head: 500; --w-title: 600; --t-h3: 21px; }
+.mock[data-dir="scholarly"][data-serif="newsreader"] { --f-head: "Newsreader", Georgia, serif; --w-head: 500; --w-title: 500; }
+
+.mock[data-dir="scholarly"] .intro { grid-template-areas: "head head" "bio photo" "bio contact"; grid-template-rows: auto auto 1fr; }
+.mock .contact { display: none; }
+.mock[data-dir="scholarly"] .contact { display: block; grid-area: contact; align-self: start; width: var(--photo-w); margin-top: var(--s3); font-size: 15px; line-height: 1.6; }
+.mock[data-dir="scholarly"] .contact li + li { margin-top: 4px; }
+.mock[data-dir="scholarly"] .contact a { text-decoration: none; }
+.mock[data-dir="scholarly"] .contact a:hover { text-decoration: underline; }
+.mock[data-dir="scholarly"] .contact-profiles a + a::before { content: "\00B7"; color: var(--muted); padding: 0 8px; display: inline-block; }
+.mock[data-dir="scholarly"] .photo { margin-top: calc(var(--s4) + 6px); }
+.mock[data-dir="scholarly"] .role { font-size: 16px; }
+/* news dates and publication years: one style, one margin column */
+.mock[data-dir="scholarly"] .news-list li { grid-template-columns: var(--year-col) minmax(0, 1fr); column-gap: var(--year-gap); }
+.mock[data-dir="scholarly"] .news-list time,
+.mock[data-dir="scholarly"] .year { font-family: var(--f-head); font-size: var(--t-meta); line-height: 1.6; color: var(--muted); text-align: left; padding-top: 0; font-variant-numeric: lining-nums tabular-nums; }
+.mock[data-dir="scholarly"] .year { line-height: 22px; }
+.mock[data-dir="scholarly"] .year.same { visibility: hidden; }
+.mock[data-dir="scholarly"] .pubs .more { margin-left: calc(var(--year-col) + var(--year-gap)); }
+/* the entry: two quiet metadata lines in the text face frame one serif title */
+.mock[data-dir="scholarly"] .authors { font-size: 15px; line-height: 22px; color: var(--muted); }
+.mock[data-dir="scholarly"] .title { font-weight: var(--w-title); line-height: 1.3; margin-top: 4px !important; }
+.mock[data-dir="scholarly"] .venue { font-size: 15px; line-height: 22px; color: var(--muted); margin-top: 4px !important; }
+.mock[data-dir="scholarly"] .venue i { color: var(--ink-2); }
+.mock[data-dir="scholarly"] .pub-foot { margin-top: 8px; justify-content: flex-start; column-gap: var(--s4); }
+.mock[data-dir="scholarly"] .slots a { text-decoration: none; }
+.mock[data-dir="scholarly"] .slots a:hover { text-decoration: underline; }
+.mock[data-dir="scholarly"] .slots li + li::before { content: "\00B7"; color: var(--muted); padding: 0 8px; }
+.mock[data-dir="scholarly"] .areas { color: var(--muted); }
+.mock[data-dir="scholarly"] .area::before { width: 8px; height: 8px; border-radius: 50%; }
+
+/* Scholarly, neutral palette: plain white ground, CV cobalt as accent */
+.mock[data-dir="scholarly"][data-palette="neutral"] {
+  --ground: #ffffff; --ink: #1b1c1e; --ink-2: #36383c; --muted: #56595e; --off: #6c6f75; --step: #f2f3f5;
+  --accent: #0047ab;
+}
+.mock[data-dir="scholarly"][data-palette="neutral"][data-theme="dark"] {
+  --ground: #131518; --ink: #e6e7e9; --ink-2: #cdd0d4; --muted: #a2a6ab; --off: #888c92; --step: #1c1f23;
+  --accent: #8db1ff;
+}
+
+/* ---------- Narrow screens ---------- */
+@media (max-width: 860px) {
+  .mock .intro, .mock[data-dir] .intro { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "head photo" "bio photo" "bio contact"; column-gap: var(--s4); align-items: start; }
+  .mock[data-dir="scholarly"] .contact { width: min(var(--photo-w), 30vw); }
+  .mock .photo, .mock[data-dir] .photo { width: min(var(--photo-w), 30vw); margin-top: 0; }
+}
+@media (max-width: 680px) {
+  .site-header nav { order: 3; width: 100%; margin-left: 0; }
+  .header-row { flex-wrap: wrap; justify-content: space-between; row-gap: var(--s1); }
+}
+@media (max-width: 560px) {
+  .mock { --frame: 16px; --s12: 64px; --t-h1: 32px !important; --t-h2: 24px !important; --t-body: 17px !important; }
+  .mock .intro, .mock[data-dir] .intro { grid-template-areas: "head photo" "bio bio" "contact contact"; grid-template-rows: auto; align-items: end; }
+  .mock[data-dir="scholarly"] .contact { width: auto; }
+  .mock .photo, .mock[data-dir] .photo { width: 96px; }
+  .news-list li { grid-template-columns: 1fr; gap: 0; }
+  .mock .pub { grid-template-columns: minmax(0, 1fr); }
+  .mock .year { display: block; text-align: left; font-size: 15px; margin-bottom: 2px; }
+  .mock[data-dir="scholarly"] .year.same { display: none; }
+  .mock[data-dir="scholarly"] .pubs .more { margin-left: 0; }
+  .mock[data-dir="scholarly"] .news-list li { grid-template-columns: 1fr; }
+  .mock[data-dir="scholarly"] .news-list time, .mock[data-dir="scholarly"] .year { text-align: left; font-size: 15px; }
+  .bench { position: static; padding: 8px 16px; }
+  .bench-hint { display: none; }
+  .specs { padding: 48px 16px 64px; }
+  .specs dl { grid-template-columns: 1fr; gap: 2px; }
+  .specs dd { margin-bottom: 12px; }
+}

@@ -12,3 +12,6 @@ build/
 # Screenshot pack for Claude Design (regenerable, large)
 design/input/site/
 design/input/cv/
+
+# Screenshots and notes from the design-taste-frontend skill (regenerable)
+.taste-skill/

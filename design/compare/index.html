@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design directions</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="compare.css">
+</head>
+<body>
+
+<!-- Comparison controls. Not part of any design. -->
+<div class="bench" role="region" aria-label="Comparison controls">
+  <p class="bench-title">Design directions for bsiepe.github.io</p>
+  <div class="bench-controls">
+    <fieldset>
+      <legend>Direction</legend>
+      <button type="button" data-set="dir" value="editorial" aria-pressed="true">1 Editorial</button>
+      <button type="button" data-set="dir" value="technical" aria-pressed="false">2 Technical</button>
+      <button type="button" data-set="dir" value="scholarly" aria-pressed="false">3 Scholarly</button>
+    </fieldset>
+    <fieldset>
+      <legend>Theme</legend>
+      <button type="button" data-set="theme" value="light" aria-pressed="true">Light</button>
+      <button type="button" data-set="theme" value="dark" aria-pressed="false">Dark</button>
+    </fieldset>
+    <fieldset>
+      <legend>Serif (Scholarly)</legend>
+      <button type="button" data-set="serif" value="libertinus" aria-pressed="false">Libertinus</button>
+      <button type="button" data-set="serif" value="literata" aria-pressed="false">Literata</button>
+      <button type="button" data-set="serif" value="crimson" aria-pressed="true">Crimson Pro</button>
+      <button type="button" data-set="serif" value="newsreader" aria-pressed="false">Newsreader</button>
+    </fieldset>
+    <fieldset>
+      <legend>Palette (Scholarly)</legend>
+      <button type="button" data-set="palette" value="warm" aria-pressed="false">Warm + oxblood</button>
+      <button type="button" data-set="palette" value="neutral" aria-pressed="true">Neutral + cobalt</button>
+    </fieldset>
+  </div>
+  <p class="bench-hint">Keys: 1 2 3 direction, d theme, s serif, p palette</p>
+</div>
+
+<!-- The mock home page. Every direction uses this same markup; only CSS differs. -->
+<div class="mock" id="mock" data-dir="scholarly" data-theme="light" data-palette="neutral" data-serif="crimson">
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a class="wordmark" href="#mock">Björn Siepe</a>
+      <nav aria-label="Main">
+        <a href="#pubs">Publications</a>
+        <a href="#mock">Talks</a>
+        <a href="#mock">Workshops</a>
+        <a href="#mock">Software</a>
+        <a href="#mock">Blog</a>
+        <a href="#mock">CV</a>
+      </nav>
+      <div class="header-tools">
+        <button type="button" class="icon-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.5 15.5 21 21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </button>
+        <button type="button" class="icon-btn" data-toggle-theme aria-label="Toggle dark mode">
+          <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap intro">
+      <div class="intro-head">
+        <h1>Björn Siepe</h1>
+        <p class="role">Postdoctoral Researcher, Psychological Methods Lab, Marburg University</p>
+      </div>
+      <figure class="photo">
+        <img src="photo.jpg" width="703" height="859" alt="Portrait of Björn Siepe">
+      </figure>
+      <ul class="contact" aria-label="Contact">
+        <li><a href="#mock">bjoern.siepe@uni-marburg.de</a></li>
+        <li class="contact-profiles"><a href="#mock">ORCID</a><a href="#mock">OSF</a><a href="#mock">GitHub</a></li>
+        <li class="contact-profiles"><a href="#mock">Bluesky</a><a href="#mock">LinkedIn</a></li>
+      </ul>
+      <div class="bio">
+        <p>I am a postdoctoral researcher at <a href="#mock">Marburg University, Germany</a>, where I recently finished my PhD in Psychological Methods. My <a href="#pubs">research</a> focuses on three areas: metascience of methodological research, time series modelling, and applied experience sampling research. Throughout these, I build open source software tools and try to promote open science practices.</p>
+        <p>In my work on time series modelling, I develop and evaluate novel multilevel models for time series data, with a particular emphasis on quantifying and communicating uncertainty in model outputs. To help researchers applying these methods, I have (co-)developed multiple <a href="#mock">software</a> packages for R and Python.</p>
+        <p>This methodological work influences my metascientific work, where I study how we can conduct methodological research in a transparent, robust, and reproducible way. One result of this work was the introduction of <a href="#mock">ADEMP-PreReg</a>, a protocol for reporting and preregistering simulation studies. I'm currently (co-)chairing two working groups on quality standards for simulation studies, and I'm always open to chat about novel ideas to improve methodological research.</p>
+        <p>I have always enjoyed teaching statistics and programming to students and researchers. Over the years, I have given multiple workshops on reproducible research and time series modelling, for which you can find the materials on my <a href="#mock">workshop page</a>.</p>
+        <p>I'm committed to open science practices. Together with collaborators, I built <a href="#mock">openESM</a>, an open-source database of 60+ experience sampling datasets. We are actively working on expanding the database and making it easier for researchers to use it. Updates on the project can be found on the <a href="#mock">openESM blog</a>. I'm also a board member of the <a href="#mock">Open Science Initiative</a> at Marburg University.</p>
+      </div>
+    </section>
+
+    <section class="wrap news" aria-labelledby="news-h">
+      <h2 id="news-h">News</h2>
+      <ol class="news-list">
+        <li><time datetime="2026-07">Jul 2026</time><p>I was awarded a 3-year (~300k €) Individual Research Grant by the German Research Foundation.</p></li>
+        <li><time datetime="2026-07">Jul 2026</time><p>I just defended my PhD in Psychological Methods.</p></li>
+        <li><time datetime="2026-07">Jul 2026</time><p>openESM received a <a href="#mock">SIPS commendation</a>.</p></li>
+      </ol>
+    </section>
+
+    <section class="wrap pubs" id="pubs" aria-labelledby="pubs-h">
+      <h2 id="pubs-h">Selected publications</h2>
+      <ol class="pub-list">
+        <li class="pub">
+          <span class="year">2026</span>
+          <div class="pub-body">
+            <p class="authors"><b>Siepe, B. S.</b>, Kloft, M., Zhang, Y., Petersen, F., Bringmann, L. F., &amp; Heck, D. W.</p>
+            <h3 class="title"><a href="#mock">Using features of dynamic networks to guide treatment selection and outcome prediction: The central role of uncertainty</a></h3>
+            <p class="venue"><i>Psychological Methods</i>, advance online publication</p>
+            <div class="pub-foot">
+              <ul class="slots" aria-label="Materials">
+                <li><a class="slot" href="#mock">Paper</a></li>
+                <li><a class="slot" href="#mock">Preprint</a></li>
+                <li><a class="slot" href="#mock">Code</a></li>
+                <li><a class="slot" href="#mock">Data</a></li>
+                <li><a class="slot" href="#mock">Prereg</a></li>
+              </ul>
+              <ul class="areas" aria-label="Research areas"><li class="area a-ts">Time series</li></ul>
+            </div>
+          </div>
+        </li>
+        <li class="pub">
+          <span class="year same">2026</span>
+          <div class="pub-body">
+            <p class="authors"><b>Siepe, B. S.</b>, Haslbeck, J. M. B., Kloft, M., Büchner, A., Zhang, Y., Fried, E. I., &amp; Heck, D. W.</p>
+            <h3 class="title"><a href="#mock">Introducing openESM: A database of openly available experience sampling datasets</a></h3>
+            <p class="venue"><i>Behavior Research Methods</i>, <i>58</i>(8), 240</p>
+            <div class="pub-foot">
+              <ul class="slots" aria-label="Materials">
+                <li><a class="slot" href="#mock">Paper</a></li>
+                <li><a class="slot" href="#mock">Preprint</a></li>
+                <li><a class="slot" href="#mock">Code</a></li>
+              </ul>
+              <ul class="areas" aria-label="Research areas"><li class="area a-esm">Experience sampling</li></ul>
+            </div>
+          </div>
+        </li>
+        <li class="pub">
+          <span class="year">2024</span>
+          <div class="pub-body">
+            <p class="authors"><b>Siepe, B. S.</b>, Bartoš, F., Morris, T. P., Boulesteix, A.-L., Heck, D. W., &amp; Pawel, S.</p>
+            <h3 class="title"><a href="#mock">Simulation Studies for Methodological Research in Psychology: A Standardized Template for Planning, Preregistration, and Reporting</a></h3>
+            <p class="venue"><i>Psychological Methods</i>, advance online publication</p>
+            <div class="pub-foot">
+              <ul class="slots" aria-label="Materials">
+                <li><a class="slot" href="#mock">Paper</a></li>
+                <li><a class="slot" href="#mock">Preprint</a></li>
+                <li><a class="slot" href="#mock">Code</a></li>
+                <li><a class="slot" href="#mock">Data</a></li>
+                <li><a class="slot" href="#mock">Prereg</a></li>
+              </ul>
+              <ul class="areas" aria-label="Research areas"><li class="area a-sim">Simulation studies</li></ul>
+            </div>
+          </div>
+        </li>
+      </ol>
+      <p class="more"><a href="#pubs">All publications</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <p class="footer-name">Björn Siepe</p>
+      <nav aria-label="Elsewhere">
+        <a href="#mock">Email</a>
+        <a href="#mock">GitHub</a>
+        <a href="#mock">ORCID</a>
+        <a href="#mock">Bluesky</a>
+        <a href="#mock">LinkedIn</a>
+        <a href="#mock">Impressum</a>
+        <a href="#mock">Datenschutz</a>
+      </nav>
+    </div>
+  </footer>
+</div>
+
+<!-- Values for the active direction, written for the handoff into design/. -->
+<section class="specs" aria-labelledby="spec-h">
+  <h2 id="spec-h">Values for the selected direction</h2>
+
+  <div class="spec" data-for="editorial">
+    <p class="spec-lede"><b>1 Editorial.</b> A serif for reading, a sans for everything you scan (navigation, author lines, dates, materials). Closest to a journal page. Accent is the CV's cobalt, so site and CV match.</p>
+    <dl>
+      <dt>Text face</dt><dd>Source Serif 4, 400 and italic, 18 px / 1.6</dd>
+      <dt>Headings</dt><dd>Source Serif 4, 600; 40 / 28 / 19 px, tracking −0.01 em on h1</dd>
+      <dt>Metadata, UI</dt><dd>Source Sans 3, 400 and 600, 15 px (authors, dates, materials, areas)</dd>
+      <dt>Measure</dt><dd>68ch bio, 72ch publication titles</dd>
+      <dt>Ground / ink</dt><dd>light <code>#fdfcfa</code> / <code>#1a1c20</code> · dark <code>#15171b</code> / <code>#e7e5e0</code></dd>
+      <dt>Muted text</dt><dd>light <code>#55585e</code> · dark <code>#a3a6ab</code></dd>
+      <dt>Accent</dt><dd>light <code>#0047ab</code> · dark <code>#8db1ff</code></dd>
+      <dt>Missing material</dt><dd>light <code>#6c6f75</code> · dark <code>#8a8e95</code>, regular weight (present ones are 600, in accent)</dd>
+      <dt>Photo</dt><dd>4:5 rectangle, 208 px wide, square corners, right of the name</dd>
+    </dl>
+  </div>
+
+  <div class="spec" data-for="technical">
+    <p class="spec-lede"><b>2 Technical.</b> One sans throughout, with Plex Mono for years and the materials row so the slots line up like a table. Denser lists, the year as a column. Reads like documentation.</p>
+    <dl>
+      <dt>Text face</dt><dd>IBM Plex Sans, 400 and italic, 17 px / 1.6</dd>
+      <dt>Headings</dt><dd>IBM Plex Sans, 600; 36 / 24 / 17 px, tracking −0.02 em on h1</dd>
+      <dt>Metadata</dt><dd>IBM Plex Mono, 400, 13 px (years, dates, materials, areas)</dd>
+      <dt>Measure</dt><dd>68ch bio; publication list uses a 64 px year column</dd>
+      <dt>Ground / ink</dt><dd>light <code>#ffffff</code> / <code>#121417</code> · dark <code>#0f1214</code> / <code>#e4e7ea</code></dd>
+      <dt>Surface step</dt><dd>light <code>#f1f3f5</code> · dark <code>#1a1e22</code> (present materials sit on it)</dd>
+      <dt>Accent</dt><dd>light <code>#0b5d6b</code> · dark <code>#6cc0cc</code></dd>
+      <dt>Missing material</dt><dd>light <code>#6f747b</code> · dark <code>#868c93</code>, no fill</dd>
+      <dt>Photo</dt><dd>square, 120 px, next to name and role</dd>
+      <dt>Home layout</dt><dd>news in a 300 px column to the right of the bio (desktop); below it on phones</dd>
+      <dt>Note</dt><dd>The taste skill bans monospace outside code. Kept here because it was part of the plan; drop it and the direction still works with Plex Sans tabular figures.</dd>
+    </dl>
+  </div>
+
+  <div class="spec" data-for="scholarly">
+    <p class="spec-lede"><b>3 Scholarly.</b> A book serif for headings and titles, Atkinson Hyperlegible (your current text face) for reading. News dates and publication years share one margin column and one style. Each entry is one serif title between two quiet metadata lines; only materials that exist are listed.</p>
+    <dl>
+      <dt>Text face</dt><dd>Atkinson Hyperlegible, 400 and italic, 17 px / 1.65</dd>
+      <dt>Headings, titles</dt><dd>Crimson Pro, 500 for headings, 600 for publication titles; 48 / 30 / 21 px</dd>
+      <dt>Dates, years</dt><dd>heading serif, 17 px, muted, in an 80 px column on the same left edge as the name, bio and section headings; entry text starts 104 px in</dd>
+      <dt>Entry</dt><dd>authors 15/22 px muted, 4 px, title 20/26 px, 4 px, venue 15/22 px muted with the journal italic in ink, 8 px, materials and areas on one line at 15 px. 40 px between entries.</dd>
+      <dt>Materials</dt><dd>only those that exist, in accent, regular weight, underlined on hover, separated by a muted middle dot</dd>
+      <dt>Ground / ink</dt><dd>neutral: light <code>#ffffff</code> / <code>#1b1c1e</code>, dark <code>#131518</code> / <code>#e6e7e9</code>. Warm: light <code>#fbfaf7</code> / <code>#1e1c1a</code>, dark <code>#171514</code> / <code>#ebe7e1</code></dd>
+      <dt>Muted text</dt><dd>neutral: light <code>#56595e</code>, dark <code>#a2a6ab</code></dd>
+      <dt>Accent</dt><dd>neutral: CV cobalt, light <code>#0047ab</code>, dark <code>#8db1ff</code>. Warm: <code>#7a2333</code>, <code>#e5939f</code></dd>
+      <dt>Photo</dt><dd>4:5 rectangle, 240 px wide, 4 px radius, right of the bio</dd>
+      <dt>Contact</dt><dd>under the photo, 15 px text face: work email; ORCID, OSF, GitHub on one line; Bluesky, LinkedIn on the next; middle dots between links. 24 px above. On phones it follows the bio.</dd>
+    </dl>
+  </div>
+
+  <div class="spec-shared">
+    <h3>Shared by all three</h3>
+    <dl>
+      <dt>Type scale</dt><dd>six steps: 13, 15, 17–18, 19–22, 24–30, 36–48 px (body and display vary per direction)</dd>
+      <dt>Spacing</dt><dd>8 px base: 8, 16, 24, 32, 48, 64, 96, 128. Section gap 96 px desktop, 64 px phone.</dd>
+      <dt>Frame</dt><dd>content 1040 px max, 32 px side margins (16 px phone)</dd>
+      <dt>Area colours</dt><dd>softened from the brief. Light: simulation <code>#2556a0</code> (brief <code>#0047ab</code>), time series <code>#23867a</code> (<code>#2a9d8f</code>), experience sampling <code>#a7661f</code> (<code>#c77d2a</code>). Dark: <code>#8eb0ea</code>, <code>#6cc4b8</code>, <code>#dda66a</code>.</dd>
+      <dt>No</dt><dd>gradients, shadows, animation, divider lines, uppercase labels, icon cards</dd>
+    </dl>
+  </div>
+</section>
+
+<script src="compare.js"></script>
+</body>
+</html>
