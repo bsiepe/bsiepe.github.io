@@ -24,16 +24,16 @@ const where = (s: WorkshopSession) => [s.host, place(s)].filter(Boolean).join(',
 	<head>
 		<BaseHead title={`Workshops | ${SITE_TITLE}`} description={`Workshops taught by ${SITE_TITLE}`} />
 		<style>
-			.sessions { list-style: none; padding: 0; margin: 0.5rem 0 0; font-size: 0.95rem; }
+			.sessions { list-style: none; padding: 0; margin: var(--s2) 0 var(--s1); font-size: 15px; }
 			.sessions li {
 				display: grid;
 				grid-template-columns: 8rem 1fr auto;
-				gap: 1rem;
-				padding: 0.3rem 0;
+				gap: var(--s3);
+				padding: 4px 0;
 				align-items: baseline;
 			}
-			.sessions time { color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
-			.session-meta { display: block; font-size: 0.9rem; color: var(--color-text-muted); }
+			.sessions time { font-family: var(--font-serif); font-size: 17px; color: var(--color-text-muted); font-variant-numeric: lining-nums tabular-nums; }
+			.session-meta { display: block; color: var(--color-text-muted); }
 			.item-desc :global(p) { margin: 0.25rem 0 0; }
 			@media (max-width: 720px) {
 				.sessions li { grid-template-columns: 1fr; gap: 0.1rem; }

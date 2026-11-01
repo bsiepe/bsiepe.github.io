@@ -35,13 +35,12 @@ const LINKS = [
 			.schedule > li {
 				display: grid;
 				grid-template-columns: 9.5rem 1fr auto;
-				gap: 1rem;
-				padding: 0.75rem 0;
-				border-bottom: 1px solid var(--color-border);
+				gap: var(--s3);
+				padding: var(--s1) 0;
 				align-items: baseline;
 			}
-			.schedule time { white-space: nowrap; color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
-			.schedule .speakers { display: block; font-size: 0.9rem; color: var(--color-text-muted); }
+			.schedule time { white-space: nowrap; font-family: var(--font-serif); font-size: 17px; color: var(--color-text-muted); font-variant-numeric: lining-nums tabular-nums; }
+			.schedule .speakers { display: block; font-size: 15px; color: var(--color-text-muted); }
 			.schedule .slots { margin: 0; }
 			@media (max-width: 720px) {
 				.facts { grid-template-columns: 1fr; }

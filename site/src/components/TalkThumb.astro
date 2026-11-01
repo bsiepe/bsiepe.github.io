@@ -21,31 +21,32 @@ const file = ['.png', '.jpg', '.jpeg', '.webp'].map((e) => id + e).find((f) => f
 </a>
 
 <style>
+	/* A tone step frames the slide instead of a border line. */
 	.thumb {
 		display: block;
 		width: 12rem;
 		aspect-ratio: 16 / 9;
 		flex-shrink: 0;
-		border: 1px solid var(--color-border);
-		border-radius: 4px;
+		padding: 6px;
 		overflow: hidden;
-		background: var(--color-bg);
+		background: var(--color-step);
+		text-decoration: none;
 	}
-	.thumb:hover { opacity: 1; text-decoration: none; border-color: var(--color-text-muted); }
 	img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
 	.card {
 		display: flex;
 		align-items: center;
 		height: 100%;
-		padding: 0.6rem 0.75rem;
+		padding: 8px 10px;
 		font-family: var(--font-serif);
-		font-size: 0.85rem;
-		line-height: 1.25;
+		font-size: 17px;
+		font-weight: 500;
+		line-height: 1.2;
 		color: var(--color-text-main);
 		overflow: hidden;
 	}
 	@media (max-width: 720px) {
 		.thumb { width: 100%; max-width: 24rem; }
-		.card { font-size: 1.1rem; padding: 1rem; }
+		.card { font-size: 21px; padding: 16px; }
 	}
 </style>

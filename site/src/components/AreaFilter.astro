@@ -20,24 +20,27 @@ const areas = Object.keys(AREA_LABELS).filter((a) => counts[a]);
 </div>
 
 <style>
-	.area-filter { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1.5rem; }
+	.area-filter { display: flex; flex-wrap: wrap; gap: var(--s1); margin: 0 0 var(--s6); }
 	.area-filter[hidden] { display: none; }
 	button {
+		display: inline-flex;
+		align-items: center;
+		gap: 8px;
 		font: inherit;
-		font-size: 0.9rem;
-		padding: 0.25rem 0.75rem;
-		border: 1px solid var(--color-border);
-		border-left: 3px solid var(--color-accent);
-		border-radius: 4px;
+		font-size: 15px;
+		padding: 6px 12px;
+		border: 0;
+		border-radius: 0;
 		background: transparent;
 		color: var(--color-text-muted);
 		cursor: pointer;
 	}
-	button[data-area=''] { border-left-color: var(--color-border); }
-	button.area-timeseries { border-left-color: #2a9d8f; }
-	button.area-esm { border-left-color: #c77d2a; }
-	button[aria-pressed='true'] { color: var(--color-text-main); border-color: var(--color-text-muted); font-weight: 700; }
-	.count { color: var(--color-text-muted); font-weight: 400; }
+	button:hover { color: var(--color-text-main); }
+	button[class^='area-']::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--area-simulation); }
+	button.area-timeseries::before { background: var(--area-timeseries); }
+	button.area-esm::before { background: var(--area-esm); }
+	button[aria-pressed='true'] { background: var(--color-step); color: var(--color-text-main); }
+	.count { font-variant-numeric: tabular-nums; }
 </style>
 
 <script>
@@ -52,6 +55,14 @@ const areas = Object.keys(AREA_LABELS).filter((a) => counts[a]);
 			for (const b of buttons) b.setAttribute('aria-pressed', String(b.dataset.area === area));
 			for (const e of entries) e.hidden = !!area && !e.dataset.areas!.split(' ').includes(area);
 			for (const s of sections) s.hidden = !s.querySelector('[data-areas]:not([hidden])');
+			// Print each year once per section, counting only the entries still shown.
+			for (const s of sections) {
+				let last = '';
+				for (const y of s.querySelectorAll<HTMLElement>('[data-areas]:not([hidden]) .pub-year')) {
+					y.classList.toggle('repeat', y.textContent === last);
+					last = y.textContent ?? '';
+				}
+			}
 			const u = new URL(location.href);
 			if (area) u.searchParams.set('area', area);
 			else u.searchParams.delete('area');

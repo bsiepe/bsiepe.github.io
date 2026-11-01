@@ -30,8 +30,8 @@ const shared = pubs.some((p) => p.shared_first || p.shared_second);
 		<main data-pagefind-body>
 			<h1>Publications</h1>
 			<p class="lead">
-				Every paper lists the same materials: paper, preprint, code, data, materials, and
-				preregistration. Greyed-out entries are not available.
+				Each paper links to the materials that exist, always in the same order: paper,
+				preprint, code, data, materials, and preregistration.
 				{shared && <> <sup>†</sup> shared first authorship, <sup>‡</sup> shared second authorship.</>}
 				All entries as <a href={url('/publications.bib')}>BibTeX</a> or <a href={url('/publications.json')}>CSL-JSON</a>.
 			</p>
@@ -39,7 +39,9 @@ const shared = pubs.some((p) => p.shared_first || p.shared_second);
 			{groups.map((g) => (
 				<section data-filter-section>
 					<h2>{g.title}</h2>
-					{g.items.map((p) => <PublicationEntry pub={p} />)}
+					<div class="pub-list">
+						{g.items.map((p, k) => <PublicationEntry pub={p} repeatYear={k > 0 && g.items[k - 1].year === p.year} />)}
+					</div>
 				</section>
 			))}
 		</main>

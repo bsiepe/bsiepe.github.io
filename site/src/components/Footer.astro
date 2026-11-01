@@ -7,49 +7,43 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="site-footer">
-	<div class="footer-content">
-		<div>&copy; {year} {SITE_TITLE}</div>
+	<div class="footer-row">
+		<p class="footer-name">{SITE_TITLE}</p>
 		<nav class="footer-links" aria-label="Contact and profiles">
 			{SOCIAL_LINKS.map((l) => <a href={l.href}>{l.label}</a>)}
 			<a href={url('/impressum/')}>Impressum</a>
 			<a href={url('/datenschutz/')}>Datenschutz</a>
 		</nav>
 	</div>
-	<div class="footer-credit">
-		Built with <a href="https://astro.build">Astro</a> on the
+	<p class="footer-credit">
+		&copy; {year} {SITE_TITLE}. Built with <a href="https://astro.build">Astro</a> on the
 		<a href="https://github.com/shravanngoswamii/astro-scholar">astro-scholar</a> theme.
 		<a href="https://github.com/bsiepe/bsiepe.github.io">Source</a>
-	</div>
+	</p>
 </footer>
 
 <Search />
 
 <style>
 	.site-footer {
-		border-top: 1px solid var(--color-border);
-		margin-top: 4rem;
-		padding: 2rem 1rem;
-		font-size: 0.9rem;
-		color: var(--color-text-muted);
+		margin-top: var(--s12);
+		padding: var(--s6) var(--frame) var(--s8);
+		background: var(--color-step);
+		font-size: 15px;
 	}
-	.footer-content,
-	.footer-credit {
-		max-width: var(--max-width);
-		margin: 0 auto;
-	}
-	.footer-content {
+	.footer-row, .footer-credit { max-width: var(--max-width); margin: 0 auto; }
+	.footer-row {
 		display: flex;
 		flex-wrap: wrap;
+		align-items: baseline;
 		justify-content: space-between;
-		gap: 1rem;
+		gap: var(--s2) var(--s4);
 	}
-	.footer-links {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 1.25rem;
-	}
-	.footer-credit {
-		margin-top: 1rem;
-		font-size: 0.8rem;
+	.footer-name { margin: 0; font-family: var(--font-serif); font-size: 21px; font-weight: 500; }
+	.footer-links { display: flex; flex-wrap: wrap; gap: 4px var(--s3); }
+	.footer-credit { margin-top: var(--s3); color: var(--color-text-muted); }
+	.footer-credit a { color: inherit; }
+	@media (max-width: 560px) {
+		.site-footer { margin-top: var(--s8); }
 	}
 </style>

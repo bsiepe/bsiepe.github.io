@@ -29,14 +29,14 @@ const roleNote = (roles: string[]) =>
 			.events li {
 				display: grid;
 				grid-template-columns: 8rem 1fr auto;
-				gap: 1rem;
-				padding: 0.75rem 0;
-				border-bottom: 1px solid var(--color-border);
+				gap: var(--s3);
+				padding: var(--s1) 0;
 				align-items: baseline;
 			}
-			.events time { color: var(--color-text-muted); font-variant-numeric: tabular-nums; }
+			.events time { font-family: var(--font-serif); font-size: 17px; color: var(--color-text-muted); font-variant-numeric: lining-nums tabular-nums; }
 			.event-title { display: block; font-style: italic; color: var(--color-text-muted); }
-			.event-meta { display: block; font-size: 0.9rem; color: var(--color-text-muted); }
+			.event-meta { display: block; font-size: 15px; color: var(--color-text-muted); }
+			.license { margin-top: var(--s6); }
 			@media (max-width: 720px) {
 				.events li { grid-template-columns: 1fr; gap: 0.2rem; }
 			}
@@ -77,10 +77,10 @@ const roleNote = (roles: string[]) =>
 			{related.length > 0 && (
 				<>
 					<h2>Related publications</h2>
-					{related.map((p) => <PublicationEntry pub={p} abstract={false} />)}
+					<div class="pub-list">{related.map((p, k) => <PublicationEntry pub={p} abstract={false} repeatYear={k > 0 && related[k - 1].year === p.year} />)}</div>
 				</>
 			)}
-			{t.license && <p class="item-meta">Slides licensed under {t.license.replace(/-/g, ' ')}.</p>}
+			{t.license && <p class="item-meta license">Slides licensed under {t.license.replace(/-/g, ' ')}.</p>}
 		</main>
 		<Footer />
 	</body>

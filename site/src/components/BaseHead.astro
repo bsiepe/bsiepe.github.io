@@ -17,8 +17,22 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const defaultImg = `/${PROFILE.social_image}`;
 
 const { title, description, image = defaultImg } = Astro.props;
-const atkinsonRegular = url('/fonts/atkinson-regular.woff');
-const atkinsonBold = url('/fonts/atkinson-bold.woff');
+// Self-hosted fonts (OFL 1.1, public/fonts/licenses/): latin and latin-ext subsets.
+const LATIN = 'U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD';
+const LATIN_EXT = 'U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF';
+const FACES: [family: string, file: string, weight: number, style: string][] = [
+	['Atkinson Hyperlegible', 'atkinson-hyperlegible', 400, 'normal'],
+	['Atkinson Hyperlegible', 'atkinson-hyperlegible', 400, 'italic'],
+	['Atkinson Hyperlegible', 'atkinson-hyperlegible', 700, 'normal'],
+	['Crimson Pro', 'crimson-pro', 400, 'normal'],
+	['Crimson Pro', 'crimson-pro', 500, 'normal'],
+	['Crimson Pro', 'crimson-pro', 600, 'normal'],
+];
+const fontFaces = FACES.flatMap(([family, file, weight, style]) =>
+	[['latin', LATIN], ['latin-ext', LATIN_EXT]].map(([subset, range]) =>
+		`@font-face { font-family: "${family}"; src: url("${url(`/fonts/${file}-${subset}-${weight}-${style}.woff2`)}") format("woff2"); font-weight: ${weight}; font-style: ${style}; font-display: swap; unicode-range: ${range}; }`,
+	),
+).join('\n');
 
 const resolveImage = (img: string) => {
     if (img.startsWith('http')) return img;
@@ -59,21 +73,15 @@ const imageUrl = typeof image === 'string'
 	/* CSS variables inline — available immediately in all modes (dev + prod), before any external CSS */
 	:root {
 		--color-bg: #ffffff;
-		--color-bg-offset: #ffffff;
-		--color-bg-header: rgba(255, 255, 255, 0.85);
-		--color-text-main: #1a1a1a;
-		--color-text-muted: #555555;
-		--color-accent: #0047AB;
-		--color-border: #eaeaea;
+		--color-text-main: #1b1c1e;
+		--color-text-muted: #56595e;
+		--color-accent: #0047ab;
 	}
 	[data-theme='dark'] {
-		--color-bg: #0f172a;
-		--color-bg-offset: #0f172a;
-		--color-bg-header: rgba(15, 23, 42, 0.8);
-		--color-text-main: #e2e8f0;
-		--color-text-muted: #94a3b8;
-		--color-accent: #7aa7ff;
-		--color-border: #334155;
+		--color-bg: #131518;
+		--color-text-main: #e6e7e9;
+		--color-text-muted: #a2a6ab;
+		--color-accent: #8db1ff;
 	}
 	html, body { min-height: 100%; background-color: var(--color-bg); }
 	@media (prefers-color-scheme: dark) {
@@ -81,29 +89,6 @@ const imageUrl = typeof image === 'string'
 	}
 	html[data-theme='dark'], html[data-theme='dark'] body { background-color: var(--color-bg); color-scheme: dark; }
 	html[data-theme='light'], html[data-theme='light'] body { background-color: var(--color-bg); color-scheme: light; }
-	/* Critical header layout — prevents FOUC before component CSS loads */
-	header {
-		position: sticky;
-		top: 0;
-		z-index: 100;
-		padding: 0 1em;
-		backdrop-filter: blur(12px);
-		-webkit-backdrop-filter: blur(12px);
-	}
-	header nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		max-width: 960px;
-		margin: 0 auto;
-		height: 4.5rem;
-	}
-	header { background-color: var(--color-bg-header); }
-	/* Critical card backgrounds — prevents white flash in dark mode */
-	.project-card, .interactive-card, .pi-card, .collab-card, .team-card {
-		background-color: var(--color-bg-offset);
-		border-color: var(--color-border);
-	}
 	body {
 		background-color: var(--color-bg);
 		color: var(--color-text-main);
@@ -127,26 +112,7 @@ const imageUrl = typeof image === 'string'
 <meta name="generator" content={Astro.generator} />
 <meta name="color-scheme" content="light dark" />
 
-<style
-	is:inline
-	set:html={`
-		@font-face {
-			font-family: "Atkinson";
-			src: url("${atkinsonRegular}") format("woff");
-			font-weight: 400;
-			font-style: normal;
-			font-display: swap;
-		}
-
-		@font-face {
-			font-family: "Atkinson";
-			src: url("${atkinsonBold}") format("woff");
-			font-weight: 700;
-			font-style: normal;
-			font-display: swap;
-		}
-	`}
-/>
+<style is:inline set:html={fontFaces} />
 
 <link rel="canonical" href={canonicalURL} />
 

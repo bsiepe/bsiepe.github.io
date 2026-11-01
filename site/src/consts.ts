@@ -20,6 +20,19 @@ export const SOCIAL_LINKS: ReadonlyArray<{ label: string; href: string }> = [
 	{ label: 'LinkedIn', href: p.linkedin },
 ];
 
+// Contact block under the photo on the home page, in two lines.
+export const CONTACT_LINES: ReadonlyArray<ReadonlyArray<{ label: string; href: string }>> = [
+	[
+		{ label: 'ORCID', href: `https://orcid.org/${p.orcid}` },
+		{ label: 'OSF', href: `https://osf.io/${p.osf}/` },
+		{ label: 'GitHub', href: `https://github.com/${p.github}` },
+	],
+	[
+		{ label: 'Bluesky', href: `https://bsky.app/profile/${p.bluesky}` },
+		{ label: 'LinkedIn', href: p.linkedin },
+	],
+];
+
 // GoatCounter analytics, production builds only. The script is self-hosted
 // (public/js/count.js, ISC license); only the page-view beacon goes to this endpoint.
 // Explicit exception to the no-external-requests rule (REDESIGN.md, open question 2).
