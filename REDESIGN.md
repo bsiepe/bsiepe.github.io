@@ -238,8 +238,9 @@ without year; packages released for R and Python are two software entries.
   that carry no information.
 - Pages: home (bio, news), publications, talks, workshops, software, blog,
   CV (download link, no iframe), lecture series, Impressum, Datenschutz.
-- Publications: fixed artifact slots per paper (preprint, data, code, materials,
-  prereg), missing ones greyed out, not hidden. Area tags visible; papers spanning
+- Publications: artifact links per paper in a fixed order (paper, preprint, code,
+  data, materials, prereg); only the ones that exist are shown (changed 2026-11-01,
+  previously missing ones were greyed out). Area tags visible; papers spanning
   two areas make that visible.
 - Talks: one page per deck, sorted by most recent event, all events listed, each
   with its own PDF. Thumbnail from the first page of the most recent PDF
