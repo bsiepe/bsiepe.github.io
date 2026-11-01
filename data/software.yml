@@ -15,7 +15,7 @@
     website: "https://openesmdata.org"
     github: "https://github.com/openesm-project/"
   publications: [siepe-openesm]
-  areas: [esm]
+  areas: [ esm, open-science ]
   tags: [open-science, openesm]
 
 - id: varcheck
@@ -32,7 +32,7 @@
   links:
     github: "https://github.com/bsiepe/VARcheck"
   publications: [haslbeck-model-checking-var]
-  areas: [timeseries]
+  areas: [ timeseries ]
 
 - id: openesm-r
   name: openesm
@@ -48,7 +48,7 @@
   links:
     github: "https://github.com/openesm-project/"
   publications: [siepe-openesm]
-  areas: [esm]
+  areas: [ esm, open-science ]
   tags: [openesm]
 
 - id: openesm-python
@@ -64,11 +64,12 @@
     pypi: "https://pypi.org/project/openesm/"
     github: "https://github.com/openesm-project/"
   publications: [siepe-openesm]
-  areas: [esm]
+  areas: [ esm, open-science ]
   tags: [openesm]
 
 - id: intervalpsych
   name: intervalpsych
+  areas: [ bayesian ]
   description: "Analyzing Interval Data in Psychometrics"
   kind: package
   languages: [R]
@@ -97,7 +98,7 @@
   links:
     github: "https://github.com/FBartos/PublicationBiasBenchmark"
   publications: [bartos-living-synthetic-benchmarks]
-  areas: [simulation]
+  areas: [ simulation, metascience ]
 
 - id: gimme
   name: gimme
@@ -114,7 +115,7 @@
   year: 2014
   contribution_year: 2025
   doi: "10.32614/CRAN.package.gimme"
-  areas: [timeseries]
+  areas: [ timeseries, networks ]
   tags: [network-analysis]
 
 - id: tsnet
@@ -131,5 +132,5 @@
   links:
     github: "https://github.com/bsiepe/tsnet"
   publications: [siepe-bayesian-idiographic-networks]
-  areas: [timeseries]
+  areas: [ timeseries, networks, bayesian ]
   tags: [bayesian, network-analysis]

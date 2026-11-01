@@ -42,7 +42,7 @@
     code: "https://osf.io/njvgc/"
     data: "https://osf.io/njvgc/"
     prereg: "https://osf.io/a96dt/overview"
-  areas: [ timeseries ]
+  areas: [ timeseries, networks, bayesian, simulation ]
   selected: true
   abstract: Multivariate time series models are commonly used in psychology to investigate person-specific associations between multiple variables. They are often represented and interpreted as dynamic network models, where features such as the centrality of nodes can potentially guide treatment selection and outcome prediction. Researchers typically rely on point estimates of specific network features while ignoring estimation uncertainty, which can lead to wrong inferences and over-optimistic claims. We introduce a one-step Bayesian approach for estimating multilevel vector autoregressive models (BmlVAR), which enables uncertainty quantification for person-specific network features and the regression of external outcomes on such features. In a preregistered simulation study, we compare the new model with several popular methods for network estimation. We also apply all methods to empirical data to highlight their differences. Our simulation results indicate that all methods perform mediocrely in estimating different centrality measures in practically relevant settings. BmlVAR still outperforms the other methods in many simulation conditions, especially regarding the statistical power to detect associations with an outcome. However, estimating the model properly can be challenging with limited data. Overall, all methods require a lot of data or very large effects to produce reasonably accurate results. Thus, although centrality measures based on dynamic networks have been widely used, our simulation study suggests they are unlikely to work well for achieving major goals of interest, such as guiding treatment selection and outcome prediction. We provide a new model that incorporates estimation uncertainty into the modelling process, thereby protecting against premature conclusions.
 
@@ -94,7 +94,7 @@
   links:
     code: "https://github.com/openesm-project/"
     website: "https://openesmdata.org"
-  areas: [ esm ]
+  areas: [ esm, open-science ]
   selected: true
   abstract: "Experience sampling via mobile devices enables unprecedented insights into daily life. However, individual studies often cannot answer research questions conclusively, and open data are scattered across repositories in different formats. This impedes research into robustness, generalizability, and heterogeneity. We address this issue by introducing, an open-source database of openly available experience sampling datasets in a harmonized format. The growing database currently comprises 60 datasets with more than 16,000 participants and more than 740,000 observations. Metadata can be searched via our website ( openesmdata.org ) to select and download datasets via packages in R and Python. We demonstrate the potential of through an analysis of within-person correlations of positive and negative affect in 39 datasets, providing evidence for a large negative momentary correlation ( $$-0.49$$ - 0.49, 95% CI: [ $$-0.54$$ - 0.54, $$-0.42$$ - 0.42 ]). We end by discussing the design principles that will allow to become a continuously evolving community resource for cumulative experience sampling research."
 
@@ -133,7 +133,7 @@
   year: 2026
   status: preprint
   preprint_doi: "10.31234/osf.io/cxjrb_v1"
-  areas: [ simulation ]
+  areas: [ simulation, open-science, metascience ]
   abstract: Simulation studies play a central role in methodological research by providing evidence about the empirical performance of statistical methods. At the same time, they involve substantial researcher degrees of freedom in the choice of data-generating mechanisms, methods, performance measures, and reporting decisions, which can undermine the credibility of their results. Preregistration has been proposed as a tool to increase transparency and reduce such flexibility, yet its role in simulation studies remains contested. In this paper, we discuss why researchers should or should not preregister their simulation studies, elaborating on the theoretical and pragmatic benefits as well as disadvantages of preregistration. Drawing on philosophical accounts, we argue that preregistration primarily reduces epistemic uncertainty about which simulation conditions were considered and why, which enables honest evaluation of whether results support the conclusions drawn. We argue that the resulting benefits depend critically on the aims of a study and its position within the methodological research cycle. Late-phase studies that investigate mature methods tend to benefit more, while early-phase studies investigating newly proposed methods generally benefit less from preregistration. We further discuss practical challenges specific to simulation studies, including the timing of preregistration, the role of preliminary simulations, and safeguards against post hoc registration. Finally, we outline concrete guidance on how to preregister simulation studies and discuss Registered Reports as a particularly promising format. Overall, we argue for a nuanced, purpose-driven use of preregistration that supports rather than hinders methodological progress.
 
 - id: huth-social-connection-loneliness
@@ -175,7 +175,7 @@
   links:
     code: "https://github.com/FBartos/PublicationBiasBenchmark"
     data: "https://github.com/FBartos/PublicationBiasBenchmark"
-  areas: [ simulation ]
+  areas: [ simulation, metascience ]
   abstract: Simulation studies are widely used to evaluate statistical methods. However, new methods are often introduced and evaluated using data-generating mechanisms (DGMs) devised by the same authors. This coupling creates misaligned incentives, e.g., the need to demonstrate the superiority of new methods, potentially compromising the neutrality of simulation studies. Furthermore, results of simulation studies are often difficult to compare due to differences in DGMs, competing methods, and performance measures. This fragmentation can lead to conflicting conclusions, hinder methodological progress, and delay the adoption of effective methods. To address these challenges, we introduce the concept of living synthetic benchmarks. The key idea is to disentangle method and simulation study development and continuously update the benchmark whenever a new DGM, method, or performance measure becomes available. This separation benefits the neutrality of method evaluation, emphasizes the development of both methods and DGMs, and enables systematic comparisons. In this paper, we outline a blueprint for building and maintaining such benchmarks, discuss the technical and organizational challenges of implementation, and demonstrate feasibility with a prototype benchmark for publication bias adjustment methods. We conclude that living synthetic benchmarks have the potential to foster neutral, reproducible, and cumulative evaluation of methods, benefiting both method developers and users.
 
 - id: pfadt-methodological-metamorphosis
@@ -236,6 +236,7 @@
     code: "https://osf.io/r7u23/"
     data: "https://osf.io/r7u23/"
     prereg: "https://osf.io/6hc9w/"
+  areas: [ bayesian, open-science, metascience ]
   abstract: The field of psychology is in the midst of a methodological revolution. To quantify the changes, we tracked the adoption of Bayesian inference and open science practices across 28,738 articles from six top-tier (15,634 articles) and six mid-tier (13,104 articles) psychology journals over a twenty-year period (2004–2024). For the top-tier journals, human (50%) and LLM-assisted (50%) full-text coding revealed that in 2024, about 1 in every 4 articles (26%) reported a Bayesian analysis, about 2 in every 5 articles (41%) included a preregistration, and about 3 in every 4 articles (73%) provided open data. For the mid-tier journals, LLM full-text coding showed that in 2024, about 1 in every 6 articles (16%) contained a Bayesian analysis, about 1 in every 5 articles (18%) was preregistered, and about 2 in every 5 articles (40%) openly shared data. From 2004 to 2012, these practices were virtually nonexistent. Application of a Bayesian logistic growth model suggests these practices will continue to rise in the future, although the extent of their growth remains uncertain. In addition, our review revealed that mixed-effects models have become more prevalent; software reporting has improved, with growing use of R alongside a relative decline of SPSS; and that estimation-focused reporting showed only modest gains. Despite considerable heterogeneity between journals, our results present a detailed account of the ways in which articles from 2024 differ methodologically from those that were published only a decade before.
 
 - id: hehlmann-affect-dynamics-treatment-outcome
@@ -284,6 +285,7 @@
   links:
     code: "https://osf.io/r32by/"
     data: "https://osf.io/r32by/"
+  areas: [ bayesian, simulation ]
   abstract: Cultural consensus theory (CCT) leverages shared knowledge between individuals to optimally aggregate answers to questions for which the underlying truth is unknown. Existing CCT models have predominantly focused on unidimensional point truths using dichotomous, polytomous, or continuous response formats. However, certain domains, such as risk assessment or interpretation of verbal quantifiers, may require a consensus focused on intervals, capturing a range of relevant values. We introduce the interval consensus model (ICM), a novel extension of CCT designed to estimate consensus intervals from continuous bounded interval responses. We use a Bayesian hierarchical modeling approach to estimate latent consensus intervals. In a simulation study, we show that, under the conditions studied, the ICM performs better than using simple means and medians of the responses. We then apply the model to empirical judgments of verbal quantifiers.
 
 - id: pawel-missingness-simulation-studies
@@ -306,7 +308,7 @@
   links:
     code: "https://github.com/SamCH93/missSim"
     data: "https://github.com/SamCH93/missSim"
-  areas: [ simulation ]
+  areas: [ simulation, metascience ]
   abstract: Simulation studies are commonly used in methodological research for the empirical evaluation of data analysis methods. They generate artificial data sets under specified mechanisms and compare the performance of methods across conditions. However, simulation repetitions do not always produce valid outputs, e.g., due to non-convergence or other algorithmic failures. This phenomenon complicates the interpretation of results, especially when its occurrence differs between methods and conditions. Despite the potentially serious consequences of such "missingness", quantitative data on its prevalence and specific guidance on how to deal with it are currently limited. To this end, we reviewed 482 simulation studies published in various methodological journals and systematically assessed the prevalence and handling of missingness. We found that only 23% (111/482) of the reviewed simulation studies mention missingness, with even fewer reporting frequency (92/482 = 19%) or how it was handled (67/482 = 14%). We propose a classification of missingness and possible solutions. We give various recommendations, most notably to always quantify and report missingness, even if none was observed, to align missingness handling with study goals, and to share code and data for reproduction and reanalysis. Using a case study on publication bias adjustment methods, we illustrate common pitfalls and solutions.
 
 - id: siepe-ema-passive-sensors
@@ -350,7 +352,7 @@
     data: "https://github.com/bsiepe/network-multiverse"
     prereg: "https://osf.io/ahcx5"
     app: "https://bsiepe.shinyapps.io/shiny-app/"
-  areas: [ timeseries ]
+  areas: [ timeseries, networks ]
   abstract: Specifying complex time series models typically allows for a wide range of plausible analysis strategies. However, researchers typically perform and report only a single, preferred analysis while ignoring alternatives that could yield different conclusions. As a remedy, we propose multiverse analysis to investigate the robustness of dynamic network analysis to arbitrary modeling choices. We focus on group iterative multiple model estimation (GIMME), a highly data-driven approach, and re-analyze two datasets (combined *n* = 199). We vary seven modeling parameters, resulting in 3,888 fitted models. Group-level and to a lesser extent subgroup-level results were mostly stable. Individual-level estimates were more heterogeneous, with some decisions strongly influencing results and conclusions. The robustness of GIMME to alternative modeling choices depends on the level of analysis. For some individuals, results may differ strongly even when changing the algorithm only slightly. Multiverse analysis is a valuable tool for checking the robustness of results from time series models.
 
 - id: cloos-visual-analog-scales
@@ -424,7 +426,7 @@
   year: 2025
   status: published
   doi: "10.1075/rmal.14.08fre"
-  areas: [ timeseries ]
+  areas: [ timeseries, networks ]
   abstract: "In this chapter, we use temporal network analysis to model longitudinal associations among six variables. We present three different networks to illustrate the threefold framework that temporal network analysis offers for analysing time-series data ( Blanchard et al., 2023 ): a temporal network (how variables predict one another from one timepoint to the next), a contemporaneous network (how variables are related within the same timeframe), and a between-subjects network (how variables are related across individuals). Conceptually, a network approach has many affordances for CDST-inspired research. Temporal network analysis is an exploratory, data-driven method that is conceptually aligned with many aspects of CDST. Methodologically however, temporal network analysis presents several challenges, including the large number of data points needed, assumptions of linearity, and considerations for handling missing data."
 
 - id: siepe-robustness-reproduction-cox
@@ -443,6 +445,7 @@
   links:
     code: "https://osf.io/ukfrc/"
     data: "https://osf.io/ukfrc/"
+  areas: [ open-science, metascience ]
 
 - id: siepe-simulation-studies-template
   type: article
@@ -463,7 +466,7 @@
     code: "https://github.com/bsiepe/SimPsychReview"
     data: "https://github.com/bsiepe/SimPsychReview"
     prereg: "https://osf.io/dfgvu/registrations"
-  areas: [ simulation ]
+  areas: [ simulation, open-science, metascience ]
   selected: true
   abstract: Simulation studies are widely used for evaluating the performance of statistical methods in psychology. However, the quality of simulation studies can vary widely in terms of their design, execution, and reporting. In order to assess the quality of typical simulation studies in psychology, we reviewed 321 articles published in Psychological Methods, Behavioral Research Methods, and Multivariate Behavioral Research in 2021 and 2022, among which 100/321 = 31.2% report a simulation study. We find that many articles do not provide complete and transparent information about key aspects of the study, such as justifications for the number of simulation repetitions, Monte Carlo uncertainty estimates, or code and data to reproduce the simulation studies. To address this problem, we provide a summary of the ADEMP (Aims, Data-generating mechanism, Estimands and other targets, Methods, Performance measures) design and reporting framework from Morris, White, and Crowther (2019) adapted to simulation studies in psychology. Based on this framework, we provide ADEMP-PreReg, a step-by-step template for researchers to use when designing, potentially preregistering, and reporting their simulation studies. We give formulae for estimating common performance measures, their Monte Carlo standard errors, and for calculating the number of simulation repetitions to achieve a desired Monte Carlo standard error. Finally, we give a detailed tutorial on how to apply the ADEMP framework in practice using an example simulation study on the evaluation of methods for the analysis of pre–post measurement experiments.
 
@@ -483,7 +486,7 @@
     code: "https://github.com/bsiepe/var-compare"
     data: "https://github.com/bsiepe/var-compare"
     supplement: "https://osf.io/9byaj/"
-  areas: [ timeseries ]
+  areas: [ timeseries, networks, bayesian ]
   abstract: >-
     Idiographic network models are estimated on time-series data of a single individual and allow researchers to investigate person-specific associations between multiple variables over time. The most common approach for fitting graphical vector autoregressive (GVAR) models uses LASSO regularization to estimate a contemporaneous and a temporal network. However, estimation of idiographic networks can be unstable in relatively small data sets typical for psychological research. This bears the risk of misinterpreting differences in estimated networks as spurious heterogeneity between individuals. As a remedy, we evaluate the performance of a Bayesian alternative for fitting GVAR models that allows for regularization of parameters while accounting for estimation uncertainty. We also develop a novel test, implemented in the tsnet package in R, which assesses whether differences between estimated networks are reliable based on matrix norms. We first compare Bayesian and LASSO approaches across a range of conditions in a simulation study. Overall, LASSO estimation performs well, while a Bayesian GVAR without edge selection may perform better when the true network is dense. In an additional simulation study, the novel test is conservative and shows good false-positive rates. Finally, we apply Bayesian estimation and testing in an empirical example using daily data on clinical symptoms for 40 individuals. We additionally provide functionality to estimate Bayesian GVAR models in Stan within tsnet.Overall, Bayesian GVAR modelling facilitates the assessment of estimation uncertainty which is important for studying inter-individual differences of intra-individual dynamics. In doing so, the novel test serves as a safeguard against premature conclusions of heterogeneity.
   summary: >-
@@ -509,7 +512,7 @@
   links:
     code: "https://github.com/bsiepe/steady_tvvar"
     prereg: "https://osf.io/mnehzs"
-  areas: [ timeseries ]
+  areas: [ timeseries, networks ]
   abstract: "**Background:** As depression is highly heterogenous, an increasing number of studies investigate person-specific associations of depressive symptoms in longitudinal data. However, most studies in this area of research conceptualize symptom interrelations to be static and time invariant, which may lead to important temporal features of the disorder being missed. **Objective:** To reveal the dynamic nature of depression, we aimed to use a recently developed technique to investigate whether and how associations among depressive symptoms change over time. **Methods:** Using daily data (mean length 274, SD 82 d) of 20 participants with depression, we modeled idiographic associations among depressive symptoms, rumination, sleep, and quantity and quality of social contacts as dynamic networks using time-varying vector autoregressive models. **Results:** The resulting models showed marked interindividual and intraindividual differences. For some participants, associations among variables changed in the span of some weeks, whereas they stayed stable over months for others. Our results further indicated nonstationarity in all participants. **Conclusions:** Idiographic symptom networks can provide insights into the temporal course of mental disorders and open new avenues of research for the study of the development and stability of psychopathological processes."
 
 - id: westhoff-psychological-flexibility-daily-lives
@@ -533,7 +536,7 @@
   links:
     code: "https://osf.io/ejtzs/"
     data: "https://osf.io/ejtzs/"
-  areas: [ timeseries, esm ]
+  areas: [ timeseries, esm, networks ]
   abstract: "Psychological flexibility plays a crucial role in how young adults adapt to their evolving cognitive and emotional landscapes. Our study investigated a core aspect of psychological flexibility in young adults: adaptive variability and maladaptive rigidity in the capacity for behavior change. We examined the interplay of these elements with cognitive-affective processes within a dynamic network, uncovering their manifestation in everyday life. Through an Ecological Momentary Assessment design, we collected intensive longitudinal data over 3 weeks from 114 young adults ages 19 to 32. Using a dynamic network approach, we assessed the temporal dynamics and individual variability in flexibility in relation to cognitive-affective processes in this sample. Rigidity exhibited the strongest directed association with other variables in the temporal network as well as highest strength centrality, demonstrating particularly strong associations to other variables in the contemporaneous network. In conclusion, the results of this study suggest that rigidity in young adults is associated with negative affect and cognitions at the same time point and the immediate future."
 
 - id: langener-preregistering-passive-smartphone
@@ -568,7 +571,7 @@
   status: published
   doi: "10.3758/s13428-024-02474-5"
   preprint_doi: "10.31234/osf.io/p4xf8"
-  areas: [ esm ]
+  areas: [ esm, open-science ]
   abstract: Passive smartphone measures hold significant potential and are increasingly employed in psychological and biomedical research to capture an individual's behavior. These measures involve the near-continuous and unobtrusive collection of data from smartphones without requiring active input from participants. For example, GPS sensors are used to determine the (social) context of a person, and accelerometers to measure movement. However, utilizing passive smartphone measures presents methodological challenges during data collection and analysis. Researchers must make multiple decisions when working with such measures, which can result in different conclusions. Unfortunately, the transparency of these decision-making processes is often lacking. The implementation of open science practices is only beginning to emerge in digital phenotyping studies and varies widely across studies. Well-intentioned researchers may fail to report on some decisions due to the variety of choices that must be made. To address this issue and enhance reproducibility in digital phenotyping studies, we propose the adoption of preregistration as a way forward. Although there have been some attempts to preregister digital phenotyping studies, a template for registering such studies is currently missing. This could be problematic due to the high level of complexity that requires a well-structured template. Therefore, our objective was to develop a preregistration template that is easy to use and understandable for researchers. Additionally, we explain this template and provide resources to assist researchers in making informed decisions regarding data collection, cleaning, and analysis. Overall, we aim to make researchers' choices explicit, enhance transparency, and elevate the standards for studies utilizing passive smartphone measures.
 
 - id: rimpler-fred

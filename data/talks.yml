@@ -7,7 +7,7 @@
 
 - id: benchmarking-psychological-time-series
   title: "Towards Benchmarking of Psychological Time Series"
-  areas: [simulation]
+  areas: [ timeseries, simulation, metascience ]
   tags: [open-science, metascience]
   events:
     - date: "2026-10-06"
@@ -32,7 +32,7 @@
 
 - id: improving-methodological-research
   title: "Improving Methodological Research in Psychology: Preregistration, Transparent Reporting, and Benchmarking"
-  areas: [simulation]
+  areas: [ simulation, open-science, metascience ]
   tags: [open-science, metascience]
   license: "CC-BY-4.0"
   events:
@@ -47,7 +47,7 @@
 
 - id: benchmarking-time-series-methods
   title: "Benchmarking psychological time series methods"
-  areas: [timeseries]
+  areas: [ timeseries, simulation, metascience ]
   events:
     - date: "2026-05"
       venue: "DynaNet Meeting"
@@ -60,7 +60,7 @@
 
 - id: dynamic-network-features-uncertainty
   title: "Using features of dynamic networks to guide treatment selection and outcome prediction: The central role of uncertainty"
-  areas: [timeseries, esm]
+  areas: [ timeseries, networks, bayesian ]
   tags: [network-analysis]
   publications: [siepe-dynamic-network-features-treatment-selection]
   license: "CC-BY-4.0"
@@ -76,7 +76,7 @@
 
 - id: uncertainty-network-features-poster
   title: "Taking uncertainty into account is central when using dynamic network features as predictors"
-  areas: [timeseries]
+  areas: [ timeseries, networks, bayesian ]
   publications: [siepe-dynamic-network-features-treatment-selection]
   events:
     - date: "2025-05"
@@ -97,7 +97,7 @@
 
 - id: introducing-openesm
   title: "Introducing openESM: A database of openly available experience sampling datasets"
-  areas: [esm, timeseries]
+  areas: [ esm, open-science ]
   tags: [open-science, openesm]
   publications: [siepe-openesm]
   links:
@@ -159,7 +159,7 @@
 
 - id: simulation-studies-state-of-the-art
   title: "Simulation Studies for Methodological Research: State of the Art, Issues, and Potential Solutions"
-  areas: [simulation]
+  areas: [ simulation, open-science, metascience ]
   tags: [open-science, metascience]
   publications: [siepe-simulation-studies-template]
   license: "CC-BY-4.0"
@@ -230,7 +230,7 @@
 
 - id: quality-standards-simulation-panel-dgps
   title: "Panel Discussion: Quality Standards for Simulation Studies"
-  areas: [simulation]
+  areas: [ simulation, metascience ]
   events:
     - date: "2025"
       venue: "Conference of the DGPs Methods and Evaluation Section 2025"
@@ -242,7 +242,7 @@
 
 - id: ema-passive-sensor-associations
   title: "Associations between ecological momentary assessment and passive sensor data in a large student sample"
-  areas: [esm, timeseries]
+  areas: [ esm ]
   tags: [measurement]
   publications: [siepe-ema-passive-sensors]
   license: "CC-BY-4.0"
@@ -258,7 +258,7 @@
 
 - id: multiverse-dynamic-networks
   title: "GIMME, GIMME more (network models): Multiverse analysis for dynamic network models"
-  areas: [timeseries, esm]
+  areas: [ timeseries, networks ]
   tags: [network-analysis]
   publications: [siepe-multiverse-dynamic-networks]
   license: "CC-BY-4.0"
@@ -286,10 +286,11 @@
       roles: [speaker]
 
 # ---------------------------------------------------------------- 2024
+  areas: [ open-science, metascience ]
 
 - id: simulation-studies-psychology
   title: "Simulation Studies for Methodological Research in Psychology"
-  areas: [simulation]
+  areas: [ simulation, open-science, metascience ]
   tags: [open-science, metascience]
   publications: [siepe-simulation-studies-template]
   license: "CC-BY-4.0"
@@ -317,7 +318,7 @@
 
 - id: quality-standards-simulation-panel-imps
   title: "Quality Standards for Simulation Studies in Psychometrics"
-  areas: [simulation]
+  areas: [ simulation, metascience ]
   license: "CC-BY-4.0"
   events:
     - date: "2024"
@@ -331,7 +332,7 @@
 
 - id: bayesian-idiographic-networks
   title: "Bayesian Estimation and Comparison of Idiographic Network Models"
-  areas: [timeseries]
+  areas: [ timeseries, networks, bayesian ]
   tags: [bayesian, network-analysis]
   publications: [siepe-bayesian-idiographic-networks]
   license: "CC-BY-4.0"
@@ -355,7 +356,7 @@
 
 - id: exploration-ema-data
   title: "Exploration of Ecological Momentary Assessment Data"
-  areas: [esm, timeseries]
+  areas: [ esm ]
   tags: [data-visualization]
   publications: [siepe-understanding-ema-data]
   license: "CC-BY-4.0"
@@ -369,7 +370,7 @@
 
 - id: forecasting-literature-trends
   title: "Historical and Recent Trends in the Forecasting Literature"
-  areas: [timeseries]
+  areas: [ timeseries ]
   tags: [forecasting, machine-learning]
   links:
     repo: "https://github.com/bsiepe/forecast-literature-talk"
@@ -387,7 +388,7 @@
 
 - id: good-practices-simulation-studies
   title: "Good Practices for Simulation Studies"
-  areas: [simulation]
+  areas: [ simulation, open-science, metascience ]
   tags: [open-science, metascience]
   publications: [siepe-simulation-studies-template]
   license: "CC-BY-4.0"
@@ -401,7 +402,7 @@
 
 - id: warn-d-ema-items
   title: "Developing EMA Items to Build an Early Warning System for Depression (WARN-D Study)"
-  areas: [esm, timeseries]
+  areas: [ esm ]
   tags: [data-visualization]
   license: "CC-BY-4.0"
   events:
@@ -415,7 +416,7 @@
 
 - id: augmenting-self-reports-passive-sensors
   title: "Augmenting Self-Reports with Passive Sensor Data to Understand Changes in Mental Health"
-  areas: [esm]
+  areas: [ esm ]
   events:
     - date: "2023-05"
       venue: "Annual Convention of the Association for Psychological Science (APS)"
@@ -431,7 +432,7 @@
 
 - id: passive-sensors-mental-health-icps
   title: "Using passive sensor data to understand changes in mental health outcomes"
-  areas: [esm]
+  areas: [ esm ]
   events:
     - date: "2023-03"
       venue: "International Convention of Psychological Science (ICPS)"
@@ -449,7 +450,7 @@
 
 - id: temporal-dynamics-depression
   title: "Temporal Dynamics of Depressive Symptomatology"
-  areas: [esm, timeseries]
+  areas: [ timeseries, networks ]
   tags: [network-analysis]
   publications: [siepe-time-varying-networks-depression]
   license: "CC-BY-4.0"
