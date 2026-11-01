@@ -30,5 +30,4 @@ Install steps are needed once (and after dependency changes). Rerun `cv` and
 `export` after changing `data/`; restart `dev` to pick up a new CV PDF.
 With fnm set up in the PowerShell profile, plain `npm install`, `npm run dev`, etc. work too.
 
-Talk thumbnails need `pdftoppm` (poppler); without it, talks get title cards.
 CI runs the same steps (`../.github/workflows/site.yml`).

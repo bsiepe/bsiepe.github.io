@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.1.0",
   "scripts": {
-    "sync": "node scripts/sync-assets.mjs && node scripts/thumbnails.mjs",
+    "sync": "node scripts/sync-assets.mjs",
     "predev": "npm run sync",
     "dev": "astro dev",
     "prebuild": "npm run sync",

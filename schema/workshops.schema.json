@@ -26,7 +26,6 @@
       },
       "doi": { "$ref": "common.schema.json#/$defs/doi" },
       "license": { "description": "SPDX identifier, e.g. CC-BY-4.0.", "type": "string" },
-      "thumbnail": { "$ref": "common.schema.json#/$defs/path" },
       "hidden": { "$ref": "common.schema.json#/$defs/hidden" },
       "note": { "$ref": "common.schema.json#/$defs/note" },
       "sessions": {

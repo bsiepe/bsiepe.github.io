@@ -28,7 +28,6 @@
         }
       },
       "doi": { "description": "Only for decks I archive on Zenodo myself.", "$ref": "common.schema.json#/$defs/doi" },
-      "thumbnail": { "description": "Overrides the thumbnail generated from the most recent PDF.", "$ref": "common.schema.json#/$defs/path" },
       "license": { "description": "SPDX identifier, e.g. CC-BY-4.0.", "type": "string" },
       "hidden": { "$ref": "common.schema.json#/$defs/hidden" },
       "note": { "$ref": "common.schema.json#/$defs/note" },

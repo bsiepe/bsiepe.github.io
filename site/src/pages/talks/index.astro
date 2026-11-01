@@ -3,7 +3,6 @@ import BaseHead from '../../components/BaseHead.astro';
 import Footer from '../../components/Footer.astro';
 import AreaFilter from '../../components/AreaFilter.astro';
 import Header from '../../components/Header.astro';
-import TalkThumb from '../../components/TalkThumb.astro';
 import { SITE_TITLE } from '../../consts';
 import { talks } from '../../lib/data';
 import { AREA_LABELS, TALK_TYPES, formatDate } from '../../lib/format';
@@ -20,11 +19,13 @@ for (const t of all) for (const a of t.areas ?? []) counts[a] = (counts[a] ?? 0)
 	<head>
 		<BaseHead title={`Talks | ${SITE_TITLE}`} description={`Talks by ${SITE_TITLE}`} />
 		<style>
-			.talk { display: flex; gap: 1.25rem; align-items: flex-start; }
-			.talk-body { flex: 1; min-width: 0; }
-			.talk-body .item-title { margin-top: 0; }
-			@media (max-width: 720px) {
-				.talk { flex-direction: column; gap: 0.75rem; }
+			.talk-list { display: grid; gap: 40px; }
+			.talk { display: grid; grid-template-columns: var(--year-col) minmax(0, 1fr); column-gap: var(--s3); margin: 0; }
+			.talk .item-title { margin-top: 0; }
+			.talk .areas { margin-top: 4px; }
+			@media (max-width: 560px) {
+				.talk { grid-template-columns: minmax(0, 1fr); }
+				.talk .pub-year.repeat { display: none; }
 			}
 		</style>
 	</head>
@@ -34,13 +35,16 @@ for (const t of all) for (const a of t.areas ?? []) counts[a] = (counts[a] ?? 0)
 			<h1>Talks</h1>
 			<p class="lead">Each talk has its own page with every event and its slides.</p>
 			<AreaFilter counts={counts} />
-			{all.map((t) => {
+			<section class="talk-list" data-filter-section>
+			{all.map((t, k) => {
 				const latest = t.events[0];
 				const slides = t.events.filter((e) => e.file).length;
+				const year = latest.date.slice(0, 4);
+				const repeat = k > 0 && all[k - 1].events[0].date.slice(0, 4) === year;
 				return (
 					<article class="item talk" data-areas={(t.areas ?? []).join(' ')}>
-						<TalkThumb id={t.id} title={t.title} href={url(`/talks/${t.id}/`)} />
-						<div class="talk-body">
+						<span class={repeat ? 'pub-year repeat' : 'pub-year'}>{year}</span>
+						<div>
 						<h3 class="item-title"><a href={url(`/talks/${t.id}/`)}>{t.title}</a></h3>
 						<p class="item-meta">
 							{formatDate(latest.date)} · {TALK_TYPES[latest.type] ?? latest.type}, {latest.venue}
@@ -54,6 +58,7 @@ for (const t of all) for (const a of t.areas ?? []) counts[a] = (counts[a] ?? 0)
 					</article>
 				);
 			})}
+			</section>
 		</main>
 		<Footer />
 	</body>

@@ -48,9 +48,6 @@ jobs:
           path: ~/.cache/typst/packages
           key: typst-packages-${{ env.TYPST_VERSION }}-${{ hashFiles('cv/**/*.typ') }}
 
-      - name: Install pdftoppm (talk thumbnails)
-        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends poppler-utils
-
       - name: Install data tools
         run: npm ci
 
@@ -67,7 +64,7 @@ jobs:
         working-directory: site
         run: npm ci
 
-      # Also syncs assets, renders thumbnails, builds the search index, and checks
+      # Also syncs assets, builds the search index, and checks
       # the URL mapping against docs/ (see site/package.json).
       - name: Build site
         working-directory: site
