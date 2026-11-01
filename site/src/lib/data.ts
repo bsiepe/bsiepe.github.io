@@ -28,7 +28,7 @@ export interface Publication {
 	venue?: string; volume?: string; issue?: string; pages?: string; article_number?: string;
 	report_number?: string; book_title?: string; series?: string; editors?: Person[]; publisher?: string;
 	doi?: string; preprint_doi?: string; url?: string; links?: Record<string, Link>;
-	shared_first?: number[]; shared_second?: number[]; areas?: string[]; abstract?: string; hidden?: boolean;
+	shared_first?: number[]; shared_second?: number[]; areas?: string[]; abstract?: string; selected?: boolean; hidden?: boolean;
 }
 
 export interface TalkEvent {

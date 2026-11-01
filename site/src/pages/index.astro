@@ -11,7 +11,7 @@ import { url } from '../utils/paths';
 
 const bio = await md(PROFILE.bio);
 const items = await Promise.all(news().map(async (n) => ({ ...n, html: await mdInline(n.text) })));
-const recent = publications().sort((a, b) => b.year - a.year).slice(0, 3);
+const selected = publications().filter((p) => p.selected).sort((a, b) => b.year - a.year);
 ---
 
 <!doctype html>
@@ -68,8 +68,8 @@ const recent = publications().sort((a, b) => b.year - a.year).slice(0, 3);
 			</section>
 
 			<section>
-				<h2>Recent publications</h2>
-				{recent.map((p) => <PublicationEntry pub={p} abstract={false} />)}
+				<h2>Selected publications</h2>
+				{selected.map((p) => <PublicationEntry pub={p} abstract={false} />)}
 				<p><a href={url('/publications/')}>All publications</a></p>
 			</section>
 		</main>
