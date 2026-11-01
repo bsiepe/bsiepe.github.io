@@ -1,0 +1,50 @@
+---
+// Renders ../content/legal/<name>.md. Legal texts are published only after
+// explicit approval (REDESIGN.md): until `approved: true` is set in the file's
+// front matter, the page carries a visible draft notice and is marked noindex.
+import fs from 'node:fs';
+import path from 'node:path';
+import YAML from 'yaml';
+import BaseHead from './BaseHead.astro';
+import Footer from './Footer.astro';
+import Header from './Header.astro';
+import { SITE_TITLE } from '../consts';
+import { repoRoot } from '../lib/data';
+import { formatDate } from '../lib/format';
+import { md } from '../lib/markdown';
+
+interface Props { name: string }
+const raw = fs.readFileSync(path.join(repoRoot, 'content', 'legal', `${Astro.props.name}.md`), 'utf8');
+const [, front, body] = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/)!;
+const meta = YAML.parse(front) as { title: string; lang?: string; approved?: boolean; updated?: string };
+const html = await md(body);
+---
+
+<!doctype html>
+<html lang={meta.lang ?? 'de'}>
+	<head>
+		<BaseHead title={`${meta.title} | ${SITE_TITLE}`} description={meta.title} />
+		{!meta.approved && <meta name="robots" content="noindex" />}
+		<style>
+			.draft {
+				border: 2px solid #c0392b;
+				color: #c0392b;
+				padding: 0.5rem 1rem;
+				border-radius: 4px;
+				font-weight: 700;
+			}
+			.legal { max-width: 46rem; }
+			.legal :global(h2) { font-size: 1.4rem; display: block; border-bottom: none; padding-bottom: 0; }
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main data-pagefind-body>
+			{!meta.approved && <p class="draft">Entwurf, nicht freigegeben.</p>}
+			<h1>{meta.title}</h1>
+			<div class="legal" set:html={html} />
+			{meta.updated && <p class="item-meta">Stand: {formatDate(meta.updated)}</p>}
+		</main>
+		<Footer />
+	</body>
+</html>

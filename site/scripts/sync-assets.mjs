@@ -19,7 +19,7 @@ function copyTree(rel, exts) {
 	let n = 0;
 	for (const entry of fs.readdirSync(src, { withFileTypes: true, recursive: true })) {
 		if (!entry.isFile()) continue;
-		const from = path.join(entry.parentPath, entry.name);
+		const from = path.join((entry.parentPath ?? entry.path), entry.name);
 		if (exts && !exts.includes(path.extname(entry.name).toLowerCase())) continue;
 		const to = path.join(pub, path.relative(repo, from));
 		fs.mkdirSync(path.dirname(to), { recursive: true });

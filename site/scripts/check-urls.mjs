@@ -20,7 +20,7 @@ const files = (dir) =>
 	fs
 		.readdirSync(dir, { withFileTypes: true, recursive: true })
 		.filter((e) => e.isFile())
-		.map((e) => '/' + path.relative(dir, path.join(e.parentPath, e.name)).split(path.sep).join('/'));
+		.map((e) => '/' + path.relative(dir, path.join((e.parentPath ?? e.path), e.name)).split(path.sep).join('/'));
 
 // `**` matches any number of segments, `*` matches within one segment.
 const toRegex = (glob) =>
