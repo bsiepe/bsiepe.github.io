@@ -1,7 +1,7 @@
 ---
 title: Datenschutzerklärung
 lang: de
-approved: false
+approved: true
 updated: "2026-11-01"
 ---
 
