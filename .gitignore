@@ -15,3 +15,7 @@ design/input/cv/
 
 # Screenshots and notes from the design-taste-frontend skill (regenerable)
 .taste-skill/
+
+# Internal working files, kept locally but not published
+MIGRATION_REPORT.md
+cv-legacy/
