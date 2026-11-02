@@ -167,8 +167,8 @@ without year; packages released for R and Python are two software entries.
   `{date, time, speakers, title, links: {join, slides, recording}}`.
 - Area tags (topics): `simulation`, `timeseries`, `esm`, `bayesian`, `networks`,
   `open-science`, `metascience` (the last four added 2026-11-01). Entries can have
-  several. Time series is for modelling work, experience sampling for data
-  collection, measurement and data resources; both only when a work does both.
+  several. Experience sampling data are time series, so every `esm` entry also
+  has `timeseries`; `timeseries` alone marks time-series work without ESM data.
   Finer topic tags are allowed but normalized (one spelling, one case).
 - Dates: ISO 8601 (`YYYY`, `YYYY-MM`, or `YYYY-MM-DD`, at the precision known).
   Never pad unknown precision with invented days or months.

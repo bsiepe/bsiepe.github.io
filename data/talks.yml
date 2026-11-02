@@ -97,7 +97,7 @@
 
 - id: introducing-openesm
   title: "Introducing openESM: A database of openly available experience sampling datasets"
-  areas: [ esm, open-science ]
+  areas: [ timeseries, esm, open-science ]
   tags: [open-science, openesm]
   publications: [siepe-openesm]
   links:
@@ -242,7 +242,7 @@
 
 - id: ema-passive-sensor-associations
   title: "Associations between ecological momentary assessment and passive sensor data in a large student sample"
-  areas: [ esm ]
+  areas: [ timeseries, esm ]
   tags: [measurement]
   publications: [siepe-ema-passive-sensors]
   license: "CC-BY-4.0"
@@ -356,7 +356,7 @@
 
 - id: exploration-ema-data
   title: "Exploration of Ecological Momentary Assessment Data"
-  areas: [ esm ]
+  areas: [ timeseries, esm ]
   tags: [data-visualization]
   publications: [siepe-understanding-ema-data]
   license: "CC-BY-4.0"
@@ -402,7 +402,7 @@
 
 - id: warn-d-ema-items
   title: "Developing EMA Items to Build an Early Warning System for Depression (WARN-D Study)"
-  areas: [ esm ]
+  areas: [ timeseries, esm ]
   tags: [data-visualization]
   license: "CC-BY-4.0"
   events:
@@ -416,7 +416,7 @@
 
 - id: augmenting-self-reports-passive-sensors
   title: "Augmenting Self-Reports with Passive Sensor Data to Understand Changes in Mental Health"
-  areas: [ esm ]
+  areas: [ timeseries, esm ]
   events:
     - date: "2023-05"
       venue: "Annual Convention of the Association for Psychological Science (APS)"
@@ -432,7 +432,7 @@
 
 - id: passive-sensors-mental-health-icps
   title: "Using passive sensor data to understand changes in mental health outcomes"
-  areas: [ esm ]
+  areas: [ timeseries, esm ]
   events:
     - date: "2023-03"
       venue: "International Convention of Psychological Science (ICPS)"
@@ -488,7 +488,7 @@
 - id: validating-ema-activity-tracking
   title: "Validating subjective EMA measures with objective activity tracking"
   hidden: true
-  areas: [esm]
+  areas: [ timeseries, esm ]
   events:
     - date: "2022-05-25"
       venue: "Annual Convention of the Association for Psychological Science (APS)"
@@ -505,7 +505,7 @@
 - id: sleep-voice-mdd
   title: "Ideographic time-series analyses of objective sleep and voice data in Major Depressive Disorder"
   hidden: true
-  areas: [timeseries]
+  areas: [ timeseries ]
   events:
     - date: "2022-11"
       venue: "Annual Meeting of the German Society for Psychiatry and Psychotherapy (DGPPN)"
@@ -526,7 +526,7 @@
 - id: triangulating-self-reports
   title: "Changes in mental health: Triangulating information from different self-reports"
   hidden: true
-  areas: [esm]
+  areas: [ timeseries, esm ]
   events:
     - date: "2023-03"
       venue: "International Convention of Psychological Science (ICPS)"
@@ -543,7 +543,7 @@
 - id: multimodal-mental-health-poster
   title: "How Should We Assess Changes in Mental Health? A Multimodal Perspective"
   hidden: true
-  areas: [esm]
+  areas: [ timeseries, esm ]
   events:
     - date: "2023-05"
       venue: "Annual Convention of the Association for Psychological Science (APS)"
@@ -560,7 +560,7 @@
 - id: psychosocial-processes-covid-poster
   title: "Examining Psychosocial Processes of change in Students' Daily Lives during COVID-19: An Ecological Momentary Assessment"
   hidden: true
-  areas: [esm]
+  areas: [ timeseries, esm ]
   events:
     - date: "2023-05"
       venue: "German Psychotherapy Congress (DPK) 2023"

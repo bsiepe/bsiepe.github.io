@@ -15,7 +15,7 @@
     website: "https://openesmdata.org"
     github: "https://github.com/openesm-project/"
   publications: [siepe-openesm]
-  areas: [ esm, open-science ]
+  areas: [ timeseries, esm, open-science ]
   tags: [open-science, openesm]
 
 - id: varcheck
@@ -48,7 +48,7 @@
   links:
     github: "https://github.com/openesm-project/"
   publications: [siepe-openesm]
-  areas: [ esm, open-science ]
+  areas: [ timeseries, esm, open-science ]
   tags: [openesm]
 
 - id: openesm-python
@@ -64,7 +64,7 @@
     pypi: "https://pypi.org/project/openesm/"
     github: "https://github.com/openesm-project/"
   publications: [siepe-openesm]
-  areas: [ esm, open-science ]
+  areas: [ timeseries, esm, open-science ]
   tags: [openesm]
 
 - id: intervalpsych

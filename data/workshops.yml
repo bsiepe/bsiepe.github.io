@@ -26,7 +26,7 @@
 - id: openesm-workshop
   title: "Introducing openESM: A Database of Openly Available Experience Sampling Datasets"
   description: "One-hour introduction to openESM, its software packages, and to modeling multi-dataset experience sampling data."
-  areas: [ esm, open-science ]
+  areas: [ timeseries, esm, open-science ]
   tags: [open-science, openesm]
   links:
     materials: "https://github.com/bsiepe/Talks/tree/main/rStats-Psych-Club2026"
