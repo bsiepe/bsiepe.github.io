@@ -78,7 +78,7 @@
 // A small heading inside a section (academicv has none).
 // Default indent matches the text column of academicv's timeline (7em + 1em
 // gutter + 0.5em pad); lists use 3em (2em number column + 1em gutter).
-#let subheading(t, indent: 8.5em) = block(above: 1.1em, below: 0.6em, sticky: true, pad(left: indent, text(weight: "semibold", t)))
+#let subheading(t, indent: 8.5em) = block(above: 16pt, below: 5pt, sticky: true, pad(left: indent, text(weight: "semibold", t)))
 #let section-title(t) = heading(level: 2, t)
 
 // One timeline block. Entries are dictionaries with start-date / end-date and
@@ -476,9 +476,13 @@
   let profile = load("profile")
   let cfg = (selected-only: selected-only, contributions: contributions, max-authors: max-authors,
     school: school, community-from: community-from, descriptions: descriptions)
+  // Vertical rhythm. Lines inside an entry sit at the paragraph leading (5pt);
+  // entries are 12pt apart (block spacing), subheadings 16pt, sections 24pt.
+  // academicv puts v(-1em + spacing-element) between an entry's lines, so with
+  // 8pt paragraph spacing, spacing-element 7pt yields exactly the 5pt leading.
   let settings = (
     font-heading: fonts.at(font), font-body: fonts.at(font),
-    fontsize: 10pt, spacing-section: 10pt, spacing-entry: 0.6em, spacing-element: 3pt, spacing-line: 5pt,
+    fontsize: 10pt, spacing-section: 12pt, spacing-entry: 0pt, spacing-element: 7pt, spacing-line: 5pt,
     color-hyperlink: cobalt,
   )
   let me = (profile.name.given, get(profile.name, "middle"), profile.name.family).filter(x => x != none).join(" ")
@@ -508,7 +512,8 @@
   )
   show: doc => showrules(settings, setrules(settings, doc))
   // Ragged right: justified text without hyphenation leaves wide gaps.
-  set par(justify: false)
+  set par(justify: false, spacing: 8pt)
+  set block(spacing: 12pt)
 
   layout-header(header-data, settings)
   for s in sections {
