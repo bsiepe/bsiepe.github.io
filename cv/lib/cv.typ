@@ -412,13 +412,20 @@
   section-title("Service")
   let all = visible(load("service"))
   let fmt(s) = (..span-dates(s), role: s.role, organization: s.organization)
-  let ed = all.filter(s => s.kind == "editorial")
-  if ed.len() > 0 {
-    subheading("Editorial")
-    timeline(ed.sorted(key: span-key).rev().map(fmt), ("role", "organization"), settings)
-    subheading("Academic service")
+  let groups = (
+    ("Editorial", ("editorial",)),
+    ("Committees, boards, and working groups", ("committee", "board", "working-group")),
+    ("Organizing and other roles", ("organizing", "other")),
+  )
+  let known = groups.map(g => g.at(1)).flatten()
+  // Kinds not listed above still print, in the last group.
+  groups.last().at(1) += all.map(s => s.kind).filter(k => k not in known).dedup()
+  for (title, kinds) in groups {
+    let xs = all.filter(s => s.kind in kinds)
+    if xs.len() == 0 { continue }
+    subheading(title)
+    timeline(xs.sorted(key: span-key).rev().map(fmt), ("role", "organization"), plain: true, compact: true, settings)
   }
-  timeline(all.filter(s => s.kind != "editorial").sorted(key: span-key).rev().map(fmt), ("role", "organization"), settings)
 }
 
 #let memberships-section(cfg, settings) = {
@@ -426,7 +433,7 @@
   timeline(visible(load("memberships")).sorted(key: m => m.start).rev().map(m => (
     start-date: period(m.start, m.end, year-of),
     organization: m.organization + if get(m, "abbreviation") != none { " (" + m.abbreviation + ")" } else { "" },
-  )), ("organization",), settings)
+  )), ("organization",), plain: true, compact: true, settings)
 }
 
 #let reviewing-section(cfg, settings) = {
@@ -444,7 +451,7 @@
     start-date: period(c.start, c.end, year-of),
     role: c.role,
     organization: c.organization + if get(c, "description") != none { " (" + c.description + ")" } else { "" },
-  )), ("role", "organization"), settings)
+  )), ("role", "organization"), plain: true, compact: true, settings)
 }
 
 #let media-section(cfg, settings) = {
