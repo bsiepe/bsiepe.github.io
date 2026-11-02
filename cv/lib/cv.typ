@@ -319,7 +319,7 @@
         where: nonempty((if e.type == "keynote" { "Keynote" }, e.venue, place(e))).join(", "),
         with: if co.len() > 0 { "With " + and-join(co.map(full-name)) },
       )
-    }), ("title",), secondary: ("where",), tertiary: ("with",), settings)
+    }), ("title",), secondary: ("where",), tertiary: ("with",), plain: true, settings)
   }
 
   let per-deck(types) = talks.map(t => {
@@ -335,17 +335,17 @@
       title: d.talk.title,
       venues: d.evs.map(e => venue-year(e) + if get(e, "award") != none { " (" + e.award + ")" } else { "" }).join("; "),
       note: if d.evs.all(e => "speaker" not in e.roles) { "Co-author" },
-    )), ("title",), secondary: ("venues",), tertiary: ("note",), settings)
+    )), ("title",), secondary: ("venues",), tertiary: ("note",), plain: true, settings)
   }
 
   let panels = flat.filter(x => x.ev.type == "panel" or ("speaker" not in x.ev.roles and "coauthor" not in x.ev.roles)).sorted(key: x => str(x.ev.date)).rev()
   if panels.len() > 0 {
     subheading("Panels and sessions")
+    // One line each: title (roles), venue.
     timeline(panels.map(x => (
       start-date: year-of(x.ev.date),
-      title: get(x.ev, "title", default: x.talk.title),
-      where: cap(x.ev.roles.join(" and ")) + ", " + venue-year(x.ev),
-    )), ("title",), secondary: ("where",), settings)
+      line: get(x.ev, "title", default: x.talk.title) + " (" + x.ev.roles.join(" and ") + "), " + venue-year(x.ev),
+    )), ("line",), plain: true, compact: true, settings)
   }
 }
 
