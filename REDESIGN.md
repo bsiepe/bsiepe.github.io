@@ -228,10 +228,30 @@ without year; packages released for R and Python are two software entries.
   `--input font=plex-serif|plex-sans` (files in `fonts/`, OFL).
 - Set PDF metadata (title, author). Print the build date.
 - Output: the academic default must be served at the existing CV PDF URL.
-- Later design polish (deferred, not blocking):
-  - Collapse repeated years in the timeline (show a year once when consecutive
-    entries share it).
-  - Further spacing and detail tweaks to be collected while using the CV.
+- Design polish (decided 2026-11-02, applied in `cv/lib/cv.typ` on top of the
+  academicv defaults; academic default is 8 pages):
+  - Spacing scale: 5pt between lines of one entry (paragraph leading), 8pt
+    between one-line list items, 12pt between entries, 16pt above and 5pt
+    below a subheading, 24pt above a section heading.
+  - Section headings 11pt semibold, rule 0.6pt black. Subheadings 10pt
+    semibold, flush left with the section heading. Detail lines 9pt.
+  - A year is shown once when consecutive entries share it, and those entries
+    share one unbroken timeline rule. Entries never break across pages.
+  - Bold entry titles only in sections with few entries (positions, stays,
+    research grants, education, software, workshops, teaching, awards).
+    Talks, smaller grants, service, memberships, and community service use
+    regular weight.
+  - Discrete events in several years read "2023 & 2024"; ranges ("2023–2025")
+    only where something ran every year (teaching, service).
+  - Grants: the DFG grant alone at the top; "Smaller grants and scholarships"
+    one line each, "name, amount (purpose)".
+  - Talks: titles regular weight, venues italic below; panels and sessions
+    one line each.
+  - Service grouped by kind: Editorial; Committees, boards, and working
+    groups; Organizing and other roles.
+  - Media coverage (full variant) grouped by the publication it covers.
+- Later: further spacing and detail tweaks collected while using the CV;
+  possibly a sans font (Latin Modern Sans, as in the LaTeX CV).
 
 ## Website
 
