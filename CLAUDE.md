@@ -1,8 +1,11 @@
 # CLAUDE.md
 
-The site and CV are being redesigned on the `redesign` branch.
-Read `REDESIGN.md` before doing any work on it: it defines the stages, review
-gates, data model, and working rules. Follow its STOP points.
+The website (Astro, `site/`) and the CV (Typst, `cv/`) are built from `data/` and
+`content/` by the GitHub Action and deployed to GitHub Pages from `main`.
+The Quarto site was retired at cutover on 2026-11-02.
 
-The live site is Quarto, rendered into `docs/` and served by GitHub Pages.
-Do not modify existing site files before cutover.
+Read `REDESIGN.md` before changing the data model, the site, or the CV: it records
+the decisions and working rules. Design values for the site are in `design/HANDOFF.md`.
+
+Slide files in `talks/` and `workshops/` and photos in `files/images/` are sources
+for the site (copied by `site/scripts/sync-assets.mjs`); do not move them.

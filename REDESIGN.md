@@ -47,6 +47,7 @@ questions, and wait for my explicit go-ahead.
 5. **Astro site.** Build the site from `data/`, `content/`, and `design/`.
    Include the URL mapping and redirect pages. STOP before cutover.
 6. **Cutover.** Only after my approval (see Build and deployment).
+   Done 2026-11-02.
 7. **Later, separate tasks:** Zotero API sync, DOI-to-YAML stub helper,
    OpenAlex check. See the last section.
 
@@ -302,7 +303,9 @@ without year; packages released for R and Python are two software entries.
   The presentation layer has to stay replaceable.
 - Cutover (only after my approval): switch the Pages source to GitHub Actions,
   verify the URL mapping live, then remove `docs/`, `_site/`, `_freeze/`, and the
-  Quarto files in a separate commit.
+  Quarto files in a separate commit. Done 2026-11-02: all 122 old URLs checked live
+  (38 kept, 26 redirected, 58 retired with 404). The slide files in `talks/` and
+  `workshops/` stay; they are sources for the site.
 
 ## Later, separate tasks
 

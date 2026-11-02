@@ -1,9 +1,11 @@
 # URL mapping from the old Quarto site (docs/) to the new site.
 #
-# Every file in docs/ must either exist at the same path in the new build,
+# docs/ was removed at cutover (2026-11-02); this list stays so the redirect pages
+# keep being built. Before that, every file in docs/ had to either exist at the same
+# path in the new build,
 # be listed under `redirects` (an HTML page that forwards to the new URL), or be
-# listed under `retired` with a reason. scripts/check-urls.mjs checks this after
-# every build, and also that every redirect target exists.
+# listed under `retired` with a reason. scripts/check-urls.mjs now only checks,
+# after every build, that each redirect page was built and its target exists.
 #
 # Kept at the same path (not listed here): /, /publications/, /talks/, /software/,
 # /blog/, /cv/, /simulation-talk-series/, /workshops/, all talk and workshop

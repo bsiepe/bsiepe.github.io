@@ -65,7 +65,7 @@ jobs:
         run: npm ci
 
       # Also syncs assets, builds the search index, and checks
-      # the URL mapping against docs/ (see site/package.json).
+      # that every redirect in site/redirects.yml has a target (see site/package.json).
       - name: Build site
         working-directory: site
         run: npm run build
