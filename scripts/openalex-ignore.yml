@@ -2,4 +2,26 @@
 # Example:
 # - doi: "10.5281/zenodo.12345"
 #   reason: Zenodo copy of a paper already in data/publications.yml
-[]
+
+- doi: "10.5281/zenodo.23729169"
+  reason: >-
+    Zenodo code release for siepe-osf-licenses-extension; that entry is tracked
+    via its preprint_doi and the GitHub link.
+- doi: "10.5281/zenodo.18346930"
+  reason: PhD dissertation repository (bsiepe/Dissertation). Not tracked as a publication.
+- doi: "10.5281/zenodo.18155738"
+  reason: >-
+    Zenodo archive of the code for siepe-dynamic-network-features-treatment-selection
+    (GitHub repo centrality-uncertainty); that entry already links its code via OSF.
+- doi: "10.17605/osf.io/bku5c"
+  reason: >-
+    OSF registration DOI, IsVersionOf the osf.io/ukfrc project already linked
+    (as code/data) in siepe-robustness-reproduction-cox.
+- doi: "10.5281/zenodo.22913007"
+  reason: Zenodo copy of rimpler-fred, already tracked under its journal DOI.
+- doi: "10.5167/uzh-281953"
+  reason: >-
+    ZORA (University of Zurich) repository copy of pawel-missingness-simulation-studies,
+    already tracked under its journal DOI.
+- doi: "10.5281/zenodo.22914228"
+  reason: Zenodo copy of siepe-ema-passive-sensors, already tracked under its journal DOI.

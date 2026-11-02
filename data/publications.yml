@@ -3,6 +3,22 @@
 # and the Hugo preprint entry. See MIGRATION_REPORT.md for every value that was
 # filled from Crossref/DataCite, derived, or disputed between sources.
 
+- id: siepe-osf-licenses-extension
+  type: preprint
+  title: "Open research materials need explicit reuse licenses"
+  authors:
+    - { family: Siepe, given: Björn S., me: true }
+    - { family: Heck, given: Daniel W. }
+    - { family: Quintana, given: Daniel }
+  venue: PsyArXiv
+  year: 2026
+  status: preprint
+  preprint_doi: "10.31234/osf.io/4rjg3_v1"
+  links:
+    code: "https://github.com/bsiepe/osf-licenses-extension"
+  areas: [ open-science ]
+  abstract: "Researchers increasingly share materials online, but often without a license, which means others cannot tell how they may reuse them. Because materials often outlive their authors' involvement, reuse questions can go unanswered. Licensing takes minutes, at the point of sharing or years later, and authors should act while they can still edit their materials."
+
 - id: pena-loray-sample-size-institutional-effects
   type: preprint
   title: "Beyond Rules of Thumb: Empirical Sample Size Requirements for Detecting Institutional Effects in the Context of Therapist Effects"
@@ -509,6 +525,7 @@
   year: 2024
   status: published
   doi: "10.2196/50136"
+  preprint_doi: "10.31234/osf.io/hnw69"
   links:
     code: "https://github.com/bsiepe/steady_tvvar"
     prereg: "https://osf.io/mnehzs"
@@ -635,3 +652,4 @@
   publisher: Klett Cotta
   year: 2021
   status: published
+  doi: "10.5771/9783608204346-230"
