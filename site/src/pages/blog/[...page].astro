@@ -40,185 +40,53 @@ const { posts, currentPage, totalPages, nextPage, prevPage } = Astro.props;
 <!doctype html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-        <style>
-            .blog-list {
-                display: flex;
-                flex-direction: column;
-                gap: 3rem;
-                margin-top: 3rem;
-            }
-            .blog-post-card {
-                display: flex;
-                gap: 2.5rem;
-                align-items: flex-start;
-                padding-bottom: 3rem;
-                border-bottom: 1px solid var(--color-border);
-            }
-            .blog-post-card:last-child {
-                border-bottom: none;
-            }
-
-            .blog-thumb {
-                width: 280px;
-                flex-shrink: 0;
-                border-radius: 8px;
-                overflow: hidden;
-                box-shadow: var(--shadow-md);
-                aspect-ratio: 16/9;
-                display: block;
-                order: 2;
-                align-self: flex-start;
-            }
-            .blog-thumb img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: transform 0.4s ease, filter 0.3s ease;
-            }
-            .blog-post-card:hover .blog-thumb img {
-                transform: scale(1.03);
-                filter: brightness(1.05);
-            }
-
-            .blog-content {
-                flex: 1;
-                order: 1;
-                padding-right: 1rem;
-            }
-            .blog-title {
-                margin: -0.2rem 0 0.75rem 0;
-                font-family: var(--font-serif);
-                font-size: 1.75rem;
-                line-height: 1.25;
-                letter-spacing: -0.01em;
-            }
-            .blog-title a {
-                color: var(--color-text-main);
-                text-decoration: none;
-                transition: color 0.2s;
-            }
-            .blog-title a:hover {
-                color: var(--color-accent);
-            }
-            .blog-meta {
-                font-size: 0.85rem;
-                color: var(--color-text-muted);
-                margin-bottom: 1rem;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                align-items: center;
-                
-                letter-spacing: 0.05em;
-                font-weight: 500;
-            }
-            .meta-divider {
-                color: #ddd;
-            }
-            .blog-desc {
-                margin: 0 0 1.5rem 0;
-                color: var(--color-text-muted);
-                line-height: 1.7;
-                font-size: 1.05rem;
-            }
-            .read-more {
-                font-size: 0.9rem;
-                font-weight: 700;
-                color: var(--color-accent);
-                display: inline-flex;
-                align-items: center;
-                text-decoration: none;
-                border-bottom: 2px solid transparent;
-                transition: border-color 0.2s;
-            }
-            .read-more:hover {
-                border-bottom-color: var(--color-accent);
-            }
-
-            @media (max-width: 720px) {
-                .blog-post-card {
-                    flex-direction: column-reverse;
-                    gap: 1.5rem;
-                    padding-bottom: 2rem;
-                }
-                .blog-thumb {
-                    width: 100%;
-                    height: auto;
-                    aspect-ratio: 16/9;
-                    box-shadow: var(--shadow-sm);
-                }
-                .blog-content {
-                    padding-right: 0;
-                }
-                .blog-title {
-                    font-size: 1.5rem;
-                }
-            }
-        </style>
+		<BaseHead title={`Blog | ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
+		<style>
+			.post-list { display: grid; gap: var(--s6); }
+			.post { display: grid; grid-template-columns: minmax(0, 66ch) 240px; column-gap: var(--s8); justify-content: space-between; align-items: start; }
+			.post h2 { font-size: 21px; font-weight: 600; line-height: 1.3; margin: 0; }
+			.post h2 a { color: var(--color-text-main); text-decoration: none; }
+			.post h2 a:hover { color: var(--color-accent); text-decoration: underline; }
+			.post-meta { margin: 4px 0 0; font-size: 15px; color: var(--color-text-muted); }
+			.post-meta time { font-family: var(--font-serif); font-size: 17px; font-variant-numeric: lining-nums tabular-nums; }
+			.post-desc { margin: var(--s1) 0 0; }
+			.post-image { display: block; background: var(--color-step); }
+			.post-image img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+			.pager { display: flex; gap: var(--s3); margin-top: var(--s6); font-size: 15px; color: var(--color-text-muted); }
+			@media (max-width: 720px) {
+				.post { grid-template-columns: minmax(0, 1fr); row-gap: var(--s2); }
+				.post-image { order: -1; }
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main data-pagefind-body>
 			<h1>Blog</h1>
-
-            <div class="blog-list">
-                {
-                    posts.map((post) => (
-                        <article class="blog-post-card">
-                            <div class="blog-content">
-                                <h2 class="blog-title">
-                                    <a href={url(`/blog/${post.id}/`)}>{post.data.title}</a>
-                                </h2>
-
-                                <div class="blog-meta">
-                                    <FormattedDate date={post.data.date} />
-                                    <span class="meta-divider">&bull;</span>
-                                    <span>{post.data.authors.map(fullName).join(', ')}</span>
-                                </div>
-
-                                <p class="blog-desc">
-                                    {post.data.description}
-                                </p>
-
-                                <a href={url(`/blog/${post.id}/`)} class="read-more">Read Article &rarr;</a>
-                            </div>
-
-                            {post.data.image && (
-                                <a href={url(`/blog/${post.id}/`)} class="blog-thumb">
-                                    <Image width={560} height={315} src={post.data.image} alt="" />
-                                </a>
-                            )}
-                        </article>
-                    ))
-                }
-
-                {posts.length === 0 && (
-                    <p style="text-align: center; color: var(--color-text-muted);">
-                        No blog posts found.
-                    </p>
-                )}
-            </div>
-
-            {totalPages > 1 && (
-                <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 3rem;">
-                    {prevPage ? (
-                        <a href={url(prevPage === 1 ? '/blog' : `/blog/${prevPage}`)} style="padding: 0.5rem 1rem; border: 1px solid var(--color-border); border-radius: 8px; text-decoration: none; color: var(--color-text-main); font-weight: 500;">&larr; Previous</a>
-                    ) : (
-                        <span style="padding: 0.5rem 1rem; border: 1px solid var(--color-border); border-radius: 8px; color: var(--color-text-muted); opacity: 0.5; cursor: not-allowed; font-weight: 500;">&larr; Previous</span>
-                    )}
-
-                    <span style="display: flex; align-items: center; font-weight: 600; color: var(--color-text-muted);">
-                        Page {currentPage} of {totalPages}
-                    </span>
-
-                    {nextPage ? (
-                        <a href={url(`/blog/${nextPage}`)} style="padding: 0.5rem 1rem; border: 1px solid var(--color-border); border-radius: 8px; text-decoration: none; color: var(--color-text-main); font-weight: 500;">Next &rarr;</a>
-                    ) : (
-                        <span style="padding: 0.5rem 1rem; border: 1px solid var(--color-border); border-radius: 8px; color: var(--color-text-muted); opacity: 0.5; cursor: not-allowed; font-weight: 500;">Next &rarr;</span>
-                    )}
-                </div>
-            )}
+			<div class="post-list">
+				{posts.map((post) => (
+					<article class="post">
+						<div>
+							<h2><a href={url(`/blog/${post.id}/`)}>{post.data.title}</a></h2>
+							<p class="post-meta"><FormattedDate date={post.data.date} /> · {post.data.authors.map(fullName).join(', ')}</p>
+							{post.data.description && <p class="post-desc">{post.data.description}</p>}
+						</div>
+						{post.data.image && (
+							<a href={url(`/blog/${post.id}/`)} class="post-image" tabindex="-1" aria-hidden="true">
+								<Image width={480} height={270} src={post.data.image} alt="" />
+							</a>
+						)}
+					</article>
+				))}
+				{posts.length === 0 && <p>No posts yet.</p>}
+			</div>
+			{totalPages > 1 && (
+				<nav class="pager" aria-label="Pages">
+					{prevPage && <a href={url(prevPage === 1 ? '/blog/' : `/blog/${prevPage}/`)}>Newer posts</a>}
+					<span>Page {currentPage} of {totalPages}</span>
+					{nextPage && <a href={url(`/blog/${nextPage}/`)}>Older posts</a>}
+				</nav>
+			)}
 		</main>
 		<Footer />
 	</body>
