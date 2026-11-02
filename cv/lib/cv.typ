@@ -80,11 +80,10 @@
 #let and-join(xs) = if xs.len() <= 1 { xs.join() } else if xs.len() == 2 { xs.at(0) + " & " + xs.at(1) } else { xs.slice(0, -1).join(", ") + ", & " + xs.last() }
 #let nonempty(xs) = xs.filter(x => x != none and x != "")
 
-// A small heading inside a section (academicv has none).
-// Default indent matches the text column of academicv's timeline (7em + 1em
-// gutter + 0.5em pad); lists use 3em (2em number column + 1em gutter).
-// Small caps keep it apart from bold entry titles and italic detail lines.
-#let subheading(t, indent: 8.5em) = block(above: 16pt, below: 5pt, sticky: true, pad(left: indent, text(tracking: 0.03em, smallcaps(t))))
+// A small heading inside a section (academicv has none): 10pt semibold, flush
+// left with the section heading, so position as well as weight sets it apart
+// from the indented entries.
+#let subheading(t) = block(above: 16pt, below: 5pt, sticky: true, text(weight: "semibold", t))
 // Section headings at 11pt (academicv: 1em), so they rank above 10pt bold entry titles.
 #let section-title(t) = heading(level: 2, text(size: 11pt, t))
 
@@ -281,7 +280,7 @@
   for (title, kind) in (("Peer-reviewed articles", "article"), ("Book chapters", "chapter"), ("Reports", "report"), ("Preprints", "preprint")) {
     let items = ps.filter(p => p.type == kind).sorted(key: p => p.year).rev()
     if items.len() == 0 { continue }
-    subheading(title, indent: 3em)
+    subheading(title)
     layout-numbered-list(items.map(p => pub-markup(p, cfg)))
   }
   if ps.any(p => get(p, "shared_first") != none or get(p, "shared_second") != none) {
