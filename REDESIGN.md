@@ -315,8 +315,10 @@ without year; packages released for R and Python are two software entries.
   items without explicit confirmation. API key in a local `.env`, never committed.
 - **DOI-to-YAML stub helper:** queries Crossref/DataCite and writes a draft entry
   for me to complete.
-- **OpenAlex check:** weekly GitHub Action querying OpenAlex for my ORCID; opens an
-  issue when a DOI appears that is not in `data/`. Never writes to `data/`.
+- **OpenAlex check:** monthly GitHub Action (changed from weekly on 2026-11-02),
+  also runnable by hand, querying OpenAlex for my ORCID; opens an issue when a DOI
+  appears that is not in `data/`, and updates that issue instead of opening a second
+  one while it is still open. Never writes to `data/`.
 
 ## Working rules
 
