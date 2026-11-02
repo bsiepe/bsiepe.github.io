@@ -1,9 +1,0 @@
----
-title: "Item Validation in the WARN-D Study"
-author: "Björn Siepe"
-date: "2023-05-28"
-categories: [EMA, Data Visualization, Time Series]
-image: "aps-validation-image.png"
-description: "Symposium talk at the APS Annual Convention 2023 (Washington D.C., US)."
-license: "CC BY"
----
