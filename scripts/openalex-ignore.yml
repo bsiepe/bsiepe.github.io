@@ -1,0 +1,5 @@
+# DOIs that scripts/openalex-check.mjs should not report, each with a reason.
+# Example:
+# - doi: "10.5281/zenodo.12345"
+#   reason: Zenodo copy of a paper already in data/publications.yml
+[]

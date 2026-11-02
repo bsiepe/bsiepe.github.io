@@ -1,0 +1,51 @@
+# Monthly check for works that OpenAlex attributes to me but that are not in data/.
+# Opens an issue labelled "openalex" with the list, or updates the open one.
+# Never writes to data/ (see scripts/openalex-check.mjs).
+#
+# Optional repository secret OPENALEX_API_KEY (free at openalex.org/settings/api);
+# without it, requests share OpenAlex's small daily budget per IP address.
+
+name: OpenAlex check
+
+on:
+  schedule:
+    - cron: "0 6 1 * *" # 06:00 UTC on the 1st of every month
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - run: npm ci
+
+      - name: Query OpenAlex
+        id: check
+        env:
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+        run: echo "count=$(node scripts/openalex-check.mjs --out report.md)" >> "$GITHUB_OUTPUT"
+
+      - name: Open or update the issue
+        if: steps.check.outputs.count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create openalex --color 0047AB --description "Works found by the OpenAlex check" --force
+          number=$(gh issue list --label openalex --state open --json number --jq '.[0].number')
+          if [ -n "$number" ]; then
+            gh issue edit "$number" --body-file report.md
+            gh issue comment "$number" --body "Updated by the OpenAlex check on $(date -u +%F)."
+          else
+            gh issue create --title "OpenAlex: works not in data/" --label openalex --body-file report.md
+          fi

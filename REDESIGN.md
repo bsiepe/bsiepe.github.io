@@ -318,7 +318,10 @@ without year; packages released for R and Python are two software entries.
 - **OpenAlex check:** monthly GitHub Action (changed from weekly on 2026-11-02),
   also runnable by hand, querying OpenAlex for my ORCID; opens an issue when a DOI
   appears that is not in `data/`, and updates that issue instead of opening a second
-  one while it is still open. Never writes to `data/`.
+  one while it is still open. Never writes to `data/`. Built 2026-11-02:
+  `scripts/openalex-check.mjs`, `.github/workflows/openalex.yml`; works are found via
+  OpenAlex author records (the ORCID works filter returns coauthors' works), and DOIs
+  to skip go in `scripts/openalex-ignore.yml`.
 
 ## Working rules
 
