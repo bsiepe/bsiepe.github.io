@@ -78,13 +78,32 @@
 // A small heading inside a section (academicv has none).
 // Default indent matches the text column of academicv's timeline (7em + 1em
 // gutter + 0.5em pad); lists use 3em (2em number column + 1em gutter).
-#let subheading(t, indent: 8.5em) = block(above: 16pt, below: 5pt, sticky: true, pad(left: indent, text(weight: "semibold", t)))
-#let section-title(t) = heading(level: 2, t)
+// Small caps keep it apart from bold entry titles and italic detail lines.
+#let subheading(t, indent: 8.5em) = block(above: 16pt, below: 5pt, sticky: true, pad(left: indent, text(tracking: 0.03em, smallcaps(t))))
+// Section headings at 11pt (academicv: 1em), so they rank above 10pt bold entry titles.
+#let section-title(t) = heading(level: 2, text(size: 11pt, t))
 
 // One timeline block. Entries are dictionaries with start-date / end-date and
 // the fields named in primary / secondary / tertiary.
-#let timeline(entries, primary, secondary: (), tertiary: (), settings) = layout-timeline(entries,
-  primary-element: primary, secondary-element: secondary, tertiary-element: tertiary, settings: settings)
+// - A date equal to the previous entry's date is shown only once.
+// - Tertiary lines are set at 9pt (academicv hard-codes 8pt; the inner size wins).
+// - `plain: true` sets the first primary field in regular weight, for long lists.
+// - `compact: true` puts entries 8pt apart instead of 12pt, for lists of one-liners.
+#let timeline(entries, primary, secondary: (), tertiary: (), plain: false, compact: false, settings) = {
+  let prev = none
+  let out = ()
+  for e in entries {
+    let d = get(e, "start-date")
+    let shown = if d != none and d == prev { none } else { d }
+    prev = d
+    let e = (..e, start-date: shown)
+    for k in tertiary { if get(e, k) != none { e.insert(k, text(size: 9pt, e.at(k))) } }
+    if plain { let k = primary.first(); if get(e, k) != none { e.insert(k, text(weight: "regular", e.at(k))) } }
+    out.push(e)
+  }
+  set block(spacing: 8pt) if compact
+  layout-timeline(out, primary-element: primary, secondary-element: secondary, tertiary-element: tertiary, settings: settings)
+}
 
 // ---------------------------------------------------------------- publications (markup strings)
 
@@ -202,21 +221,23 @@
 #let grants-section(cfg, settings) = {
   section-title("Grants")
   let gs = visible(load("grants")).sorted(key: g => g.date).rev()
-  let fmt(g) = (
+  let money(g) = if get(g, "amount") != none { amount(g.amount) + if get(g, "amount_note") != none { " " + g.amount_note } else { "" } }
+  // Research grants: bold name, role and amount, project title below.
+  timeline(gs.filter(g => g.kind == "research-grant").map(g => (
     start-date: year-of(g.date),
     name: g.name,
-    facts: nonempty((
-      if get(g, "amount") != none { amount(g.amount) + if get(g, "amount_note") != none { " (" + g.amount_note + ")" } else { "" } },
-      if get(g, "role") == "pi" { "principal investigator" },
-    )).join(", "),
+    facts: nonempty((if get(g, "role") == "pi" { "principal investigator" }, money(g))).join(", "),
     project: get(g, "project_title"),
-    purpose: get(g, "purpose"),
-  )
-  timeline(gs.filter(g => g.kind in ("research-grant", "internal-grant")).map(fmt), ("name", "facts"), secondary: ("project",), tertiary: ("purpose",), settings)
-  let small = gs.filter(g => g.kind not in ("research-grant", "internal-grant"))
+  )), ("name", "facts"), secondary: ("project",), settings)
+  // Everything else on one line each, regular weight: name, amount (purpose).
+  let lower-first(s) = if s.len() > 1 and lower(s.at(1)) == s.at(1) { lower(s.first()) + s.slice(1) } else { s }
+  let small = gs.filter(g => g.kind != "research-grant")
   if small.len() > 0 {
-    subheading("Travel grants and scholarships")
-    timeline(small.map(fmt), ("name", "facts"), tertiary: ("purpose",), settings)
+    subheading("Smaller grants and scholarships")
+    timeline(small.map(g => (
+      start-date: year-of(g.date),
+      line: nonempty((g.name, money(g))).join(", ") + if get(g, "purpose") != none { " (" + lower-first(g.purpose) + ")" } else { "" },
+    )), ("line",), plain: true, compact: true, settings)
   }
 }
 
@@ -511,6 +532,10 @@
     footer: context align(center, text(size: 0.8em)[#counter(page).display() / #counter(page).final().first() #h(1.5em) Updated #built]),
   )
   show: doc => showrules(settings, setrules(settings, doc))
+  // Section rule at 0.6pt instead of academicv's 1pt; the rest of its heading stays.
+  // Keep each timeline entry and publication on one page.
+  set grid.cell(breakable: false)
+  show heading.where(level: 2): it => { show line.where(stroke: 1pt + black): line(length: 100%, stroke: 0.6pt); it }
   // Ragged right: justified text without hyphenation leaves wide gaps.
   set par(justify: false, spacing: 8pt)
   set block(spacing: 12pt)
