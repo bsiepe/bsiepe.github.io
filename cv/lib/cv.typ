@@ -46,6 +46,11 @@
   runs.push(if start == prev { str(start) } else { str(start) + "–" + str(prev) })
   runs.join(", ")
 }
+// Discrete events in several years: "2023 & 2024", "2022, 2024 & 2025".
+#let event-years(ys) = {
+  let ys = ys.map(year-of).dedup().sorted()
+  if ys.len() == 1 { ys.first() } else { ys.slice(0, -1).join(", ") + " & " + ys.last() }
+}
 #let end-key(e) = { let v = get(e, "end", default: get(e, "start", default: "0000")); if v == "present" { "9999" } else { str(v) } }
 #let cap(s) = if s.len() == 0 { s } else { upper(s.first()) + s.slice(1) }
 #let end-punct(s) = if s.ends-with(".") or s.ends-with("?") or s.ends-with("!") { s } else { s + "." }
@@ -85,24 +90,36 @@
 
 // One timeline block. Entries are dictionaries with start-date / end-date and
 // the fields named in primary / secondary / tertiary.
-// - A date equal to the previous entry's date is shown only once.
+// - A date equal to the previous entry's date is shown only once, and the
+//   vertical rule runs unbroken through all entries of that date.
 // - Tertiary lines are set at 9pt (academicv hard-codes 8pt; the inner size wins).
 // - `plain: true` sets the first primary field in regular weight, for long lists.
 // - `compact: true` puts entries 8pt apart instead of 12pt, for lists of one-liners.
 #let timeline(entries, primary, secondary: (), tertiary: (), plain: false, compact: false, settings) = {
+  let gap = if compact { 8pt } else { 12pt }
+  // Runs of consecutive entries that share a date.
+  let runs = ()
   let prev = none
-  let out = ()
   for e in entries {
     let d = get(e, "start-date")
-    let shown = if d != none and d == prev { none } else { d }
+    let same = d != none and d == prev
     prev = d
-    let e = (..e, start-date: shown)
+    let e = (..e, start-date: if same { none } else { d })
     for k in tertiary { if get(e, k) != none { e.insert(k, text(size: 9pt, e.at(k))) } }
     if plain { let k = primary.first(); if get(e, k) != none { e.insert(k, text(weight: "regular", e.at(k))) } }
-    out.push(e)
+    if same { runs.last().push(e) } else { runs.push((e,)) }
   }
-  set block(spacing: 8pt) if compact
-  layout-timeline(out, primary-element: primary, secondary-element: secondary, tertiary-element: tertiary, settings: settings)
+  // Fills the gap between two entries of a run with the rule only. Same grid
+  // geometry as academicv's timeline (7em date column, 1em gutter, vline).
+  let connector = block(sticky: true, grid(columns: (7em, 1fr), gutter: 1em, block(height: gap), grid.vline(), []))
+  let one(e) = layout-timeline((e,), primary-element: primary, secondary-element: secondary, tertiary-element: tertiary, settings: settings)
+  set block(spacing: gap)
+  for run in runs {
+    block({
+      set block(spacing: 0pt)
+      run.map(one).join(connector)
+    })
+  }
 }
 
 // ---------------------------------------------------------------- publications (markup strings)
@@ -331,7 +348,7 @@
     if decks.len() == 0 { continue }
     subheading(title)
     timeline(decks.map(d => (
-      start-date: compress-years(d.evs.map(e => e.date)),
+      start-date: event-years(d.evs.map(e => e.date)),
       title: d.talk.title,
       venues: d.evs.map(e => venue-year(e) + if get(e, "award") != none { " (" + e.award + ")" } else { "" }).join("; "),
       note: if d.evs.all(e => "speaker" not in e.roles) { "Co-author" },
@@ -368,7 +385,7 @@
       g.place + if bits.len() > 0 { " (" + bits.join(", ") + ")" } else { "" }
     })
     (
-      start-date: compress-years(ss.map(s => s.date)),
+      start-date: event-years(ss.map(s => s.date)),
       title: w.title,
       where: parts.join("; "),
       with: if co.len() > 0 { "With " + and-join(co.map(full-name)) },
@@ -456,11 +473,27 @@
 
 #let media-section(cfg, settings) = {
   section-title("Media Coverage")
-  timeline(visible(load("media")).map(m => (
-    start-date: if get(m, "date") != none { year-of(m.date) },
-    outlet: link(m.url, m.outlet),
-    kind: cap(m.kind.replace("-", " ")),
-  )), ("outlet", "kind"), settings)
+  // Grouped by the publication covered (`about`): its title, then the outlets.
+  // Items about no publication stand alone. Undated groups go last.
+  let pubs = load("publications")
+  let groups = ()
+  for m in visible(load("media")) {
+    let key = get(m, "about", default: ()).at(0, default: none)
+    let i = if key == none { none } else { groups.position(g => g.key == key) }
+    if i == none { groups.push((key: key, items: (m,))) } else { groups.at(i).items.push(m) }
+  }
+  let dates(g) = g.items.map(m => get(m, "date")).filter(d => d != none).map(str).sorted()
+  let outlet(m) = link(m.url, m.outlet) + if m.kind != "article" { " (" + m.kind.replace("-", " ") + ")" }
+  let entries = groups.sorted(key: g => dates(g).at(-1, default: "0000")).rev().map(g => {
+    let p = pubs.find(p => p.id == g.key)
+    let ds = dates(g)
+    (
+      start-date: if ds.len() > 0 { year-of(ds.first()) },
+      title: if p != none { p.title } else { outlet(g.items.first()) },
+      outlets: if p != none { g.items.map(outlet).join(", ") },
+    )
+  })
+  timeline(entries, ("title",), secondary: ("outlets",), plain: true, settings)
 }
 
 #let training-section(cfg, settings) = {
