@@ -46,7 +46,7 @@ bio: |
 
   I'm committed to open science practices. Together with collaborators, I built [openESM](https://openesmdata.org), an open-source database of 60+ experience sampling datasets. We are actively working on expanding the database and making it easier for researchers to use it. Updates on the project can be found on the [openESM blog](https://openesmdata.org/blog/). I'm also a board member of the [Open Science Initiative](https://openscienceinitiativeuniversitymarburg.github.io/) at Marburg University.
 photo: "files/images/headshot_bjoern_siepe.jpg"
-social_image: "files/images/bjoern_headshot.png"
+social_image: "files/images/headshot_bjoern_siepe.jpg"
 skills_hidden: true
 skills:
   - { category: Languages, items: ["German (mother tongue)", "English (fluent)", "French (basic skills)"] }
