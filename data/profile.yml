@@ -29,19 +29,18 @@ linkedin: "https://www.linkedin.com/in/bj%C3%B6rn-siepe-11a750219/"
 twitter: b_siepe
 extra_links:
   - { label: "openesmdata.org", url: "https://openesmdata.org" }
-# Draft written 2026-10-31 from the bio; to be edited.
-research_profile: "I develop and evaluate statistical methods for intensive longitudinal data, with a focus on quantifying uncertainty in multilevel time series and dynamic network models. A second line of my work is the metascience of methodological research: how simulation studies are planned, preregistered, and reported, and how methods can be benchmarked. I build open-source software and research infrastructure for this work, including the openESM database of experience sampling datasets and several R and Python packages."
+research_profile: "My work addresses two main questions. The first is how much we can learn about psychological processes in daily life from intensive longitudinal data. I develop and evaluate time series and dynamic network models for such data, with an emphasis on uncertainty quantification. The second, from the metascience of methodological research, is how we know which statistical methods work well. In particular, I study how simulation studies and benchmarks are planned, preregistered, and reported. These two lines meet in my current DFG project, in which I build an empirical benchmark for time series models in psychology. Across both, I develop open-source software and infrastructure, including the openESM database of experience sampling datasets and several R and Python packages."
 research_interests:
   - "Design of research software and infrastructure"
   - "Metascience of methodological research"
   - "Multivariate time series methods for intensive longitudinal data"
   - "Applied experience sampling research"
 bio: |
-  I am a postdoctoral researcher at [Marburg University, Germany](https://www.uni-marburg.de/de/fb04/team-heck/team/bjoern-siepe), where I recently finished my PhD in Psychological Methods. My [research](/publications/) focuses on three areas: metascience of methodological research, time series modelling, and applied experience sampling research. Throughout these, I build open source software tools and try to promote open science practices.
+  I am a postdoctoral researcher at [Marburg University, Germany](https://www.uni-marburg.de/de/fb04/team-heck/team/bjoern-siepe), where I recently finished my PhD in Psychological Methods. My [research](/publications/) addresses two main questions: how much we can learn about psychological processes in daily life from intensive longitudinal data, and how we know which statistical methods work well.
 
-  In my work on time series modelling, I develop and evaluate novel multilevel models for time series data, with a particular emphasis on quantifying and communicating uncertainty in model outputs. To help researchers applying these methods, I have (co-)developed multiple [software](/software/) packages for R and Python.
+  For the first question, I develop and evaluate multilevel time series and dynamic network models, with a particular emphasis on quantifying and communicating uncertainty in model outputs. To help researchers applying these methods, I have (co-)developed multiple [software](/software/) packages for R and Python.
 
-  This methodological work influences my metascientific work, where I study how we can conduct methodological research in a transparent, robust, and reproducible way. One result of this work was the introduction of [ADEMP-PreReg](https://github.com/bsiepe/ADEMP-PreReg), a protocol for reporting and preregistering simulation studies. I'm currently (co-)chairing two working groups on quality standards for simulation studies, and I'm always open to chat about novel ideas to improve methodological research.
+  The second question belongs to the metascience of methodological research. I study how simulation studies and benchmarks are planned, preregistered, and reported. One result of this work was [ADEMP-PreReg](https://github.com/bsiepe/ADEMP-PreReg), a protocol for reporting and preregistering simulation studies. I'm currently (co-)chairing two working groups on quality standards for simulation studies, and I'm always open to chat about novel ideas to improve methodological research. The two questions meet in my current DFG project, in which I build an empirical benchmark for time series models in psychology.
 
   I have always enjoyed teaching statistics and programming to students and researchers. Over the years, I have given multiple workshops on reproducible research and time series modelling, for which you can find the materials on my [workshop page](/workshops/).
 
