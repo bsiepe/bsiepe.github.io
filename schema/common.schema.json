@@ -41,7 +41,7 @@
     },
     "area": {
       "type": "string",
-      "enum": ["simulation", "timeseries", "esm", "bayesian", "networks", "open-science", "metascience"]
+      "enum": ["simulation", "timeseries", "esm", "bayesian", "networks", "open-science", "metascience", "benchmarking"]
     },
     "areas": {
       "type": "array",

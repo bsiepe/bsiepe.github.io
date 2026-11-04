@@ -48,6 +48,7 @@ export const AREA_LABELS: Record<string, string> = {
 	networks: 'Network analysis',
 	'open-science': 'Open science',
 	metascience: 'Metascience',
+	benchmarking: 'Benchmarking',
 };
 
 // Venue line for a publication, APA style, without the authors and title.
