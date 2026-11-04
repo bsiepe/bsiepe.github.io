@@ -1,9 +1,23 @@
 # Talks. One entry per deck (or per session I chaired / panel I joined).
 # Schema: schema/talks.schema.json
-# Migrated 2026-10-31 from talks/*/ (website), cv-legacy/latex/cv_english.tex, and
-# cv-legacy/latex/my_pubs.bib. See MIGRATION_REPORT.md section 2b.
 
 # ---------------------------------------------------------------- 2026
+
+- id: dynamic-ecr-retreat
+  title: "Stability of Psychological Network Models"
+  areas: [ timeseries, networks]
+  tags: [network-analysis]
+  events:
+    - date: "2026-11-05"
+      venue: "ECR Meeting of the LOEWE DYNAMIC Consortium"
+      city: Marburg
+      country: DE
+      online: false
+      type: invited
+      roles: [speaker]
+      coauthors:
+        - { family: Nehler, given: Kai }
+      file: "talks/2026-11-05-dynamic-ecr-retreat/Dynamic-ECR-Retreat-Siepe-Nehler-2026.pdf"
 
 - id: benchmarking-psychological-time-series
   title: "Towards Benchmarking of Psychological Time Series"

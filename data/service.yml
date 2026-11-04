@@ -13,6 +13,11 @@
   start: "2021"
   end: "2023"
 
+- role: "Co-Organizer"
+  organization: "Open Science Teaching Event Marburg"
+  kind: organizing
+  years: ["2026"]
+
 - role: "Organizer"
   organization: "Online Lunch Talk Series on Simulation Studies"
   kind: organizing
